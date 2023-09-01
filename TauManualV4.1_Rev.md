@@ -1839,7 +1839,7 @@ Upper protection direction (c)</strong></strong></p>
 
 ## []{#anchor-69}Functional design of τ-argus 
 
-> ![](Media/Pictures/2000000700004D00000062CFD2BA6125.svm){width="14.792cm"
+> ![](Media/Pictures/tau_argus_functional_design.png){width="14.792cm"
 > height="19.233cm"}
 
 # []{#anchor-70}[]{#anchor-71}[]{#anchor-14}A tour of τ-ARGUS
