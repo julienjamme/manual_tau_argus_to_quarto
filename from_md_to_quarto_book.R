@@ -3,8 +3,6 @@ if(! dir.exists("chapters")) dir.create("chapters")
 brio::read_file("TauManualV4.1_Rev.md") |>
   # One qmd file at each h1 level
   stringr::str_split(pattern = "\n# []") |>
-  # wmf files to png files (in the md) => run ths bash file to convert all wmf
-  stringr::str_replace_all(pattern = ".wmf[)]", replacement = ".png)") |>
   unlist() |>
   purrr::iwalk(
     function(f, i){
