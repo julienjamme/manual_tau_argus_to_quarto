@@ -1841,7 +1841,7 @@ Upper protection direction (c)</strong></strong></p>
 
 > ![](Media/Pictures/tau_argus_functional_design.png){width="14.792cm"
 > height="19.233cm"}
-
+<!-- 2000000700004D00000062CFD2BA6125.svm -->
 # []{#anchor-70}[]{#anchor-71}[]{#anchor-14}A tour of τ-ARGUS
 
 > In this chapter, we explain and display the key features of τ-argus.
