@@ -4165,8 +4165,9 @@ Upper protection direction (c)</strong></strong></p>
 > before computing the tables. Apart from a small delay you will not
 > notice this.
 
-> ![](Media/Pictures/2000000700007D7B00005FC73C8B3BA5.svm){width="13cm"
+> ![](Media/Pictures/tau_argus_specify_metadata_spss.png){width="13cm"
 > height="9.931cm"}
+ <!-- 2000000700007D7B00005FC73C8B3BA5.svm -->
 
 ### []{#anchor-206}[]{#anchor-218}Specify \| Metafile \[for tabular data\]
 
