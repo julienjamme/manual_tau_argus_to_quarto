@@ -1,0 +1,3 @@
+## Series of tables
+In τ-argus it is possible to specify a series of tables that will beprotected one by one, and independently of each other. It is moreefficient to choose this option since τ-argus requires only a singlerun through the microdata in order to produce the tables. But also forthe user it is often more attractive to specify a series of tables andlet τ-argus protect them in a single session, rather than have severalindependent sessions.
+

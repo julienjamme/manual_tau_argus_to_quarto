@@ -1,0 +1,22 @@
+## Codelist file
+Codelists can be specified for explanatory variables. The codes arestored in a separate file (default extension .CDL).
+However the codes are only used to enhance certain windows during theprocessing. τ-argus itself will create the coding schemes for thevariables used during the processing of the datafile. So a code notspecified in the .CDL-file will not cause any problem, only the labelis not available. Also codes specified but not found in the data filewill be ignored.
+The structure of the file is simple. Each line contains a code and alabel separated by a ","
+region.cdl
+1,Groningen
+2,Friesland
+3,Drenthe
+4,Overijssel
+5,Flevoland
+6,Gelderland
+7,Utrecht
+8,Noord-Holland
+9,Zuid-Holland
+10,Zeeland
+11,Noord-Brabant
+12,Limburg
+Nr,North
+Os,East
+Ws,West
+Zd,South
+

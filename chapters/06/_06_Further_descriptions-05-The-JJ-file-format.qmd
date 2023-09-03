@@ -1,0 +1,52 @@
+## The JJ-file format
+The JJ-file format has been introduced to establish a link between the(hierarchical) tables and the structures required for the optimisationroutines used in Cell-suppression etc.
+Basically it is a set of table-cells and a set of relations betweenthem. The layout is free-format separated by one or more spaces.
+The first line is a zero
+The second line is the number of cells.
+Then all cells are described. The entries on a line are:
+
+-   A sequence number
+
+-   The cell value
+
+-   The value of the cost-function
+
+-   The status (s = safe, m = secondary suppression, u = primary unsafe,
+    > z = protected cell or empty)
+
+-   The lower bound
+
+-   The upper bound
+
+-   The lower protection level
+
+-   The upper protection level
+
+-   The sliding protection level (never used in τ‑argus)
+Then the number of relations
+Then follow all the relations.
+Each relation starts with a '0'followed by the number of cells in thatrelations and a colon (':'). Then the sequence-number of the totalcell (followed by a (-1) and all the sub-cells (followed by a (1).
+Example of a part of a JJ-file:
+0
+162
+0 16847646.84 20000 s 0.00 25271470.26 0.0100 0.0100 0.00
+1 4373664.00 5192 s 0.00 25271470.26 0.0100 0.0100 0.00
+2 1986129.00 2358 s 0.00 25271470.26 0.0100 0.0100 0.00
+3 1809246.00 2148 s 0.00 25271470.26 0.0100 0.0100 0.00
+4 578289.00 686 s 0.00 25271470.26 0.0100 0.0100 0.00
+5 3703896.00 4397 s 0.00 25271470.26 0.0100 0.0100 0.00
+\...
+\...
+\...
+\...
+63
+0 9 : 0 (-1) 18 (1) 36 (1) 54 (1) 72 (1) 90 (1) 108 (1) 126 (1) 144(1)
+0 9 : 1 (-1) 19 (1) 37 (1) 55 (1) 73 (1) 91 (1) 109 (1) 127 (1) 145(1)
+0 9 : 2 (-1) 20 (1) 38 (1) 56 (1) 74 (1) 92 (1) 110 (1) 128 (1) 146(1)
+0 9 : 3 (-1) 21 (1) 39 (1) 57 (1) 75 (1) 93 (1) 111 (1) 129 (1) 147(1)
+0 9 : 4 (-1) 22 (1) 40 (1) 58 (1) 76 (1) 94 (1) 112 (1) 130 (1) 148(1)
+\...
+\...
+\...
+\...
+

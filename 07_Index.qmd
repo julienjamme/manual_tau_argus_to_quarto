@@ -1,0 +1,81 @@
+# Index
+
+<div>
+
+</div>
+
+[^1]:
+    > See Anco Hundepool et al., 2014, μ-argus version 5.1 user's
+    > manual, Statistics Netherlands, The Hague, The Netherlands.
+
+[^2]:
+    > This interpretation is due to Peter Kooiman, former head of the
+    > methodology department at Statistics Netherlands.
+
+[^3]:
+    > The original copy of this engraving is in the collection of 'Het
+    > Leidsch Prentenkabinet' in Leiden, The Netherlands.
+
+[^4]:
+    > Anco Hundepool, Josep Domingo-Ferrer, Luisa Franconi, Sarah
+    > Giessing, Eric Schulte Nordholt, Keith Spicer, Peter-Paul de Wolf
+    > (2012), [Statistical Disclosure
+    > Control](http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1119978157.html),
+    > ISBN: 978-1-119-97815-2, Wiley.
+
+[^5]:
+    > See section 4.2
+    > *D**isclosure risk
+    > assessment I: primary sensitive cells* of the SDC-Handbook
+    > (Hundepool et all (2012)).
+
+[^6]:
+    > Loeve, Anneke, 2001, Notes on sensitivity measures and protection
+    > levels, Research paper, Statistics Netherlands. Available at
+    > [*http://research.cbs.nl/casc/related/marges.pdf*](http://research.cbs.nl/casc/related/marges.pdf)
+
+[^7]:
+    > See section 5.2 Disclosure risks of the SDC-Handbook (Hundepool et
+    > all (2012)).
+
+[^8]:
+    > See section 4.6 *Information loss measures for tabular data* of
+    > the SDC-Handbook (Hundepool et all (2012).
+
+[^9]:
+    > The section on GHMiter has been contributed by Sarah Giessing,
+    > *Federal Statistical Office of Germany *65180 Wiesbaden; E-mail:
+    > [**sarah.giessing@destatis.de**](mailto:sarah.giessing@destatis.de?subject=Tau-ARGUS%20Manual)*.
+    > *See section 4.4.3 *Algorithms for secondary cell suppressio*n of
+    > the SDC-Handbook (Hundepool et all (2012)).
+
+[^10]:
+    > The optimisation models have been built by a team of researchers
+    > headed by Juan-José Salazar-Gonzalez of the University La Laguna,
+    > Tenerife, Spain. Other members of the team were: G. Andreatta, M.
+    > Fischetti, R. Betancort Villalva, M.D. Montesdeoca Sanchez and M.
+    > Schoch
+
+[^11]:
+    > See section 4.4.4 *Secondary cell suppression in hierarchical and
+    > linked tables* of the SDC-Handbook, Hundepool et all (2012).
+
+[^12]:
+    > See section 4.5.2 A post-tabular method: Controlled tabular
+    > adjustment of the Handbook
+
+[^13]:
+    > See section 5.4.3 Rounding of the Handbook.
+
+[^14]:
+    > For further details see Salazar, Staggermeier and Bycroft (2005
+    > [****Controlled rounding
+    > implementation****](http://www.unece.org/stats/documents/ece/ces/ge.46/2005/wp.36.e.pdf)**,
+    > UN-ECE Worksession on SDC, Geneva**)
+
+[^15]:
+    > Fischetti, M, Salazar Gonzales, J.J. (2000), *Models and
+    > Algorithms for Optimizing Cell Suppression Problem in Tabular Data
+    > with Linear Constraints*, in Journal of the American Statistical
+    > Association, Vol. 95, pp 916
+

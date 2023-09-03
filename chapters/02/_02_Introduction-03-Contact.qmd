@@ -1,0 +1,3 @@
+## Contact
+Feedback from users will help improve future versions of τ-argus andis therefore greatly appreciated. The authors of this manual can becontacted directly for suggestions that may lead to improved versionsof τ-argus in writing or otherwise; e-mail messages can also be sentto [*argus@cbs.nl*](mailto:argus@cbs.nl).
+

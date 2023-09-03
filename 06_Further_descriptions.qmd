@@ -1,0 +1,19 @@
+# 06_Further_descriptions
+
+{{< include chapters/06/_06_Further_descriptions-01-Meta-data-files.qmd >}}
+
+{{< include chapters/06/_06_Further_descriptions-02-Hierarchy-file.qmd >}}
+
+{{< include chapters/06/_06_Further_descriptions-03-Codelist-file.qmd >}}
+
+{{< include chapters/06/_06_Further_descriptions-04-Global-recode-file.qmd >}}
+
+{{< include chapters/06/_06_Further_descriptions-05-The-JJ-file-format.qmd >}}
+
+{{< include chapters/06/_06_Further_descriptions-06-The-apriori-file.qmd >}}
+
+{{< include chapters/06/_06_Further_descriptions-07-The-Batch-command-file.qmd >}}
+
+{{< include chapters/06/_06_Further_descriptions-08-Log-file.qmd >}}
+
+

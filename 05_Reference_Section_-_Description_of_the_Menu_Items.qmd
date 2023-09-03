@@ -1,0 +1,17 @@
+# 05_Reference_Section_-_Description_of_the_Menu_Items
+
+{{< include chapters/05/_05_Reference_Section_-_Description_of_the_Menu_Items-01--Menu-structure.qmd >}}
+
+{{< include chapters/05/_05_Reference_Section_-_Description_of_the_Menu_Items-02-Viewing-the-table.qmd >}}
+
+{{< include chapters/05/_05_Reference_Section_-_Description_of_the_Menu_Items-03-The-File-menu.qmd >}}
+
+{{< include chapters/05/_05_Reference_Section_-_Description_of_the_Menu_Items-04-The-Specify-menu.qmd >}}
+
+{{< include chapters/05/_05_Reference_Section_-_Description_of_the_Menu_Items-05-The-Modify-menu.qmd >}}
+
+{{< include chapters/05/_05_Reference_Section_-_Description_of_the_Menu_Items-06-The-Output-menu.qmd >}}
+
+{{< include chapters/05/_05_Reference_Section_-_Description_of_the_Menu_Items-07-The-Help-menu.qmd >}}
+
+

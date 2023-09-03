@@ -1,0 +1,85 @@
+## The Modular approach^[^11]^
+The modular (HiTaS) solution is a heuristic approach to cellsuppression in hierarchical tables. Hierarchical tables are speciallylinked tables: at least one of the spanning variables exhibits ahierarchical structure, *i.e*. contains (many) sub-totals.
+In Fischetti and Salazar (1998) a theoretical framework is presentedthat should be able to deal with hierarchical and generally linkedtables. In what follows, this will be called the mixed integerapproach. In this framework, additional constraints to a linearprogramming problem are generated. The number of added constraintshowever, grows rapidly when dealing with hierarchical tables, sincemany dependencies exist between all possible (sub-)tables containingmany (sub-)totals. The implemented heuristic approach (HiTaS) dealswith a large set of (sub)-tables in a particular order. A nonhierarchical table can be considered to be a hierarchical table withjust one level. In that case, the approach reduces to the originalmixed integer approach and hence provides the optimal solution. Incase of a hierarchical table, the approach will provide a sub-optimalsolution that minimises the information loss per sub-table, but notnecessarily the global information loss of the complete set ofhierarchically linked tables.
+In the following section, a short description of the approach isgiven. For a more detailed description of the method, including someexamples, see *e.g*., De Wolf (2002).
+HiTaS deals with cell suppression in hierarchical tables using atop-down approach. The first step is to determine the primary unsafecells in the base-table consisting of all the cells that appear whencrossing the hierarchical spanning variables. This way all cells,whether representing a (sub-)total or not, are checked for primarysuppression. Knowing all primary unsafe cells, the secondary cellsuppressions have to be found in such a way that each (sub-)table ofthe base-table is protected and that the different tables cannot becombined to undo the protection of any of the other (sub-)tables. Thebasic idea behind the top-down approach is to start with the highestlevels of the variables and calculate the secondary suppressions forthe resulting table. The suppressions in the interior of the protectedtable is then transported to the corresponding marginal cells of thetables that appear when crossing lower levels of the two variables.All marginal cells, both suppressed and not suppressed, are then'fixed' in the calculation of the secondary suppressions of that lowerlevel table, i.e., they are not allowed to be (secondarily)suppressed. This procedure is then repeated until the tables that areconstructed by crossing the lowest levels of the spanning variablesare dealt with.
+A suppression pattern at a higher level only introduces restrictionson the marginal cells of lower level tables. Calculating secondarysuppressions in the interior while keeping the marginal cells fixed,is then independent between the tables on that lower level, i.e., allthese (sub)-tables can be dealt with independently of each other.Moreover, added primary suppressions in the interior of a lower leveltable are dealt with at that same level: secondary suppressions canonly occur in the same interior, since the marginal cells are keptfixed.
+However, when several empty cells are apparent in a low level table,it might be the case that no solution can be found if one isrestricted to suppress interior cells only. Unfortunately,backtracking is then needed.
+Obviously, all possible (sub)tables should be dealt with in aparticular order, such that the marginal cells of the table underconsideration have been protected as the interior of a previouslyconsidered table. To that end, certain groups of tables are formed ina specific way (see De Wolf (2002)). All tables within such a groupare dealt separately, using the mixed integer approach.
+The number of tables within a group is determined by the number ofparent-categories the variables have one level up in the hierarchy. Aparent-category is defined as a category that has one or moresub-categories. Note that the total number of (sub)-tables that haveto be considered thus grows rapidly.
+Singletons
+Singleton cells should be treated with extra care. The singlerespondent in this cell could easily undo the protection if no extrameasures were taken. The most dangerous situation is that there areonly two singletons in a row, or one and one other primary unsafecell. These singletons could easily disclose the other cell.
+We have added options for extra singleton protection in the followingsituations.
+
+1.  If on a row or column of a subtable there are only two singletons
+    > and no other primary suppressions.
+
+2.  If there is only one singleton and one multiple primary unsafe cell.
+
+3.  If a frequency rule is used, it could happen that two cells on a
+    > row/column are primary unsafe, but the sum of the two cells could
+    > still be unsafe. In that case it should be prevented that these
+    > two cells protect each other.
+Cells within a table sometimes consist of exactly one contributor.Such a cell is called a singleton. Linear sensitivity rules willusually label this cell as (primary) unsafe. When cell suppression isused to protect a table with unsafe cells, these singletons need to betaken care of in a special way.
+Within a suppression pattern, contributors in singletons may be ableto recalculate other suppressed cells. Obviously, a contributor couldalways insert its own contribution and thereby recalculate its ownsuppressed cell. This could in turn lead to the possibility ofrecalculating other suppressed cells in the same suppression pattern.Whenever such a recalculated cell is (primary) unsafe, this meansdisclosure.
+Within the current models used to determine suppression patterns, itis not possible to take all possible situations into account whensingletons are part of a suppression pattern. However, an importantgroup of instances of disclosure by singletons, is when a singleton ispart of a row with exactly one additional (also primary) suppression.
+
+1.  If on a row or column of a subtable there are only two singletons
+    > and no other primary suppressions.
+
+2.  If there is only one singleton and one multiple primary unsafe cell.
+
+3.  If a frequency rule is used, it could happen that two cells on a
+    > row/column are primary unsafe, but the sum of the two cells could
+    > still be unsafe. In that case it should be prevented that these
+    > two cells protect each other.
+Note that the last situation is not really a singleton problem, butthis problem is handeled in the same way.
+To prevent this kind of disclosure, it would be sufficient to force anadditional (third) suppression in the same row. In prior versions ofτ‑argus this was accomplished by increasing the protection levels ofone of the (primary) unsafe cells in the row. In short, the protectionlevel of one of the primary suppressed cells was raised in such a waythat the other primary suppression would not be able to givesufficient protection. The largest primary unsafe cell in the row gotthe *cell value* of the other unsafe cell in the row, plus a smallvalue, as protection level. Indeed, this forces a third suppression inthe row.
+However, since the *cell value* of one of the suppressed cells wasinvolved, this meant that the increased protection level of this cellcould become quite large, which would have an effect on thesuppression pattern in one of the other dimensions. In certainsituations this led to oversuppression.
+To circumvent this problem, the newly implemented approach adds avirtual cell to the table. That virtual cell is assigned a value equalto the sum of the two primary suppressed cells in the row, and isgiven the status \`(primary) unsafe\'. That virtual cell then only hasto be protected against exact disclosure, i.e., it suffices to imposea small protection interval.
+The table below shows an example table, displaying the singletonproblem. In the first table the values of the cells are given, with inbold, red, italic the (primary) unsafe cells. The second table showsthe names of the cells, where *c*~*ij*~ stands for the cell withcoordinates (i, j).
+
++---------+---------+------+------+------+------+
+|         | > Total | > X1 | > X2 | > X3 | > X4 |
++---------+---------+------+------+------+------+
+| > Total | > 227   | > 73 | > 33 | > 93 | > 25 |
++---------+---------+------+------+------+------+
+| > A     | > 146   | > 52 | > 15 | > 62 | > 17 |
++---------+---------+------+------+------+------+
+| > B     | > 81    | > 24 | > 18 | > 31 | > 8  |
++---------+---------+------+------+------+------+
+
++---------+---------+---------+---------------------+---------+-----------------------+
+|         | > Total | > X1    | > X2                | > X3    | > X4                  |
++---------+---------+---------+---------------------+---------+-----------------------+
+| > Total | > c~00~ | > c~01~ | > c~02~             | > c~03~ | > c~04~               |
++---------+---------+---------+---------------------+---------+-----------------------+
+| > A     | > c~10~ | > c~11~ | > ***c***~***12***~ | > c~13~ | > ***c***~***\ 14***~ |
++---------+---------+---------+---------------------+---------+-----------------------+
+| > B     | > c~20~ | > c~21~ | > c~22~             | > c~23~ | > c~24~               |
++---------+---------+---------+---------------------+---------+-----------------------+
+Example table to explain Singleton Problem.
+Bold and red means (primary) unsafe.
+Now assume that cell *c*~*12*~ = (A,X2) is a singleton and cell*c*~*14*~ = (A,X4) is unsafe according to a p%-rule with p=10. Hence,cell *c*~*14*\ ~is the only other (primary) unsafe cell in that row.To protect cell *c*~*14*~ against disclosure by the contributor ofsingleton *c*~*12*~, a \`virtual cell *c*~*v*~ is defined with value32. Moreover, that virtual cell is given a small protection interval,(32,33) say. The relations that define the table structure, includingthe virtual cell, are given below:
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+c~00~ = c~01\ ~+ c~02\ ~+ c~03\ ~+ c~04~
+c~10~ = c~11\ ~+ c~12\ ~+ c~13\ ~+ c~04~
+c~20~ = c~21\ ~+ c~22\ ~+ c~23\ ~+ c~24~
+c~00~ = c~10\ ~+ c~20~
+c~01~ = c~11\ ~+ c~21~
+c~02~ = c~12\ ~+ c~22~
+c~03~ = c~13\ ~+ c~23~
+c~04~ = c~14\ ~+ c~24~
+c~v~ = c~12\ ~+ c~14~
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+Table showing the relations defining table structure of table above
+Within τ‑argus, this procedure is implemented in both the optimalapproach as well as in the modular approach. For the modular approach,this procedure is applied to each subtable separately, whenever asubtable is dealt with within the modular approach.
+This special attention to singletons is only given when the othersuppressed cell in the same row is a \`true\' primary suppression.This is natural, since it has to be done prior to the search forsecondary suppressions. In the modular approach, a hierarchical tableis divided into many, non-hierarchical, subtables. Secondarysuppressions in one table sometimes temporarily become primarysuppressions in other tables during the process. I.e., thosesuppression are not \`true\' primary suppressions. It is thereforealso natural not to construct virtual cells in case a singleton is inthe same row with exactly one other primary suppression that wasoriginally a secondary suppression. This is indeed the way it isimplemented in the modular approach.
+In previous versions of τ‑argus a similar procedure was available. Butthen the additional protection was achieved by increasing theprotection level of the singleton cell. This would lead however alsoin additional protection in other dimensions and would createover-protection
+Negative values
+The implementation by Fischetti and Salazar does not allow fornegative values. However it is not uncommon, that some cells in atable have negative values. Therefore additional measures have beentaken. If in a subtable during the process negative values are found,all cell values are increased such that the lowest value becomespositive. Of course the margins have to be recalculated, but a safeprotection pattern will be found.
+References on the modular method
+Fischetti, M. and J.J. Salazar-González (1998). Models and Algorithmsfor Optimizing Cell Suppression in Tabular Data with LinearConstraints. Technical Paper, University of La Laguna, Tenerife.
+P.P. de Wolf (2002). HiTaS: a heuristic approach to cell suppressionin hierarchical tables. Proceedings of the AMRADS meeting inLuxembourg (2002).
+Additional reading on the optimisation models can be found at theCASC-website[**(http://research.cbs.nl/casc/Related/99wol-heu-r.pdf)**](http://research.cbs.nl/casc/Related/99wol-heu-r.pdf)
+
