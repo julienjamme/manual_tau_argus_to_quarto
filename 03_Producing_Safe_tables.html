@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Manual of Tau-Argus - 3&nbsp; 03_Producing_Safe_tables</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./04_A_tour_of_τ-ARGUS.html" rel="next">
+<link href="./02_Introduction.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_Producing_Safe_tables.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">03_Producing_Safe_tables</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Manual of Tau-Argus</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">GHMiter huge in batch</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">02_Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_Producing_Safe_tables.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">03_Producing_Safe_tables</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_A_tour_of_τ-ARGUS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">04_A_tour_of_τ-ARGUS</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_Reference_Section_-_Description_of_the_Menu_Items.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">05_Reference_Section_-_Description_of_the_Menu_Items</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_Further_descriptions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">06_Further_descriptions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_Index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Index</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">3.1</span> Introduction</a></li>
+  <li><a href="#sensitive-cells-in-magnitude-tables5" id="toc-sensitive-cells-in-magnitude-tables5" class="nav-link" data-scroll-target="#sensitive-cells-in-magnitude-tables5"><span class="header-section-number">3.2</span> Sensitive cells in magnitude tables<sup>[^5]</sup></a></li>
+  <li><a href="#sensitive-cells-in-frequency-count-tables" id="toc-sensitive-cells-in-frequency-count-tables" class="nav-link" data-scroll-target="#sensitive-cells-in-frequency-count-tables"><span class="header-section-number">3.3</span> Sensitive cells in frequency count tables</a></li>
+  <li><a href="#table-redesign" id="toc-table-redesign" class="nav-link" data-scroll-target="#table-redesign"><span class="header-section-number">3.4</span> Table redesign</a></li>
+  <li><a href="#secondary-cell-suppression" id="toc-secondary-cell-suppression" class="nav-link" data-scroll-target="#secondary-cell-suppression"><span class="header-section-number">3.5</span> Secondary cell suppression</a></li>
+  <li><a href="#information-loss-in-terms-of-cell-costs8" id="toc-information-loss-in-terms-of-cell-costs8" class="nav-link" data-scroll-target="#information-loss-in-terms-of-cell-costs8"><span class="header-section-number">3.6</span> Information loss in terms of cell costs<sup>[^8]</sup></a></li>
+  <li><a href="#series-of-tables" id="toc-series-of-tables" class="nav-link" data-scroll-target="#series-of-tables"><span class="header-section-number">3.7</span> Series of tables</a></li>
+  <li><a href="#the-hypercubeghmiter-method9" id="toc-the-hypercubeghmiter-method9" class="nav-link" data-scroll-target="#the-hypercubeghmiter-method9"><span class="header-section-number">3.8</span> The Hypercube/GHMITER method<sup>[^9]</sup></a>
+  <ul class="collapse">
+  <li><a href="#the-hypercube-method" id="toc-the-hypercube-method" class="nav-link" data-scroll-target="#the-hypercube-method"><span class="header-section-number">3.8.1</span> The hypercube method</a></li>
+  <li><a href="#the-argus-implementation-of-ghmiter" id="toc-the-argus-implementation-of-ghmiter" class="nav-link" data-scroll-target="#the-argus-implementation-of-ghmiter"><span class="header-section-number">3.8.2</span> The ARGUS implementation of GHMITER</a></li>
+  </ul></li>
+  <li><a href="#optimisation-models-for-secondary-cell-suppression10" id="toc-optimisation-models-for-secondary-cell-suppression10" class="nav-link" data-scroll-target="#optimisation-models-for-secondary-cell-suppression10"><span class="header-section-number">3.9</span> Optimisation models for secondary cell suppression<sup>[^10]</sup></a></li>
+  <li><a href="#the-modular-approach11" id="toc-the-modular-approach11" class="nav-link" data-scroll-target="#the-modular-approach11"><span class="header-section-number">3.10</span> The Modular approach<sup>[^11]</sup></a></li>
+  <li><a href="#the-modular-approach-for-linked-tables" id="toc-the-modular-approach-for-linked-tables" class="nav-link" data-scroll-target="#the-modular-approach-for-linked-tables"><span class="header-section-number">3.11</span> The modular approach for linked tables</a></li>
+  <li><a href="#network-solution-for-large-2-dimensional-tables-with-one-hierarchy" id="toc-network-solution-for-large-2-dimensional-tables-with-one-hierarchy" class="nav-link" data-scroll-target="#network-solution-for-large-2-dimensional-tables-with-one-hierarchy"><span class="header-section-number">3.12</span> Network solution for large 2 dimensional tables with one hierarchy</a></li>
+  <li><a href="#controlled-tabular-adjustment12" id="toc-controlled-tabular-adjustment12" class="nav-link" data-scroll-target="#controlled-tabular-adjustment12"><span class="header-section-number">3.13</span> Controlled Tabular Adjustment[^12]</a></li>
+  <li><a href="#controlled-rounding13" id="toc-controlled-rounding13" class="nav-link" data-scroll-target="#controlled-rounding13"><span class="header-section-number">3.14</span> Controlled rounding<sup>[^13]</sup></a></li>
+  <li><a href="#audit" id="toc-audit" class="nav-link" data-scroll-target="#audit"><span class="header-section-number">3.15</span> Audit</a></li>
+  <li><a href="#functional-design-of-τ-argus" id="toc-functional-design-of-τ-argus" class="nav-link" data-scroll-target="#functional-design-of-τ-argus"><span class="header-section-number">3.16</span> Functional design of τ-argus</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">03_Producing_Safe_tables</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">3.1</span> Introduction</h2>
+<p>The growing demands from researchers, policy makers and others formore and more detailed statistical information lead to a conflict.Statistical offices collect large amounts of data for statisticalpurposes. The respondents are only willing to provide the statisticaloffices with the required information if they can be certain thatthese statistical offices will treat their data with the utmost care.This implies that respondents' confidentiality must be guaranteed.This imposes limitations on the amount of detail in the publications.Practice and research have generated insights into how to protecttables, but the problem is not yet definitively solved. Before we go into more details of the basic ideas on which τ-argus isbased, we give a sketch of the general ideas. At first sight one mightfind it difficult to understand that information presented in tabularform presents a disclosure risk. After all, one might say that theinformation is presented only in aggregate form. Safe tables are produced from unsafe ones by applying certain SDCmeasures to the tables. These SDC measures - as far as they areimplemented in τ-argus - are discussed in the present section. Somekey concepts such as sensitive cells, information loss and the likeare discussed as well.</p>
+</section>
+<section id="sensitive-cells-in-magnitude-tables5" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="sensitive-cells-in-magnitude-tables5"><span class="header-section-number">3.2</span> Sensitive cells in magnitude tables<sup>[^5]</sup></h2>
+<p>The well-known dominance rule is often used to find the sensitivecells in tables, i.e.&nbsp;the cells that cannot be published as they mightreveal information on individual respondents. More particularly, thisrule states that a cell of a table is unsafe for publication if a few(<em>n</em>) major (largest) contributors to a cell are responsible for acertain percentage (<em>k</em>) of the total of that cell. The idea behindthis rule is that in that case at least the major contributorsthemselves can determine with sufficient precision the contributionsof the other contributors to that cell. The choice <em>n</em>=3 and <em>k</em>=70%is not uncommon, but τ-argus will allow the users to specify their ownvalues of <em>n</em> and <em>k</em>. As an alternative the prior-posterior rule has been proposed. Thebasic idea is that a contributor to a cell has a better chance toestimate competitors in a cell than an outsider, and also that thesekind of intrusions can occur rather often. The precision with which acompetitor can estimate is a measure of the sensitivity of a cell. Theworst case is that the second largest contributor will be able toestimate the largest contributor. If this precision is more than <em>p</em>%,the cell is considered unsafe. An extension is that also the globalknowledge about each cell is taken into account. In that case weassume that each intruder has a basic knowledge of the value of eachcontributor of <em>q</em>%. Note, that it is actually the ratio p/q thatdetermines which cells are considered safe, or unsafe. In this versionof τ-argus, the q‑parameter is fixed to 100. Literature refers to thisrule as (minimum protection of) p%‑rule. If the intention is to statea prior-posterior rule with parameters p<sub>0</sub> and q<sub>0</sub>, whereq<sub>0&nbsp;</sub>&lt;<sub>&nbsp;</sub>100, choose the parameter p of the p%‑ruleas p = p<sub>0</sub>/q<sub>0</sub>*100. See Loeve (2001)<sup>[^6]</sup> With these rules as a starting point it is easy to identify thesensitive cells, provided that the tabulation package has the facilitynot only to calculate the cell totals, but also to calculate thenumber of contributors and the n individual contributions of the majorcontributors. Tabulation packages like ABACUS (from StatisticsNetherlands) and the package ‘SuperCross’ developed in Australia bySpace-Time Research have that capacity. In fact τ-argus not onlystores the sum of the n major contributions for each cell, but theindividual major contributions themselves. The reason for this is thatthis is very handy in case rows and columns etc. in a table arecombined. By merging and sorting the sets of individual contributionsof the cells to be combined, one can quickly determine the majorcontributions of the new cell, without going back to the originalfile. This implies that one can quickly apply the dominance rule orthe p%-rule to the combined cells. Combining rows and columns (tableredesign) is one of the major tools for reducing the number of unsafecells. This too is the reason why τ-argus can read microdata files and buildthe tables itself. However due to continuous demands from users wehave now also provide the option to read ready-made tables, but withthe restriction that the options for table redesign will not beavailable in that case. A problem, however, arises when also the marginals of the table arepublished. It is no longer enough to just suppress the sensitivecells, as they can be easily recalculated using the marginals. Even ifit is not possible to exactly recalculate the suppressed cell, it ispossible to calculate an interval that contains the suppressed cell.This is possible if some constraints are known to hold for the cellvalues in a table. A commonly found constraint is that the cell valuesare all nonnegative. If the size of such an interval is rather small, then the suppressedcell can be estimated rather precisely. This is not acceptable either.Therefore it is necessary to suppress additional information toachieve sufficiently large intervals. Several solutions are available to protect the information of thesensitive cells:</p>
+<ul>
+<li><p>Combining categories of the spanning variables (table redesign). &gt; Larger cells tend to protect the information about the individual &gt; contributors better.</p></li>
+<li><p>Suppression of additional (secondary) cells to prevent the &gt; recalculation of the sensitive (primary) cells. The calculation of the optimal set (with respect to the loss ofinformation) of secondary cells is a complex OR-problem. τ-argus hasbeen built around this solution, and takes care of the whole process.A typical τ-argus session will be one in which the users will first bepresented with the table containing only the primary unsafe cells. Theuser can then choose how to protect these cells. This can involve thecombining of categories, equivalent to the global recoding of μ-argus.The result will be an update of the table with fewer unsafe cells(certainly not more) if the recoding has worked. At a certain stagethe user requests the system to solve the remaining unsafe cells byfinding secondary cells to protect the primary cells. At this stage the user can choose between several options to protectthe primary sensitive cells. Either they choose the hypercube methodor the optimal solution. In this case they also has to select thesolver to be used, Xpress or cplex or the free solver soplex. Afterthis, the table can be stored for further processing if necessary, andeventual publication.</p></li>
+</ul>
+</section>
+<section id="sensitive-cells-in-frequency-count-tables" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="sensitive-cells-in-frequency-count-tables"><span class="header-section-number">3.3</span> Sensitive cells in frequency count tables</h2>
+<p>In the simplest way of using τ-argus, sensitive cells in frequencycount tables are defined as those cells that contain a frequency thatis below a certain threshold value. This threshold value is to beprovided by the data protector. This way of identifying unsafe cellsin a table is the one that is implemented in the current version ofτ-argus It should be remarked, however, that this is not always anadequate way to protect a frequency count table.[^7] Yet it is applieda lot. Applying a dominance rule or a p% rule is useless in thiscontext. One should think about possible disclosure risks that afrequency count table poses and possible disclosure scenarios in orderto simulate the behaviour of an intruder. Such an analysis wouldprobably come up with different insights than using a simplethresholding rule, <em>e.g.</em> like the one sketched in the reference justmentioned. We just mention here the risks of group-disclosure; when a(small) group of respondents have all the same score on a certaincategory. This risk is often also referred to as the problem of100%-cells. Further research on this topic is being carried out ata.o. Statistics Netherlands.</p>
+</section>
+<section id="table-redesign" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="table-redesign"><span class="header-section-number">3.4</span> Table redesign</h2>
+<p>If a large number of sensitive cells are present in a table, it mightbe an indication that the spanning variables are too detailed. In thatcase one could consider combining certain rows and columns in thetable. (This might not always be possible because of publicationpolicy.) Otherwise the number of secondary cell suppressions mightjust be too enormous. The situation is comparable to the case ofmicrodata containing many unsafe combinations. Rather than eliminatingthem with local suppressions one can remove them by using globalrecodings. For tabular data we use the phrase “table redesign” todenote an operation analogous to global recoding in microdata sets.The idea of table redesign is to combine rows, columns etc., by addingthe cell contents of corresponding cells from the different rows,columns etc. It is a property of the sensitivity rules that a jointcell is safer than any of the individual cells. So as a result of thisoperation the number of unsafe cells is reduced. One can try toeliminate all unsafe combinations in this way, but that might lead toan unacceptably high information loss. Instead, one could stop at somepoint, and eliminate the remaining unsafe combinations by using othertechniques such as cell suppression.</p>
+</section>
+<section id="secondary-cell-suppression" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="secondary-cell-suppression"><span class="header-section-number">3.5</span> Secondary cell suppression</h2>
+<p>Once the sensitive cells in a table have been identified, possiblyfollowing table redesign it might be a good idea to suppress thesevalues. In case no constraints on the possible values in the cells ofa table exist this is easy: one simply removes the cell valuesconcerned and the problem is solved. In practice, however, thissituation hardly ever occurs. Instead one has constraints on thevalues in the cells due to the presence of marginals and lower boundsfor the cell values (typically 0). The problem then is to findadditional cells that should be suppressed in order to protect thesensitive cells. The additional cells should be chosen in such a waythat the interval of possible values for each sensitive cell value issufficiently large. What is “sufficiently large” can be specified bythe data protector in τ-argus by specifying the protection intervals. In general the secondary cell suppression problem turns out to be ahard problem, provided the aim is to retain as much information in thetable as possible, which, of course, is a quite natural requirement.The optimisation problems that will then result are quite difficult tosolve and require expert knowledge in the area of combinatorialoptimisation.</p>
+</section>
+<section id="information-loss-in-terms-of-cell-costs8" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="information-loss-in-terms-of-cell-costs8"><span class="header-section-number">3.6</span> Information loss in terms of cell costs<sup>[^8]</sup></h2>
+<p>In case of secondary cell suppression it is possible that a dataprotector might want to differentiate between the candidate cells forsecondary suppression. It is possible that they would strongly preferto preserve the content of certain cells, and are willing to sacrificethe values of other cells instead. A mechanism that can be used tomake such a distinction between cells in a table is that of cellcosts. In τ-argus it is possible to associate different costs with thecells in a table. The higher the cost the more important thecorresponding cell value is considered and the less likely it will besuppressed. We shall interpret this by saying that the cells with thehigher associated costs have a higher information content. The aim ofsecondary cell suppression can be summarised by saying that a safetable should be produced from an unsafe one, by minimising theinformation loss, expressed as the sum of the costs associated withthe cells that have secondarily been suppressed. τ-argus offers several ways to compute these costs. The first optionis to compute the costs as the sum of the contributions to a cell.Alternatively another variable in the data file can be used as thecost function. Secondly this cost can be the frequency of thecontributors to a cell, and finally each cell can have cost = 1,minimising the number of suppressed cells.</p>
+</section>
+<section id="series-of-tables" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="series-of-tables"><span class="header-section-number">3.7</span> Series of tables</h2>
+<p>In τ-argus it is possible to specify a series of tables that will beprotected one by one, and independently of each other. It is moreefficient to choose this option since τ-argus requires only a singlerun through the microdata in order to produce the tables. But also forthe user it is often more attractive to specify a series of tables andlet τ-argus protect them in a single session, rather than have severalindependent sessions.</p>
+</section>
+<section id="the-hypercubeghmiter-method9" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="the-hypercubeghmiter-method9"><span class="header-section-number">3.8</span> The Hypercube/GHMITER method<sup>[^9]</sup></h2>
+<p>In order to ensure tractability also of big applications, τ‑argusinterfaces with the ghmiter hypercube method of R. D. Repsilber of theLandesamt für Datenverarbeitung und Statistik inNordrhein-Westfalen/Germany, offering a quick heuristic solution. Themethod has been described in depth in Repsilber (1994), Repsilber(1999) and Repsilber (2002), for a briefer description see Giessingand Repsilber (2002).</p>
+<section id="the-hypercube-method" class="level3" data-number="3.8.1">
+<h3 data-number="3.8.1" class="anchored" data-anchor-id="the-hypercube-method"><span class="header-section-number">3.8.1</span> The hypercube method</h3>
+<p>The approach builds on the fact that a suppressed cell in a simple<em>n</em>‑dimensional table without substructure cannot be disclosed exactlyif that cell is contained in a pattern of suppressed, nonzero cells,forming the corner points of a hypercube. The algorithm subdivides n-dimensional tables with hierarchicalstructure into a set of n-dimensional sub-tables without substructure.These sub-tables are then protected successively in an iterativeprocedure that starts from the highest level. Successively, for eachprimary suppression in the current sub-table, all possible hypercubeswith this cell as one of the corner points are constructed. If protection against inferential disclosure is requested, for eachhypercube, a lower bound for the width of the suppression interval forthe primary suppression that would result from the suppression of allcorner points of the particular hypercube will be estimated. Toestimate that bound, it is not necessary to implement the timeconsuming solution to the corresponding Linear Programming problem.Only if it turns out that the bound is sufficiently large, thehypercube becomes a feasible solution. If no protection against inferential disclosure is requested, anyhypercube will be considered feasible. This may of course lead to somecases of underprotection. For any of the feasible hypercubes, the loss of information associatedwith the suppression of its corner points is computed. The particularhypercube that leads to minimum information loss is selected, and allits corner points are suppressed. Note that the information loss concept of the hypercube method isslightly different from the one of the other, linear programming basedmethods for secondary cell suppression offered by τ‑argus it operatesrather like a two-stage concept. In the first way, the algorithm willlook at the number of additional suppressions (additional to thosethat are already suppressed because they a primary unsafe, or becausethey were selected as secondary suppression in another subtable) thatwould be caused by the selection of a particular candidate hypercube.If there is more than one hypercube that would result in the same,smallest number of additional secondary suppressions, at secondpriority the method will select the one with the smallest sum of costsassociated to the suppression of the corresponding additionalsecondary suppressions. Cell costs associated to a cell are indeed alogarithmic transformation of the cell value plus eventually a largeconstant, if the cell is a marginal cell of the current sub-table. After all sub-tables have been protected once, the procedure isrepeated in an iterative fashion. Within this procedure, when cellsbelonging to more than one sub-table are chosen as secondarysuppressions in one of these sub-tables, in further processing theywill be treated like sensitive cells in the other sub-tables theybelong to. The same iterative approach is used for sets of linkedtables. It should be mentioned here that the ‘hypercube criterion’ is asufficient but not a necessary criterion for a ‘safe’ suppressionpattern. Thus, for particular subtables the ‘best’ suppression patternmay not be a set of hypercubes – in which case, of course, thehypercube method will miss the best solution and lead to someoverprotection. Other simplifications of the heuristic approach thatadd to this tendency for over‑suppression are the following: whenassessing the feasibility of a hypercube to protect specific targetsuppressions against interval disclosure, the method</p>
+<ul>
+<li><p>is not able to consider protection maybe already provided by other &gt; cell suppressions (suppressed cells that are not corner points of &gt; this hypercube) within the same sub‑table,</p></li>
+<li><p>does not consider the sensitivity of multi‑contributor primary &gt; suppressions properly, that is, it does not consider the &gt; protection already provided in advance of cell suppression through &gt; aggregation of these contributions,</p></li>
+<li><p>attempts to provide the same <em>relative</em> ambiguity to (eventually &gt; large) secondary suppressions that have been selected to protect &gt; cells in a linked sub‑table, as if they were single‑respondent &gt; primary suppressions, while actually it would be enough to provide &gt; the same <em>absolute</em> ambiguity as required by the corresponding &gt; primary suppressions.</p></li>
+</ul>
+</section>
+<section id="the-argus-implementation-of-ghmiter" class="level3" data-number="3.8.2">
+<h3 data-number="3.8.2" class="anchored" data-anchor-id="the-argus-implementation-of-ghmiter"><span class="header-section-number">3.8.2</span> The ARGUS implementation of GHMITER</h3>
+<ul>
+<li><p>In the implementation offered by argus, ghmiter makes sure that a &gt; single respondent cell will never appear to be corner point of one &gt; hypercube only, but of two hypercubes at least. Otherwise it could &gt; happen that a single respondent, who often can be reasonably &gt; assumed to know that he is the only respondent, could use his &gt; knowledge on the amount of his own contribution to recalculate the &gt; value of any other suppressed corner point of this hypercube.</p></li>
+<li><p>As explained above, ghmiter uses an elaborate internal cost &gt; assignment mechanism which is essential to achieve an optimal &gt; performance (given the natural restrictions of the simple &gt; heuristic approach, of course). This mechanism should not be cast &gt; out of balance. Therefore, the user’s choice of the cell costs &gt; (c.f. <a href="#anchor-44">3.1.4</a>, <a href="#anchor-45">4.4.4</a>) does not have any &gt; impact, when using the hypercube method.</p></li>
+<li><p>For tables presenting magnitude data, if protection against &gt; inferential disclosure is requested (see the upper part of the &gt; pop-up window below) τ-argus will ensure that ghmiter selects &gt; secondary suppressions that protect the sensitive cells properly. &gt; Only cells will be considered feasible as secondary suppressions &gt; that are large enough to give enough protection to the target &gt; sensitive cell as explained in Giessing (2003). !(Media/Pictures/10000000000001860000013A300D2794.png){width=“10.689cm”height=“8.599cm”}</p></li>
+<li><p>The standard implementation of the hypercube is that extra &gt; protection is given to singleton cells, i.e.&nbsp;cells with only one &gt; contributor. As this contributor knows exactly the cell value he &gt; might be able to undo the protection. But this extra protecting &gt; can be disabled.</p></li>
+<li><p>In order to achieve this, τ-argus computes a suitable <em>sliding &gt; protection ratio</em> (for explanation see Giessing (2003), τ-argus &gt; will display the value of this ratio in the report file) to be &gt; used by ghmiter. If in the screen above the option “<em>Protection &gt; against inferential disclosure required</em>” is inactivated, ghmiter &gt; will not check whether secondary suppressions are sufficiently &gt; large.</p></li>
+<li><p>As mentioned above, ghmiter is unable to 'add' the protection &gt; given by multiple hypercubes. In certain situations, it is not &gt; possible to provide sufficient protection to a particular &gt; sensitive cell (or secondary suppression) by suppression of one &gt; single hypercube. In such a case, ghmiter is unable to confirm &gt; that this cell has been protected properly, according to the &gt; specified <em>sliding protection ratio</em>. It will then reduce the &gt; <em>sliding protection ratio</em> automatically, and individually, step &gt; by step for those cells, the protection of which the program &gt; cannot confirm otherwise. In steps 1 to 9 we divide the original &gt; ratio by k, values of k from 2&nbsp;to&nbsp;10, and if this still does not &gt; help, in step 10 we divide by an extremely large value, and &gt; finally, if even that does not solve the problem, step 11 will set &gt; the ratio to zero). The τ-argus report file will display the &gt; number of cases where the sliding protection range was reduced by &gt; finally confirmed sliding protection ratio.</p></li>
+<li><p>Note, that that the number of cases with range reduction reported by &gt; this statistic in the report file is very likely to exceed the &gt; actual number of cells concerned, because cells belonging to &gt; multiple (sub-) tables are counted multiple times. In our &gt; experience this concerns particularly the cases, where the &gt; protection level was reduced to an‚ ‘infinitely’ small (positive) &gt; value (in step 10, see above). Step 10 is usually required to &gt; confirm protection of large, high level secondary suppressions, &gt; which are likely to appear in multiple tables, especially in &gt; processing of linked tables. By the way, terms “reduction of the &gt; <em>sliding protection ratio</em>” and “reduction of the <em>protection &gt; level</em>” are used synonymously in the report file.</p></li>
+<li><p>Note that step 11 will make cells eligible for secondary suppression &gt; that τ-argus considers as ‘protected’ (so called ‘<em>frozen</em>’ cells, &gt; for discussion of this option see for instance Giessing (2003). As this is inconsistent with the current view on protected cells inτ-argus this will lead to the following error message:</p></li>
+</ul>
+<blockquote class="blockquote">
+<p>!(Media/Pictures/100000000000016E0000009C1D394A05.png){width=“10.301cm”height=“4.713cm”}cell value and the codes of those suppressed <em>frozen</em> cells arethen displayed by τ-argus :This information is also written in thefile “frozen.txt” in the temp-directory. !(Media/Pictures/10000000000001A0000002008F41CBDE.png){width=“11.007cm”height=“13.547cm”} When the status of these cells is changed into ‘unprotected’ beforere-running the hypercube method, the solution will be a feasiblesolution for τ‑argus. Zero cells are consider to be frozen as well inthe hypercube. Those frozen cells can be ignored Negative values The hypercube method has no problems when certain cells are negative. References on GHMITER</p>
+</blockquote>
+<ol type="1">
+<li><p>Repsilber, R. D. (1994), ‘Preservation of Confidentiality in &gt; Aggregated data’, paper presented at the Second International &gt; Seminar on Statistical Confidentiality, Luxembourg, 1994</p>
+<blockquote class="blockquote">
+<p>Repsilber, D. (1999), ‘Das Quaderverfahren’&nbsp;- in Forum der Bundesstatistik, Band 31/1999: Methoden zur Sicherung der Statistischen Geheimhaltung, (in German)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Repsilber, D. (2002), ‘Sicherung persönlicher Angaben in Tabellendaten’&nbsp;- in Statistische Analysen und Studien Nordrhein-Westfalen, Landesamt für Datenverarbeitung und Statistik NRW, Ausgabe 1/2002 (in German)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Giessing, S. and Repsilber, D. (2002), ‘Tools and Strategies to Protect Multiple Tables with the GHQUAR Cell Suppression Engine’, in ’<em>Inference Control in Statistical Databases’</em> Domingo-Ferrer (Editor), Springer Lecture Notes in Computer Science Vol. 2316.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Giessing, S. (2003), ‘Co-ordination of Cell Suppressions: strategies for use of GHM<em>ITER</em>’, Proceedings of the Joint ECE/Eurostat work session on statistical data confidentiality (Luxembourg, 7-9 April 2003)</p>
+</blockquote></li>
+</ol>
+</section>
+</section>
+<section id="optimisation-models-for-secondary-cell-suppression10" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="optimisation-models-for-secondary-cell-suppression10"><span class="header-section-number">3.9</span> Optimisation models for secondary cell suppression<sup>[^10]</sup></h2>
+<p>τ-argus applies different approaches to find optimal and near-optimalsolutions. One of these approaches is based on a MathematicalProgramming technique which consists of solving Integer LinearProgramming programs modelling the combinatorial problems underdifferent methodologies (Cell Suppression and Controlled Rounding).The main characteristic of these models is that they share the samestructure, thus based only on a 0-1 variable for each cell. In theCell Suppression methodology, the variable is 1 if and only if thecell value must be suppressed. In the Controlled Rounding methodology,the variable is 1 if and only if the cell value must be rounded up. Noother variables are necessary, so the number of variables in the modelis exactly the number of cells in the table to be protected. Inaddition, the model also imposes the protection level requirements(upper, lower and sliding) in the same way for the differentmethodologies (Cell Suppression and Controlled Rounding). Theserequirements ask for a guarantee that an attacker will not get toonarrow an interval of potential values for a sensitive cell, whichhe/she will compute by solving two linear programming programs (calledattacker problems). Even if a first model containing this two-attackerproblem would lead to a bi-level programming model, complex to besolved in practice, a Benders' decomposition approach allows us toconvert the attacker problems into a set of linear inequalities. Thisconversion provides a second model for each methodology that can beefficiently solved by a modern cutting-plane approach. Since thevariables are 0-1, a branching phase can be necessary, and the wholeapproach is named "branch-and-cut algorithm". Branch-and-cut algorithms are modern techniques in Operations Researchthat provide excellent results when solving larger and complicatedcombinatorial problems arising in many applied fields (like routing,scheduling, planning, telecomunications, etc.). Shortly, the idea isto solve a compact 0-1 model containing a large number of linearinequalities (as the ones above mentioned for the Cell Suppression andfor the Controlled Rounding) through an iterative procedure that doesnot consider all the inequalities at the same time, but generates theimportant ones when needed. This dynamic procedure of dealing withlarge models allows the program to replace the resolution of a hugelarge model by a short sequence of small models, which is termed a"decomposition approach". The on-line generation of the linearinequalities (rows) was also extended in this work to the variables(columns), thus the algorithm can also works on tables with a largenumber of cells, and the overall algorithm is named"branch-and-cut-and-price" in the Operations Research literature. To obtain good performance, the implementation has also consideredmany other ingredients, standard in branch-and-cut-and-priceapproaches. For example, it is fundamentally the implementation of apre-processing approach where redundant equations defining the tableare eliminated, where variables associated to non-relevant cells areremoved, and where dominated protection levels are detected. Thepre-processing is fundamental to make the problem as small as possiblebefore starting the optimization phase. Another fundamental ingredientis the heuristic routine, which allows the algorithm to start with anupper bound of the optimal loss of information. This heuristic routineensures the production of a protected pattern if the algorithm isinterrupted by the user before the end. In other words, thanks to theheuristic routine, the implemented algorithm provide a near-optimalsolution if the execution is cancelled before having a proof ofoptimality. During the implicit enumeration approach (i.e., thebranch-and-cut-and-price) the heuristic routine is called severaltimes, thus providing different protected patterns, and the best onewill be the optimal solution if its loss of information is equal tothe lower bound. This lower bound is computed by solving a relaxedmodel, which consists of removing the integrability condition on theinteger model. Since the relaxed model is a linear program, a linearprogramming solver must be called. We have not implemented our own linear programming solver, but used acommercial solver which is already tested by other programmers formany years. A robust linear programming solver is a guarantee that nonumerical trouble will appear during the computation. That is the reason to requires either cplex (from ILOG) or Xpress(from FICO). Because the model to be solved can be applied to all typeof table structures (2-dim, 3-dim, 4-dim, etc), including hierarchicaland linked tables, we cannot use special simplex algorithmimplementations, like the min-cost flow computation which wouldrequired to work with tables that can be modelled as a network (e.g.,2-dimensional tables or collections of 2-dim tables linked by onelink). On this special table, ad-hoc approaches (solving network flowsor short path problems) could be implemented to avoid using generallinear programming solvers. Since τ‑argus has been transformed to an open source project we havealso included an open source solver Soplex as an alternative forXpress and cplex. We have obtained a licence that is included in thesoftware that grants to the European National Statistical Institutes anon-exclusive, non-transferable, non-sub-licensable, perpetual rightto use Soplex version 2.0.x and SCIP version 3.1.x, linked to theτ‑argus software. This enables you to use the τ‑argus software withoutbuying a licence for the commercial solvers. However it should benoted that commercial solvers are more powerful and might be needed tosolve larger instances.</p>
+</section>
+<section id="the-modular-approach11" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="the-modular-approach11"><span class="header-section-number">3.10</span> The Modular approach<sup>[^11]</sup></h2>
+<p>The modular (HiTaS) solution is a heuristic approach to cellsuppression in hierarchical tables. Hierarchical tables are speciallylinked tables: at least one of the spanning variables exhibits ahierarchical structure, <em>i.e</em>. contains (many) sub-totals. In Fischetti and Salazar (1998) a theoretical framework is presentedthat should be able to deal with hierarchical and generally linkedtables. In what follows, this will be called the mixed integerapproach. In this framework, additional constraints to a linearprogramming problem are generated. The number of added constraintshowever, grows rapidly when dealing with hierarchical tables, sincemany dependencies exist between all possible (sub-)tables containingmany (sub-)totals. The implemented heuristic approach (HiTaS) dealswith a large set of (sub)-tables in a particular order. A nonhierarchical table can be considered to be a hierarchical table withjust one level. In that case, the approach reduces to the originalmixed integer approach and hence provides the optimal solution. Incase of a hierarchical table, the approach will provide a sub-optimalsolution that minimises the information loss per sub-table, but notnecessarily the global information loss of the complete set ofhierarchically linked tables. In the following section, a short description of the approach isgiven. For a more detailed description of the method, including someexamples, see <em>e.g</em>., De Wolf (2002). HiTaS deals with cell suppression in hierarchical tables using atop-down approach. The first step is to determine the primary unsafecells in the base-table consisting of all the cells that appear whencrossing the hierarchical spanning variables. This way all cells,whether representing a (sub-)total or not, are checked for primarysuppression. Knowing all primary unsafe cells, the secondary cellsuppressions have to be found in such a way that each (sub-)table ofthe base-table is protected and that the different tables cannot becombined to undo the protection of any of the other (sub-)tables. Thebasic idea behind the top-down approach is to start with the highestlevels of the variables and calculate the secondary suppressions forthe resulting table. The suppressions in the interior of the protectedtable is then transported to the corresponding marginal cells of thetables that appear when crossing lower levels of the two variables.All marginal cells, both suppressed and not suppressed, are then’fixed’ in the calculation of the secondary suppressions of that lowerlevel table, i.e., they are not allowed to be (secondarily)suppressed. This procedure is then repeated until the tables that areconstructed by crossing the lowest levels of the spanning variablesare dealt with. A suppression pattern at a higher level only introduces restrictionson the marginal cells of lower level tables. Calculating secondarysuppressions in the interior while keeping the marginal cells fixed,is then independent between the tables on that lower level, i.e., allthese (sub)-tables can be dealt with independently of each other.Moreover, added primary suppressions in the interior of a lower leveltable are dealt with at that same level: secondary suppressions canonly occur in the same interior, since the marginal cells are keptfixed. However, when several empty cells are apparent in a low level table,it might be the case that no solution can be found if one isrestricted to suppress interior cells only. Unfortunately,backtracking is then needed. Obviously, all possible (sub)tables should be dealt with in aparticular order, such that the marginal cells of the table underconsideration have been protected as the interior of a previouslyconsidered table. To that end, certain groups of tables are formed ina specific way (see De Wolf (2002)). All tables within such a groupare dealt separately, using the mixed integer approach. The number of tables within a group is determined by the number ofparent-categories the variables have one level up in the hierarchy. Aparent-category is defined as a category that has one or moresub-categories. Note that the total number of (sub)-tables that haveto be considered thus grows rapidly. Singletons Singleton cells should be treated with extra care. The singlerespondent in this cell could easily undo the protection if no extrameasures were taken. The most dangerous situation is that there areonly two singletons in a row, or one and one other primary unsafecell. These singletons could easily disclose the other cell. We have added options for extra singleton protection in the followingsituations.</p>
+<ol type="1">
+<li><p>If on a row or column of a subtable there are only two singletons &gt; and no other primary suppressions.</p></li>
+<li><p>If there is only one singleton and one multiple primary unsafe cell.</p></li>
+<li><p>If a frequency rule is used, it could happen that two cells on a &gt; row/column are primary unsafe, but the sum of the two cells could &gt; still be unsafe. In that case it should be prevented that these &gt; two cells protect each other. Cells within a table sometimes consist of exactly one contributor.Such a cell is called a singleton. Linear sensitivity rules willusually label this cell as (primary) unsafe. When cell suppression isused to protect a table with unsafe cells, these singletons need to betaken care of in a special way. Within a suppression pattern, contributors in singletons may be ableto recalculate other suppressed cells. Obviously, a contributor couldalways insert its own contribution and thereby recalculate its ownsuppressed cell. This could in turn lead to the possibility ofrecalculating other suppressed cells in the same suppression pattern.Whenever such a recalculated cell is (primary) unsafe, this meansdisclosure. Within the current models used to determine suppression patterns, itis not possible to take all possible situations into account whensingletons are part of a suppression pattern. However, an importantgroup of instances of disclosure by singletons, is when a singleton ispart of a row with exactly one additional (also primary) suppression.</p></li>
+<li><p>If on a row or column of a subtable there are only two singletons &gt; and no other primary suppressions.</p></li>
+<li><p>If there is only one singleton and one multiple primary unsafe cell.</p></li>
+<li><p>If a frequency rule is used, it could happen that two cells on a &gt; row/column are primary unsafe, but the sum of the two cells could &gt; still be unsafe. In that case it should be prevented that these &gt; two cells protect each other. Note that the last situation is not really a singleton problem, butthis problem is handeled in the same way. To prevent this kind of disclosure, it would be sufficient to force anadditional (third) suppression in the same row. In prior versions ofτ‑argus this was accomplished by increasing the protection levels ofone of the (primary) unsafe cells in the row. In short, the protectionlevel of one of the primary suppressed cells was raised in such a waythat the other primary suppression would not be able to givesufficient protection. The largest primary unsafe cell in the row gotthe <em>cell value</em> of the other unsafe cell in the row, plus a smallvalue, as protection level. Indeed, this forces a third suppression inthe row. However, since the <em>cell value</em> of one of the suppressed cells wasinvolved, this meant that the increased protection level of this cellcould become quite large, which would have an effect on thesuppression pattern in one of the other dimensions. In certainsituations this led to oversuppression. To circumvent this problem, the newly implemented approach adds avirtual cell to the table. That virtual cell is assigned a value equalto the sum of the two primary suppressed cells in the row, and isgiven the status `(primary) unsafe'. That virtual cell then only hasto be protected against exact disclosure, i.e., it suffices to imposea small protection interval. The table below shows an example table, displaying the singletonproblem. In the first table the values of the cells are given, with inbold, red, italic the (primary) unsafe cells. The second table showsthe names of the cells, where <em>c</em><sub><em>ij</em></sub> stands for the cell withcoordinates (i, j).</p></li>
+</ol>
+<table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><blockquote class="blockquote">
+<p>Total</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>X1</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>X2</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>X3</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>X4</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td><blockquote class="blockquote">
+<p>Total</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>227</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>73</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>33</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>93</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>25</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td><blockquote class="blockquote">
+<p>A</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>146</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>52</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>15</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>62</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>17</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td><blockquote class="blockquote">
+<p>B</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>81</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>24</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>18</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>31</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>8</p>
+</blockquote></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 24%">
+<col style="width: 11%">
+<col style="width: 26%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><blockquote class="blockquote">
+<p>Total</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>X1</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>X2</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>X3</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>X4</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td><blockquote class="blockquote">
+<p>Total</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>c<sub>00</sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>c<sub>01</sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>c<sub>02</sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>c<sub>03</sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>c<sub>04</sub></p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td><blockquote class="blockquote">
+<p>A</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>c<sub>10</sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>c<sub>11</sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p><strong><em>c</em></strong><sub><strong><em>12</em></strong></sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>c<sub>13</sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p><strong><em>c</em></strong><sub><strong><em>&nbsp;14</em></strong></sub></p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td><blockquote class="blockquote">
+<p>B</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>c<sub>20</sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>c<sub>21</sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>c<sub>22</sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>c<sub>23</sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>c<sub>24</sub></p>
+</blockquote></td>
+</tr>
+</tbody>
+</table>
+<p>Example table to explain Singleton Problem. Bold and red means (primary) unsafe. Now assume that cell <em>c</em><sub><em>12</em></sub> = (A,X2) is a singleton and cell<em>c</em><sub><em>14</em></sub> = (A,X4) is unsafe according to a p%-rule with p=10. Hence,cell <em>c</em><sub><em>14</em>&nbsp;</sub>is the only other (primary) unsafe cell in that row.To protect cell <em>c</em><sub><em>14</em></sub> against disclosure by the contributor ofsingleton <em>c</em><sub><em>12</em></sub>, a `virtual cell <em>c</em><sub><em>v</em></sub> is defined with value32. Moreover, that virtual cell is given a small protection interval,(32,33) say. The relations that define the table structure, includingthe virtual cell, are given below: ___________________________ c<sub>00</sub> = c<sub>01&nbsp;</sub>+ c<sub>02&nbsp;</sub>+ c<sub>03&nbsp;</sub>+ c<sub>04</sub> c<sub>10</sub> = c<sub>11&nbsp;</sub>+ c<sub>12&nbsp;</sub>+ c<sub>13&nbsp;</sub>+ c<sub>04</sub> c<sub>20</sub> = c<sub>21&nbsp;</sub>+ c<sub>22&nbsp;</sub>+ c<sub>23&nbsp;</sub>+ c<sub>24</sub> c<sub>00</sub> = c<sub>10&nbsp;</sub>+ c<sub>20</sub> c<sub>01</sub> = c<sub>11&nbsp;</sub>+ c<sub>21</sub> c<sub>02</sub> = c<sub>12&nbsp;</sub>+ c<sub>22</sub> c<sub>03</sub> = c<sub>13&nbsp;</sub>+ c<sub>23</sub> c<sub>04</sub> = c<sub>14&nbsp;</sub>+ c<sub>24</sub> c<sub>v</sub> = c<sub>12&nbsp;</sub>+ c<sub>14</sub> _____________________________ Table showing the relations defining table structure of table above Within τ‑argus, this procedure is implemented in both the optimalapproach as well as in the modular approach. For the modular approach,this procedure is applied to each subtable separately, whenever asubtable is dealt with within the modular approach. This special attention to singletons is only given when the othersuppressed cell in the same row is a `true' primary suppression.This is natural, since it has to be done prior to the search forsecondary suppressions. In the modular approach, a hierarchical tableis divided into many, non-hierarchical, subtables. Secondarysuppressions in one table sometimes temporarily become primarysuppressions in other tables during the process. I.e., thosesuppression are not `true' primary suppressions. It is thereforealso natural not to construct virtual cells in case a singleton is inthe same row with exactly one other primary suppression that wasoriginally a secondary suppression. This is indeed the way it isimplemented in the modular approach. In previous versions of τ‑argus a similar procedure was available. Butthen the additional protection was achieved by increasing theprotection level of the singleton cell. This would lead however alsoin additional protection in other dimensions and would createover-protection Negative values The implementation by Fischetti and Salazar does not allow fornegative values. However it is not uncommon, that some cells in atable have negative values. Therefore additional measures have beentaken. If in a subtable during the process negative values are found,all cell values are increased such that the lowest value becomespositive. Of course the margins have to be recalculated, but a safeprotection pattern will be found. References on the modular method Fischetti, M. and J.J. Salazar-González (1998). Models and Algorithmsfor Optimizing Cell Suppression in Tabular Data with LinearConstraints. Technical Paper, University of La Laguna, Tenerife. P.P. de Wolf (2002). HiTaS: a heuristic approach to cell suppressionin hierarchical tables. Proceedings of the AMRADS meeting inLuxembourg (2002). Additional reading on the optimisation models can be found at theCASC-website<a href="http://research.cbs.nl/casc/Related/99wol-heu-r.pdf"><strong>(http://research.cbs.nl/casc/Related/99wol-heu-r.pdf)</strong></a></p>
+</section>
+<section id="the-modular-approach-for-linked-tables" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="the-modular-approach-for-linked-tables"><span class="header-section-number">3.11</span> The modular approach for linked tables</h2>
+<p>When tables are linked through simple linear constraints, cellsuppressions must obviously be coordinated between tables. The mosttypical case is when tables share common cells (usually marginals),i.e., when they are linked through constraints saying literally thatcell <em>X</em> of table A is identical to cell <em>Y</em> of table B. Suppose a set of <em>N</em> tables, {<em>T</em><sub>1</sub>,…,<em>T</em><sub><em>N</em></sub>}, need to beprotected. These tables are assumed to be linked. Each table has ahierarchical structure that may differ from the hierarchicalstructures of the other tables. However, it is assumed that tablesusing the same spanning variables have hierarchies that can becovered. Loosely speaking this means that a single hierarchy can beconstructed such that all hierarchies of the same variable in the <em>N</em>tables are a sub hierarchy of the cover hierarchy. See De Wolf andGiessing (2009) for more details. In the context of pre-planned tableproduction processes which are typically in place in statisticalagencies for the production of certain sets of pre-specified standardtabulations, it is normally no problem to satisfy these conditions.Literally speaking, the assumption is that tables in a set of linkedtables may present the data in a breakdown by the same spanningvariable at various amounts of detail. But only under the conditionthat, if in one of the tables some categories of a spanning variableare grouped into a certain intermediate sum category, during SDCprocessing this intermediate sum category is considered in any othertable presenting the data in a breakdown of the same spanning variableand at that much detail. The idea is then as follows. Suppose that the <em>N</em> tables{<em>T</em><sub>1</sub>,…,<em>T</em><sub><em>N</em></sub>} that need to be protected simultaneously,contain <em>M</em> different spanning variables. Since the hierarchies aresupposed to be coverable, an <em>M</em>-dimensional table exists having allthe specified tables as subtables. The spanning variables will benumbered 1 up to <em>M</em>. Each spanning variable can have several hierarchies in the specifiedtables. Denote those hierarchies for spanning variable <em>i</em> by{.image .placeholderoriginal-image-src=“./ObjectReplacements/Object 1”original-image-title=“” width=“1.54cm” height=“0.658cm”} where<em>I</em><sub><em>i</em></sub> is the number of different hierarchies of variable <em>i</em>. Define the <em>M</em>-dimensional table by the table with spanning variablesaccording to hierarchies <em>G</em><sub>1</sub>,…,G<sub><em>M</em></sub> such that, for each <em>i</em> =1,..., <em>M</em> hierarchy <em>G</em><sub><em>i</em></sub> covers the set of hierarchies{{.image .placeholderoriginal-image-src=“./ObjectReplacements/Object 2”original-image-title=“” width=“0.524cm” height=“0.658cm”}} with <em>j</em> =1,…, <em>I</em><sub><em>i</em></sub>. This <em>M</em>-dimensional table will be called the covertable. See De Wolf and Giessing (2009) for more details. Then use the Modular approach (see section <a href="#anchor-49">2.10</a>) on thecover table <em>T</em><sub><em>C</em></sub>, but only consider those subtables that are alsosubtables of at least one of the specified tables <em>T</em><sub>1</sub>,…,<em>T</em><sub><em>N</em></sub>and disregard the other subtables. I.e., the procedure of the Modular approach is followed, but duringthat process any simple subtable that is not a subtable of any of thetables in the set {<em>T</em><sub>1</sub>,…,<em>T</em><sub><em>N</em></sub>} is skipped. I.e., the orderthe simple subtables will be protected, is the same as in the’complete’ Modular approach, only some subtables will be skipped. See De Wolf and Hundepool (2010) for a practical application of theAdjusted Modular Approach. References on the modular approach for linked tables De Wolf, P.P. and S. Giessing (2009), Adjusting the τ-argus modularapproach to deal with linked tables, Data &amp; Knowledge Engineering,Volume 68, Issue 11, pp.&nbsp;1160-1174. De Wolf, P.P. and A. Hundepool (2010), Three ways to deal with a setof linked SBS tables using τ-argus, Privacy in Statistical Databases,J. Domingo-Ferrer and E. Magkos (Eds.), Springer 2010, LNCS 6344 pp.66-74.</p>
+</section>
+<section id="network-solution-for-large-2-dimensional-tables-with-one-hierarchy" class="level2" data-number="3.12">
+<h2 data-number="3.12" class="anchored" data-anchor-id="network-solution-for-large-2-dimensional-tables-with-one-hierarchy"><span class="header-section-number">3.12</span> Network solution for large 2 dimensional tables with one hierarchy</h2>
+<p>τ-argus also contains a solution for the secondary cell suppressionbased on network flows. This contribution is by Jordi Casto of theUniversitat Politècnica de Catalunya in Barcelona. The network flowssolution for cell suppression implements a fast heuristic for theprotection of statistical data in two-dimensional tables with onehierarchical dimension (1H2D tables). This new heuristic sensiblycombines and improves ideas of previous approaches for the secondarycell suppression problem in two-dimensional general, see Castro(1994)and positive tables, see Kelly(1992) and Castro(2003) tables. Detailsabout the heuristic can be found in Castro(1996) and Cox(1995).Unfortunately this approach is only possible for two-dimensionaltables with only one hierarchy, due to the limitations of the networkflows. Note that the hierarchical variable should be the firstvariable. The heuristic is based on the solution of a sequence of shortest-pathsubproblems that guarantee a feasible pattern of suppressions (i.e.,one that satisfies the protection levels of sensitive cells).Hopefully, this feasible pattern will be close to the optimal one. The current package is linked with three solvers: CPLEX7.5/8.0 seeILOG(2000) pprn see Castro(1996), and an efficient implementation ofthe bidirectional Dijkstra’s algorithm for shortest-paths (that willbe denoted as “Dijkstra”) see Ahuja(1993). Later releases of cplexwill also work if the interface routines are the same than for version8.0. The heuristic can use any of the three solvers for the solutionof the shortest path subproblems, although Dijkstra is recommended(and the default one) for efficiency reasons. cplex is needed if alower bound of the optimal solution want to be computed. The auditingphase can be performed with either cplex or pprn. pprn and Dijkstra were implemented at the Dept. of Statistics andOperations Research of the Universitat Politècnica de Catalunya, andare included in NF CSP. pprn was originally developed during1992–1995, but it had to be significantly improved within the CASCproject to work with NF CSP. Dijkstra was completely developed in thescope of CASC. The third solver, cplex, is a commercial tool, andrequires purchasing a license. However, pprn is a fairly goodreplacement—although not so robust— for the network flows routinesof cplex. Therefore, in principle, there is no need for an externalcommercial solver, unless lower bounds want to be computed. Even though two of the three solvers are included in the distributionof NF CSP, this document only describes the features of the heuristic,and from the user’s point of view. A detailed description of pprn andDijkstra’s solvers can be found in Castro(1996) and Ahuja(1993),respectively. The current implementation in τ-argus however only uses the Dijkstraand the pprn solvers. We have restricted ourselves from commercialsolvers here as the network flows give already a very fast solution. <strong>References on the network solution</strong> Ahuja, R.K, Magnanti, T.L., Orlin, J.B., Network Flows, Prentice Hall(1993). Castro, J., pprn 1.0, User’s Guide, Technical report DR 94/06 Dept. ofStatistics and Op-erations Research, Universitat Politècnica deCatalunya, Barcelona, Spain, 1994. Castro, J., Network flows heuristics for complementary cellsuppression: an empirical evaluation and extensions, in LNCS 2316,Inference Control in Statistical Databases, J. Domingo-Ferrer (Ed),(2002) 59–73. Castro, J., Nabona, N. An implementation of linear and nonlinearmulticommodity network flows. European Journal of Operational Research92, (1996) 37–53. Cox, L.H., Network models for complementary cell suppression. J. Am.Stat. Assoc. 90, (1995) 1453–1462. ILOG CPLEX, ILOG CPLEX 7.5 Reference Manual Library, ILOG, (2000). Kelly, J.P., Golden, B.L, Assad, A.A., Cell Suppression: disclosureprotection for sensitive tabular data, Networks 22, (1992) 28–55. Castro, J. User’s and programmer’s manual of the network flowsheuristics package for cell suppression in 2D tables Technical ReportDR 2003-07, Dept. of Statistics and Operations Research, UniversitatPolitècnica de Catalunya, Barcelona, Spain,2003; See<a href="http://research.cbs.nl/casc/deliv/41D5-NF-Tau-Argus.pdf"><em>http://research.cbs.nl/casc/deliv/41D5-NF-Tau-Argus.pdf</em></a></p>
+</section>
+<section id="controlled-tabular-adjustment12" class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="controlled-tabular-adjustment12"><span class="header-section-number">3.13</span> Controlled Tabular Adjustment[^12]</h2>
+<p>****The purpose of *****controlled tabular adjustment***** (also knownas *****minimum-distance controlled tabular adjustment***** or simplyCTA) is to find the closest safe table to the original one. Since CTAis a perturbative method, this goal is achieved by publishing a tablewhere the values of sensitive cells have been modified according tosome predefined protection levels, and the remaining non-sensitivecells are minimally changed to guarantee the table additivity.**** ****The example illustrates CTA on a small two-dimensional table withone sensitive cell in boldface, with lower and upper protection levelsequal to five (table (a) of the example). Depending on the'protection direction' of the sensitive cell, either 'lower' or'upper', which has to be decided, the value to be published for thiscell will be respectively less or equal than the original cell valueminus the lower protection level, or greater or equal than theoriginal cell value plus the upper protection level. In the example,if the protection direction is 'lower', then the value published orthe sensitive cell should be less or equal than 35; the optimaladjusted table for this case is shown in table (b) of the example. Ifthe protection direction is 'upper', then the value must be greateror equal than 45, as shown in table (c) of the example. In a largerand more complex table, with many sensitive cells, the obtention ofthe protection directions that provide the minimal changes tonon-sensitives cells is not as easy as in the example. CTA has thus tobe formulated and solved as an optimization problem, in particular asa *****mixed integer linear problem***** (MILP).**** *****Example of a CTA solution:***** The cell (M2P3) is a sensitivecell with lower and upper protection level 5. Protected tables with'lower protection direction' and ****'upper protection direction'(i.e., value of sensitive is respectively reduced and increased byfive units)**** ****</p>
+<table class="table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><blockquote class="blockquote">
+<p>P1</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>P2</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>P3</p>
+</blockquote></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><blockquote class="blockquote">
+<p>M1</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>20</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>24</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>28</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>72</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td><blockquote class="blockquote">
+<p>M2</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>38</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>38</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>40</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>116</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td><blockquote class="blockquote">
+<p>M3</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>40</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>39</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>42</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>121</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><blockquote class="blockquote">
+<p>98</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>101</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>110</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>309</p>
+</blockquote></td>
+</tr>
+</tbody>
+</table>
+<p>Original table (a)</p>
+
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>
+<blockquote class="blockquote">
+
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+P1
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+P2
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+P3
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+P1
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+P2
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+P3
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+
+</blockquote>
+</td>
+</tr>
+<tr class="even">
+<td>
+<blockquote class="blockquote">
+<p>
+M1
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+15
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+24
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+33
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+72
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+I
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+25
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+24
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+23
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+72
+</p>
+</blockquote>
+</td>
+</tr>
+<tr class="odd">
+<td>
+<blockquote class="blockquote">
+<p>
+M2
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+43
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+38
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+35
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+116
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+33
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+38
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+45
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+116
+</p>
+</blockquote>
+</td>
+</tr>
+<tr class="even">
+<td>
+<blockquote class="blockquote">
+<p>
+M3
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+40
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+39
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+42
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+121
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+40
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+39
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+42
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+121
+</p>
+</blockquote>
+</td>
+</tr>
+<tr class="odd">
+<td>
+<blockquote class="blockquote">
+
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+98
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+101
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+110
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+309
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+98
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+101
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+110
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+309
+</p>
+</blockquote>
+</td>
+</tr>
+<tr class="even">
+<td>
+<blockquote class="blockquote">
+<p>
+<strong><strong>Adjusted table<br> Lower protection direction (b)</strong></strong>
+</p>
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+
+</blockquote>
+</td>
+<td>
+<blockquote class="blockquote">
+<p>
+<strong><strong>Adjusted table<br> Upper protection direction (c)</strong></strong>
+</p>
+</blockquote>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+
+</table>
+<hr>
+<p>****CTA was introduced in the manuscript Dandekar and Cox(2002) and,independently and in an extended form, in Castro(2006) (in the latterit was named minimum-distance controlled perturbation method). CTA hasshown to have both a small disclosure risk see Castro(2012) and smallinformation loss see Castro and González(2014).**** ****The parameters that define any CTA instance are:****</p>
+<ul>
+<li><p>****A general table *****a<strong><em><sub><strong><em>i</em></strong></sub></em></strong>, i &gt; *****=1*****,...,n*****, with *****m***** linear relations &gt; *****Aa=b*****.****</p></li>
+<li><p>****Upper and lower bounds *****u***** and *****l***** for the cell &gt; values, assumed to be known by any attacker: *****l ******≤ &gt; ******a ******≤******u *****</p></li>
+<li><p>****V****ector of nonnegative weights associated to the cell &gt; perturbations *****w<strong><em><sub><strong><em>i</em></strong></sub></em></strong>, &gt; i=*****1*****,...,n*****.****</p></li>
+<li><p>****Set ****<span class="math display">\[P \subseteq {1,...,n}\]</span>**** of sensitive cells.****</p></li>
+<li><p>****Lower and upper protection levels for each primary cell &gt; *****lpl<em><strong><sub><strong><em>p</em></strong></sub></strong> and </em>****upl<em><strong><sub><strong><em>p</em></strong></sub></strong> &gt; </em><strong><em><span class="math display">\[p \in P\]</span></em></strong><em> </em><strong><em>CTA finds the safe table </em>x</strong>*** closest to *****a*****, usingsome distance ****<span class="math display">\[l{(w)}\]</span>**** ****!(Media/Pictures/10000000000003D20000014D15F11B5A.png){width=“13cm”height=“4.426cm”}**** !(Media/Pictures/2000000700008418000010AE1E94497F.svm){width=“13cm”height=“1.64cm”}**** **** !(Media/Pictures/10000000000003B4000000FF92756D35.png){width=“13cm”height=“3.496cm”}**** ****Problem (3) has |*****P*****| binary variables, 2*****n*****continuous variables and *****m *****+ 4|*****P*****| constraints.The size of (3) is much less than that of the cell suppressionproblem. For instance, for a table of 8000 cells, 800 primaries, and4000 linear relations, CTA formulates a MILP of 800 binary variables,16000 continuous variables and 7200 constraints (these figures wouldbe 8000, 12,800,000 and 32,000,000 for cell suppression).**** ****The benefits of CTA are not limited to a smaller size of theresulting MILP problem. CTA can be easily extended with constraints tomeet some data quality criteria see Cox et al (2005). It has also beenexperimentally observed that the information loss of CTA solutions iscomparable (in some instances even better) to that of cell suppressionsee Castro and Giessing(2006).**** ****References on the controlled tabular adjustment solution**** ****L.H. Cox, J.P. Kelly and R. Patil (2005), Computational aspects ofcontrolled tabular adjustment: algorithm and analysis. B. Golden, S.Raghavan, E. Wassil, eds.&nbsp;*****The ******Next wave in Computer,******Optimization and Decision Technologies*****, Kluwer, Boston, MA,45–59.**** ****J. Castro, Minimum-distance controlled perturbation methods forlarge-scale tabular data protection, *****European Journal ofOperational Research*****, 171 (2006) 39–52.**** ****J. Castro (2012), On assessing the disclosure risk of controlledadjustment methods for statistical tabular data, *****InternationalJournal of Uncertainty, Fuzziness and Knowledge-Based Systems*****, 20921****–****941.**** ****J. Castro and S. Giessing (2006), Testing variants of minimumdistance controlled tabular adjustment, in *****Monographs of OfficialStatistics. Work session on Statistical Data Confidentiality*****,Eurostat-Office for Official Publications of the European Communities,Luxembourg, 2006, 333****–****343. ISBN 92-79-01108-1.**** ****J. Castro and J.A. González (2014), Assessing the information lossof controlled tabular adjustment in two-way tables, *****Lecture Notesin Computer Science*****, 8744, 11****–****23.**** ****R.A. Dandekar and L.H. Cox (2002), Synthetic tabular data: Analternative to complementary cell suppression, manuscript, EnergyInformation Administration, US Department of. Energy.****</p></li>
+</ul>
+</section>
+<section id="controlled-rounding13" class="level2" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="controlled-rounding13"><span class="header-section-number">3.14</span> Controlled rounding<sup>[^13]</sup></h2>
+<p>Controlled rounding is a rounding procedure that, differently fromother rounding methods, yields additive rounded tables. That is to saythat the rounded values add up to the rounded totals and sub-totalsshown in the table. This property not only permits the release ofrealistic tables but also makes it impossible to reduce the protectionby “unpicking” the original values by exploiting the differences inthe sums of the rounded values. The Controlled Rounding Procedure(CRP) implemented in τ-argus also allows the specificationhierarchical tables. Controlled rounding is a SDC method that is most effective forfrequency tables. In fact, this method gives adequate protection tosmall frequencies by creating uncertainty also with respect to zerovalues (<em>i.e.</em> empty cells). The same cannot be said for suppressionin the way it is implemented now in τ-argus. Restricted and non-restricted controlled rounding In Zero-restricted Controlled Rounding the rounded values are chosenleaving unaltered the original values that are already multiples ofthe rounding base, while rounding the others to one of the adjacentmultiples of this base. The modified values are chosen so that the sumof the absolute differences between the original values and therounded ones is minimized under the additivity constraint. Therefore,some values will be rounded up or down to the most distant multiple ofthe base in order to satisfy the constraints. In most cases such asolution can be found but in some cases it cannot. Thezero-restriction constraint in CRP can be relaxed allowing the valuesto be rounded to a nonadjacent multiple of the base. This relaxationis controlled by allowing a maximum number of <em>steps</em>. For example,consider rounding the value 7 when the base equals 5. Inzero-restricted rounding, the solution can be either 5 or 10. If 1step is allowed, the solution can be 0, 5, 10 or 15. In general, let<em>z</em> be the integer to be rounded in base <em>b</em>, then this number can bewritten as <span class="math display">\[{z = {\mathit{ub} + r}},\]</span> where <em>ub</em> is the lower adjacent multiple of <em>b</em> (hence <em>u</em> is thefloor value of <em>z/b</em>) and <em>r</em> is the remainder. In the zero-restrictedsolution the rounded value, <em>a</em>, can take values: <span class="math display">\[\left\{ \begin{matrix}{{a = \mathit{ub}}\mathit{if}{r = 0};} \\{{a = \left\{ \begin{matrix}\mathit{ub} \\{{({u + 1})}b}\end{matrix} \right.}\mathit{if}{r \neq 0.}}\end{matrix} \right.\]</span> If <em>K</em> steps are allowed, then <em>a</em>, can take values: <span class="math display">\[\left\{ \begin{matrix}{{a = \mathit{\max}}{\{{0,{({u + j})}}\}}b,{j = {- K}},\ldots,K,\mathit{if}{r = 0};} \\{{a = \mathit{\max}}{\{{o,{({u + j})}}\}}b,{j = {- K}},\ldots,{({K + 1})},\mathit{if}{r \neq 0.}}\end{matrix} \right.\]</span> Optimal, first feasible and RAPID solutions<sup><strong>[^14]</strong></sup> For a given table there could exist more than one controlled roundedsolutions; any of these solutions is a <em>feasible</em> solution. TheControlled Rounding Program embedded in τ-argus determines the<em>optimal</em> solution by minimising the sum of the absolute distances ofthe rounded values from the original ones. Denoting the cell values,including the totals and sub-totals, with <em>z</em><sub>i</sub> and the correspondingrounded values with <em>a</em><sub>i</sub>, the function that is minimised is <span class="math display">\[{\sum\limits_{i = 1}^{N}{\mid {z_{i} - a_{i}} \mid}},\]</span> where <em>N</em> is the number of cells in a table (including the marginalones). The optimisation procedure for controlled rounding is a rathercomplex one (<em>NP</em>-complete program), so finding the optimal solutionmay take a long time for large tables. In fact, the algorithmiteratively builds different rounded tables until it finds the optimalsolution. In order to limit the time required to obtain a solution,the algorithm can be stopped when the first feasible solution isfound. In many cases, this solution is quite close to the optimal oneand it can be found in significantly less time. The RAPID solution is produced by CRP as an approximated solution whennot even a feasible one can be found. This solution is obtained byrounding the internal cells to the closest multiple of the base andthen computing the marginal cells by addition. This means that thecomputed marginal values can be many jumps away from the originalvalue. However, a RAPID solution is produced at each iteration of thesearch for an optimal one and it will improve (in terms of the lossfunction) over time. τ-argus allows to stop CRP after the first RAPIDis produced, but this solution is likely to be very far away from theoptimal one. Protection provided by controlled rounding The protection provided by controlled rounding can be assessed byconsidering the uncertainty about the disclosive true values achievedreleasing rounded values; that is the existence interval that anintruder can compute for the rounded value. We assume that also thevalues of the rounding base, <em>b</em>, and the number of steps allowed,<em>K</em>, are released together with the rounded table. Furthermore, weassume that it is known that the original values are frequencies(hence nonnegative integers). <strong>Zero-restricted rounding</strong> Given a rounded value, <em>a</em>, an intruder can compute the followingexistence intervals for the true value, <em>z</em>: <span class="math display">\[\begin{matrix}{{z \in {\lbrack{0,{b - 1}}\rbrack}}\mathit{if}{a = 0}} \\{{z \in {\lbrack{{{a - b} + 1,}{{a + b} - 1}}\rbrack}}\mathit{if}{a \neq 0.}}\end{matrix}\]</span> For example, if the rounding base is <em>b</em>=5 and the rounded value is<em>a</em>=0, a user can determine that the original value is between 0 and4. If the rounded value is not 0, then users can determine that thetrue value is between plus or minus 4 units from the published value. ****K-step rounding**** As mentioned before, it is assumed that the number of steps allowed isreleased together with the rounded table. Let <em>K</em> be the number ofsteps allowed, then an intruder can compute the following existenceintervals for the true value <em>z</em>: <span class="math display">\[\begin{matrix}{{z \in {\lbrack{0,{({K + 1})}{b - 1}}\rbrack}}\mathit{if}{a &lt; {({K + 1})}}b} \\{{z \in {\lbrack{{a - {({K + 1})}}{b + 1,}{a + {({K + 1})}}{b - 1}}\rbrack}}\mathit{if}{a \geq {({K + 1})}}\mathit{b.}}\end{matrix}\]</span> For example, assume that for controlled rounding with <em>b</em>=5 and <em>K</em>=1,<em>a</em>=15, then a user can determinethat<span class="math display">\[{z \in {\lbrack{6,24}\rbrack}}.\]</span> Choosing the parameters for Controlled Rounding The parameters that can be chosen for rounding are the rounding base,<em>b</em>, and the number of steps allowed. If their value is released,users (including potential intruders) will be able to computeexistence intervals for the true values according to the formulaegiven above. Then, the choice of the parameters’ values depends on theprotection required for the disclosive values. Of course, the largerthe existence interval the greater the protection but also the<em>damage</em> caused to the data. The choice of the rounding base, then,should be made by the data protector considering the protectionrequirements and the damage caused to the data. A discussion on howexistence intervals can be related to protection requirements can befound, for example, in Willenborg and de Waal (2001). Below we givesome general considerations on the effect of different choices of therounding base. Frequencies are disclosive if their values are not larger than achosen threshold, say <em>f</em>. In τ-argus the minimal rounding base is<em>b</em>=<em>f</em>. When this value is chosen, disclosive values can be roundedeither to 0 or to <em>b</em>. Hence, an intruder would know that allpublished zeros are disclosive values, while he or she could notdetermine if a published value equal to <em>b</em> is a disclosive value or alarger, safe, one. In some cases this protection can be consideredinsufficient because it is required that the existence interval forvalues rounded to zero contains at least one safe value. Then thevalue of <em>b</em> must be chosen to be greater than <em>f</em> or the number ofsteps allowed must be greater than zero. It must be stressed, however,that the larger the base and the greater the damage inflicted to thedata (including safe values). In some cases, data protector may behappy with a base that is less than the minimum frequency threshold.For example, it could be decided that the width of the existenceinterval must be not less than the minimum frequency. In this case,the base should be chosen to be the minimal integer not smallerthan{.image .placeholderoriginal-image-src=“./ObjectReplacements/Object 10”original-image-title=“” width=“0.762cm” height=“0.524cm”}. Using asmaller base than the minimum safe frequency can be achieved inτ-argus by lowering the threshold before computing the table. This”trick” is allowed in rounding because the procedure does not changeif the disclosive cells are changed (unlike secondary suppression).</p>
+</section>
+<section id="audit" class="level2" data-number="3.15">
+<h2 data-number="3.15" class="anchored" data-anchor-id="audit"><span class="header-section-number">3.15</span> Audit</h2>
+<p>When a table is protected by cell suppression, by making use of thelinear relation between published and suppressed cell values in atable (including its margins), it is always possible for anyparticular suppressed cell of a table to derive upper and lower boundsfor its true value. This holds for either tables with non-negativevalues, and those tables containing negative values as well, when itis assumed that instead of zero, some other (possibly tight) lowerbound for any cell is available to data users in advance ofpublication. The interval given by these bounds is called the’<em>feasibility interval’</em>. The example below illustrates thecomputation of the feasibility interval in the case of a simpletwo-dimensional table where all cells may only assume non-negativevalues:</p>
+<table class="table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><blockquote class="blockquote">
+<p>Example</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>1</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>2</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>Total</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td><blockquote class="blockquote">
+<p>1</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>X<sub>11</sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>X<sub>12</sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>7</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td><blockquote class="blockquote">
+<p>2</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>X<sub>21</sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>X<sub>22</sub></p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>3</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td><blockquote class="blockquote">
+<p>3</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>3</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>3</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>6</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td><blockquote class="blockquote">
+<p>Total</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>9</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>7</p>
+</blockquote></td>
+<td><blockquote class="blockquote">
+<p>16</p>
+</blockquote></td>
+</tr>
+</tbody>
+</table>
+<p>For this table the following linear relations hold: <span class="math display">\[\begin{matrix}{{{X_{11} + X_{12}} = 7}{(\mathit{R1})}} \\{{{X_{21} + X_{22}} = 3}{(\mathit{R2})}} \\{{{X_{11} + X_{21}} = 6}{(\mathit{C1})}} \\{{{X_{12} + X_{22}} = 4}{(\mathit{C2})}} \\{\mathit{with}{X_{\mathit{ij}} \geq 0}\mathit{for}\mathit{all}{({i,j})}}\end{matrix}\]</span> Using linear programming methodology, it is possible to derivesystematically for any suppressed cell in a table a upperbound<span class="math display">\[(X^{\mathit{\max}})\]</span>and a lower bound<span class="math display">\[(X_{11}^{\mathit{\min}})\]</span>for the set of feasible values. In theexample above, for cell (1,1) these boundsare<span class="math display">\[(X_{11}^{\mathit{\min}})\]</span> = 3 and<span class="math display">\[(X_{11}^{\mathit{\max}})\]</span>&nbsp;=&nbsp;6 . A general mathematical statement for the linear programming problem tocompute upper and lower bounds for the suppressed entries of a tableis given in Fischetti and Salazar (2000)<sup>[^15]</sup>. Note that in the current implementation the τ-argus audit routinecomputes upper and lower bounds (i.e.&nbsp;the feasibility intervals) forthe suppressed entries of a hierarchical table considering the <em>full</em>set of table relations – even, if the table is a hierarchical table.After obtaining these feasibility intervals, they are compared to theprotection intervals (c.f. subsection on protection levels in section4.3.2. <em>Protection level</em> of the SDC-Handbook, Hundepool et al(2012))and the result of this comparison will be reported to the user. When atable has been protected properly, the feasibility interval of eachprimary sensitive cell should cover the protection interval. Theseintervals will be shown by τ-argus. Auditing a hierarchical table It should be noted that secondary cell suppression algorithms likeModular and Hypercube relying on a backtracking procedure (c.f. thesubsection on linked and hierarchical tables in section 4.4.4.<em>Secondary cell suppression in hierarchical and linked tables</em> of theSDC-Handbook, Hundepool et all(2012)) assign secondary suppressionsconsidering only a part of the table relations at a time, e.g.&nbsp;thosereferring to the ‘current’ subtable. These methods are able to protecteach subtable properly in the sense that the feasibility intervals ofthe sensitive cells indeed cover the protection intervals. But thisholds only, if the feasibility intervals are computed considering onlythe table relations of the particular subtable. But for a hierarchicaltable, feasibility intervals computed on basis of the set of relationsfor the <em>full </em>table normally tend to be closer than those computed onbasis of separate sets of relations corresponding to individualsub-tables. Hence, in a hierarchical table, it is not unlikely thatthe Audit routine discovers that some cells were not protectedproperly. Discovering singleton problems Making use of the additional knowledge of a respondent, who is thesingle respondent to a cell (a so called ‘singleton’), it is possibleto derive intervals that are much closer than without this knowledge.The audit routine could be used to identify problems in this respectin the following way: in advance of running the audit routine, set thestatus of a particular singleton cell from “unsafe” to “safe”.</p>
+</section>
+<section id="functional-design-of-τ-argus" class="level2" data-number="3.16">
+<h2 data-number="3.16" class="anchored" data-anchor-id="functional-design-of-τ-argus"><span class="header-section-number">3.16</span> Functional design of τ-argus</h2>
+<p>!(Media/Pictures/tau_argus_functional_design.png){width=“14.792cm”height=“19.233cm”} <!-- 2000000700004D00000062CFD2BA6125.svm --></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02_Introduction.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">02_Introduction</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./04_A_tour_of_τ-ARGUS.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">04_A_tour_of_τ-ARGUS</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
