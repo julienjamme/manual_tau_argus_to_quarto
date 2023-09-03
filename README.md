@@ -16,3 +16,7 @@ I choose to export them into png files manually.
 - Split the chapters into sections with "split_chapters.R"
 
 - update the _quarto.yml, mentionning the list of chapters
+
+- create github pages with the command line: `quarto publish gh-pages`
+
+- render the quarto book with `quarto render`
