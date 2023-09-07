@@ -7,12 +7,12 @@ book:
   date: "9/3/2023"
   chapters:
     - index.qmd
-    - 02_Introduction.qmd
-    - 03_Producing_Safe_tables.qmd
-    - 04_A_tour_of_τ-ARGUS.qmd
-    - 05_Reference_Section_-_Description_of_the_Menu_Items.qmd
-    - 06_Further_descriptions.qmd
-    - 07_Index.qmd
+    - 01_Introduction.qmd
+    - 02_Producing_Safe_tables.qmd
+    - 03_A_tour_of_τ-ARGUS.qmd
+    - 04_Reference_Section_-_Description_of_the_Menu_Items.qmd
+    - 05_Further_descriptions.qmd
+    - 06_Index.qmd
     - references.qmd
 
 bibliography: references.bib
