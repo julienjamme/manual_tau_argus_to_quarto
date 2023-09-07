@@ -1,0 +1,118 @@
+## The process of disclosure control
+When the table(s) have been calculated, the main-window of τ-arguswill show the (first) table.
+![](Media/Pictures/1000000000000399000002AFC81A9D2E.png){width=13cm height=9.696cm}
+Safe cells are shown in black, whilst cells failing the safety ruleand/or minimum frequency rule are displayed in red.
+Only the top2 levels of a hierarchy are shown initially. But at thebottom of the window there are options to open more levels. Alsoclicking on the \'+\'before a code will open a level of the hierarchy.In the example we have opened the 3^rd^ level of the region variable.
+The user now has to decide whether to carry out secondary suppressionsimmediately or to perform some recoding first. There are other optionssuch as changing the status of individual cells manually, this will bediscussed further in the Reference chapter (see section[4.2]).
+
+#### Cell information
+Cells can be selected in the table by clicking with the cursor on aspecific cell. In that case, information about the selected cell isshown on the right top part of the window.
+The status of the cell can be one of the following. Some of the termswill be explained later in this section but others are expanded uponin the Reference section [4.2].
+
+-   Safe: Does not violate the safety rule
+
+-   Safe (from manual): manually made safe during this session
+
+-   Unsafe: According to the safety rule
+
+-   Unsafe (request): Unsafe according to the Request rule.
+
+-   Unsafe (frequency): Unsafe according to the minimum frequency rule.
+
+-   Unsafe (zero cell) Unsafe because the zero-cells are considered
+    > unsafe.
+
+-   Unsafe (from manual): Manually made unsafe during this session.
+
+-   Protected: Cannot be selected as a candidate for secondary cell
+    > suppression.
+
+-   Secondary: Cell selected for secondary suppression.
+
+-   Secondary (from manual): Unsafe due to secondary suppression after
+    > primary suppressions carried out manually.
+
+-   Zero: Value is zero and cannot be suppressed.
+
+-   Empty: No records contributed to this cell and the cell cannot be
+    > suppressed.
+****Change Status****
+The second pane ('Change Status') on the right will allow the user tochange the cell--status.
+
+-   Set to Safe: A cell, which has failed the safety rules, can be
+    > declared safe by the user.
+
+-   Set to Unsafe: A cell, which has passed the safety rules, can be
+    > declared to be unsafe by the user.
+
+-   Set to Protected: A safe cell is set so that it cannot be selected
+    > for secondary suppression.
+
+-   Set Cost: Change the value of the Cost-value for this cell
+
+-   Use \'a priori\' information (see below).
+A Priori Info
+This option is an *a priori* option to be mainly used for microdatawhich allows the user to feed τ-argus a list of cells where the statusof the standard rules can be overruled i.e. the status of the cells isalready specified. The associated file specifying this information isfree format. The format will be:
+Code of first spanning variable, Code of second spanning variable,Status of cell (u = unsafe, p = protected (not to be suppressed),s = safe).
+Also the cost-function can be changed here for a cell. This will makethe cell more likely to become secondary cell suppression, when thevalue is low or less likely when the value is high.
+Nr, 4, u
+Zd, 6, p
+5, 5, c, 1
+A full description of the aproiri file can be found in section[5.6]
+
+#### Recode
+The recode button will bring the user to the recoding system. Recodingis a very powerful method of protecting a table. Collapsed cellsusually have more contributors and therefore tend to be much safer.
+Hierarchical Recoding
+The first window shows the variables available for recoding
+In this example, the 'Region' variable has been selected for recoding.As 'Region' is a hierarchical variable, the codes are shown in ahierarchical tree. The user can either fold or unfold the branches byclicking on the '+' or '-' boxes which results in showing or omittingcodes from the table, or by choosing an overall maximum hierarchicallevel. (See the following windows for details). Pressing the 'Apply'button followed by 'Close' will actually apply the selected recodingand show the resulting table. Press the undo-button -- it is nowpossible to go back to the original recoding scheme. Below this thereare two windows, one showing the recode window prior to applying therecoding for the hierarchical variable 'Region' and the second afterthe folding of the tree.
+![](Media/Pictures/100000000000025C000002278C10BCB1.png){width=13cm height=11.716cm}
+The next window shows the new hierarchical codes after collapsing allsecond level categories
+![](Media/Pictures/100000000000025C0000017155E7F1A3.png){width=13cm height=7.941cm}
+By clicking \'Apply\' and \'Close\', we go back to the main windowwhich shows the table after recoding:
+![](Media/Pictures/100000000000039B000002A87499D80A.png){width=13cm height=9.696cm}
+Non Hierarchical Recoding
+In this example the non-hierarchical 'Size' variable has been selectedto be recoded. The user can either write the required recodings in theedit box or import them from a previously written file. In the examplethe line 2:2-6 results that categories 2,3,4,5,and 6 will be recodedinto a new category 2. Note that τ‑argus will give a warning that somecodes have not been recoded. They will remain unchanged. The user willknow whether this is harmful or not.
+![](Media/Pictures/1000000000000295000002273BA54BDE.png){width=13cm height=11.529cm}Once the recoding has been applied (both forhierarchical and non hierarchical data) the table can again bedisplayed. If there are now no cells, which fail the safety rules, thetable can be saved as a protected table. However, if there are still anumber of unsafe cells, secondary suppression needs to be carried out.This is necessary as the table is not yet safe. If only the cellsfailing the safety rules are suppressed, other cell values could beobtained by differencing.
+
+#### Secondary Suppression
+The Suppress button is an important button. It will activate themodules for computing the necessary secondary suppressions asdescribed above. There are a number of options here.
+
+-   Hypercube
+
+-   Modular
+
+-   Network
+
+-   Optimal
+Hypercube
+This is also known as the ghmiter method. The approach builds on thefact that a suppressed cell in a simple *n*‑dimensional table withoutsubstructure cannot be disclosed exactly if that cell is contained ina pattern of suppressed, nonzero cells, forming the corner points of ahypercube.
+Modular
+This partial method will break the hierarchical table down to severalnon-hierarchical tables, protect them and compose a protected tablefrom the smaller tables. As this method uses the optimisationroutines, an LP-solver is required: this will be either Xpress orcplex, or the free solver The routine used can be specified in theOptions window, this will be discussed later.
+Optimal
+This method protects the hierarchical table as a single table withoutbreaking it down into smaller tables. As this method uses theoptimisation routines, an LP-solver is required: this will be eitherXpress or cplex. The routine used can be specified in the Optionswindow; see section [4.7.3].
+Network
+This is a Network Flow approach for large unstructured 2 dimensionaltables or a 2 dimensional table with one hierarchy (the first variablespecified). This method is also based on optimisation techniques, butdoes not require an external solver like Xpress or cplex.
+As alternatives for cell suppression we can also apply rounding andControlled Tabular Adjustment (CTA)
+Rounding
+The controlled rounding procedure can be applied. The user has tospecify the rounding base. Note that this option requires the Xpresssolver or the cplex solver or the free solver. See section[4.2.5]
+Controlled Tabular Adjustment (CTA)
+This method will modify a table such that the unsafe cells arereplaced by their upper or lower protection level and the remainingcells are modified such that the table is still additive. See section[4.2.4]
+**Choose the suppression method**
+****The radio-buttons at the right lower part of the window allowselecting the desired suppression method. Clicking on the Suppressbutton will then start the process of calculating the secondarysuppressions. When this process has finished the protected table willbe displayed and also the user will be informed about the number ofcells selected for secondary suppression and the time taken to performthe operation. The secondary suppressed cells will be shown in blue.****
+![](Media/Pictures/100000000000039C000002B6944CDCBE.png){width=13cm height=9.696cm}
+
+#### **Summary Window**
+By clicking on \'Table Summary\', the summary window is obtained. Thesummary window gives an overview of the cells according to theirstatus.
+
+-   Freq: The number of cells in each category
+
+-   \# rec: The number of observations in each category
+
+-   Sum Resp: Total cell value in each category
+
+-   SumCost: The sum of the cost variable. Here it is equal to the
+    > response variable.
+![](Media/Pictures/100000000000026700000177020B6D1D.png){width=13cm height=7.976cm}
+By clicking on \'Close\', we return to the table window.
+The table can now be written to an output file in the required format.Any cells which have been selected for suppression will be replaced by\'X\', unless another option is chosen.. The safe table can be savedby using \'Output\|Save table\' menu on the main menu. See section[4.6.1].
+

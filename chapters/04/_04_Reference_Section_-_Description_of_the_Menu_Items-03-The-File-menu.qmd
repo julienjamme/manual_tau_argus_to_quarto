@@ -1,0 +1,127 @@
+## The File menu
+τ-argus can read data in two ways. The first option is that τ-arguswill read the data from a microdata file (fixed format, free formatand a SPSS_systemfile), which is explained in section[4.3.1]. From this microdata τ-argus can then build oneor more tables and during this tabulation process compute allnecessary additional information, needed to fully protect a table.This is the most flexible way allowing using all the functionality ofτ-argus.
+The second option is the input and treatment of a pre-tabulated dataand is dealt with in section [4.3.2]. Only one of theseoptions can be used at one time, a pre-tabulated table and tablescomputed from microdata cannot be read in τ-argus simultaneously.
+A set of pre-tabulated tables can be read into τ-argus and via thelinked tables procedure be protected. See section[4.3.3].
+τ-argus can also be used in batch, see section [4.3.4].
+Finally the τ-argus can be closed.
+
+### File \| Open Microdata
+The File\|Open microdata menu allows the user to specify the microdatafile (both fixed and free format or a SPSS-system file) and optionallythe metadata file.
+Note that a valid licence for SPSS must be available on your PC, atτ‑argus will use the functionality of SPSS to extract the microdatafrom SPSS to a scratch file. This file will then be used to constructthe tables to be protected.
+![](Media/Pictures/1000000000000240000000DC8A23AEC6.png){width=13cm height=4.964cm}
+In this dialog box the user can select the microdata-file or the SPSSsystem file and optionally the corresponding metadata file
+By default the microdata-file has extension .asc and the metafile.rda. .(Note, the user may use any file extension, but is advised touse default names).
+![](Media/Pictures/10000000000000340000002158C58202.png){width=1.044cm height=0.587cm}When the user clicks on he will get the traditionalopen file dialog box.
+![](Media/Pictures/1000000000000248000001ADA71A4DF3.png){width=15cm height=11.017cm}
+This box enables searching for the required files. Otherfile-extensions can be chosen when clicking on the files of typelistbox. When the user has selected the microdata file a suggestionfor the metafile (with the same name but with the extension .rda) isgiven but only when this file exists. Note, both files do notnecessarily have to have the same name.
+If a user selects a data file with another extension,τ-argus willremember this and will suggest this extension in a future use ofτ-argus.
+A full description of the metadata file can be found in section[5.1].
+When the data file has been selected and optionally the meta datafile, you can proceed to the menu options Specify\|Metafile toedit/modify the meta data file and to Specify\|Tables to specify thetables required. See section [4.4] and[4.4.4].
+
+### File \| Open Table 
+This is the option allowing the input of tabular data into τ-argus. Inthis case, an already-constructed table is read in. This is reached byselecting 'Open Table' in the file menu of τ-argus.
+![](Media/Pictures/1000000000000263000000EFC8740176.png){width=14.49cm height=5.084cm}
+The name of the file containing the table to be opened (in the formatgiven below) needs to be specified in the first line. Optionally thename of the file containing the metadata is entered in the secondline. Later on you will be offered the option of adapting the metadataor even enter the metadata from scratch.
+There is a great flexibility with this option.
+The structure of the file is that each line/record describes one cellin free format. The separator is to be specified in the metadata. Themore detail is given for each cell, the more τ-argus can do for you.
+In any case for each cell the codes of the explanatory variables andthe cell value need to be given. Optionally the following informationcan be specified:
+
+-   Frequency
+
+-   Status
+
+-   Cost variable
+
+-   Shadow variable
+
+-   Top-n variables
+
+-   Lower and upper protection levels
+The more details are given for each cell to more flexibility τ-argusoffers in a later stage to apply sensitivity rules etc.
+If only the cell status is provided, τ-argus can only use that andgive each unsafe cell a fixed protection level of some percentage tobe specified. If also the largest say 2 contributors are provided,τ-argus can apply most of the sensitivity rules, like a p% rule of adominance rule (up to n=2).
+It is important
+
+1.  To stress that all the cells of a table have to be specified as
+    > τ-argus will not compute any (sub-)totals. In most situations this
+    > is simply impossible.
+
+2.  A table has to be additive. Theoretically this is trivial, but many
+    > methods to protect a table even require strict additivity.
+After clicking 'OK' you can either proceed by adapting the metadatavia Specify\|Metafile or by specifying the table details viaSpecify\|Table.
+This (artificially generated) datafile shows 2 explanatory variables,cell value, cell frequency and the top 3 values in each cell. Withthis information τ‑argus is still able to apply the primarysensitivity rules, like p% rule.
+An example of a 2 dimensional table
+T, T, 2940 ,48, 200,200,200
+T, A, 745 ,12, 200,100,100
+T, B, 810 ,12, 200,100,100
+T, C, 685 ,12, 200,100,100
+T, D, 700 ,12, 200,100,100
+1, T, 795 ,12, 200,100,100
+1, A, 350 ,3, 200,100,50
+1, B, 190 ,3, 100,50,40
+1, C, 150 ,3, 100,40,10
+1, D, 115 ,3, 50,40,25
+2, T, 670 ,12, 200,100,100
+2, A, 115 ,3, 50,40,25
+2, B, 340 ,3, 200,100,40
+2, C, 115 ,3, 50,40,25
+2, D, 120 ,3, 100,10,10
+3, T, 785 ,12, 200,100,100
+3, A, 190 ,3, 100,50,40
+3, B, 115 ,3, 50,40,25
+3, C, 325 ,3, 200,100,25
+3, D, 165 ,3, 100,40,25
+4, T, 690 ,12, 200,100,100
+4, A, 100 ,3, 50,25,25
+4, B, 175 ,3, 100,50,25
+4, C, 115 ,3, 50,40,25
+4, D, 310 ,3, 200,100,10
+Alternatively if only the status is given to τ‑argus , there is noother option than to use the status and treat all unsafe cells as'manually' unsafe and apply the manual safety margin.
+T, T, 2940 ,u
+T, A, 745 ,s
+T, B, 810 ,s
+T, C, 685 ,s
+T, D, 700 ,s
+1, T, 795 ,s
+1, A, 350 ,s
+1, B, 190 ,s
+1, C, 150 ,s
+1, D, 115 ,s
+2, T, 670 ,s
+2, A, 115 ,s
+2, B, 340 ,s
+2, C, 115 ,u
+2, D, 120 ,u
+3, T, 785 ,s
+3, A, 190 ,s
+3, B, 115 ,s
+3, C, 325 ,s
+3, D, 165 ,s
+4, T, 690 ,s
+4, A, 100 ,s
+4, B, 175 ,s
+4, C, 115 ,s
+4, D, 310 ,s
+For tables of dimension 3 or higher, additional columns for theexplanatory variables need to be added as well as additional rows toallow for the increased depth of the table.
+The next step will be to optionally edit the metadata and then readthe table.
+
+### File \| Open Table Set
+When the linked tables procedure will be used in combination withtabular input, the option "Open Table Set" must be used to read a setof tables in τ‑argus. The "Open Table" option as described above([4.3.2]) allows for only one single individual table.
+In this option a set of tables with the corresponding metadata files(\*.rda) is specified.
+Search for the tables in the familiar way and press "Add" to add thetable to the det of linked tables being build.
+When the set is complete, press the OK-button.
+![](Media/Pictures/10000000000002330000018093D119F9.png){width=13cm height=8.865cm}
+After pressing the OK-button, you will be guided automatically to theSpecify Tables window. This is described in section[4.4.5].
+In the linked tables approach it is no longer possible to modify themetadata.
+As the same rules will be applied to each individual table, you willbe guided to the Specify Tables window only once. The choices will beapplied to each table.
+This implies that all tables in a linked set should have the sameadditional variables, as described in the previous section[4.3.2].
+Please note that it is advisable to read each table individually inτ‑argus before. This to be sure that the specification of the tablesand the metadata is correct, before starting the linked tablesprocedure.
+
+### File \| Open Batch Process
+This option allows the user to run the commands in batch mode fromopening the microdata and metadata, protecting the table and creatingthe output of the final table(s).
+If the last line of the batch-file is \<GOINTERACTIVE\> τ-argus willfirst perform all the actions as specified in the batch-file and thenopen the main menu and giving the control to the user to continue thework in the interactive modus.
+The lay-out of the batch-file is described in section[5.7].
+Note that a log file is maintained of all actions. This is the placeto look if something might go wrong, as a batch-process typically doesnot report to a GUI. By default the log file is "Logbook.txt" in thetemp-directory, but in the batch-file a different file can be chosen.Also from the command-line a log file name can be specified. See alsosection [5.7].
+
+### File \| Exit
+Exits the τ-argus-session.
+

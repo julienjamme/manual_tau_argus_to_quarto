@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-09-03">
 
-<title>Manual of Tau-Argus</title>
+<title>Manual of Tau-Argus - 2&nbsp; 01_Introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01_Introduction.html" rel="next">
+<link href="./02_Producing_Safe_tables.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">GHMiter huge in batch</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_Introduction.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">01_Introduction</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -102,13 +102,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">GHMiter huge in batch</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_Introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="./01_Introduction.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">01_Introduction</span></span></a>
   </div>
 </li>
@@ -158,7 +158,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#ghmiter-huge-in-batch" id="toc-ghmiter-huge-in-batch" class="nav-link active" data-scroll-target="#ghmiter-huge-in-batch"><span class="header-section-number">1</span> GHMiter huge in batch</a></li>
+  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface"><span class="header-section-number">2.1</span> Preface</a></li>
+  <li><a href="#about-the-name-argus" id="toc-about-the-name-argus" class="nav-link" data-scroll-target="#about-the-name-argus"><span class="header-section-number">2.2</span> About the name ARGUS</a></li>
+  <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact"><span class="header-section-number">2.3</span> Contact</a></li>
+  <li><a href="#open-source" id="toc-open-source" class="nav-link" data-scroll-target="#open-source"><span class="header-section-number">2.4</span> Open Source</a></li>
+  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments"><span class="header-section-number">2.5</span> Acknowledgments</a></li>
+  <li><a href="#latest-improvements" id="toc-latest-improvements" class="nav-link" data-scroll-target="#latest-improvements"><span class="header-section-number">2.6</span> Latest improvements</a></li>
+  <li><a href="#the-structure-of-this-manual" id="toc-the-structure-of-this-manual" class="nav-link" data-scroll-target="#the-structure-of-this-manual"><span class="header-section-number">2.7</span> The structure of this manual</a></li>
   </ul>
 </nav>
     </div>
@@ -167,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Manual of Tau-Argus</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">01_Introduction</span></h1>
 </div>
 
 
@@ -175,12 +181,6 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 3, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -188,62 +188,40 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="ghmiter-huge-in-batch" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> GHMiter huge in batch</h1>
-<p>Wijzigingen in table-meta &lt;Solver&gt; in batch mogelijk &lt;SBS-output&gt; &lt;Rounder extensions&gt; SPSS system files Nog verwijzingen naar het handboek Revision overview December 2019</p>
+<section id="preface" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="preface"><span class="header-section-number">2.1</span> Preface</h2>
+<p>This is the user's manual for τ-argus version 4.1. τ-argus is asoftware tool designed to assist a data protector in producing safetables. This manual describes the first Open Source version ofτ-argus. After a long history of development at Statistics Netherlands(CBS) as closed software, CBS has decided to convert τ-argus towardsOpen Source. This process coincides with the formal retirement of themain developer, Anco Hundepool. With the financial support of Eurostatwe have been able to do this transformation and we hope that thefuture of τ-argus is secured. The main aim of this transition projectwas to port the current (version 3.5) of τ-argus to an openenvironment. So this version 4.1 does not contain many new extensions.The whole user-interface has been rewritten in java, replacing the oldVisual Basic version. The aim of this transition is to be in an openenvironment and also be platform independent. So also a unix versionis possible now. Nevertheless with respect to the previous release of τ-argus we havemade a few steps forward, and τ-argus now has facilities to protecttables via Controlled Tabular Adjustment (CTA). These routines forthis have been developed by Jordi Castro of the Polytechnic Universityof Catalonia. We have also added the option to use a free open solver (soplex) inaddition to the classical commercial solvers like cplex and Xpress.However we expect that these commercial solvers are still very muchneeded, when we want to protect large serious tables. The purpose of τ-argus is to protect tables against the risk ofdisclosure, i.e.&nbsp;the accidental or deliberate disclosure ofinformation related to individuals from a statistical table. This isachieved by modifying the table so that it contains less detailedinformation. τ-argus allows for several modifications of a table: atable can be redesigned, meaning that rows and columns can becombined; sensitive cells can be suppressed and additional cells toprotect these can be found in some optimum way (secondary cellsuppression). Also rounding and CTA can be used to protect sensitivetables. The purpose of the present manual is to give a potential user enoughinformation so that he can understand the general principles on whichτ-argus is based, and also allow him to use the package. So itcontains both general background information and detailed programinformation. For a more in-depth theoretical background we refer tothe handbook “<a href="http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1119978157.html">Statistical DisclosureControl</a>”by Anco Hundepool, Josep Domingo-Ferrer, Luisa Franconi, SarahGiessing, Eric Schulte Nordholt, Keith Spicer and Peter-Paul de Wolf(ISBN: 978-1-119-97815-2, Wiley, 2012). τ-argus is one of a twin set of disclosure control packages. For theprotection of microdata - μ-argus - has been developed, which is thetwin brother of τ-argus.<sup>[^1]</sup> Also μ-argus has been ported to OpenSource.</p>
+</section>
+<section id="about-the-name-argus" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="about-the-name-argus"><span class="header-section-number">2.2</span> About the name ARGUS</h2>
+<p>Somewhat jokingly the name argus can be interpreted as the acronym of’Anti-Re-identification General Utility System’<sup>[^2]</sup>. As a matter offact, the name argus was inspired by a myth of the ancient Greeks. Inthis myth Zeus has a girl friend named Io. Hera, Zeus’ wife, did notapprove of this relationship and turned Io into a cow. She let themonster argus guard Io. argus seemed to be particularly well qualifiedfor this job, because it had a hundred eyes that could watch over Io.If it would fall asleep only two of its eyes were closed. That wouldleave plenty of eyes to watch Io. Zeus was eager to find a way to getIo back. He hired Hermes who could make argus fall asleep by theenchanting music on his flute. When Hermes played his flute to argusthis indeed happened: all its eyes closed, one by one. When Hermes hadsucceeded in making argus fall asleep, argus was decapitated. argus’eyes were planted onto a bird’s tail - a type of bird that we now knowunder the name of peacock. That explains why a peacock has theseeye-shaped marks on its tail. This also explains the picture on thecover of this manual. It is a copperplate engraving of Gerard deLairesse (1641-1711) depicting the process where the eyes of argus arebeing removed and placed on the peacock’s tail.<sup>[^3]</sup> Like the mythological argus, the software is supposed to guardsomething, in this case data. This is where the similarity between themyth and the package is supposed to end, as we believe that thepackage is a winner and not a loser as the mythological argus is.</p>
+</section>
+<section id="contact" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="contact"><span class="header-section-number">2.3</span> Contact</h2>
+<p>Feedback from users will help improve future versions of τ-argus andis therefore greatly appreciated. The authors of this manual can becontacted directly for suggestions that may lead to improved versionsof τ-argus in writing or otherwise; e-mail messages can also be sentto <a href="mailto:argus@cbs.nl"><em>argus@cbs.nl</em></a>.</p>
+</section>
+<section id="open-source" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="open-source"><span class="header-section-number">2.4</span> Open Source</h2>
+<p>In the open source world the responsibility for the software isdifferent. The idea behind open source is that the software code is nolonger owned by one institute (Statistics Netherlands), but the sourceis available for anybody. Anybody can also contribute to the code andmake his own extensions. Nevertheless we do not want to have manydifferent versions of the software and many diversions. Therefore there will always be one official version of τ-argus. Inorder to achieve this we need a body to make decisions about furtherdevelopments and extensions for the official τ-argus. Thisresponsibility will be in the hands of a small committee. Thiscommittee will be a sub-group of the Eurostat technical working groupon Statistical Confidentiality. They will make decisions on whether anew extension/correction will be allowed in the official versions ofτ-argus, and also make recommendations for future extensions. Nevertheless the above mentioned email address(<a href="mailto:argus@cbs.nl"><strong>argus@cbs.nl</strong></a>) will remain open forquestions.</p>
+</section>
+<section id="acknowledgments" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="acknowledgments"><span class="header-section-number">2.5</span> Acknowledgments</h2>
+<p>τ-argus was started as part of the EU 4<sup>th</sup> framework SDC-project andbecame a mature software tool as part of the CASC project that waspartly sponsored by the EU under contract number IST-2000-25069. Thissupport is highly appreciated. The CASC (Computational Aspects ofStatistical Confidentiality) project is part of the Fifth Framework ofthe European Union. The main part of τ-argus has been developed atStatistics Netherlands by Aad van de Wetering and Ramya Ramaswamy (whowrote the kernel) and Anco Hundepool (who wrote the interface).However this software would not have been possible without thecontributions of several others, both partners in the CASC-project andoutsiders. Recent extensions of τ-argus have been made possible duringthe European CENEX-SDC-project (grant agreement25200.2005.001-2005.619), the ESSNet-SDC project (grant agreement25200.2005.003-2007.670.) and the ESSnet SDC harmonisation(61102.2010.004-2010.579). The Open Source transition was supported by a Eurostat grant(61102.2012.001-2012.102). The German partners ****Statistisches Bundesamt (Sarah Giessing andDietz Repsilber) have contributed the ****ghmiter**** software, whichoffers a solution for secondary cell suppression based on hypercubes.Peter-Paul de Wolf has built a ****search algorithm based onnon-hierarchical optimal solutions. This algorithm breaks down a largehierarchical table into small non-hierarchical subtables, which arethen individually protected. A team led by JJ Salazar of theUniversity La Laguna Tenerif****e, Spain, has developed theoptimisation routines. Additionally Jordi Castro, UniversitatPolitècnica de Catalunya. Barcelona, has developed a solution based onnetworks. Jordi Castro also developed the CTA solution.**** ****The controlled rounding procedure has been developed by JJSala****zar in a project sponsored by ONS. In order to enhance theusability τ-****argus**** now also can handle SPSS-system files. Forusing τ-****argus**** in combination with SAS, several reports havebeen produced during the ESSnet projects. These reports and also theSAS-tools are available from the CASC/ESSNet website.**** ****The audit routine was first developed by Karl Luhn of theUniversity of ****Ilmenau and further developed by Destatis. For solving these optimisation problems, τ-argus traditionally usescommercial LP-solvers. Traditionally we use Xpress as an LP-solver.This package is kindly made available for users of τ-argus in aspecial agreement between the τ-argus-team and FICO, the developers ofXpress. Alternatively τ-argus can also use the cplex-package. Userscan choose either solver to link to τ-argus (provided, of course, theypurchase a license for the solver chosen). However users alreadyhaving a licence for one of these packages for other applications canuse their current licence for τ-argus as well. Starting with this Open Source version also free and open solver(Soplex) can now be used to solve the optimisation models behind CellSuppression, rounding and CTA.</p>
+</section>
+<section id="latest-improvements" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="latest-improvements"><span class="header-section-number">2.6</span> Latest improvements</h2>
+<p>The latest extensions in version 4.1 of τ‑argus are :</p>
 <ul>
-<li><p>All batch file issues from release notes version 4.1.7 have been &gt; included</p></li>
-<li><p>Some errors on the solver issues have been corrected.</p></li>
-<li><p>Obsolete neon server has been replaced by research.cbs</p></li>
-<li><p>The story of frozen cells in the Hypercube has been suppressed as it &gt; is no longer displayed. Needs nevertheless attention. Old text has &gt; been made hidden now.</p></li>
-<li><p>All screen shots have been updated, except the SPSS_story. τ ARGUS <img src="Media/Pictures/100000000000027F000001D1F527FC8E.png" style="width:14.637cm;height:10.663cm">Version 4.1 (revised) User’s Manual</p></li>
+<li><p>New structure of the interface, making the table itself the central &gt; window.</p></li>
+<li><p>Controlled Tabular Adjustment.</p></li>
+<li><p>Rewritten Open Source Code in JAVA.</p></li>
+<li><p>C++ dlls for data manipulation and the modular approach have been &gt; adapted for the Open Source compilers.</p></li>
+<li><p>The use of free Open Solvers complementary to the commercial &gt; solvers.</p></li>
 </ul>
-<table class="table">
-<tbody>
-<tr class="odd">
-<td><blockquote class="blockquote">
-<p>Project: Argus Open Source-project</p>
-</blockquote></td>
-<td><blockquote class="blockquote">
-<p>Statistics Netherlands, P.O. Box 24500</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td><blockquote class="blockquote">
-<p>Date: January 2020</p>
-</blockquote></td>
-<td><blockquote class="blockquote">
-<p>2490 HA The Hague, The Netherlands</p>
-</blockquote></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td><blockquote class="blockquote">
-<p>email: <a href="mailto:argus@cbs.nl"><strong>argu s@cbs.nl</strong></a></p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<colgroup>
-<col style="width: 26%">
-<col style="width: 70%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><blockquote class="blockquote">
-<p>Contributors:</p>
-</blockquote></td>
-<td><blockquote class="blockquote">
-<p>Peter-Paul de Wolf (Modular), Anco Hundepool, Sarah Giessing (ghmiter, audit), Juan-José Salazar (Optimisation methods), Jordi Castro (Network solutions, CTA)</p>
-</blockquote></td>
-</tr>
-</tbody>
-</table>
-<div>
-
-</div>
-<p>Contents</p>
+</section>
+<section id="the-structure-of-this-manual" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="the-structure-of-this-manual"><span class="header-section-number">2.7</span> The structure of this manual</h2>
+<p>The remaining part of this manual consists of four chapters and anindex. In Chapter [2] we will give a short introduction to thetheory and methodology. However for a more fundamental description werefer to the Wiley handbook on Statistical Disclosure Control<sup>[^4]</sup>.This handbook is the result of the joined work of the SDC specialistsin Europe working together for a long period. In Chapter [3] a short tour of τ‑argus will be given as afirst impression of the program. Chapter [4] is the reference manual of τ‑argus. It willdescribe in detail the program. This chapter is organized by the menuitems of τ‑argus. Chapter [5] gives details of files used by τ‑argus. The manual is concluded with an index.</p>
 
 
 </section>
@@ -482,12 +460,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">GHMiter huge in batch</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01_Introduction.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">01_Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02_Producing_Safe_tables.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">02_Producing_Safe_tables</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

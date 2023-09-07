@@ -1,0 +1,37 @@
+## Save the safe table
+When the table is safe it may be written to the hard disk of thecomputer. The user has six options:
+
+1.  As a CSV file. This Comma separated file can easily be read into
+    > Excel. Please note that τ-argus uses the ',' as the
+    > field-separator in this CSV-file. This might influence opening the
+    > CSV file in Excel. A solution for this is to change the settings
+    > in the Windows control-panel or use the \'Data\|Text to Columns\'
+    > option of Excel. This is a typical tabular output maintaining the
+    > appearance of the table in τ-argus.
+
+2.  A CSV-file for a pivot table. This offers the opportunity to make
+    > use of the facilities of pivot tables in Excel. The status of each
+    > cell can be added here as an option (Safe, Unsafe or Protected for
+    > example). The information for each cell is displayed on a single
+    > line unlike standard csv format.
+
+3.  A text file in the format code-value, separated by commas. Here, the
+    > cell status is again an option. Also empty cells can be suppressed
+    > from the output file if required. The information for each cell is
+    > displayed on a single line similar to the CSV file for a pivot
+    > table.
+
+4.  SBS format. This is a special format required for sending data to
+    > Eurostat.
+
+5.  A file in intermediate format for possible input into another
+    > program. This contains protection levels and external bounds for
+    > each cell. This table could even be read back into τ-argus.
+
+6.  A file in the JJ-format. This format has been introduced by JJ
+    > Salazar as an intermediate between the normal table and the
+    > structures required in the optimisation routines.
+![](Media/Pictures/100000000000019F000001BBAB79FE89.png){width=12.107cm height=12.813cm}
+Finally, a report will be generated to a user specified directory.This report will also be displayed on the screen when the table hasbeen written. It will contain details such as table structure, safetyrules (and number of cells failing), secondary suppression method (andnumber of cell failing) and details of any recodes. An example isshown in the Reference section [4.6.2]. As this is anHTML-file it can be viewed easily later or printed.
+
+

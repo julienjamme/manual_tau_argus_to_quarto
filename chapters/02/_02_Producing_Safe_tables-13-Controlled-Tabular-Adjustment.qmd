@@ -1,0 +1,241 @@
+## Controlled Tabular Adjustment[^12]
+****The purpose of *****controlled tabular adjustment***** (also knownas *****minimum-distance controlled tabular adjustment***** or simplyCTA) is to find the closest safe table to the original one. Since CTAis a perturbative method, this goal is achieved by publishing a tablewhere the values of sensitive cells have been modified according tosome predefined protection levels, and the remaining non-sensitivecells are minimally changed to guarantee the table additivity.****
+****The example illustrates CTA on a small two-dimensional table withone sensitive cell in boldface, with lower and upper protection levelsequal to five (table (a) of the example). Depending on the\'protection direction\' of the sensitive cell, either \'lower\' or\'upper\', which has to be decided, the value to be published for thiscell will be respectively less or equal than the original cell valueminus the lower protection level, or greater or equal than theoriginal cell value plus the upper protection level. In the example,if the protection direction is \'lower\', then the value published orthe sensitive cell should be less or equal than 35; the optimaladjusted table for this case is shown in table (b) of the example. Ifthe protection direction is \'upper\', then the value must be greateror equal than 45, as shown in table (c) of the example. In a largerand more complex table, with many sensitive cells, the obtention ofthe protection directions that provide the minimal changes tonon-sensitives cells is not as easy as in the example. CTA has thus tobe formulated and solved as an optimization problem, in particular asa *****mixed integer linear problem***** (MILP).****
+*****Example of a CTA solution:***** The cell (M2P3) is a sensitivecell with lower and upper protection level 5. Protected tables with\'lower protection direction\' and ****\'upper protection direction\'(i.e., value of sensitive is respectively reduced and increased byfive units)****
+****
+
++------+------+-------+-------+-------+
+|      | > P1 | > P2  | > P3  |       |
++------+------+-------+-------+-------+
+| > M1 | > 20 | > 24  | > 28  | > 72  |
++------+------+-------+-------+-------+
+| > M2 | > 38 | > 38  | > 40  | > 116 |
++------+------+-------+-------+-------+
+| > M3 | > 40 | > 39  | > 42  | > 121 |
++------+------+-------+-------+-------+
+|      | > 98 | > 101 | > 110 | > 309 |
++------+------+-------+-------+-------+
+Original table (a)
+
+<table>
+<tbody>
+<tr class="odd">
+<td><blockquote>
+&#10;</blockquote></td>
+<td><blockquote>
+<p>P1</p>
+</blockquote></td>
+<td><blockquote>
+<p>P2</p>
+</blockquote></td>
+<td><blockquote>
+<p>P3</p>
+</blockquote></td>
+<td><blockquote>
+&#10;</blockquote></td>
+<td><blockquote>
+&#10;</blockquote></td>
+<td><blockquote>
+&#10;</blockquote></td>
+<td><blockquote>
+<p>P1</p>
+</blockquote></td>
+<td><blockquote>
+<p>P2</p>
+</blockquote></td>
+<td><blockquote>
+<p>P3</p>
+</blockquote></td>
+<td><blockquote>
+&#10;</blockquote></td>
+</tr>
+<tr class="even">
+<td><blockquote>
+<p>M1</p>
+</blockquote></td>
+<td><blockquote>
+<p>15</p>
+</blockquote></td>
+<td><blockquote>
+<p>24</p>
+</blockquote></td>
+<td><blockquote>
+<p>33</p>
+</blockquote></td>
+<td><blockquote>
+<p>72</p>
+</blockquote></td>
+<td><blockquote>
+&#10;</blockquote></td>
+<td><blockquote>
+<p>I</p>
+</blockquote></td>
+<td><blockquote>
+<p>25</p>
+</blockquote></td>
+<td><blockquote>
+<p>24</p>
+</blockquote></td>
+<td><blockquote>
+<p>23</p>
+</blockquote></td>
+<td><blockquote>
+<p>72</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td><blockquote>
+<p>M2</p>
+</blockquote></td>
+<td><blockquote>
+<p>43</p>
+</blockquote></td>
+<td><blockquote>
+<p>38</p>
+</blockquote></td>
+<td><blockquote>
+<p>35</p>
+</blockquote></td>
+<td><blockquote>
+<p>116</p>
+</blockquote></td>
+<td><blockquote>
+&#10;</blockquote></td>
+<td><blockquote>
+&#10;</blockquote></td>
+<td><blockquote>
+<p>33</p>
+</blockquote></td>
+<td><blockquote>
+<p>38</p>
+</blockquote></td>
+<td><blockquote>
+<p>45</p>
+</blockquote></td>
+<td><blockquote>
+<p>116</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td><blockquote>
+<p>M3</p>
+</blockquote></td>
+<td><blockquote>
+<p>40</p>
+</blockquote></td>
+<td><blockquote>
+<p>39</p>
+</blockquote></td>
+<td><blockquote>
+<p>42</p>
+</blockquote></td>
+<td><blockquote>
+<p>121</p>
+</blockquote></td>
+<td><blockquote>
+&#10;</blockquote></td>
+<td><blockquote>
+&#10;</blockquote></td>
+<td><blockquote>
+<p>40</p>
+</blockquote></td>
+<td><blockquote>
+<p>39</p>
+</blockquote></td>
+<td><blockquote>
+<p>42</p>
+</blockquote></td>
+<td><blockquote>
+<p>121</p>
+</blockquote></td>
+</tr>
+<tr class="odd">
+<td><blockquote>
+&#10;</blockquote></td>
+<td><blockquote>
+<p>98</p>
+</blockquote></td>
+<td><blockquote>
+<p>101</p>
+</blockquote></td>
+<td><blockquote>
+<p>110</p>
+</blockquote></td>
+<td><blockquote>
+<p>309</p>
+</blockquote></td>
+<td><blockquote>
+&#10;</blockquote></td>
+<td><blockquote>
+&#10;</blockquote></td>
+<td><blockquote>
+<p>98</p>
+</blockquote></td>
+<td><blockquote>
+<p>101</p>
+</blockquote></td>
+<td><blockquote>
+<p>110</p>
+</blockquote></td>
+<td><blockquote>
+<p>309</p>
+</blockquote></td>
+</tr>
+<tr class="even">
+<td><blockquote>
+<p><strong><strong>Adjusted table<br />
+Lower protection direction (b)</strong></strong></p>
+</blockquote></td>
+<td><blockquote>
+&#10;</blockquote></td>
+<td><blockquote>
+<p><strong><strong>Adjusted table<br />
+Upper protection direction (c)</strong></strong></p>
+</blockquote></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+****
+****CTA was introduced in the manuscript Dandekar and Cox(2002) and,independently and in an extended form, in Castro(2006) (in the latterit was named minimum-distance controlled perturbation method). CTA hasshown to have both a small disclosure risk see Castro(2012) and smallinformation loss see Castro and González(2014).****
+****The parameters that define any CTA instance are:****
+
+-   ****A general table *****a***~***i***~***, i
+    > *****=1*****,\...,n*****, with *****m***** linear relations
+    > *****Aa=b*****.****
+
+-   ****Upper and lower bounds *****u***** and *****l***** for the cell
+    > values, assumed to be known by any attacker: *****l ******≤
+    > ******a ******≤******u *****
+
+-   ****V****ector of nonnegative weights associated to the cell
+    > perturbations *****w***~***i***~***,
+    > i=*****1*****,\...,n*****.****
+
+-   ****Set ****$$P \subseteq {1,...,n}$$**** of sensitive cells.****
+
+-   ****Lower and upper protection levels for each primary cell
+    > *****lpl***~***p***~** and *****upl***~***p***~**
+    > ****$$p \in P$$****
+****CTA finds the safe table *****x***** closest to *****a*****, usingsome distance ****$$l{(w)}$$****
+****![](Media/Pictures/10000000000003D20000014D15F11B5A.png){width=13cm height=4.426cm}****
+![](Media/Pictures/2000000700008418000010AE1E94497F.svm){width=13cm height=1.64cm}****
+****
+![](Media/Pictures/10000000000003B4000000FF92756D35.png){width=13cm height=3.496cm}****
+****Problem (3) has \|*****P*****\| binary variables, 2*****n*****continuous variables and *****m *****+ 4\|*****P*****\| constraints.The size of (3) is much less than that of the cell suppressionproblem. For instance, for a table of 8000 cells, 800 primaries, and4000 linear relations, CTA formulates a MILP of 800 binary variables,16000 continuous variables and 7200 constraints (these figures wouldbe 8000, 12,800,000 and 32,000,000 for cell suppression).****
+****The benefits of CTA are not limited to a smaller size of theresulting MILP problem. CTA can be easily extended with constraints tomeet some data quality criteria see Cox et al (2005). It has also beenexperimentally observed that the information loss of CTA solutions iscomparable (in some instances even better) to that of cell suppressionsee Castro and Giessing(2006).****
+****References on the controlled tabular adjustment solution****
+****L.H. Cox, J.P. Kelly and R. Patil (2005), Computational aspects ofcontrolled tabular adjustment: algorithm and analysis. B. Golden, S.Raghavan, E. Wassil, eds. *****The ******Next wave in Computer,******Optimization and Decision Technologies*****, Kluwer, Boston, MA,45--59.****
+****J. Castro, Minimum-distance controlled perturbation methods forlarge-scale tabular data protection, *****European Journal ofOperational Research*****, 171 (2006) 39--52.****
+****J. Castro (2012), On assessing the disclosure risk of controlledadjustment methods for statistical tabular data, *****InternationalJournal of Uncertainty, Fuzziness and Knowledge-Based Systems*****, 20921****--****941.****
+****J. Castro and S. Giessing (2006), Testing variants of minimumdistance controlled tabular adjustment, in *****Monographs of OfficialStatistics. Work session on Statistical Data Confidentiality*****,Eurostat-Office for Official Publications of the European Communities,Luxembourg, 2006, 333****--****343. ISBN 92-79-01108-1.****
+****J. Castro and J.A. González (2014), Assessing the information lossof controlled tabular adjustment in two-way tables, *****Lecture Notesin Computer Science*****, 8744, 11****--****23.****
+****R.A. Dandekar and L.H. Cox (2002), Synthetic tabular data: Analternative to complementary cell suppression, manuscript, EnergyInformation Administration, US Department of. Energy.****
+

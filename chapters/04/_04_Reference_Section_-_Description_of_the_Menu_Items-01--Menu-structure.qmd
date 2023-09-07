@@ -1,0 +1,137 @@
+##  Menu structure
+There are five menu headings:
+
++-----------+---------------------------------------------------------+
+| > File    | > Under ***F*****ile** either a microdata file or       |
+|           | > tabular data file can be opened together with the     |
+|           | > meta data file describing the data; also a set of     |
+|           | > tables for the linked table procedure can be opened.  |
+|           |                                                         |
+|           | > In addition there is the option to open a Batch       |
+|           | > process file and to Exit.                             |
++-----------+---------------------------------------------------------+
+| > Specify | > ***S*****pecify** allows the metadata to be entered   |
+|           | > or edited and the user can specify the tables to be   |
+|           | > protected along with primary sensitivity rules. When  |
+|           | > tabular data is the starting point the details about  |
+|           | > the table can be specified                            |
++-----------+---------------------------------------------------------+
+| > Modify  | > Under ***M*****odify,** the table to be protected can |
+|           | > be selected and the linked tables procedure can be    |
+|           | > carried out.                                          |
++-----------+---------------------------------------------------------+
+| > Output  | > ***O*****utput **allows the suppressed table to be    |
+|           | > saved. In addition there is also view report and      |
+|           | > write a batchfile. Also a tool to generate a‑priory   |
+|           | > information can be found here.                        |
++-----------+---------------------------------------------------------+
+| > Help    | > Finally, there is a ***H*****elp **menu, with         |
+|           | > contents, news, options and about-box of the program. |
++-----------+---------------------------------------------------------+
+Below is a list of the menu items which are shown under each of themenu headings. As some of the items are context specific they will notall be always available.
+Overview of the menu-items
+
++-------------+-------------+-------------+-------------+-------------+
+| > [****File | > [***      | > [*        | > [*        | > [****Help |
+| ****](#_The | *Specify*** | ***Modify** | ***Output** | ****](#_The |
+| _File_menu) | *](#_The_Sp | **](#_The_M | **](#_The_O | _Help_menu) |
+|             | ecify_menu) | odify_menu) | utput_menu) |             |
++-------------+-------------+-------------+-------------+-------------+
+| > [****Open | > **        | > **        | > **        | > [***      |
+| > Microd    | > **[       | > **        | >           | *Contents** |
+| ata****](#_ | ****Metafil | [****Select | **[****Save | **](#_Help_ |
+| File_|_Open | e****](#_Sp | > Ta        | >           | |_Contents) |
+| _Microdata) | ecify_|_Met | ble****](#_ | Table****]( |             |
+|             | afile_[for  | Modify_|_Se | #_Output_|_ |             |
+|             | microdata]) | lect_Table) | Save_Table) |             |
++-------------+-------------+-------------+-------------+-------------+
+| > **        | > **        | >           | > **        | > [****Ne   |
+| >           | > **[       | [****Linked | >           | ws****](#_H |
+| **[****Open | ****Specify | > Tables    | **[****View | elp_|_News) |
+| > Table**** | > Tables    | ****](#_Lin | > Re        |             |
+| ](#_File_|_ | ****](#_Spe | ked_Tables) | port****](# |             |
+| Open_Table) | cify_|_Spec |             | _Output_|_V |             |
+|             | ify_Tables  |             | iew_Report) |             |
+|             | [for micro) |             |             |             |
++-------------+-------------+-------------+-------------+-------------+
+| > [****Open |             |             | > [*        | > [***      |
+| > Table     |             |             | ***Generate | *Options*** |
+| > Set       |             |             | > apriori   | *](#_Help_| |
+| ****](#_Fil |             |             | ****](#_Hel | _Options_1) |
+| e_|_Open_2) |             |             | p_|_Generat |             |
+|             |             |             | eApriory)** |             |
+|             |             |             | > **        |             |
++-------------+-------------+-------------+-------------+-------------+
+| > **        |             |             | >           | > [****Abou |
+| >           |             |             |  [****Write | t****](#_He |
+| **[****Open |             |             | > Batch     | lp_|_About) |
+| > Batch     |             |             | > File*     |             |
+| > Process*  |             |             | ***](#_Outp |             |
+| ***](#_File |             |             | ut_|_Write_ |             |
+| _|_Open_Bat |             |             | Batch File) |             |
+| ch Process) |             |             |             |             |
++-------------+-------------+-------------+-------------+-------------+
+| > **        |             |             |             |             |
+| > **[****Ex |             |             |             |             |
+| it****](#_F |             |             |             |             |
+| ile_|_Exit) |             |             |             |             |
++-------------+-------------+-------------+-------------+-------------+
+The most important items of the menu can also be reached via thecorresponding icons:
+
++-------+-------+-------+-------+-------+-------+-------+-------+
+| > ![  | > ![  | > ![  | > ![  | >     | > ![  | > ![  | > ![  |
+| ](Med | ](Med | ](Med | ](Med | ![](M | ](Med | ](Med | ](Med |
+| ia/Pi | ia/Pi | ia/Pi | ia/Pi | edia/ | ia/Pi | ia/Pi | ia/Pi |
+| cture | cture | cture | cture | Pictu | cture | cture | cture |
+| s/100 | s/100 | s/100 | s/100 | res/1 | s/100 | s/100 | s/100 |
+| 00201 | 00201 | 00201 | 00201 | 00002 | 00201 | 00201 | 00201 |
+| 00000 | 00000 | 00000 | 00000 | 01000 | 00000 | 00000 | 00000 |
+| 01800 | 01800 | 01800 | 01800 | 00018 | 01800 | 01800 | 01800 |
+| 00001 | 00001 | 00001 | 00001 | 00000 | 00001 | 00001 | 00001 |
+| 81B00 | 81C9A | 876CC | 8076A | 01844 | 8D92D | 851B9 | 80C75 |
+| DF93. | 2381. | 80EC. | 7629. | B8045 | C8EC. | 59F6. | E9B0. |
+| png){ | png){ | png){ | png){ | B.png | png){ | png){ | png){ |
+| width | width | width | width | ){wid | width | width | width |
+| ="0.6 | ="0.6 | ="0.6 | ="0.6 | th="0 | ="0.6 | ="0.6 | ="0.6 |
+| 99cm | 99cm | 99cm | 99cm | .7cm | 99cm | 99cm | 99cm |
+| > he  | > he  | > he  | > he  | >     | > he  | > he  | > he  |
+| ight= | ight= | ight= | ight= | heigh | ight= | ight= | ight= |
+| "0.63 | "0.63 | "0.63 | "0.63 | t="0. | "0.63 | "0.69 | "0.63 |
+| 9cm} | 9cm} | 9cm} | 9cm} | 7cm} | 9cm} | 9cm} | 9cm} |
++-------+-------+-------+-------+-------+-------+-------+-------+
+| >     | >     | >     | >     | > Sp  | > Sp  | > S   | > L   |
+|  Open |  Open |  Open |  Open | ecify | ecify | elect | inked |
+| >     | >     | > Tab | >     | > Met | > T   | >     | > T   |
+| Micro | Table | leset | Batch | adata | ables | Table | ables |
+| >     |       |       | > Pr  |       |       |       |       |
+|  data |       |       | ocess |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+
+
++--------+--------+--------+--------+--------+--------+----+----+
+| >      | >      | >      | >      | >      | >      |    |    |
+| ![](Me | ![](Me | ![](Me | ![](Me | ![](Me | ![](Me |    |    |
+| dia/Pi | dia/Pi | dia/Pi | dia/Pi | dia/Pi | dia/Pi |    |    |
+| ctures | ctures | ctures | ctures | ctures | ctures |    |    |
+| /10000 | /10000 | /10000 | /10000 | /10000 | /10000 |    |    |
+| 201000 | 201000 | 201000 | 201000 | 201000 | 201000 |    |    |
+| 000180 | 000180 | 000180 | 000180 | 000180 | 000180 |    |    |
+| 000001 | 000001 | 000001 | 000001 | 000001 | 000001 |    |    |
+| 898C9E | 898437 | 81B4DC | 8407AA | 8890CB | 887C8F |    |    |
+| A71.pn | 13E.pn | DAA.pn | 94F.pn | C69.pn | 819.pn |    |    |
+| g){wid | g){wid | g){wid | g){wid | g){wid | g){wid |    |    |
+| th="0. | th="0. | th="0. | th="0. | th="0. | th="0. |    |    |
+| 699cm | 699cm | 699cm | 699cm | 699cm | 699cm |    |    |
+| >      | >      | >      | >      | >      | >      |    |    |
+|  heigh |  heigh |  heigh |  heigh |  heigh |  heigh |    |    |
+| t="0.6 | t="0.6 | t="0.6 | t="0.6 | t="0.6 | t="0.6 |    |    |
+| 39cm} | 39cm} | 39cm} | 39cm} | 39cm} | 39cm} |    |    |
++--------+--------+--------+--------+--------+--------+----+----+
+| > Save | > View | > Ge   | > Help | > O    | >      |    |    |
+| >      | >      | nerate |        | ptions |  About |    |    |
+|  Table | Report | > A    |        |        |        |    |    |
+|        |        | priori |        |        |        |    |    |
++--------+--------+--------+--------+--------+--------+----+----+
+These menu items will be explained in detail in the sections followingthe description of the main window.
+The Main window
+Starting with the Open Source version (4.0) the main window of τ-argushas been changed completely. In the previous versions an overview waspresented of the number of unsafe combinations for each explanatoryvariable and each code. However this information was hardy used andthe focus of the user is on the table(s) itself. So from now on thetable itself is the central point (the main window) of τ-argus. Assoon as the table has been completed, the table is presented here andthe process of disclosure control is controlled from this main window.
+

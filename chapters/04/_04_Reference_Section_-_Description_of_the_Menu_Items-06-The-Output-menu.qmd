@@ -1,0 +1,98 @@
+## The Output menu
+
+### Output \| Save Table
+There are six options of saving the tables
+![](Media/Pictures/100000000000019F000001BB880BA05A.png){width=11.351cm height=12.012cm}
+**As a CSV file**. This Comma Separated file can easily be read intoExcel. Please note the Excel should interpret the comma as aseparator. If your local settings are different you could use theExcel option 'Data\|Text to Columns', This a typical tabular outputmaintaining the appearance of the table in τ-argus.
+**CSV-file for a pivot table**. This offers the opportunity to makeuse of the facilities of pivot table in Excel. The status of each cellcan be added here as an option (Safe, Unsafe or Protected forexample). The information for each cell is displayed on a single lineunlike standard csv format
+**A text file** in the format code-value, this is separated by commas.Here, the cell status is again an option. Also empty cells can besuppressed from the output file if required. The information for eachcell is displayed on a single line similar to the CSV file for a pivottable. There are two possibilities. Either the unsafe cells are shownas an 'x', as it should be in the final publication or the exactstatus can be printed in the output file in addition to the cellvalue. Optionally empty cells can be suppressed.
+When the status is added to the output file τ-argus can use 14different statuses. They can also be found in the report file.
+
++----------+-------------------------+
+| > Number | > Status                |
++----------+-------------------------+
+| > 1      | > Safe                  |
++----------+-------------------------+
+| > 2      | > Safe (manual)         |
++----------+-------------------------+
+| > 3      | > Unsafe                |
++----------+-------------------------+
+| > 4      | > Unsafe (request)      |
++----------+-------------------------+
+| > 5      | > Unsafe (Freq)         |
++----------+-------------------------+
+| > 6      | > Unsafe (Zero cell)    |
++----------+-------------------------+
+| > 9      | > Unsafe (manual)       |
++----------+-------------------------+
+| > 10     | > Protected             |
++----------+-------------------------+
+| > 11     | > Secondary             |
++----------+-------------------------+
+| > 12     | > Secondary (from man.) |
++----------+-------------------------+
+| > 13     | > Empty (non-struct.)   |
++----------+-------------------------+
+| > 14     | > Empty                 |
++----------+-------------------------+
+Note: 7 and 8 are no longer used. But in order to be compatible witholder versions of τ-argus we did not change the numbers.
+**A SBS-format file**. This file contains the information required byEurostat for different surveys like the SBS-survey. Each linedescribes one cell in the table. First all the spanning variables,with the levels in the hierarchy, then the cell value, the cellfrequency, the status and the dominance percentage. If the 2 largestcontributors have been computed this percentage is the sum of thelargest two, otherwise the largest one. It will be obvious that thisoutput format is not possible if a table has been used as input, withonly the status or maybe a cell frequency.
+The cell status can be:
+
++------+------------------------------------------+
+| > A  | > Frequency unsafe                       |
++------+------------------------------------------+
+| > B  | > Dominance unsafe with one contributor  |
++------+------------------------------------------+
+| > C  | > Dominance unsafe with two contributors |
++------+------------------------------------------+
+| > D  | > Secondary unsafe                       |
++------+------------------------------------------+
+| > V  | > Safe                                   |
++------+------------------------------------------+
+**A file in intermediate format** for possible input into anotherprogram. This contains protection levels and external bounds for eachcell. This file could even be read back into τ-argus, using the readtables option
+The options are:
+
+-   Write only the status
+
+-   Add the results of the audit procedure (realised lower and upper
+    > bounds)
+
+-   Write information at the holding level, like the frequency.
+
+-   Suppress the empty cells.
+Of course certain options are only available if appropriate.
+Finally, a report will be generated to a user specified directory.This report will be shown, when the table has been written. As this isan HTML-file; it can be viewed easily later.
+A **file in JJ-format**. This is an intermediate format used inτ‑argus. See section [5.5].
+Some options are applicable to several output-versions. These aregrouped together under "General Options".
+
+### Output \| View Report
+Views the report file which has been generated with Output\|SaveTable. An example of a part of the output HTML file is shown here.
+As can be seen the essential information, for somebody other than theuser, about which rules have been applied to make the data safe isdisplayed along with details of any recoding. If required the reportcan be printed as well.
+![](Media/Pictures/10000000000002450000030C952D053E.png){width=13cm height=17.452cm}
+A nicer view of the report will be obtained if you open the report ina web-browser:
+![](Media/Pictures/10000000000002780000032EBF45FA3A.png){width=13.049cm height=16.806cm}
+
+### Output \| Generate apriori
+In many situations it is desirable to coordinate the secondarysuppressions between tables. This can be because of links betweentables. Suppressions in one table should also be suppressions on theother table.
+But also when protecting monthly tables it could be a good idea tocoordinate suppressions between the different months. A secondarysuppression in month 1 could be an ideal candidate for secondarysuppression in month 2. This could be achieved by changing thesuppression weights for these cells.
+The apriori option is the way to change the default suppressionweights etc. But this leaves the task of generating the apriori file.
+Via this option the protected file as generated by τ-argus can beconverted into an apriori file. The table has to be saved in theformat code-value with the 'Add Status'-option selected.
+For each status the user can select which action in the apriori filehas to be created. This can be a change of the suppression weight,give a new status, or nothing at all.
+The user has to specify the protected file (written in the rightformat (saved as code/value plus status) and the apriori file to begenerated.
+Also the correspondence between the variables must be specified. It isnot always the case that the first spanning variable is also the firstspanning variable in the apriori file. Even the number of variable canbe different. If not all variables of the safe file will be availablein the newly to be protected file, only the score for the total willbe used. This is often the case if the apriori file is generated for alinked tables problem.
+The separator to be used in the apriori file must be specified aswell; a comma is the default.
+Pressing the 'Go'-button will generate the apriori file and the'ready'-button will bring you back to the main menu of τ-argus.
+![](Media/Pictures/100000000000021B000002430FAD6E72.png){width=12.388cm height=13.963cm}
+
+### Output \| Write Batch File
+The commands used in interactive mode can be saved into a file forfuture use. τ-argus will write a batch file containing the commandsnecessary to achieve the current situation of the τ-argus run so far.For more information on the batch facility see section[4.3.3]
+For example the following shows the dominance rule (n=3, k= 75)applied to the Size by Region table with Var2 as the responsevariable. The threshold value = 5 with a safety range = 30%. Modularsecondary suppression was applied. The last line indicates thatτ-argus will not stop after these commands but become an interactiveprogram.
+\<OPENMICRODATA\> \"C:\\Program Files\\TauARGUS\\data\\tau_testW.asc\"
+\<OPENMETADATA\> \"C:\\Program Files\\TauARGUS\\data\\tau_testW.rda\"
+\<SPECIFYTABLE\> \"Size\"\"Region\"\|\"Var2\"\|\"\"\|\"\"
+\<SAFETYRULE\> NK(3,75)\|NK(0,0)\|FREQ(5,30)\|
+\<READMICRODATA\>
+\<SUPPRESS\> MOD(1)
+\<GOINTERACTIVE\>
+

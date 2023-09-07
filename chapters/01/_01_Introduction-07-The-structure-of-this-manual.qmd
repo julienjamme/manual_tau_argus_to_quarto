@@ -1,0 +1,9 @@
+## The structure of this manual
+The remaining part of this manual consists of four chapters and anindex.
+In Chapter [2] we will give a short introduction to thetheory and methodology. However for a more fundamental description werefer to the Wiley handbook on Statistical Disclosure Control^[^4]^.This handbook is the result of the joined work of the SDC specialistsin Europe working together for a long period.
+In Chapter [3] a short tour of τ‑argus will be given as afirst impression of the program.
+Chapter [4] is the reference manual of τ‑argus. It willdescribe in detail the program. This chapter is organized by the menuitems of τ‑argus.
+Chapter [5] gives details of files used by τ‑argus.
+The manual is concluded with an index.
+
+

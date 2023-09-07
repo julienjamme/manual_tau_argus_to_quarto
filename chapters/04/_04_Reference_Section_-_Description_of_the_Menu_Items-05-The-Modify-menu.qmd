@@ -1,0 +1,34 @@
+## The Modify menu
+
+### Modify \| Select Table
+This dialog box enables the user to select the table they want to see.If the user has specified only one table, this table will be selectedautomatically and this option cannot be accessed. In the examplewindow shown here the first table is a 2 dimensional table (Size xRegion) followed by a 3 dimensional table (Size x Region xIndustryCode). Select the table to be processed and press theOK-button.
+![](Media/Pictures/10000000000001A3000001755AA5646B.png){width=12.22cm height=10.837cm}
+
+### Modify \| Linked Tables
+This option is available when the tables specified have at least oneexplanatory or spanning variable in common and have the same responsevariable.
+When the tables are built from micro data, the tables can be specifiedusing the screen below. See also section [4.4.4].
+An example is shown.
+![](Media/Pictures/10000000000002EC000002CD1643832F.png){width=15cm height=14.33cm}
+When the tables are supplied to τ‑argus as tabular input see section[4.3.3] (Open Table set). When supplying a set of readymade tables it should be clear to τ‑argus which explanatory variablesare in fact the same dimension. They should have the same name, evenif the level of detail is different.
+The next step is to further define the tables. This is similar to theprocedure in Specify Tables (see section [4.4.5]). Thesame choices for the parameters etc. are applied to each table. Itwill be clear that all tables should have the same amount of detail.Otherwise the choices cannot be applied to all tables. So it is notpossible that one table just has a Status indicator and another tablehas the top-2 allowing for applying the p%-rule.
+![](Media/Pictures/1000000000000267000001C2FDB62744.png){width=16cm height=11.726cm}
+E.g. if a regional variable is an explanatory variable in two tables,but in one table it is at the level of province and in the other atthe level of municipality, they should nevertheless have the samename. If not τ‑argus will not recognise them as a link.
+The set of linked tables can be protected using the hypercube (seesection [2.8]) and the extended modular approach(see section [2.11]).
+When protecting a set of linked tables the restriction is that alltables are a sub-set of a theoretical cover table. The cover table isformed by building a table spanned by all explanatory variable fromthe individual tables and using the longest code list for eachdimension. The dimensions are decided by looking for different namesof explanatory variables.
+As long as the cover table does not have more than 10 dimensions andall the individual tables have not more that 4 dimensions, the linkedtables approach is possible.
+In the current implementation there is one restriction. For each ofthe spanning variables in the cover table the codelist and thehierarchy should be present in one of the linked tables. For all othertables the codelists and the hierarchy should be a subset of thiscover hierarchy. And of course the set of linked tables should beconsistent. The cells that are logical the same should have exactlythe same value and status. If not the protection of the cover tablewill fail.
+When tabular data is the starting point, it is the responsibility ofthe user that the tables are consistent. This means that the cellvalues of corresponding cells** **are the same and also the status. Ifnot this is an inconsistent situation. The modular approach is verystrict on complete additivity, as the optimisation routines behindmodular require this. The hypercube is a bit more relaxed.
+![](Media/Pictures/10000000000001F900000163BCB65DA5.png){width=14.499cm height=10.084cm}
+The set of linked tables can now be protected by pressing 'Suppressvia modular' or 'suppress via hypercube'. τ-argus will then start anautomatic procedure.
+When the modular approach is selected, the subtables will be loaded inthe cover table. The cover table will then be protected via an extrabatch-run of τ‑argus and in the end the results (suppression pattern)will be transferred to the original subtables. If this procedure mightfail, information could be found in the log-file of τ‑argus. See alsosection [5.8].
+Modular will ask for the selection of the singleton rules as usual.
+![](Media/Pictures/100000000000010D000000BF96B05061.png){width=7.117cm height=5.054cm}
+When making the cover table τ-argus will check for consistencies. E.gcells that are in the overlapping part of a table and who are bydefinition equal should have the same value status, protection leveletc. If τ-argus finds some inconsistencies, it will be reported.
+![](Media/Pictures/10000000000001430000009C33054C73.png){width=8.546cm height=4.128cm}In the example the value of cell "Total,Nr"(4373664.0) and "12,Total" (1441228.0) are not correct. In twodifferent input files the status is not equal.
+![](Media/Pictures/10000000000001C7000001FA9B13F0DA.png){width=12.039cm height=13.388cm}
+When the hypercube is selected, all the input files for the hypercubewill be prepared and the linked table procedure of the hypercube willbe started to protect the set of tables. Also the hypercube does notlike inconsistencies in e.g. the status. These will be reported in thefile PROTO002 in the temp-directory.
+![](Media/Pictures/10000000000001A000000076F66E1F2B.png){width=11.007cm height=3.122cm}
+If successful the following information will be shown:
+![](Media/Pictures/10000000000001470000009C0DE176B2.png){width=9.624cm height=4.713cm}
+When the protection has been completed, the linked tables procedurecan be closed and the individual protected subtables can be inspectedand stored as normal tables.
+
