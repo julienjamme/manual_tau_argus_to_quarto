@@ -2,9 +2,9 @@ library(magrittr)
 if(! dir.exists("chapters")) dir.create("chapters")
 brio::read_file("TauManualV4.1_Rev.md") |>
   # Remove all the anchors
-  stringr::str_remove_all(pattern = "\\{#anchor-[0-9]*\\}") |>
-  stringr::str_remove_all(pattern = "\\{#anchor-[0-9]*\\}\\[\\]") |>
-  stringr::str_remove_all("\\[\\]") |>
+  # stringr::str_remove_all(pattern = "\\{#anchor-[0-9]*\\}") |>
+  # stringr::str_remove_all(pattern = "\\{#anchor-[0-9]*\\}\\[\\]") |>
+  # stringr::str_remove_all("\\[\\]") |>
   stringr::str_remove_all("\n> ") |>
   # One qmd file at each h1 level
   stringr::str_split(pattern = "\n# ") |>
