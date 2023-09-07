@@ -42,7 +42,7 @@ It should be mentioned here that the 'hypercube criterion' is asufficient but no
     > performance (given the natural restrictions of the simple
     > heuristic approach, of course). This mechanism should not be cast
     > out of balance. Therefore, the user's choice of the cell costs
-    > (c.f. [3.1.4](#anchor-44), [4.4.4](#anchor-45)) does not have any
+    > (c.f. [3.1.4], [4.4.4]) does not have any
     > impact, when using the hypercube method.
 
 -   For tables presenting magnitude data, if protection against
@@ -52,7 +52,7 @@ It should be mentioned here that the 'hypercube criterion' is asufficient but no
     > Only cells will be considered feasible as secondary suppressions
     > that are large enough to give enough protection to the target
     > sensitive cell as explained in Giessing (2003).
-!(Media/Pictures/10000000000001860000013A300D2794.png){width="10.689cm"height="8.599cm"}
+![](Media/Pictures/10000000000001860000013A300D2794.png){width=10.689cm height=8.599cm}
 
 -   The standard implementation of the hypercube is that extra
     > protection is given to singleton cells, i.e. cells with only one
@@ -103,8 +103,8 @@ It should be mentioned here that the 'hypercube criterion' is asufficient but no
     > for discussion of this option see for instance Giessing (2003).
 As this is inconsistent with the current view on protected cells inτ-argus this will lead to the following error message:
 
->!(Media/Pictures/100000000000016E0000009C1D394A05.png){width="10.301cm"height="4.713cm"}\The cell value and the codes of those suppressed *frozen* cells arethen displayed by τ-argus :This information is also written in thefile "frozen.txt" in the temp-directory.
-!(Media/Pictures/10000000000001A0000002008F41CBDE.png){width="11.007cm"height="13.547cm"}
+>![](Media/Pictures/100000000000016E0000009C1D394A05.png){width=10.301cm height=4.713cm}\The cell value and the codes of those suppressed *frozen* cells arethen displayed by τ-argus :This information is also written in thefile "frozen.txt" in the temp-directory.
+![](Media/Pictures/10000000000001A0000002008F41CBDE.png){width=11.007cm height=13.547cm}
 When the status of these cells is changed into 'unprotected' beforere-running the hypercube method, the solution will be a feasiblesolution for τ‑argus. Zero cells are consider to be frozen as well inthe hypercube. Those frozen cells can be ignored
 Negative values
 The hypercube method has no problems when certain cells are negative.

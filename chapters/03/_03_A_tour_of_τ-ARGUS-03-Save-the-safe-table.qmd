@@ -31,7 +31,7 @@ When the table is safe it may be written to the hard disk of thecomputer. The us
 6.  A file in the JJ-format. This format has been introduced by JJ
     > Salazar as an intermediate between the normal table and the
     > structures required in the optimisation routines.
-!(Media/Pictures/100000000000019F000001BBAB79FE89.png){width="12.107cm"height="12.813cm"}
-Finally, a report will be generated to a user specified directory.This report will also be displayed on the screen when the table hasbeen written. It will contain details such as table structure, safetyrules (and number of cells failing), secondary suppression method (andnumber of cell failing) and details of any recodes. An example isshown in the Reference section [4.6.2](#anchor-114). As this is anHTML-file it can be viewed easily later or printed.
+![](Media/Pictures/100000000000019F000001BBAB79FE89.png){width=12.107cm height=12.813cm}
+Finally, a report will be generated to a user specified directory.This report will also be displayed on the screen when the table hasbeen written. It will contain details such as table structure, safetyrules (and number of cells failing), secondary suppression method (andnumber of cell failing) and details of any recodes. An example isshown in the Reference section [4.6.2]. As this is anHTML-file it can be viewed easily later or printed.
 
 

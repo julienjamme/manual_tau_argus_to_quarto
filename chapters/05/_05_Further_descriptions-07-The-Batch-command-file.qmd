@@ -1,9 +1,9 @@
 ## The Batch command file
-τ-argus has originally been designed as an interactive program. Acomplete menu-driven design guides you through all steps of theprocess. However a growing need for a batch version emerged afterthat. Since then τ-argus has been extended with a batch version. Thebatch commands are stored in a separate text-file. These commands canbe executed from the command line or via the menu (File\|Open Batchprocess. See section [4.3.4](#anchor-162).
+τ-argus has originally been designed as an interactive program. Acomplete menu-driven design guides you through all steps of theprocess. However a growing need for a batch version emerged afterthat. Since then τ-argus has been extended with a batch version. Thebatch commands are stored in a separate text-file. These commands canbe executed from the command line or via the menu (File\|Open Batchprocess. See section [4.3.4].
 Alternatively the batch file can be used in a real batch environmentas well. Just invoke τ-argus with the command
 Taupath\\TAUARGUS param1 param2 param3 param4
-where Taupath is the name of the directory where you installedτ-argus, param1 is the name of the file with batch commands; seebelow. Param2 is optional, and is the name of the logfile. If omittedτ-argus will write a logbook in the file logbook.txt in thetemp-directory. See also section [5.8](#anchor-257). Param3 is theparameter specifying the temp-directory. If omitted the defaulttemp-directory will be used. Param4 specifies the batch datadirectory.
-When using τ-argus interactively a batch file can be generated via themenu Output\|Write Batch file. See section [4.6.4](#anchor-272). Butwe advise you to inspect the results of this action before using thisgenerated batch-file as certain details might have been omitted.
+where Taupath is the name of the directory where you installedτ-argus, param1 is the name of the file with batch commands; seebelow. Param2 is optional, and is the name of the logfile. If omittedτ-argus will write a logbook in the file logbook.txt in thetemp-directory. See also section [5.8]. Param3 is theparameter specifying the temp-directory. If omitted the defaulttemp-directory will be used. Param4 specifies the batch datadirectory.
+When using τ-argus interactively a batch file can be generated via themenu Output\|Write Batch file. See section [4.6.4]. Butwe advise you to inspect the results of this action before using thisgenerated batch-file as certain details might have been omitted.
 Layout of the batch-file
 A file can be written in a text editor and called from this command.Lines starting with "//" will be considered as comment and will beignored.
 Files mentioned in batch-file are assumed to reside in the samedirectory as the batch-file. If not, the complete directory-pathshould be specified.
@@ -41,7 +41,7 @@ The possible commands are shown here.
 |                 | > chosen for frequency or '-2' for unity or -3    |
 |                 | > for the distance function.                      |
 |                 |                                                   |
-|                 | > (See section [4.4.4](#anchor-45) for the        |
+|                 | > (See section [4.4.4] for the        |
 |                 | > explanation for the use of lambda)              |
 +-----------------+---------------------------------------------------+
 | > CLEAR         | > Clears all and starts a new session.            |
@@ -49,7 +49,7 @@ The possible commands are shown here.
 | > SAFETYRULE    | > This command is used for primary suppression.   |
 |                 |                                                   |
 |                 | > All these parameters are described in the       |
-|                 | > section Specify tables, [4.4.4](#anchor-45)     |
+|                 | > section Specify tables, [4.4.4]     |
 |                 |                                                   |
 |                 | > A set of safety rule specifications separated   |
 |                 | > by a "\|"                                       |
@@ -126,7 +126,7 @@ The possible commands are shown here.
 |                 |                                                   |
 |                 | > ExpandTrivial: if 1 then a line will be applied |
 |                 | > to all trivial levels in the hierarchy; see     |
-|                 | > also section [5.6](#anchor-130)                 |
+|                 | > also section [5.6]                 |
 +-----------------+---------------------------------------------------+
 | > SUPPRESS      | > This command applies the secondary suppression. |
 |                 |                                                   |
@@ -231,7 +231,7 @@ The possible commands are shown here.
 |                 | > replace the cell value by an x for unsafe       |
 |                 | > cells, but give the value and a status          |
 |                 | > indicator. This is a number between 1 and 14    |
-|                 | > see section [4.6.1](#anchor-110).\              |
+|                 | > see section [4.6.1].\              |
 |                 | > For CTA and rounding this means that the        |
 |                 | > original and the modified value are written.    |
 |                 |                                                   |
@@ -257,7 +257,7 @@ The possible commands are shown here.
 |                 | > and do not cause an error. See the Save Table   |
 |                 | > option in the interactive mode to see which     |
 |                 | > options are valid in which situation or section |
-|                 | > [4.6.1](#anchor-145).                           |
+|                 | > [4.6.1].                           |
 +-----------------+---------------------------------------------------+
 | > VERSIONINFO   | > Writes the version of τ‑argus to a file.        |
 |                 |                                                   |

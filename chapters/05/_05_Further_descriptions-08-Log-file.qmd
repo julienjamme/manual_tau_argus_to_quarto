@@ -4,7 +4,7 @@ By default the logfile is the file taulogbook.txt in thetemp-directory. In the o
 The Temp directory is normally something like
 C:\\Users\\*YOURNAME*\\AppData\\Local\\Temp
 where yourname is the name of the current user. Of course in specificcircumstances the network administrator might have a chosen differentlocation.
-When running in batch-mode it is possible to change the name of thelog-file with a batch command in the batch-file or as the secondparameter on the commandline. See section [4.3.4](#anchor-192)
+When running in batch-mode it is possible to change the name of thelog-file with a batch command in the batch-file or as the secondparameter on the commandline. See section [4.3.4]
 23-Oct-2014 16:17:27 : Start of TauArgus run
 23-Oct-2014 16:17:27 : Version 4.0.1 (beta) build 3
 23-Oct-2014 16:17:27 :\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--

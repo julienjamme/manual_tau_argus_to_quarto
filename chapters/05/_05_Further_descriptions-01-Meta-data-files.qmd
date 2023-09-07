@@ -1,12 +1,12 @@
 ## Meta data files
 The meta data plays a vital role in τ-argus. The meta data is alwaysspecified and stored in a separate file. As τ-argus can read bothmicro data as input as tabular data, the meta data descriptions willbe different as well. Nevertheless there are many similarities,especially between meta data for fixed and free format micro data.
-The meta data can always be changed/adapted/entered via the menu itemSpecify\|Metadata, see sections [4.4.1](#anchor-92),[4.4.2](#anchor-215) and [4.4.3](#anchor-218).
+The meta data can always be changed/adapted/entered via the menu itemSpecify\|Metadata, see sections [4.4.1],[4.4.2] and [4.4.3].
 As no standard meta data system is available which is powerful enoughto manage the complete metadata specification necessary forStatistical Disclosure Control we had to develop something speciallyfor τ-argus.
 The metadata file (default extension .RDA) has globally the samestructure for all the different file types that can be handled byτ-argus. i.e fixed format/free format microdata, SPSS system files ortabular data.
 For each variable the name is specified followed by its position inthe file and possible missing values. Following this specificationadditional information can be specified. These specifications alwaysstart with a keyword enclosed by "\<"and"\>" followed by thespecifications.
 The metadata is always stored in a plain text file without any tabs orso. If you wish you could enter/modify the metadata file with e.g.Notepad, but not with Word. It is then your own risk that the metadatais syntactically correct. τ-argus will check the meta data file whenit is read, but to a certain limit. The best way is to modify themetadata via the τ‑argus program.
 Files mentioned in meta-files are assumed to reside in the samedirectory as the meta-file. If not, the complete directory-path shouldbe specified.
-We will first describe in section [5.1.1](#anchor-211)the meta datafile a fixed format micro data file. In the subsequent sections thespecial issues for the other file formats (free format and SPSS) willbe described. In section [5.1.4](#anchor-219) the meta data fortabular data files will be dscribed.
+We will first describe in section [5.1.1]the meta datafile a fixed format micro data file. In the subsequent sections thespecial issues for the other file formats (free format and SPSS) willbe described. In section [5.1.4] the meta data fortabular data files will be dscribed.
 
 ### Meta data for fixed format micro data 
 For fixed format for each variable the starting position and the fieldlength have to be specified. Also the possible missing values must bespecified as well as the role that a variable can play in theSDC-analysis, like spanning variable (also known as explanatoryvariable), cell item, weight, etc. Additional extra specifications canbe entered. as well, like codelists and hierarchical structures.
@@ -26,7 +26,7 @@ The following lines explain specific characteristics of the variable:
 |                          | > The name of the codelist file follows  |
 |                          | > this \<CODELIST\> command. The default |
 |                          | > extension is .CDL. See section         |
-|                          | > [5.3](#anchor-294)                     |
+|                          | > [5.3]                     |
 +--------------------------+------------------------------------------+
 | -   \<NUMERIC\>          | > This numeric variable can be used as   |
 |                          | > cell-item.                             |
@@ -57,12 +57,12 @@ The following lines explain specific characteristics of the variable:
 | -   \<HIERCODELIST\>     | > The name of the file describing the    |
 |                          | > hierarchical structure. Default        |
 |                          | > extension .HRC. See section            |
-|                          | > [5.2](#anchor-295).                    |
+|                          | > [5.2].                    |
 +--------------------------+------------------------------------------+
 | -   \<HIERLEADSTRING\>   | > The string/character that is used to   |
 |                          | > indicate the depth of a code in the    |
 |                          | > hierarchy***.*** See section           |
-|                          | > [5.2](#anchor-296)                     |
+|                          | > [5.2]                     |
 +--------------------------+------------------------------------------+
 | -   \<REQUEST\>          | > This variable contains the status      |
 |                          | > denoting whether or not a respondent   |
@@ -101,7 +101,7 @@ Explanation of the details of the variables
 *'Year'*: For this explanatory/spanning variable each record begins onposition 1, is 2 characters long and missing values are represented by99. It is also recodeable implicitly stating that it is an explanatoryor spanning variable used to create the tables.
 *'IndustryCode'*: For this variable each record begins on position 4and is 5 characters long. Missing values are represented by 99999. Aswell as being recodeable this variable is hierarchical and thehierarchy structure is specified. The first 3 characters are in thetop hierarchy level, the 4^th^ character in the second level and the5^th^ character in the lowest level. As 'Industry' is a 5 digitvariable there are 5 digits specified for the hierarchical structure.This is the reason for the 2 zeros at the end.
 *'Size':* For this variable each record begins on position 9 and is 2characters long, and missing values are represented by 99. It is alsorecodeable.
-*'Region'*: For this variable each record begins on position 12 and is2 characters long. Missing values are represented by 99. Region has acodelist. See section [5.3](#anchor-297). Region is also ahierarchical variable. As the hierarchical structure cannot be derivedfrom the structure of the coding scheme itself the hierarchicalstructure is described in a special .HRC file. See section[5.2](#anchor-298). The hierarchical structure is described with anindentation structure. Therefore the indentation character(HIERLEADSTRING) has to be specified. Here an @ was chosen.
+*'Region'*: For this variable each record begins on position 12 and is2 characters long. Missing values are represented by 99. Region has acodelist. See section [5.3]. Region is also ahierarchical variable. As the hierarchical structure cannot be derivedfrom the structure of the coding scheme itself the hierarchicalstructure is described in a special .HRC file. See section[5.2]. The hierarchical structure is described with anindentation structure. Therefore the indentation character(HIERLEADSTRING) has to be specified. Here an @ was chosen.
 *'Wgt'*: For this variable each record begins on position 14 and is 4characters in length. There is 1 decimal place for these values andthe variable is defined as a weight. A missing value is not allowedhere.
 Two numeric variables are also shown in the above rda file. Thesenumeric variables (not defined as weights) are those to be used ascell items *i.e.* response variables used in creating the table.
 *'Var1'*: This variable begins on position 19 and is 9 characterslong. Missing values are represented by 999999999 and it is numeric.However the missing values for numerical variables will be ignored.The missing values problem should have been solved by e.g. imputationtechniques, but it is outside of the scope of τ‑argus.
@@ -110,7 +110,7 @@ The representation in an rda file for the Request rule and HoldingIndicator are 
 Request rule
 Request 99 1
 \<REQUEST\> \"1\" \"2\"
-Here the request indicator is in column 99 and is one character long.Individuals (or companies) wishing to make use of this rule arerepresented by 1 or 2, Any other value will be interpreted as 'norequest'. Two different parameters-sets for the request rule can bespecified, the first set will be applied to the companies where thefirst code has been specified, the second set to the companies withthe second code. The request rule is further explained in section[4.4.4](#anchor-45).
+Here the request indicator is in column 99 and is one character long.Individuals (or companies) wishing to make use of this rule arerepresented by 1 or 2, Any other value will be interpreted as 'norequest'. Two different parameters-sets for the request rule can bespecified, the first set will be applied to the companies where thefirst code has been specified, the second set to the companies withthe second code. The request rule is further explained in section[4.4.4].
 This rule is used in foreign trade statistics and based on a specialregulation..
 Holding Indicator
 entgroup 101 4
@@ -147,7 +147,7 @@ Var2 10 9999999999
 ..
 
 ### Meta data for SPSS system files
-When the microdata is stored in a SPSS System file τ-argus can alsoread this data. However some special rules have to be taken intoaccount. It is assumed that a valid license for SPSS is available onthe computer, because τ-argus will call SPSS to read the data from thesystemfile. Also part of the metadata will be retrieved from SPSS.However not all meta data needed for τ‑argus is available in SPSS, sothe user has to enter the additional metadata himself. See section[4.4.2](#anchor-216)
+When the microdata is stored in a SPSS System file τ-argus can alsoread this data. However some special rules have to be taken intoaccount. It is assumed that a valid license for SPSS is available onthe computer, because τ-argus will call SPSS to read the data from thesystemfile. Also part of the metadata will be retrieved from SPSS.However not all meta data needed for τ‑argus is available in SPSS, sothe user has to enter the additional metadata himself. See section[4.4.2]
 In fact τ-argus will call SPSS to export the data and will create afixed format scratch file in the temp-directory. After that τ‑arguswill work similar to working with fixed format ASCII files.
 The first time you open a SPSS systemfile, no metadata file can andhas to be specified.
 After opening the SPSS system file in this menu option SPSS will becalled and the meta data (Variable names, field length, missingvalues) available in SPSS will be read. This is a process that takes abit of time and should not be interrupted by pressing any key or so.However no progress information can be showed on the screen.

@@ -80,7 +80,7 @@ The most important items of the menu can also be reached via thecorresponding ic
 
 +-------+-------+-------+-------+-------+-------+-------+-------+
 | > ![  | > ![  | > ![  | > ![  | >     | > ![  | > ![  | > ![  |
-| ](Med | ](Med | ](Med | ](Med | !(M | ](Med | ](Med | ](Med |
+| ](Med | ](Med | ](Med | ](Med | ![](M | ](Med | ](Med | ](Med |
 | ia/Pi | ia/Pi | ia/Pi | ia/Pi | edia/ | ia/Pi | ia/Pi | ia/Pi |
 | cture | cture | cture | cture | Pictu | cture | cture | cture |
 | s/100 | s/100 | s/100 | s/100 | res/1 | s/100 | s/100 | s/100 |
@@ -93,11 +93,11 @@ The most important items of the menu can also be reached via thecorresponding ic
 | png){ | png){ | png){ | png){ | B.png | png){ | png){ | png){ |
 | width | width | width | width | ){wid | width | width | width |
 | ="0.6 | ="0.6 | ="0.6 | ="0.6 | th="0 | ="0.6 | ="0.6 | ="0.6 |
-| 99cm" | 99cm" | 99cm" | 99cm" | .7cm" | 99cm" | 99cm" | 99cm" |
+| 99cm | 99cm | 99cm | 99cm | .7cm | 99cm | 99cm | 99cm |
 | > he  | > he  | > he  | > he  | >     | > he  | > he  | > he  |
 | ight= | ight= | ight= | ight= | heigh | ight= | ight= | ight= |
 | "0.63 | "0.63 | "0.63 | "0.63 | t="0. | "0.63 | "0.69 | "0.63 |
-| 9cm"} | 9cm"} | 9cm"} | 9cm"} | 7cm"} | 9cm"} | 9cm"} | 9cm"} |
+| 9cm} | 9cm} | 9cm} | 9cm} | 7cm} | 9cm} | 9cm} | 9cm} |
 +-------+-------+-------+-------+-------+-------+-------+-------+
 | >     | >     | >     | >     | > Sp  | > Sp  | > S   | > L   |
 |  Open |  Open |  Open |  Open | ecify | ecify | elect | inked |
@@ -109,7 +109,7 @@ The most important items of the menu can also be reached via thecorresponding ic
 
 +--------+--------+--------+--------+--------+--------+----+----+
 | >      | >      | >      | >      | >      | >      |    |    |
-| !(Me | !(Me | !(Me | !(Me | !(Me | !(Me |    |    |
+| ![](Me | ![](Me | ![](Me | ![](Me | ![](Me | ![](Me |    |    |
 | dia/Pi | dia/Pi | dia/Pi | dia/Pi | dia/Pi | dia/Pi |    |    |
 | ctures | ctures | ctures | ctures | ctures | ctures |    |    |
 | /10000 | /10000 | /10000 | /10000 | /10000 | /10000 |    |    |
@@ -120,11 +120,11 @@ The most important items of the menu can also be reached via thecorresponding ic
 | A71.pn | 13E.pn | DAA.pn | 94F.pn | C69.pn | 819.pn |    |    |
 | g){wid | g){wid | g){wid | g){wid | g){wid | g){wid |    |    |
 | th="0. | th="0. | th="0. | th="0. | th="0. | th="0. |    |    |
-| 699cm" | 699cm" | 699cm" | 699cm" | 699cm" | 699cm" |    |    |
+| 699cm | 699cm | 699cm | 699cm | 699cm | 699cm |    |    |
 | >      | >      | >      | >      | >      | >      |    |    |
 |  heigh |  heigh |  heigh |  heigh |  heigh |  heigh |    |    |
 | t="0.6 | t="0.6 | t="0.6 | t="0.6 | t="0.6 | t="0.6 |    |    |
-| 39cm"} | 39cm"} | 39cm"} | 39cm"} | 39cm"} | 39cm"} |    |    |
+| 39cm} | 39cm} | 39cm} | 39cm} | 39cm} | 39cm} |    |    |
 +--------+--------+--------+--------+--------+--------+----+----+
 | > Save | > View | > Ge   | > Help | > O    | >      |    |    |
 | >      | >      | nerate |        | ptions |  About |    |    |

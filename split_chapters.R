@@ -2,6 +2,8 @@ library(magrittr)
 library(purrr)
 library(stringr)
 
+setwd("manual_tau_argus_to_quarto/")
+
 split_chapter_into_section_files <- function(original_file){
   
   dir <- dirname(original_file)
@@ -78,6 +80,7 @@ split_chapter_into_section_files <- function(original_file){
   
 }
 
+if(!dir.exists("chapters")) dir.create("chapters")
 files <- list.files(".", ".qmd", full.names = TRUE)
 
 files |> map(split_chapter_into_section_files)

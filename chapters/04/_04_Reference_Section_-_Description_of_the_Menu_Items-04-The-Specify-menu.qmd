@@ -1,10 +1,10 @@
 ## The Specify menu
-Themetadata structure is different for describing microdata and tabulardata. Therefor the structure of the metadata file (RDA-file) isdifferent and also the window to specify and modify the metadata isdifferent. The version presented depends on the type of data that hasbeen selected. We will first describe the situation for microdata(section [4.4.1](#anchor-205)) and then for tabular data (section[4.4.3](#anchor-206)).
+Themetadata structure is different for describing microdata and tabulardata. Therefor the structure of the metadata file (RDA-file) isdifferent and also the window to specify and modify the metadata isdifferent. The version presented depends on the type of data that hasbeen selected. We will first describe the situation for microdata(section [4.4.1]) and then for tabular data (section[4.4.3]).
 
 ### Specify \| Metafile \[for microdata\]
 Clicking on 'Specify\|Metafile' gives the user the opportunity toeither edit a metafile already read in or to enter the metadatainformation directly at the computer from scratch.
-In this dialog box all attributes of the variables can be specified.This is a good alternative to manually edit the rda-file outsideτ-argus. τ-argus does a moderate checking of the rda-file, but noguarantee can be given for a proper functioning of a manually editedrda-file. The rda-file has been explained in detail in section[5.1](#anchor-173). Here, the editing of a rda-file within τ-argus islooked at.
-!(Media/Pictures/10000000000003810000023790E40C02.png){width="13cm"height="8.216cm"}
+In this dialog box all attributes of the variables can be specified.This is a good alternative to manually edit the rda-file outsideτ-argus. τ-argus does a moderate checking of the rda-file, but noguarantee can be given for a proper functioning of a manually editedrda-file. The rda-file has been explained in detail in section[5.1]. Here, the editing of a rda-file within τ-argus islooked at.
+![](Media/Pictures/10000000000003810000023790E40C02.png){width=13cm height=8.216cm}
 If under File\|Open Microdata an rda-file has been specified, thisdialog box shows the contents of this file. If no .rda-file has beenspecified the information can be specified in this dialog box afterpushing the New button. As default \"New\" is substituted as thevariable name, but the user is expected to fill in a correct name.Apart from defining a new variable, an existing one can be modified ordeleted.
 In the left top field the file type (fixed, free format or SPSS) canbe specified.
 The following attributes for each variable can be specified or edited:
@@ -18,7 +18,7 @@ The following attributes for each variable can be specified or edited:
 -   the number of decimals (for numerical variables).
 
 -   Furthermore, the role of variable can be specified or edited (more
-    > detail on these can be seen in section [4.3.1](#anchor-165)):
+    > detail on these can be seen in section [4.3.1]):
 
 -   *explanatory variable*: This can be used as a spanning variable in
     > the row or column of the table
@@ -27,11 +27,11 @@ The following attributes for each variable can be specified or edited:
 
 -   *weight variable*: This specifies the sampling-weight of the record
     > and is based on the sampling design used.
-The following are special variable types and have not been previouslydescribed. As they are specific to designating safety rules, moredetail is given in section [4.4.4](#anchor-45).
+The following are special variable types and have not been previouslydescribed. As they are specific to designating safety rules, moredetail is given in section [4.4.4].
 Holding Indicator
-The Holding indicator: sometimes groups of records belong together.E.g. if a set of records describe the contributions of one business tovarious cells. So it could be better to apply the confidentialityprotection at the business level in all cells of the table, especiallythe marginal cells. This variable is the group identifier. τ-argusexpects the records of a group to be together in the input datafile.An example is shown in section [4.4.4](#anchor-45).
+The Holding indicator: sometimes groups of records belong together.E.g. if a set of records describe the contributions of one business tovarious cells. So it could be better to apply the confidentialityprotection at the business level in all cells of the table, especiallythe marginal cells. This variable is the group identifier. τ-argusexpects the records of a group to be together in the input datafile.An example is shown in section [4.4.4].
 Request Protection
-The Request protection option is used if the Request Rule under'Specify tables' is to be applied. This variable indicates whether ornot a record asked for protection. This is further explained insection [4.4.4](#anchor-45). Additionally the codes specifying whethera respondent asked for asking protection is to be specified; twodifferent codes are possible, corresponding to two different sets ofparameters in the sensitivity rule. This rule is often used in ForeignTrade Statistics.
+The Request protection option is used if the Request Rule under'Specify tables' is to be applied. This variable indicates whether ornot a record asked for protection. This is further explained insection [4.4.4]. Additionally the codes specifying whethera respondent asked for asking protection is to be specified; twodifferent codes are possible, corresponding to two different sets ofparameters in the sensitivity rule. This rule is often used in ForeignTrade Statistics.
 Distance function
 When finding a pattern of secondary suppressions, most methods try tominimalize some kind of cost function. Often the costs are some valuelinked to each cell.\Some users like to group the secondaries close to the primaries. Theadvantage is that loss of information is grouped in certain parts ofthe table.
 This can be achieved by used the distance function. The costs for eachcell depend on the number of steps the cell is apart from a primary.For each step the cost can be specified, with a maximum of 5.
@@ -40,11 +40,11 @@ Total code
 Optionally a code for the total can be chosen; the default is\"Total\".
 Additional Specifications
 Other attributes, which may be edited or specified are missing valueoptions, (optional, not required) codelist files, (optional, notrequired) hierarchies.
-Details on these options have been given in section[4.3.1](#anchor-166).
+Details on these options have been given in section[4.3.1].
 In summary, for codelist the 'automatic' option simply generates thecodes from the data. Specifying a codelist, allows the user to supplyan additional file (usually .cdl) containing the labels attached tothe codes. These labels are used to enhance the information by τ-arguson the screen. In both cases τ-argus will use the codes that it findsin the datafile.
 Hierarchies can either be derived from the digits in the codes or froma file (usually .hrc)
 **The RDA file**
-Here is an example of a rda file for microdata. This has already beenshown in section [4.3.1](#anchor-167) and is shown here forcompleteness. (Note, the dots at the bottom just means that here ashortened version of the file is presented.)
+Here is an example of a rda file for microdata. This has already beenshown in section [4.3.1] and is shown here forcompleteness. (Note, the dots at the bottom just means that here ashortened version of the file is presented.)
 Year 1 2
 \<RECODEABLE\>
 IndustryCode 4 5 99999
@@ -70,26 +70,26 @@ Var1 19 9 999999999
 Var2 28 10 9999999999
 \<NUMERIC\>
 \<DECIMALS\> 2 ..................
-See also section [5.1.1](#anchor-211) for a more detailed description
+See also section [5.1.1] for a more detailed description
 τ‑argus can also read free format data files. In that case there areslight differences. You select free format in the combo box in theleft upper corner. And specify the separator used. The parameterstarting position is no longer valid and will not be visible.
 
 ### Specify \| Metafile \[SPSS System files\]
-When τ-argus works with a SPSS system file the specification of themeta data is twofold. The data is stored in the SPSS system file andalso the metadata. But the metadata available in the SPSS system fileis not enough for τ‑argus. E.g. no information on hierarchies isavailable. So the SPSS metadata is only a starting point. The metadatahas to be extended. The procedure is that τ‑argus will retrieve theSPSS meta data and then expects the user to extend the metadata, usingthe familiar window; see section [4.4.1](#anchor-92). However certainvariables in the metadata cannot be changed any more as we have toguarantee that the extended metadata is still applicable to the SPSSsystem file. E.g. the length of the variables cannot be modified northe number of decimals nor the name.
+When τ-argus works with a SPSS system file the specification of themeta data is twofold. The data is stored in the SPSS system file andalso the metadata. But the metadata available in the SPSS system fileis not enough for τ‑argus. E.g. no information on hierarchies isavailable. So the SPSS metadata is only a starting point. The metadatahas to be extended. The procedure is that τ‑argus will retrieve theSPSS meta data and then expects the user to extend the metadata, usingthe familiar window; see section [4.4.1]. However certainvariables in the metadata cannot be changed any more as we have toguarantee that the extended metadata is still applicable to the SPSSsystem file. E.g. the length of the variables cannot be modified northe number of decimals nor the name.
 **Selecting the variables.**
 If no RDA file but only the SPS-system file has been specified youhave to select the variables of interest running τ-argus. At thebottom of the metadata window you will find a button "SPSS meta". Thiswill bring you to a window showing all variables available. Make aselection.
-!(Media/Pictures/2000000700002293000036FD523A979B.svm){width="7.056cm"height="11.289cm"}
+![](Media/Pictures/2000000700002293000036FD523A979B.svm){width=7.056cm height=11.289cm}
 If the RDA-file has been specified too this step is not needed.
 **Extending the metadata**
 Secondly the meta data has to be filled in that could not beautomatically retrieved from the system file. SPSS gives only thebasic information like variable names, field length. But northingabout SDC-specific information
 The working of τ-argus when using a SPSS system file is very similarto the fixed format version, However you will see that certain fieldscannot be changed as they are implied by SPSS. This is to guaranteethat the τ-argus metadata is still applicable to the SPSS system file.
-Often τ-argus cannot decide whether a variable from SPSS is a spanningvariable or a response variable (eg AGE recoded numerically in SPSS).Also the hierarchical information has to be added. Refer to section[4.4.1](#anchor-92).
+Often τ-argus cannot decide whether a variable from SPSS is a spanningvariable or a response variable (eg AGE recoded numerically in SPSS).Also the hierarchical information has to be added. Refer to section[4.4.1].
 When the metadata is ready, you can save it in the traditional way.This RDA file can also be used if you want to use this SPS system fileagain.
 For the rest will behave exactly as if a fixed format microdata inputfile had been used. Only if you start computing tables computing thetables τ-argus will automatically first extract the data from SPSSbefore computing the tables. Apart from a small delay you will notnotice this.
-!(Media/Pictures/tau_argus_specify_metadata_spss.png){width="13cm"height="9.931cm"}
+![](Media/Pictures/tau_argus_specify_metadata_spss.png){width=13cm height=9.931cm}
  <!-- 2000000700007D7B00005FC73C8B3BA5.svm -->
 
 ### Specify \| Metafile \[for tabular data\]
-When a tabular datafile has been selected, the metadata window willhave a different form. Clicking on 'Specify\|Metafile' gives theopportunity to either edit the metafile already read in or to enterthe metafile information directly at the computer. In section[5.1.4](#anchor-219) a detailed description of the metafile fortabular data can be found
+When a tabular datafile has been selected, the metadata window willhave a different form. Clicking on 'Specify\|Metafile' gives theopportunity to either edit the metafile already read in or to enterthe metafile information directly at the computer. In section[5.1.4] a detailed description of the metafile fortabular data can be found
 Below is displayed the 'Specify metafile' window for tabular inputdata.
 Above the list of variables the separator used to separate thevariables in the datafile can be specified.
 Here, the variables can be specified or edited as required.
@@ -120,16 +120,16 @@ The options are:
 -   'Status indicator' -- allows a variable in the left-hand pane to be
     > declared as a Status Indicator. Typically cells can be declared as
     > Safe, Unsafe or Protected.
-!(Media/Pictures/100000000000038100000283BA7D8ED4.png){width="14.471cm"height="9.319cm"}
-The codelist and the hierarchy are the same as for microdata, so werefer to section [4.4.1](#anchor-205).
-For explanatory variables the code for the total has to be specified.We strongly recommend strongly that the user also provides the valuesfor the totals himself, but if needed he can ask τ-argus to computethese totals. However it should be noted that when the option tocompute the totals by τ-argus is selected you will lose vitalinformation as the cell status. See also section [4.4.5](#anchor-220)In any case, τ-argus needs these totals as they play an important roleis the structure of a table and also are important for the suppressionmodels.
+![](Media/Pictures/100000000000038100000283BA7D8ED4.png){width=14.471cm height=9.319cm}
+The codelist and the hierarchy are the same as for microdata, so werefer to section [4.4.1].
+For explanatory variables the code for the total has to be specified.We strongly recommend strongly that the user also provides the valuesfor the totals himself, but if needed he can ask τ-argus to computethese totals. However it should be noted that when the option tocompute the totals by τ-argus is selected you will lose vitalinformation as the cell status. See also section [4.4.5]In any case, τ-argus needs these totals as they play an important roleis the structure of a table and also are important for the suppressionmodels.
 
 ### Specify \| Specify Tables \[for microdata\]
-In this dialog box the user can specify the tables which requireprotection. In one run of τ-argus more than one table can bespecified, but the tables will be protected separately unless they arelinked (have at least one variable in common). In that case they canbe protected simultaneously if required. In section[4.5.2](#anchor-223) the idea of linked tables will be discussed.
-Also, the user has to specify the parameters for the dominance rule orp% rule and the minimum number of contributors in a cell, etc. Atpresent τ-argus allows up to 6-dimensional tables, but due to thecapacities of the LP-solver used (either Xpress or cplex depending onthe user's license or the free solver) and the complexity of theoptimisations involved, tables of this complexity can only beprotected by the hypercube method (see section [2.8](#anchor-36) inthe Theory chapter). The solutions based on optimisation are limitedto 4 dimensions.
+In this dialog box the user can specify the tables which requireprotection. In one run of τ-argus more than one table can bespecified, but the tables will be protected separately unless they arelinked (have at least one variable in common). In that case they canbe protected simultaneously if required. In section[4.5.2] the idea of linked tables will be discussed.
+Also, the user has to specify the parameters for the dominance rule orp% rule and the minimum number of contributors in a cell, etc. Atpresent τ-argus allows up to 6-dimensional tables, but due to thecapacities of the LP-solver used (either Xpress or cplex depending onthe user's license or the free solver) and the complexity of theoptimisations involved, tables of this complexity can only beprotected by the hypercube method (see section [2.8] inthe Theory chapter). The solutions based on optimisation are limitedto 4 dimensions.
 Below is a typical window obtained when specifying tables with thep%-rule applied.
-!(Media/Pictures/10000000000002EC000002CD5B540B5F.png){width="15cm"height="14.33cm"}
-In section [4.4](#anchor-174) details of variable definitions in themetafile were explained. Now consider how the variables defined in themetafile are used to create a table along with an associated safetyrule.
+![](Media/Pictures/10000000000002EC000002CD5B540B5F.png){width=15cm height=14.33cm}
+In section [4.4] details of variable definitions in themetafile were explained. Now consider how the variables defined in themetafile are used to create a table along with an associated safetyrule.
 The explanatory (or spanning) variables
 On the left is the listbox with the explanatory variables.
 When the user clicks on '\>' or '\<' the selected variable istransported to the next box. From the left box with explanatoryvariables the user can select the variables that will be used as thespanning variables in the row or the column of the table.
@@ -153,7 +153,7 @@ For example if there is a cell with two contributions:
 10, weight 7
 The cell value = (4 x 100) + (7 x 10) = 470. Without considering theweights there are only two contributors to the cell 100 and 10.However by taking account of the sampling weights the cell values areapproximately 100, 100, 100, 100, 10, 10, 10, 10, 10, 10 and 10. Thelargest two contributors are now 100 and 100. These are regarded asthe largest two values for application of the safety rules. If theweights are not integers, a simple extension is applied.
 The safety rule
-The concept of safety rules is explained in section [2.2](#anchor-22)On the left side of the window the type of rule that can be selectedalong with the value of the parameters is shown. The possible rulesare:
+The concept of safety rules is explained in section [2.2]On the left side of the window the type of rule that can be selectedalong with the value of the parameters is shown. The possible rulesare:
 
 -   Dominance Rule
 
@@ -171,7 +171,7 @@ The rule can be written as:
 $${{\sum\limits_{i = 3}^{c}x_{i}} \geq \frac{p}{100}}x_{1}$$ for thecell to be non-disclosive where *c* is the total number ofcontributors to the cell and the intruder is a respondent in the cell.
 It is important to know that when entering this rule in τ-argus thevalue of *N* refers to the number of intruders in coalition (who wishto group together to estimate the largest contributor).
 A typical example would be that the sum of all reporting unitsexcluding the largest two must be at least 10% of the value of thelargest. Therefore, in τ-argus set p=10 and n =1 as there is just oneintruder in the coalition, respondent *x*~*2*~.
-For the dominance rule and the *p%*-rule the safety ranges required(as a result of applying the rule) can be derived automatically. Thetheory gives formulas for the upper limit only, but for the lowerlimit there is a symmetric range. See e.g. Loeve (2001). (This isreferenced in Section [2.2](#anchor-22) (Theory))
+For the dominance rule and the *p%*-rule the safety ranges required(as a result of applying the rule) can be derived automatically. Thetheory gives formulas for the upper limit only, but for the lowerlimit there is a symmetric range. See e.g. Loeve (2001). (This isreferenced in Section [2.2] (Theory))
 As this rule focusses better on the protection of individualcontributors the τ-argus team is convinced that the p%-rule is to bepreferred over the dominance rule. This is also the advice in Europe.
 Request Rule
 This is a special option applicable in certain countries relating toe.g. foreign trade statistics. Here, cells are protected only when thelargest contributor represents over (for example) 70% of the total andthat contributor asked for protection. Therefore, a variableindicating the request is required.
@@ -190,10 +190,10 @@ If all contributions to a cell are zero, the cell value will be zerotoo. Applyin
 Missing = safe
 If one of the spanning variables of a cell has a code missing, thiscell is often no longer sensitive. The idea behind this is that therespondent in this cell is not identifiable. When this option ischecked, all cells for which at least one spanning variable has amissing value is considered safe, whatever all the sensitivity rulessay. If this option is not checked the normal procedures as for allother cells are applied.
 **Holding Indicator** ****
-*This section on the Holding Indicator is best read after section[4.2](#anchor-122)*
+*This section on the Holding Indicator is best read after section[4.2]*
 In some countries, confidentiality protection is applied to businessesat different levels. For example, as in the U.K. a number of'reporting units' (the lower level of unit) within a cell might belongto an 'enterprise group' (higher level). The level at which theconfidentiality rule is applied clearly matters. The holding indicatorallows such groupings to be defined and used in one or more of thesafety rules.
 This is now illustrated with an example looking at both the p% ruleand the threshold rule at the same time.
-!(Media/Pictures/10000000000002EC000002CD5D19D566.png){width="15cm"height="14.33cm"}
+![](Media/Pictures/10000000000002EC000002CD5D19D566.png){width=15cm height=14.33cm}
 Consider the following dataset
 
 +-------------+-------------+--------------------+--------------------+
@@ -258,8 +258,8 @@ Click on 'Compute Tables' to compute the tables. In case of a SPSSsystem file SP
 When the table(s) has been computed, the first table will be shown.
 
 ### Specify \| Specify tables \[for tabular data\]
-When the 'Specify\|Metafile' option is followed the 'Specify\|Tablemetadata' option is also available and the window is displayed here.This will allow the application of safety rules such as the DominanceRule and the P% rule. Section [4.4.4](#anchor-45) (specifying tablesfrom microdata) will explain these safety rules and other options indetail.
-!(Media/Pictures/1000000000000267000001C2A8F47332.png){width="13cm"height="9.527cm"}
+When the 'Specify\|Metafile' option is followed the 'Specify\|Tablemetadata' option is also available and the window is displayed here.This will allow the application of safety rules such as the DominanceRule and the P% rule. Section [4.4.4] (specifying tablesfrom microdata) will explain these safety rules and other options indetail.
+![](Media/Pictures/1000000000000267000001C2A8F47332.png){width=13cm height=9.527cm}
 In the safety rule frame, the type of rule can be selected along withthe value of the parameters. These are the dominance rule and P% rule.Additionally, the minimum number of contributors can be chosen(threshold rule), via ticking and filling-in the minimum frequencybox. If both the status and some information to apply the sensitivityrules have been supplied, both options 'use given status' and 'usesafety rules' are enabled and the user can chose which one to use.
 Depending one the amount of detail in the table file some options willbe disabled. If no top1 and top2 information is provided, the p%-rulecannot be used.
 There is an option to calculate the possibly missing marginals andtotals. This option should be used only as an emergency. It is alwaysbetter to provide τ‑argus with a full, complete table. When τ-argushas to compute these marginals all safety information will be ignored.

@@ -1,0 +1,35 @@
+# 02_Producing_Safe_tables
+
+{{< include chapters/02/_02_Producing_Safe_tables-01-Introduction.qmd >}}
+
+{{< include chapters/02/_02_Producing_Safe_tables-02-Sensitive-cells-in-magnitude-tables.qmd >}}
+
+{{< include chapters/02/_02_Producing_Safe_tables-03-Sensitive-cells-in-frequency-count-tables.qmd >}}
+
+{{< include chapters/02/_02_Producing_Safe_tables-04-Table-redesign.qmd >}}
+
+{{< include chapters/02/_02_Producing_Safe_tables-05-Secondary-cell-suppression.qmd >}}
+
+{{< include chapters/02/_02_Producing_Safe_tables-06-Information-loss-in-terms-of-cell-costs.qmd >}}
+
+{{< include chapters/02/_02_Producing_Safe_tables-07-Series-of-tables.qmd >}}
+
+{{< include chapters/02/_02_Producing_Safe_tables-08-The-Hypercube-GHMITER-method.qmd >}}
+
+{{< include chapters/02/_02_Producing_Safe_tables-09-Optimisation-models-for-secondary-cell-suppression.qmd >}}
+
+{{< include chapters/02/_02_Producing_Safe_tables-10-The-Modular-approach.qmd >}}
+
+{{< include chapters/02/_02_Producing_Safe_tables-11-The-modular-approach-for-linked-tables.qmd >}}
+
+{{< include chapters/02/_02_Producing_Safe_tables-12-Network-solution-for-large-2-dimensional-tables-with-one-hierarchy.qmd >}}
+
+{{< include chapters/02/_02_Producing_Safe_tables-13-Controlled-Tabular-Adjustment.qmd >}}
+
+{{< include chapters/02/_02_Producing_Safe_tables-14-Controlled-rounding.qmd >}}
+
+{{< include chapters/02/_02_Producing_Safe_tables-15-Audit.qmd >}}
+
+{{< include chapters/02/_02_Producing_Safe_tables-16-Functional-design-of-τ-argus-.qmd >}}
+
+

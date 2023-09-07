@@ -10,14 +10,14 @@ Any secondary suppressed cells are shown in blue (there are none atthis stage, i
     > replaced by an 'X'; this is how the safe table will be published,
     > but without the colours distinguishing between primary and
     > secondary suppressions.
-!(Media/Pictures/100000000000039C000002BA5B0158B8.png){width="13cm"height="12.476cm"}
+![](Media/Pictures/100000000000039C000002BA5B0158B8.png){width=13cm height=12.476cm}
 For some windows, the complete table cannot be seen on the screen. Inthese cases there will be scrollbars at the bottom and the right ofthe table above, which can be used to display the unseen columns.
 For large tables one does not want to see the whole table on thescreen, which is virtually impossible. Therefore τ-argus will showonly the first two levels of the hierarchal structures. If you want tosee more you can open and close certain parts of the table by clickingon the codes with a '+' or "-"sign. This works similar to the way youopen and close certain parts in the Windows explorer. Via 'ChangeView' at the bottom of the screen you can also select the level ofeach hierarchy you want to see both horizontally and vertically.
 Example of a 3-dimensional table
 3-dimensional tables cannot be displayed as a whole. τ-argus can onlyshow a 2-dimensional layer of the table. So for higher dimensionaltable two variables are selected to be show. For the other variablescombo-boxes are shown. These combo-boxes allow for the selection of aspecific layer of the table. Just select the corresponding code andthat layer will be shown.
-If you want to see another combination of two explanatory variables,go to "Select view" at the bottom of the window. See section[4.2.7](#anchor-125).
-!(Media/Pictures/20000007000070CF0000728555E01747.svm){width="15cm"height="15.236cm"}
-!(Media/Pictures/100000000000033C000002BA8CA03719.png){width="13cm"height="9.82cm"}
+If you want to see another combination of two explanatory variables,go to "Select view" at the bottom of the window. See section[4.2.7].
+![](Media/Pictures/20000007000070CF0000728555E01747.svm){width=15cm height=15.236cm}
+![](Media/Pictures/100000000000033C000002BA8CA03719.png){width=13cm height=9.82cm}
 ****Additional information in the View Table window****
 Clicking on a cell in the main body of the table makes informationabout this cell visible in the Cell Information**** pane****.****
 Here, the following information can be seen:
@@ -85,21 +85,21 @@ The format is:
 Code of first spanning variable, Code of second spanning variable,...,Status of cell (u = unsafe, p = protected (not to be suppressed), s =safe).
 Also the cost-function can be changed here for a cell. This will makethe cell more likely to become secondary cell suppression, when thevalue is low, or less likely when the value is high.
 Normally the sensitivity rules will also give the required protectionlevels for unsafe cells. But sometimes, e.g. in the case of 'manualunsafe cells' the user might want to specify the required protectionlevel different for a standard percentage. After the keyword 'pl', thelower and upper protection levels can be given for a specific cell.Note that the protection levels will always have to be positive, asthey are considered as distances from the cell-value.
-A full description of the apriori file is given in section[5.6](#anchor-130).
+A full description of the apriori file is given in section[5.6].
 Nr, 4, u
 Zd, 6, p
 5, 5, c, 1
 Zd, 5, pl, 100, 200
 When the apriori file has been applied τ-argus will show an overviewof the changes that have been made to the table.
-!(Media/Pictures/100000000000017B0000016FE25BE8F1.png){width="13cm"height="12.247cm"}
+![](Media/Pictures/100000000000017B0000016FE25BE8F1.png){width=13cm height=12.247cm}
 
 ### Global recoding
 The recode button will open the recoding options. Recoding is a verypowerful method of protecting a table. Collapsed cells tend to havemore contributors and therefore tend to be much safer.
 Recoding a variable always starts with the original codes. It is notpossible to refine a recoding. If required you must start with acomplete new recoding.
 ****Recoding a non-hierarchical variable****
 There is a clear difference in recoding a hierarchical variablecompared to a non-hierarchical variable.
-In the non-hierarchical case the user can specify a global recodingmanually. Either enter the recoding described below manually or readit from a file. The default extension for this file is .GRC. Detailscan also be found in section [5.4](#anchor-134).
-!(Media/Pictures/100000000000025C000002272F49C698.png){width="13cm"height="11.682cm"}
+In the non-hierarchical case the user can specify a global recodingmanually. Either enter the recoding described below manually or readit from a file. The default extension for this file is .GRC. Detailscan also be found in section [5.4].
+![](Media/Pictures/100000000000025C000002272F49C698.png){width=13cm height=11.682cm}
 There are some standards about how to specify a recode scheme.
 Always the new code is specified first followed by a colon (\`:\`).After that the set of old codes to be collapsed into the new code isspecified.
 All codelists are treated as alphanumeric codes. This means thatcodelists are not restricted to numerical codes only. However, thisalso implies that the codes \'01\' and \' 1\' are considered differentcodes and also \'aaa\' and \'AAA\' are different. In a recoding schemethe user can specify individual codes separated by a comma (,) orranges of codes separated by a hyphen (-). The range is determined bytreating the codes as strings and using the standard stringcomparison. E.g. \`0111\`\< \`11\` as the \`0\` precedes the \`1\` and\`ZZ'\< \`a\` as the uppercase \`Z\` precedes the lowercase \`a\`.Special attention should be paid when a range is given without a leftor right value. This means every code less or greater than the givencode. In the first example, the new category 1 will contain all thecodes less than or equal to 49 and code 4 will contain everythinglarger than or equal to 150.
@@ -134,10 +134,10 @@ Ws,West
 Zd,South
 Pressing the 'Apply' button will actually restructure the table. Thevariable concerned will be displayed in red and additionally an x isshown in front of the variable. If required, recoding can easily beundone by pressing \'undo recoding\'. The window will return to theoriginally coding structure. If there is any error in the recodingsuch as certain codes not being found when pressing the 'Apply'button, an error message will be shown at the bottom of the screen.Alternatively, a warning could be issued; *e.g.* if the user did notrecode all original codes, τ-argus will inform the user. This may havebeen the intention of the user, therefore the program allows it. Inthe above example a τ-argus message informs the user that 4 codes havenot been changed.
 At the end of the operation τ‑argus will ask you whether or not amodified recoding scheme must be saved or not.
-!(Media/Pictures/1000000000000114000000762128121F.png){width="8.184cm"height="3.641cm"}
+![](Media/Pictures/1000000000000114000000762128121F.png){width=8.184cm height=3.641cm}
 Once the 'Close' button has been pressed, τ-argus will present thetable with the recoding applied.
 **Recoding a hierarchical variable **
-!(Media/Pictures/100000000000025C000001CACB45ADD8.png){width="14.979cm"height="9.857cm"}
+![](Media/Pictures/100000000000025C000001CACB45ADD8.png){width=14.979cm height=9.857cm}
 In the hierarchical case the code scheme is typically a tree. Toglobal recode a hierarchical variable requires a user to manipulate atree structure. The standard Windows tree view is used to present ahierarchical code. Certain parts of a tree can be folded and unfoldedwith the standard Windows actions (clicking on '+' and '-').
 The maximum level box at the top of the screen offers the opportunityto fold and unfold the tree to a certain level.
 Pressing the 'Apply' button will actually restructure the table. Ifrequired, a recoding may always be undone.
@@ -155,12 +155,12 @@ There are a number of suppression options, which can be seen on thebottom right 
 -   Optimal
 
 -   Network
-!(Media/Pictures/100000000000031F000002C826BA6194.png){width="14.75cm"height="12.511cm"}
+![](Media/Pictures/100000000000031F000002C826BA6194.png){width=14.75cm height=12.511cm}
 
 #### Hypercube
 This is also known as the ghmiter method. The approach builds on thefact that a suppressed cell in a simple n‑dimensional table withoutsubstructure cannot be disclosed exactly if that cell is contained ina pattern of suppressed, nonzero cells, forming the corner points of ahypercube. Selecting the hypercube method will lead to the followingwindow being showed by τ-argus.
 ghmiter will select secondary suppressions that protect the sensitivecells properly against the risk of inferential disclosure, to someextent, if the user activates the option "*Protection againstinferential disclosure required*". If the option is inactivated, onthe other hand, ghmiter will not check secondary suppressions to besufficiently large.
-For more explanation, and detailed information on the hypercube seesection [2.8](#anchor-36).
+For more explanation, and detailed information on the hypercube seesection [2.8].
 The lower part of the window above enables the user to affect thesetting of two parameters, "Max sub-codelist size" and "Max sub-tablesize" that GHMITER uses for memory allocation.
 If the option 'normal size' is active, the default values mentionedbelow will be used. Ticking the option 'large size' will lead to asetting of 250 and 25000, respectively.
 "Max sub-codelist size" must exceed the largest maximum sub-codelistsize of all explanatory variables of the table. The maximumsub-codelist size of a (hierarchical) variable is the largest numberof categories on the same (hierarchical) level that contribute to thesame category on the (hierarchical) level just above. The defaultvalue for "Max sub codelist size" is 200.
@@ -170,50 +170,50 @@ The Cancel button will bring you back to the main window, withoutprotecting the 
 
 #### Modular
 This partial method will break down the hierarchical table intoseveral non-hierarchical tables, protect them and compose a protectedtable from the smaller tables. As this method uses the optimisationroutines, an LP-solver is required: this can be either Xpress or cplexor a free solver. The routine used can be specified in the Optionsbox, this will be discussed later.
-After starting the modular procedure a little window will be shown.This allows to select three additional rules to be applied. At the endof section [2.10](#anchor-49) more information on these three rulescan be found.
-!(Media/Pictures/100000000000010D000000BFFF6CF9ED.png){width="7.117cm"height="5.054cm"}
+After starting the modular procedure a little window will be shown.This allows to select three additional rules to be applied. At the endof section [2.10] more information on these three rulescan be found.
+![](Media/Pictures/100000000000010D000000BFFF6CF9ED.png){width=7.117cm height=5.054cm}
 
 #### Optimal
 This method protects the (hierarchical) table as a single tablewithout breaking it down into smaller tables. As this method uses theoptimisation routines, an LP-solver is required: this can be eitherXpress or cplex or a free solver. The routine used can be specified inthe Options box, this will be discussed later.
 It is the responsibility of the users of τ-argus to apply for alicence for one of these commercial packages themselves. Informationon obtaining one of these licences will be found in a 'read.me' filesupplied with the software or on the CASC website.
 Almost the same window as in Modular is shown to select the 3additional rules; see above.
-!(Media/Pictures/100000000000010D000000BF7829E019.png){width="7.117cm"height="5.054cm"}
+![](Media/Pictures/100000000000010D000000BF7829E019.png){width=7.117cm height=5.054cm}
 But a further question is asked. The question is 'How much time do youallow the system to compute the optimal solution'.
 When the specified time limit has been reached τ‑argus will ask youwhat to do. This can be twofold, you allow τ‑argus to continue for anew amount of time, or not. The window below allows you to specifythis.
 Note that τ‑argus will check only at a specific location in a cyclewhether or not the time has elapsed.
-!(Media/Pictures/10000000000000EF000001136FAF8FEF.png){width="6.324cm"height="7.276cm"}
+![](Media/Pictures/10000000000000EF000001136FAF8FEF.png){width=6.324cm height=7.276cm}
 
 #### Network
 This is a Network Flow approach for large unstructured 2 dimensionaltables with only one hierarchy (the first variable specified). Theuser has the option of selecting an optimisation method (pprn andDykstra). Both optimisation methods are available free of anadditional licence. By default the Dykstra solution is advised.
-!(Media/Pictures/1000000000000140000001941A4AD131.png){width="9.426cm"height="11.571cm"}
+![](Media/Pictures/1000000000000140000001941A4AD131.png){width=9.426cm height=11.571cm}
 As the network solution is a heuristic to find an approximation of thereal optimal solution, it cannot be expected that always an optimalsolution is found. Nevertheless it is guaranteed that at least a goodfeasible solution is found in a relatively short time. The order inwhich the primaries are provided to the network algorithm couldinfluence the solution found. Therefore three options are available toorder the primaries.
 
 #### **After the suppression**
 After selecting one of the options and after clicking the Suppressbutton, τ-argus will run and display a protected table after informingthe user of the number of cells selected for secondary suppression andthe time taken to perform the operation.
-!(Media/Pictures/10000000000001080000008913CDE9F9.png){width="7.846cm"height="4.177cm"}
+![](Media/Pictures/10000000000001080000008913CDE9F9.png){width=7.846cm height=4.177cm}
 The secondary suppressed cells will be shown in blue.
-!(Media/Pictures/100000000000032F000002BE6D6373C6.png){width="15cm"height="14.524cm"}
-When the user is satisfied with the table it can be saved (see section[4.6.1](#anchor-145) for the possible formats). Via the menuOutput\|Save table you can specify the format and start the process ofsaving a table.
+![](Media/Pictures/100000000000032F000002BE6D6373C6.png){width=15cm height=14.524cm}
+When the user is satisfied with the table it can be saved (see section[4.6.1] for the possible formats). Via the menuOutput\|Save table you can specify the format and start the process ofsaving a table.
 
 ### Controlled Tabular Adjustment
 A method new in version 4.0 of τ-argus is a method called ControlledTabular Adjustment. Instead of suppressing a set of cells, a selectedset of cells is modified. The aim is to change the sensitive cellssuch that the cells are replaced by a value larger that the upperprotection level or smaller than the lower protection level. i.e. farenough away from the unsafe value.. And a set of safe cells ismodified such that the resulting table is additive again. Of course wetry to minimise the information loss.
-More information can be found in section [2.13](#anchor-55).
+More information can be found in section [2.13].
 We have implemented two variants. A standard version, suitable forgeneral cases, and an expert version for the specialists.
-!(Media/Pictures/1000000000000116000000759A081A18.png){width="7.355cm"height="3.096cm"}
+![](Media/Pictures/1000000000000116000000759A081A18.png){width=7.355cm height=3.096cm}
 The standard version will run CTA without any further questions.
 The expert version will show the following window: You can e.g. selectthe solver and the type of CTA. We further refer to the detailed [CTAdocumentation](../tau-Argus_CTA_help.pdf).
-!(Media/Pictures/100000000000043E000002A721797AA0.png){width="12.986cm"height="8.611cm"}
+![](Media/Pictures/100000000000043E000002A721797AA0.png){width=12.986cm height=8.611cm}
 
 ### Controlled rounding
-Controlled rounding (see Section [2.14](#anchor-58) for details onthis method) requires a solver that allows you using the Mixed IntegerModel (MIP). Already in version 3 of τ‑argus we had access to MIP inXpress, thanks to the friendly cooperation of Dash Inc and later FICO.However the restricted version of the cplex licence we used in version3 of τ-argus did not have access to MIP. But from now on you can buy alicence for cplex including MIP. This allows you to use ControlledRounding with a new cplex licence.
+Controlled rounding (see Section [2.14] for details onthis method) requires a solver that allows you using the Mixed IntegerModel (MIP). Already in version 3 of τ‑argus we had access to MIP inXpress, thanks to the friendly cooperation of Dash Inc and later FICO.However the restricted version of the cplex licence we used in version3 of τ-argus did not have access to MIP. But from now on you can buy alicence for cplex including MIP. This allows you to use ControlledRounding with a new cplex licence.
 Also the free solver, soplex, can be used for Controlled Rounding.
 In general, rounding is more appropriate for frequency tables than formagnitude tables.
 The next figure shows the simple frequency table obtained from thetest data using the variable Size and Region.
-!(Media/Pictures/100000000000032C000002C67D708055.png){width="14.471cm"height="11.367cm"}
+![](Media/Pictures/100000000000032C000002C67D708055.png){width=14.471cm height=11.367cm}
 Rounding can be applied also to tables with no unsafe cells. Thechoice of the minimum threshold and whether zeros are safe or not hasan effect on the minimal possible rounding base, as it will beexplained in the *Option* paragraph.
 When rounding has been chosen and the round-button has been pressed,the following window will be shown. You can enter a few parameters.
 Rounding Options
-!(Media/Pictures/100000000000017D000001C6F6D1CF04.png){width="10.081cm"height="12.012cm"}
+![](Media/Pictures/100000000000017D000001C6F6D1CF04.png){width=10.081cm height=12.012cm}
 The controlled rounding window allows to set the following parameters:
 
 -   Rounding Base\
@@ -221,8 +221,8 @@ The controlled rounding window allows to set the following parameters:
     > rounding base is equal to the maximum between the minimum
     > frequency threshold and twice the highest Protection Level set for
     > an unsafe cell (with the Dominance or p-q rule). See the Section
-    > [2.2](#anchor-22) for details on safety rules and section
-    > [2.6](#anchor-34) protection levels. If no rule is specified the
+    > [2.2] for details on safety rules and section
+    > [2.6] protection levels. If no rule is specified the
     > minimum base is 1. Rounding can be used to round a table for
     > "cosmetic" motives.
 
@@ -277,29 +277,29 @@ These options allow to control the quality of the rounded solution.The user can 
 -   Optimal\
     > This option provides the fully optimal controlled rounded
     > solution.
-!(Media/Pictures/10000000000001080000009C6B4EB077.png){width="6.985cm"height="4.128cm"}
+![](Media/Pictures/10000000000001080000009C6B4EB077.png){width=6.985cm height=4.128cm}
 The rounded table
 The next figure shows the rounded table with the values rounded tomultiples of 5. Note that the values that were originally zero (henceempty cells denoted with a dash) are still shown as a dash while thevalues that have been rounded down to zero are shown as zeros.
-!(Media/Pictures/100000000000032C000002C6549686D2.png){width="15cm"height="13.115cm"}
+![](Media/Pictures/100000000000032C000002C6549686D2.png){width=15cm height=13.115cm}
 
 ### The audit procedure
-After the secondary cell suppression procedure has been carried outall cells should have been properly protected. Cell suppressionguarantees that unsafe cells cannot be estimated to a narrowerinterval that the required protection interval. The realised upper andlower bounds can be computed by solving two linear programmingproblems for each unsafe cell. This can be rather an effort doing itall manually, but the audit procedure will do this. Note that theModel solved by the audit procedure will check only for the requiredprotection levels, but not for the additional singleton protection.See also section [2.15](#anchor-67).
+After the secondary cell suppression procedure has been carried outall cells should have been properly protected. Cell suppressionguarantees that unsafe cells cannot be estimated to a narrowerinterval that the required protection interval. The realised upper andlower bounds can be computed by solving two linear programmingproblems for each unsafe cell. This can be rather an effort doing itall manually, but the audit procedure will do this. Note that theModel solved by the audit procedure will check only for the requiredprotection levels, but not for the additional singleton protection.See also section [2.15].
 The Audit option will only be active after secondary cell suppression.By activating the procedure all the linear programming problems forall unsafe (both primary and secondary) cell will be computed. Whencompleted a message will be showing whether all cells were protectedcorrectly.
-!(Media/Pictures/1000000000000125000000896F58AC54.png){width="7.752cm"height="3.625cm"}
+![](Media/Pictures/1000000000000125000000896F58AC54.png){width=7.752cm height=3.625cm}
 If in the unfortunate case the protection was not optimal according tothe audit procedure a list of problems will be shown. Also theproblematic cells will be highlighted.
 For each unsafe cell the realised lower and upper bounds will beshown. If you put your mouse on the value also the distance to thereal value and the corresponding percentage will be shown
-!(Media/Pictures/1000000000000370000003224E4A612F.png){width="13cm"height="11.846cm"}
+![](Media/Pictures/1000000000000370000003224E4A612F.png){width=13cm height=11.846cm}
 
 ### The Options at the Bottom of the table
 At the bottom of this window there are a few additional options. Theseoptions will be described here.
 Select View
 By clicking on Select View a dialog box below pops up. The user canspecify which variable is preferred in the row and the column. In thetwo-dimensional case, the table can only be transposed. In the higherdimensional case, the remaining variables will be in the layer. Forthese layer variables a combo-box will appear at the top of the table,where the user can select a code. This will show the correspondingslice of the table.
-!(Media/Pictures/10000000000001570000011BB372F670.png){width="9.075cm"height="7.488cm"}
+![](Media/Pictures/10000000000001570000011BB372F670.png){width=9.075cm height=7.488cm}
 For a 3 dimensional table, this window is as follows:
-!(Media/Pictures/10000000000001570000011B4F9D22CE.png){width="9.075cm"height="7.488cm"}
+![](Media/Pictures/10000000000001570000011B4F9D22CE.png){width=9.075cm height=7.488cm}
 **Table summary**
 Pressing \'table summary\' provides a table summary giving an overviewof the number of cells according to their status. The example shownhere refers to the case after secondary suppression has beenperformed.
-**!(Media/Pictures/1000000000000267000001777C12E035.png){width="13cm"height="7.925cm"}**
+**![](Media/Pictures/1000000000000267000001777C12E035.png){width=13cm height=7.925cm}**
 The headings in the summary window are as follows:
 *Freq*: The number of cells in each category
 *\# rec*: The number of observations in each category

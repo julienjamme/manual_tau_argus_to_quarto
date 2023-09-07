@@ -225,10 +225,10 @@ Upper protection direction (c)</strong></strong></p>
     > *****lpl***~***p***~** and *****upl***~***p***~**
     > ****$$p \in P$$****
 ****CTA finds the safe table *****x***** closest to *****a*****, usingsome distance ****$$l{(w)}$$****
-****!(Media/Pictures/10000000000003D20000014D15F11B5A.png){width="13cm"height="4.426cm"}****
-!(Media/Pictures/2000000700008418000010AE1E94497F.svm){width="13cm"height="1.64cm"}****
+****![](Media/Pictures/10000000000003D20000014D15F11B5A.png){width=13cm height=4.426cm}****
+![](Media/Pictures/2000000700008418000010AE1E94497F.svm){width=13cm height=1.64cm}****
 ****
-!(Media/Pictures/10000000000003B4000000FF92756D35.png){width="13cm"height="3.496cm"}****
+![](Media/Pictures/10000000000003B4000000FF92756D35.png){width=13cm height=3.496cm}****
 ****Problem (3) has \|*****P*****\| binary variables, 2*****n*****continuous variables and *****m *****+ 4\|*****P*****\| constraints.The size of (3) is much less than that of the cell suppressionproblem. For instance, for a table of 8000 cells, 800 primaries, and4000 linear relations, CTA formulates a MILP of 800 binary variables,16000 continuous variables and 7200 constraints (these figures wouldbe 8000, 12,800,000 and 32,000,000 for cell suppression).****
 ****The benefits of CTA are not limited to a smaller size of theresulting MILP problem. CTA can be easily extended with constraints tomeet some data quality criteria see Cox et al (2005). It has also beenexperimentally observed that the information loss of CTA solutions iscomparable (in some instances even better) to that of cell suppressionsee Castro and Giessing(2006).****
 ****References on the controlled tabular adjustment solution****
