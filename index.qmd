@@ -1,4 +1,10 @@
+# $\tau$-ARGUS User's Manual
+
+**Version 4.1 (revised)**
+
+<!--
 # GHMiter huge in batch
+
 Wijzigingen in table-meta
 \<Solver\> in batch mogelijk
 \<SBS-output\>
@@ -20,10 +26,11 @@ December 2019
     > been made hidden now.
 
 -   All screen shots have been updated, except the SPSS_story.
-τ
-ARGUS
-![](Media/Pictures/100000000000027F000001D1F527FC8E.png){width=14.637cm height=10.663cm}Version 4.1 (revised)
-User's Manual
+-->
+
+
+![](Media/Pictures/100000000000027F000001D1F527FC8E.png){width=14.637cm height=10.663cm}
+
 
 +----------------------------------+----------------------------------+
 | > Project: Argus Open            | > Statistics Netherlands, P.O.   |
@@ -44,8 +51,9 @@ User's Manual
 |                  | > (Network solutions, CTA)                       |
 +------------------+--------------------------------------------------+
 
+<!--
 <div>
 
 </div>
 Contents
-
+-->
