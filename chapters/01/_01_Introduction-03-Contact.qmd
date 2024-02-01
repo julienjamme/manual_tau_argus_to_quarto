@@ -1,3 +1,4 @@
 ## Contact
-Feedback from users will help improve future versions of $\tau$-Argus andis therefore greatly appreciated. The authors of this manual can becontacted directly for suggestions that may lead to improved versionsof $\tau$-Argus in writing or otherwise; e-mail messages can also be sentto [*argus@cbs.nl*](mailto:argus@cbs.nl).
+
+Feedback from users will help improve future versions of $\tau$-Argus and is therefore greatly appreciated. The authors of this manual can be contacted directly for suggestions that may lead to improved versions of $\tau$-Argus in writing or otherwise; e-mail messages can also be sent to [*argus@cbs.nl*](mailto:argus@cbs.nl).
 
