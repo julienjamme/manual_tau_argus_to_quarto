@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.545">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Manual of Tau-Argus - 2&nbsp; 01_Introduction</title>
+<title>Manual of Tau-Argus - 2&nbsp; Introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,28 +62,57 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
 <body class="nav-sidebar floating">
 
-
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_Introduction.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">01_Introduction</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_Introduction.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -87,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Manual of Tau-Argus</a> 
@@ -103,37 +138,37 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">GHMiter huge in batch</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><span class="math inline">\(\tau\)</span>-ARGUS User’s Manual</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_Introduction.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">01_Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_Producing_Safe_tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">02_Producing_Safe_tables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Producing Safe Tables</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_A_tour_of_τ-ARGUS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">03_A_tour_of_τ-ARGUS</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">A tour of <span class="math inline">\(\tau\)</span>-Argus</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_Reference_Section_-_Description_of_the_Menu_Items.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">04_Reference_Section_-_Description_of_the_Menu_Items</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Description of the Menu Items</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_Further_descriptions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">05_Further_descriptions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Further descriptions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -151,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -173,7 +208,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">01_Introduction</span></h1>
+<h1 class="title"><span id="sec-introduction" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></h1>
 </div>
 
 
@@ -186,42 +221,47 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <section id="preface" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="preface"><span class="header-section-number">2.1</span> Preface</h2>
-<p>This is the user's manual for τ-argus version 4.1. τ-argus is asoftware tool designed to assist a data protector in producing safetables. This manual describes the first Open Source version ofτ-argus. After a long history of development at Statistics Netherlands(CBS) as closed software, CBS has decided to convert τ-argus towardsOpen Source. This process coincides with the formal retirement of themain developer, Anco Hundepool. With the financial support of Eurostatwe have been able to do this transformation and we hope that thefuture of τ-argus is secured. The main aim of this transition projectwas to port the current (version 3.5) of τ-argus to an openenvironment. So this version 4.1 does not contain many new extensions.The whole user-interface has been rewritten in java, replacing the oldVisual Basic version. The aim of this transition is to be in an openenvironment and also be platform independent. So also a unix versionis possible now. Nevertheless with respect to the previous release of τ-argus we havemade a few steps forward, and τ-argus now has facilities to protecttables via Controlled Tabular Adjustment (CTA). These routines forthis have been developed by Jordi Castro of the Polytechnic Universityof Catalonia. We have also added the option to use a free open solver (soplex) inaddition to the classical commercial solvers like cplex and Xpress.However we expect that these commercial solvers are still very muchneeded, when we want to protect large serious tables. The purpose of τ-argus is to protect tables against the risk ofdisclosure, i.e.&nbsp;the accidental or deliberate disclosure ofinformation related to individuals from a statistical table. This isachieved by modifying the table so that it contains less detailedinformation. τ-argus allows for several modifications of a table: atable can be redesigned, meaning that rows and columns can becombined; sensitive cells can be suppressed and additional cells toprotect these can be found in some optimum way (secondary cellsuppression). Also rounding and CTA can be used to protect sensitivetables. The purpose of the present manual is to give a potential user enoughinformation so that he can understand the general principles on whichτ-argus is based, and also allow him to use the package. So itcontains both general background information and detailed programinformation. For a more in-depth theoretical background we refer tothe handbook “<a href="http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1119978157.html">Statistical DisclosureControl</a>”by Anco Hundepool, Josep Domingo-Ferrer, Luisa Franconi, SarahGiessing, Eric Schulte Nordholt, Keith Spicer and Peter-Paul de Wolf(ISBN: 978-1-119-97815-2, Wiley, 2012). τ-argus is one of a twin set of disclosure control packages. For theprotection of microdata - μ-argus - has been developed, which is thetwin brother of τ-argus.<sup>[^1]</sup> Also μ-argus has been ported to OpenSource.</p>
+<p>This is the user's manual for <span class="math inline">\(\tau\)</span>-Argus version 4.1. <span class="math inline">\(\tau\)</span>-Argus is a software tool designed to assist a data protector in producing safe tables. This manual describes the first Open Source version of <span class="math inline">\(\tau\)</span>-Argus. After a long history of development at Statistics Netherlands(CBS) as closed software, CBS has decided to convert <span class="math inline">\(\tau\)</span>-Argus towards Open Source. This process coincides with the formal retirement of the main developer, Anco Hundepool. With the financial support of Eurostat we have been able to do this transformation and we hope that thefuture of <span class="math inline">\(\tau\)</span>-Argus is secured. The main aim of this transition project was to port the current (version 3.5) of <span class="math inline">\(\tau\)</span>-Argus to an open environment. So this version 4.1 does not contain many new extensions.The whole user-interface has been rewritten in java, replacing the old Visual Basic version. The aim of this transition is to be in an open environment and also be platform independent. So also a unix versionis possible now. Nevertheless with respect to the previous release of <span class="math inline">\(\tau\)</span>-Argus we have made a few steps forward, and <span class="math inline">\(\tau\)</span>-Argus now has facilities to protect tables via Controlled Tabular Adjustment (CTA). These routines for this have been developed by Jordi Castro of the Polytechnic Universityof Catalonia. We have also added the option to use a free open solver (soplex) in addition to the classical commercial solvers like cplex and Xpress. However we expect that these commercial solvers are still very much needed, when we want to protect large serious tables. The purpose of <span class="math inline">\(\tau\)</span>-Argus is to protect tables against the risk of disclosure, i.e.&nbsp;the accidental or deliberate disclosure of information related to individuals from a statistical table. This is achieved by modifying the table so that it contains less detailed information. <span class="math inline">\(\tau\)</span>-Argus allows for several modifications of a table: a table can be redesigned, meaning that rows and columns can be combined; sensitive cells can be suppressed and additional cells to protect these can be found in some optimum way (secondary cell suppression). Also rounding and CTA can be used to protect sensitive tables. The purpose of the present manual is to give a potential user enough information so that he can understand the general principles on which <span class="math inline">\(\tau\)</span>-Argus is based, and also allow him to use the package. So it contains both general background information and detailed program information. For a more in-depth theoretical background we refer to the handbook “<a href="http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1119978157.html">Statistical DisclosureControl</a>” by Anco Hundepool, Josep Domingo-Ferrer, Luisa Franconi, SarahGiessing, Eric Schulte Nordholt, Keith Spicer and Peter-Paul de Wolf(ISBN: 978-1-119-97815-2, Wiley, 2012). <span class="math inline">\(\tau\)</span>-Argus is one of a twin set of disclosure control packages. For the protection of microdata - <span class="math inline">\(\mu\)</span>-Argus - has been developed, which is the twin brother of <span class="math inline">\(\tau\)</span>-Argus.<sup>[^1]</sup> Also <span class="math inline">\(\mu\)</span>-Argus has been ported to OpenSource.</p>
 </section>
 <section id="about-the-name-argus" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="about-the-name-argus"><span class="header-section-number">2.2</span> About the name ARGUS</h2>
-<p>Somewhat jokingly the name argus can be interpreted as the acronym of’Anti-Re-identification General Utility System’<sup>[^2]</sup>. As a matter offact, the name argus was inspired by a myth of the ancient Greeks. Inthis myth Zeus has a girl friend named Io. Hera, Zeus’ wife, did notapprove of this relationship and turned Io into a cow. She let themonster argus guard Io. argus seemed to be particularly well qualifiedfor this job, because it had a hundred eyes that could watch over Io.If it would fall asleep only two of its eyes were closed. That wouldleave plenty of eyes to watch Io. Zeus was eager to find a way to getIo back. He hired Hermes who could make argus fall asleep by theenchanting music on his flute. When Hermes played his flute to argusthis indeed happened: all its eyes closed, one by one. When Hermes hadsucceeded in making argus fall asleep, argus was decapitated. argus’eyes were planted onto a bird’s tail - a type of bird that we now knowunder the name of peacock. That explains why a peacock has theseeye-shaped marks on its tail. This also explains the picture on thecover of this manual. It is a copperplate engraving of Gerard deLairesse (1641-1711) depicting the process where the eyes of argus arebeing removed and placed on the peacock’s tail.<sup>[^3]</sup> Like the mythological argus, the software is supposed to guardsomething, in this case data. This is where the similarity between themyth and the package is supposed to end, as we believe that thepackage is a winner and not a loser as the mythological argus is.</p>
+<p>Some what jokingly the name Argus can be interpreted as the acronym of ‘Anti-Re-identification General Utility System’<sup>[^2]</sup>. As a matter of fact, the name Argus was inspired by a myth of the ancient Greeks. In this myth Zeus has a girl friend named Io. Hera, Zeus’ wife, did not approve of this relationship and turned Io into a cow. She let the monster Argus guard Io. Argus seemed to be particularly well qualified for this job, because it had a hundred eyes that could watch over Io. If it would fall asleep only two of its eyes were closed. That would leave plenty of eyes to watch Io. Zeus was eager to find a way to getIo back. He hired Hermes who could make Argus fall asleep by the enchanting music on his flute. When Hermes played his flute to Argus this indeed happened: all its eyes closed, one by one. When Hermes had succeeded in making Argus fall asleep, Argus was decapitated. Argus’ eyes were planted onto a bird’s tail - a type of bird that we now know under the name of peacock. That explains why a peacock has these eye-shaped marks on its tail. This also explains the picture on the cover of this manual. It is a copper plate engraving of Gerard de Lairesse (1641-1711) depicting the process where the eyes of Argus are being removed and placed on the peacock’s tail.<sup>[^3]</sup> Like the mythological Argus, the software is supposed to guard something, in this case data. This is where the similarity between the myth and the package is supposed to end, as we believe that the package is a winner and not a loser as the mythological Argus is.</p>
 </section>
 <section id="contact" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="contact"><span class="header-section-number">2.3</span> Contact</h2>
-<p>Feedback from users will help improve future versions of τ-argus andis therefore greatly appreciated. The authors of this manual can becontacted directly for suggestions that may lead to improved versionsof τ-argus in writing or otherwise; e-mail messages can also be sentto <a href="mailto:argus@cbs.nl"><em>argus@cbs.nl</em></a>.</p>
+<p>Feedback from users will help improve future versions of <span class="math inline">\(\tau\)</span>-Argus and is therefore greatly appreciated. The authors of this manual can be contacted directly for suggestions that may lead to improved versions of <span class="math inline">\(\tau\)</span>-Argus in writing or otherwise; e-mail messages can also be sent to <a href="mailto:argus@cbs.nl"><em>argus@cbs.nl</em></a>.</p>
 </section>
 <section id="open-source" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="open-source"><span class="header-section-number">2.4</span> Open Source</h2>
-<p>In the open source world the responsibility for the software isdifferent. The idea behind open source is that the software code is nolonger owned by one institute (Statistics Netherlands), but the sourceis available for anybody. Anybody can also contribute to the code andmake his own extensions. Nevertheless we do not want to have manydifferent versions of the software and many diversions. Therefore there will always be one official version of τ-argus. Inorder to achieve this we need a body to make decisions about furtherdevelopments and extensions for the official τ-argus. Thisresponsibility will be in the hands of a small committee. Thiscommittee will be a sub-group of the Eurostat technical working groupon Statistical Confidentiality. They will make decisions on whether anew extension/correction will be allowed in the official versions ofτ-argus, and also make recommendations for future extensions. Nevertheless the above mentioned email address(<a href="mailto:argus@cbs.nl"><strong>argus@cbs.nl</strong></a>) will remain open forquestions.</p>
+<p>In the open source world the responsibility for the software is different. The idea behind open source is that the software code is no longer owned by one institute (Statistics Netherlands), but the source is available for anybody. Anybody can also contribute to the code and make his own extensions. Nevertheless we do not want to have many different versions of the software and many diversions. Therefore there will always be one official version of <span class="math inline">\(\tau\)</span>-Argus. In order to achieve this we need a body to make decisions about further developments and extensions for the official <span class="math inline">\(\tau\)</span>-Argus. This responsibility will be in the hands of a small committee. This committee will be a sub-group of the Eurostat technical working group on Statistical Confidentiality. They will make decisions on whether a new extension/correction will be allowed in the official versions of <span class="math inline">\(\tau\)</span>-Argus, and also make recommendations for future extensions.</p>
+<p>Nevertheless the above mentioned email address(<a href="mailto:argus@cbs.nl"><strong>argus@cbs.nl</strong></a>) will remain open for questions.</p>
 </section>
 <section id="acknowledgments" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="acknowledgments"><span class="header-section-number">2.5</span> Acknowledgments</h2>
-<p>τ-argus was started as part of the EU 4<sup>th</sup> framework SDC-project andbecame a mature software tool as part of the CASC project that waspartly sponsored by the EU under contract number IST-2000-25069. Thissupport is highly appreciated. The CASC (Computational Aspects ofStatistical Confidentiality) project is part of the Fifth Framework ofthe European Union. The main part of τ-argus has been developed atStatistics Netherlands by Aad van de Wetering and Ramya Ramaswamy (whowrote the kernel) and Anco Hundepool (who wrote the interface).However this software would not have been possible without thecontributions of several others, both partners in the CASC-project andoutsiders. Recent extensions of τ-argus have been made possible duringthe European CENEX-SDC-project (grant agreement25200.2005.001-2005.619), the ESSNet-SDC project (grant agreement25200.2005.003-2007.670.) and the ESSnet SDC harmonisation(61102.2010.004-2010.579). The Open Source transition was supported by a Eurostat grant(61102.2012.001-2012.102). The German partners ****Statistisches Bundesamt (Sarah Giessing andDietz Repsilber) have contributed the ****ghmiter**** software, whichoffers a solution for secondary cell suppression based on hypercubes.Peter-Paul de Wolf has built a ****search algorithm based onnon-hierarchical optimal solutions. This algorithm breaks down a largehierarchical table into small non-hierarchical subtables, which arethen individually protected. A team led by JJ Salazar of theUniversity La Laguna Tenerif****e, Spain, has developed theoptimisation routines. Additionally Jordi Castro, UniversitatPolitècnica de Catalunya. Barcelona, has developed a solution based onnetworks. Jordi Castro also developed the CTA solution.**** ****The controlled rounding procedure has been developed by JJSala****zar in a project sponsored by ONS. In order to enhance theusability τ-****argus**** now also can handle SPSS-system files. Forusing τ-****argus**** in combination with SAS, several reports havebeen produced during the ESSnet projects. These reports and also theSAS-tools are available from the CASC/ESSNet website.**** ****The audit routine was first developed by Karl Luhn of theUniversity of ****Ilmenau and further developed by Destatis. For solving these optimisation problems, τ-argus traditionally usescommercial LP-solvers. Traditionally we use Xpress as an LP-solver.This package is kindly made available for users of τ-argus in aspecial agreement between the τ-argus-team and FICO, the developers ofXpress. Alternatively τ-argus can also use the cplex-package. Userscan choose either solver to link to τ-argus (provided, of course, theypurchase a license for the solver chosen). However users alreadyhaving a licence for one of these packages for other applications canuse their current licence for τ-argus as well. Starting with this Open Source version also free and open solver(Soplex) can now be used to solve the optimisation models behind CellSuppression, rounding and CTA.</p>
+<p><span class="math inline">\(\tau\)</span>-Argus was started as part of the EU 4<sup>th</sup> framework SDC-project andbecame a mature software tool as part of the CASC project that was partly sponsored by the EU under contract number IST-2000-25069. This support is highly appreciated. The CASC (Computational Aspects ofStatistical Confidentiality) project is part of the Fifth Framework ofthe European Union. The main part of <span class="math inline">\(\tau\)</span>-Argus has been developed at Statistics Netherlands by Aad van de Wetering and Ramya Ramaswamy (who wrote the kernel) and Anco Hundepool (who wrote the interface). However this software would not have been possible without the contributions of several others, both partners in the CASC-project and outsiders. Recent extensions of <span class="math inline">\(\tau\)</span>-Argus have been made possible during the European CENEX-SDC-project (grant agreement25200.2005.001-2005.619), the ESSNet-SDC project (grant agreement25200.2005.003-2007.670.) and the ESSnet SDC harmonisation (61102.2010.004-2010.579). The Open Source transition was supported by a Eurostat grant (61102.2012.001-2012.102).</p>
+<p>The German partners Statistisches Bundesamt (Sarah Giessing and Dietz Repsilber) have contributed the ghmiter software, which offers a solution for secondary cell suppression based on hypercubes.Peter-Paul de Wolf has built a search algorithm based on non-hierarchical optimal solutions. This algorithm breaks down a large hierarchical table into small non-hierarchical subtables, which are then individually protected. A team led by JJ Salazar of the University La Laguna Tenerife, Spain, has developed the optimisation routines. Additionally Jordi Castro, Universitat Politècnica de Catalunya, Barcelona, has developed a solution based on networks. Jordi Castro also developed the CTA solution. The controlled rounding procedure has been developed by JJ Salazar in a project sponsored by ONS. In order to enhance the usability <span class="math inline">\(\tau\)</span>-Argus now also can handle SPSS-system files. Forusing <span class="math inline">\(\tau\)</span>-Argus in combination with SAS, several reports have been produced during the ESSnet projects. These reports and also the SAS-tools are available from the CASC/ESSNet website.The audit routine was first developed by Karl Luhn of the University of Ilmenau and further developed by Destatis.</p>
+<p>For solving these optimisation problems, <span class="math inline">\(\tau\)</span>-Argus traditionally uses commercial LP-solvers. Traditionally we use Xpress as an LP-solver. This package is kindly made available for users of <span class="math inline">\(\tau\)</span>-Argus in a special agreement between the <span class="math inline">\(\tau\)</span>-Argus-team and FICO, the developers of Xpress. Alternatively <span class="math inline">\(\tau\)</span>-Argus can also use the cplex-package. Users can choose either solver to link to <span class="math inline">\(\tau\)</span>-Argus (provided, of course, they purchase a license for the solver chosen). However users already having a licence for one of these packages for other applications can use their current licence for <span class="math inline">\(\tau\)</span>-Argus as well. Starting with this Open Source version also free and open solver(Soplex) can now be used to solve the optimisation models behind Cell Suppression, rounding and CTA.</p>
 </section>
 <section id="latest-improvements" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="latest-improvements"><span class="header-section-number">2.6</span> Latest improvements</h2>
 <p>The latest extensions in version 4.1 of τ‑argus are :</p>
 <ul>
-<li><p>New structure of the interface, making the table itself the central &gt; window.</p></li>
+<li><p>New structure of the interface, making the table it self the central window.</p></li>
 <li><p>Controlled Tabular Adjustment.</p></li>
 <li><p>Rewritten Open Source Code in JAVA.</p></li>
-<li><p>C++ dlls for data manipulation and the modular approach have been &gt; adapted for the Open Source compilers.</p></li>
-<li><p>The use of free Open Solvers complementary to the commercial &gt; solvers.</p></li>
+<li><p>C++ dlls for data manipulation and the modular approach have been adapted for the Open Source compilers.</p></li>
+<li><p>The use of free Open Solvers complementary to the commercial solvers.</p></li>
 </ul>
 </section>
 <section id="the-structure-of-this-manual" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="the-structure-of-this-manual"><span class="header-section-number">2.7</span> The structure of this manual</h2>
-<p>The remaining part of this manual consists of four chapters and anindex. In Chapter [2] we will give a short introduction to thetheory and methodology. However for a more fundamental description werefer to the Wiley handbook on Statistical Disclosure Control<sup>[^4]</sup>.This handbook is the result of the joined work of the SDC specialistsin Europe working together for a long period. In Chapter [3] a short tour of τ‑argus will be given as afirst impression of the program. Chapter [4] is the reference manual of τ‑argus. It willdescribe in detail the program. This chapter is organized by the menuitems of τ‑argus. Chapter [5] gives details of files used by τ‑argus. The manual is concluded with an index.</p>
+<p>The remaining part of this manual consists of four chapters and an index. In <a href="02_Producing_Safe_tables.html" class="quarto-xref"><span>Chapter 3</span></a> we will give a short introduction to the theory and methodology. However for a more fundamental description we refer to the Wiley handbook on Statistical Disclosure Control<sup>[^4]</sup>. This handbook is the result of the joined work of the SDC specialists in Europe working together for a long period. In <a href="03_A_tour_of_τ-ARGUS.html" class="quarto-xref"><span>Chapter 4</span></a> a short tour of <span class="math inline">\(\tau\)</span>-Argus will be given as a first impression of the program. <a href="04_Reference_Section_-_Description_of_the_Menu_Items.html" class="quarto-xref"><span>Chapter 5</span></a> is the reference manual of <span class="math inline">\(\tau\)</span>-Argus. It will describe in detail the program. This chapter is organized by the menu items of <span class="math inline">\(\tau\)</span>-Argus. <a href="05_Further_descriptions.html" class="quarto-xref"><span>Chapter 6</span></a> gives details of files used by <span class="math inline">\(\tau\)</span>-Argus. The manual is concluded with an index (<a href="06_Index.html" class="quarto-xref"><span>Chapter 7</span></a>).</p>
 
 
 </section>
@@ -306,10 +346,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -319,8 +358,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -333,6 +381,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -376,6 +543,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -401,6 +569,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -460,20 +654,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">GHMiter huge in batch</span></span>
+      <a href="./index.html" class="pagination-link  aria-label=" &lt;span="" user&#39;s="" manual&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><span class="math inline">\(\tau\)</span>-ARGUS User’s Manual</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02_Producing_Safe_tables.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">02_Producing_Safe_tables</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02_Producing_Safe_tables.html" class="pagination-link" aria-label="<span class='chapter-number'>3</span>&nbsp; <span class='chapter-title'>Producing Safe Tables</span>">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Producing Safe Tables</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

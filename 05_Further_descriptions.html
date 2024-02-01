@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.545">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Manual of Tau-Argus - 6&nbsp; 05_Further_descriptions</title>
+<title>Manual of Tau-Argus - 6&nbsp; Further descriptions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,28 +62,57 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
 <body class="nav-sidebar floating">
 
-
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_Further_descriptions.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">05_Further_descriptions</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_Further_descriptions.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Further descriptions</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -87,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Manual of Tau-Argus</a> 
@@ -103,37 +138,37 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">GHMiter huge in batch</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title"><span class="math inline">\(\tau\)</span>-ARGUS User’s Manual</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_Introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">01_Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_Producing_Safe_tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">02_Producing_Safe_tables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Producing Safe Tables</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_A_tour_of_τ-ARGUS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">03_A_tour_of_τ-ARGUS</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">A tour of <span class="math inline">\(\tau\)</span>-Argus</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_Reference_Section_-_Description_of_the_Menu_Items.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">04_Reference_Section_-_Description_of_the_Menu_Items</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Description of the Menu Items</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_Further_descriptions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">05_Further_descriptions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Further descriptions</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -151,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -180,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">05_Further_descriptions</span></h1>
+<h1 class="title"><span id="sec-further" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Further descriptions</span></span></h1>
 </div>
 
 
@@ -193,14 +228,16 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <section id="meta-data-files" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="meta-data-files"><span class="header-section-number">6.1</span> Meta data files</h2>
-<p>The meta data plays a vital role in τ-argus. The meta data is alwaysspecified and stored in a separate file. As τ-argus can read bothmicro data as input as tabular data, the meta data descriptions willbe different as well. Nevertheless there are many similarities,especially between meta data for fixed and free format micro data. The meta data can always be changed/adapted/entered via the menu itemSpecify|Metadata, see sections [4.4.1],[4.4.2] and [4.4.3]. As no standard meta data system is available which is powerful enoughto manage the complete metadata specification necessary forStatistical Disclosure Control we had to develop something speciallyfor τ-argus. The metadata file (default extension .RDA) has globally the samestructure for all the different file types that can be handled byτ-argus. i.e fixed format/free format microdata, SPSS system files ortabular data. For each variable the name is specified followed by its position inthe file and possible missing values. Following this specificationadditional information can be specified. These specifications alwaysstart with a keyword enclosed by “&lt;”and”&gt;” followed by thespecifications. The metadata is always stored in a plain text file without any tabs orso. If you wish you could enter/modify the metadata file with e.g.Notepad, but not with Word. It is then your own risk that the metadatais syntactically correct. τ-argus will check the meta data file whenit is read, but to a certain limit. The best way is to modify themetadata via the τ‑argus program. Files mentioned in meta-files are assumed to reside in the samedirectory as the meta-file. If not, the complete directory-path shouldbe specified. We will first describe in section [5.1.1]the meta datafile a fixed format micro data file. In the subsequent sections thespecial issues for the other file formats (free format and SPSS) willbe described. In section [5.1.4] the meta data fortabular data files will be dscribed.</p>
+<p>The meta data plays a vital role in <span class="math inline">\(\tau\)</span>-Argus. The meta data is alwaysspecified and stored in a separate file. As <span class="math inline">\(\tau\)</span>-Argus can read bothmicro data as input as tabular data, the meta data descriptions willbe different as well. Nevertheless there are many similarities,especially between meta data for fixed and free format micro data. The meta data can always be changed/adapted/entered via the menu itemSpecify|Metadata, see sections [4.4.1],[4.4.2] and [4.4.3]. As no standard meta data system is available which is powerful enoughto manage the complete metadata specification necessary forStatistical Disclosure Control we had to develop something speciallyfor <span class="math inline">\(\tau\)</span>-Argus. The metadata file (default extension .RDA) has globally the samestructure for all the different file types that can be handled by<span class="math inline">\(\tau\)</span>-Argus. i.e fixed format/free format microdata, SPSS system files ortabular data. For each variable the name is specified followed by its position inthe file and possible missing values. Following this specificationadditional information can be specified. These specifications alwaysstart with a keyword enclosed by “&lt;”and”&gt;” followed by thespecifications. The metadata is always stored in a plain text file without any tabs orso. If you wish you could enter/modify the metadata file with e.g.Notepad, but not with Word. It is then your own risk that the metadatais syntactically correct. <span class="math inline">\(\tau\)</span>-Argus will check the meta data file whenit is read, but to a certain limit. The best way is to modify themetadata via the τ‑argus program. Files mentioned in meta-files are assumed to reside in the samedirectory as the meta-file. If not, the complete directory-path shouldbe specified. We will first describe in section [5.1.1]the meta datafile a fixed format micro data file. In the subsequent sections thespecial issues for the other file formats (free format and SPSS) willbe described. In section [5.1.4] the meta data fortabular data files will be dscribed.</p>
 <section id="meta-data-for-fixed-format-micro-data" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="meta-data-for-fixed-format-micro-data"><span class="header-section-number">6.1.1</span> Meta data for fixed format micro data</h3>
-<p>For fixed format for each variable the starting position and the fieldlength have to be specified. Also the possible missing values must bespecified as well as the role that a variable can play in theSDC-analysis, like spanning variable (also known as explanatoryvariable), cell item, weight, etc. Additional extra specifications canbe entered. as well, like codelists and hierarchical structures. The metafile describes the variables in the microdata file, both therecord layout and some additional information necessary to perform theSDC-process. Each variable is specified on one main line followed byone or more option lines. The first line gives the name of the variable followed by the startingposition for each record, the width of the field and optionally one ortwo missing value indicators for the record. Missing values are notrequired in τ-argus, but they can play a role when deciding whether ornot a cell is unsafe. For fixed format microdata it is not necessary to specify all thevariables in the file. Only the variables used in τ‑argus have to bespecified. When reading the data τ‑argus will ignore the fields notdescribed. This will improve the speed of processing. The following lines explain specific characteristics of the variable:</p>
+<p>For fixed format for each variable the starting position and the fieldlength have to be specified. Also the possible missing values must bespecified as well as the role that a variable can play in theSDC-analysis, like spanning variable (also known as explanatoryvariable), cell item, weight, etc. Additional extra specifications canbe entered. as well, like codelists and hierarchical structures. The metafile describes the variables in the microdata file, both therecord layout and some additional information necessary to perform theSDC-process. Each variable is specified on one main line followed byone or more option lines. The first line gives the name of the variable followed by the startingposition for each record, the width of the field and optionally one ortwo missing value indicators for the record. Missing values are notrequired in <span class="math inline">\(\tau\)</span>-Argus, but they can play a role when deciding whether ornot a cell is unsafe. For fixed format microdata it is not necessary to specify all thevariables in the file. Only the variables used in τ‑argus have to bespecified. When reading the data τ‑argus will ignore the fields notdescribed. This will improve the speed of processing. The following lines explain specific characteristics of the variable:</p>
 <table class="table">
 <colgroup>
 <col style="width: 37%">
@@ -297,15 +334,15 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>Here is an example of a rda file for microdata. (Note, the dots at thebottom just means that here a shortened version of the file ispresented.) YEAR 1 2 99 &lt;RECODEABLE&gt; IndustryCode 4 5 99999 &lt;RECODEABLE&gt; &lt;HIERARCHICAL&gt; &lt;HIERLEVELS&gt; 3 1 1 0 0 Size 9 2 99 &lt;RECODEABLE&gt; Region 12 2 99 &lt;RECODEABLE&gt; &lt;CODELIST&gt; Region.cdl &lt;HIERCODELIST&gt; Region2.hrc &lt;HIERLEADSTRING&gt; @ &lt;HIERARCHICAL&gt; Wgt 14 4 &lt;NUMERIC&gt; &lt;DECIMALS&gt; 1 &lt;WEIGHT&gt; Var1 19 9 999999999 &lt;NUMERIC&gt; Var2 28 10 9999999999 &lt;NUMERIC&gt; &lt;DECIMALS&gt; 2 ………… Explanation of the details of the variables <em>‘Year’</em>: For this explanatory/spanning variable each record begins onposition 1, is 2 characters long and missing values are represented by99. It is also recodeable implicitly stating that it is an explanatoryor spanning variable used to create the tables. <em>‘IndustryCode’</em>: For this variable each record begins on position 4and is 5 characters long. Missing values are represented by 99999. Aswell as being recodeable this variable is hierarchical and thehierarchy structure is specified. The first 3 characters are in thetop hierarchy level, the 4<sup>th</sup> character in the second level and the5<sup>th</sup> character in the lowest level. As ‘Industry’ is a 5 digitvariable there are 5 digits specified for the hierarchical structure.This is the reason for the 2 zeros at the end. <em>‘Size’:</em> For this variable each record begins on position 9 and is 2characters long, and missing values are represented by 99. It is alsorecodeable. <em>‘Region’</em>: For this variable each record begins on position 12 and is2 characters long. Missing values are represented by 99. Region has acodelist. See section [5.3]. Region is also ahierarchical variable. As the hierarchical structure cannot be derivedfrom the structure of the coding scheme itself the hierarchicalstructure is described in a special .HRC file. See section[5.2]. The hierarchical structure is described with anindentation structure. Therefore the indentation character(HIERLEADSTRING) has to be specified. Here an @ was chosen. <em>‘Wgt’</em>: For this variable each record begins on position 14 and is 4characters in length. There is 1 decimal place for these values andthe variable is defined as a weight. A missing value is not allowedhere. Two numeric variables are also shown in the above rda file. Thesenumeric variables (not defined as weights) are those to be used ascell items <em>i.e.</em> response variables used in creating the table. <em>‘Var1’</em>: This variable begins on position 19 and is 9 characterslong. Missing values are represented by 999999999 and it is numeric.However the missing values for numerical variables will be ignored.The missing values problem should have been solved by e.g.&nbsp;imputationtechniques, but it is outside of the scope of τ‑argus. <em>‘Var2’</em>: This variable begins on position 28 and is 10 characterslong. Missing values are represented by 9999999999 and it is numeric.This variable has 2 decimal places. The representation in an rda file for the Request rule and HoldingIndicator are shown here for completeness. Request rule Request 99 1 &lt;REQUEST&gt; "1" "2" Here the request indicator is in column 99 and is one character long.Individuals (or companies) wishing to make use of this rule arerepresented by 1 or 2, Any other value will be interpreted as ‘norequest’. Two different parameters-sets for the request rule can bespecified, the first set will be applied to the companies where thefirst code has been specified, the second set to the companies withthe second code. The request rule is further explained in section[4.4.4]. This rule is used in foreign trade statistics and based on a specialregulation.. Holding Indicator entgroup 101 4 &lt;HOLDING&gt; Here the variable ‘entgroup’ is in column 101 and is four characterslong. This variable is to act as the holding indicator (see section4.3.1 for further explanation). The records of a holding should begrouped together in the input datafile. τ-argus will not searchthrough the whole file to try to find all records for a holding.Before applying the sensitivity rules all records of one holding aregrouped together and treated as one contribution.</p>
+<p>Here is an example of a rda file for microdata. (Note, the dots at thebottom just means that here a shortened version of the file ispresented.) YEAR 1 2 99 &lt;RECODEABLE&gt; IndustryCode 4 5 99999 &lt;RECODEABLE&gt; &lt;HIERARCHICAL&gt; &lt;HIERLEVELS&gt; 3 1 1 0 0 Size 9 2 99 &lt;RECODEABLE&gt; Region 12 2 99 &lt;RECODEABLE&gt; &lt;CODELIST&gt; Region.cdl &lt;HIERCODELIST&gt; Region2.hrc &lt;HIERLEADSTRING&gt; @ &lt;HIERARCHICAL&gt; Wgt 14 4 &lt;NUMERIC&gt; &lt;DECIMALS&gt; 1 &lt;WEIGHT&gt; Var1 19 9 999999999 &lt;NUMERIC&gt; Var2 28 10 9999999999 &lt;NUMERIC&gt; &lt;DECIMALS&gt; 2 ………… Explanation of the details of the variables <em>‘Year’</em>: For this explanatory/spanning variable each record begins onposition 1, is 2 characters long and missing values are represented by99. It is also recodeable implicitly stating that it is an explanatoryor spanning variable used to create the tables. <em>‘IndustryCode’</em>: For this variable each record begins on position 4and is 5 characters long. Missing values are represented by 99999. Aswell as being recodeable this variable is hierarchical and thehierarchy structure is specified. The first 3 characters are in thetop hierarchy level, the 4<sup>th</sup> character in the second level and the5<sup>th</sup> character in the lowest level. As ‘Industry’ is a 5 digitvariable there are 5 digits specified for the hierarchical structure.This is the reason for the 2 zeros at the end. <em>‘Size’:</em> For this variable each record begins on position 9 and is 2characters long, and missing values are represented by 99. It is alsorecodeable. <em>‘Region’</em>: For this variable each record begins on position 12 and is2 characters long. Missing values are represented by 99. Region has acodelist. See section [5.3]. Region is also ahierarchical variable. As the hierarchical structure cannot be derivedfrom the structure of the coding scheme itself the hierarchicalstructure is described in a special .HRC file. See section[5.2]. The hierarchical structure is described with anindentation structure. Therefore the indentation character(HIERLEADSTRING) has to be specified. Here an @ was chosen. <em>‘Wgt’</em>: For this variable each record begins on position 14 and is 4characters in length. There is 1 decimal place for these values andthe variable is defined as a weight. A missing value is not allowedhere. Two numeric variables are also shown in the above rda file. Thesenumeric variables (not defined as weights) are those to be used ascell items <em>i.e.</em> response variables used in creating the table. <em>‘Var1’</em>: This variable begins on position 19 and is 9 characterslong. Missing values are represented by 999999999 and it is numeric.However the missing values for numerical variables will be ignored.The missing values problem should have been solved by e.g.&nbsp;imputationtechniques, but it is outside of the scope of τ‑argus. <em>‘Var2’</em>: This variable begins on position 28 and is 10 characterslong. Missing values are represented by 9999999999 and it is numeric.This variable has 2 decimal places. The representation in an rda file for the Request rule and HoldingIndicator are shown here for completeness. Request rule Request 99 1 &lt;REQUEST&gt; "1" "2" Here the request indicator is in column 99 and is one character long.Individuals (or companies) wishing to make use of this rule arerepresented by 1 or 2, Any other value will be interpreted as ‘norequest’. Two different parameters-sets for the request rule can bespecified, the first set will be applied to the companies where thefirst code has been specified, the second set to the companies withthe second code. The request rule is further explained in section[4.4.4]. This rule is used in foreign trade statistics and based on a specialregulation.. Holding Indicator entgroup 101 4 &lt;HOLDING&gt; Here the variable ‘entgroup’ is in column 101 and is four characterslong. This variable is to act as the holding indicator (see section4.3.1 for further explanation). The records of a holding should begrouped together in the input datafile. <span class="math inline">\(\tau\)</span>-Argus will not searchthrough the whole file to try to find all records for a holding.Before applying the sensitivity rules all records of one holding aregrouped together and treated as one contribution.</p>
 </section>
 <section id="meta-data-for-free-format-micro-data" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="meta-data-for-free-format-micro-data"><span class="header-section-number">6.1.2</span> Meta data for free format micro data</h3>
-<p>For a free-format datafile the RDA is a little bit different. Notablythe first line specifies the separator used. This indicates to τ-argusthat the record description is for a free-format file. And for eachvariable the starting position is no longer specified, as this ismeaningless in a free-format datafile. For the rest there are nodifferences compared to the fixed format version. The example givenabove for a fixed format file will now looks as: &lt;SEPARATOR&gt; "," YEAR 2 99 &lt;RECODEABLE&gt; Sbi 5 99999 &lt;RECODEABLE&gt; &lt;HIERARCHICAL&gt; &lt;HIERLEVELS&gt; 3 1 1 0 0 GK 2 99 &lt;RECODEABLE&gt; Regio 2 99 &lt;RECODEABLE&gt; &lt;CODELIST&gt; REGION.CDL &lt;HIERARCHICAL&gt; &lt;HIERCODELIST&gt; region2.hrc &lt;HIERLEADSTRING&gt; @ Wgt 4 9999 &lt;NUMERIC&gt; &lt;DECIMALS&gt; 1 &lt;WEIGHT&gt; Var1 9 999999999 &lt;NUMERIC&gt; Var2 10 9999999999 &lt;NUMERIC&gt; &lt;DECIMALS&gt; 2 .. ..</p>
+<p>For a free-format datafile the RDA is a little bit different. Notablythe first line specifies the separator used. This indicates to <span class="math inline">\(\tau\)</span>-Argusthat the record description is for a free-format file. And for eachvariable the starting position is no longer specified, as this ismeaningless in a free-format datafile. For the rest there are nodifferences compared to the fixed format version. The example givenabove for a fixed format file will now looks as: &lt;SEPARATOR&gt; "," YEAR 2 99 &lt;RECODEABLE&gt; Sbi 5 99999 &lt;RECODEABLE&gt; &lt;HIERARCHICAL&gt; &lt;HIERLEVELS&gt; 3 1 1 0 0 GK 2 99 &lt;RECODEABLE&gt; Regio 2 99 &lt;RECODEABLE&gt; &lt;CODELIST&gt; REGION.CDL &lt;HIERARCHICAL&gt; &lt;HIERCODELIST&gt; region2.hrc &lt;HIERLEADSTRING&gt; @ Wgt 4 9999 &lt;NUMERIC&gt; &lt;DECIMALS&gt; 1 &lt;WEIGHT&gt; Var1 9 999999999 &lt;NUMERIC&gt; Var2 10 9999999999 &lt;NUMERIC&gt; &lt;DECIMALS&gt; 2 .. ..</p>
 </section>
 <section id="meta-data-for-spss-system-files" class="level3" data-number="6.1.3">
 <h3 data-number="6.1.3" class="anchored" data-anchor-id="meta-data-for-spss-system-files"><span class="header-section-number">6.1.3</span> Meta data for SPSS system files</h3>
-<p>When the microdata is stored in a SPSS System file τ-argus can alsoread this data. However some special rules have to be taken intoaccount. It is assumed that a valid license for SPSS is available onthe computer, because τ-argus will call SPSS to read the data from thesystemfile. Also part of the metadata will be retrieved from SPSS.However not all meta data needed for τ‑argus is available in SPSS, sothe user has to enter the additional metadata himself. See section[4.4.2] In fact τ-argus will call SPSS to export the data and will create afixed format scratch file in the temp-directory. After that τ‑arguswill work similar to working with fixed format ASCII files. The first time you open a SPSS systemfile, no metadata file can andhas to be specified. After opening the SPSS system file in this menu option SPSS will becalled and the meta data (Variable names, field length, missingvalues) available in SPSS will be read. This is a process that takes abit of time and should not be interrupted by pressing any key or so.However no progress information can be showed on the screen. If you reopen an SPSS system file with a meta data file, τ-argus willcheck whether all the variables in the RDA file are really availablein the system file. The RDA file is very similar to the RDA file for a fixed format ASCIIfile. One exception is that the first line will read &lt;SPSS&gt;</p>
+<p>When the microdata is stored in a SPSS System file <span class="math inline">\(\tau\)</span>-Argus can alsoread this data. However some special rules have to be taken intoaccount. It is assumed that a valid license for SPSS is available onthe computer, because <span class="math inline">\(\tau\)</span>-Argus will call SPSS to read the data from thesystemfile. Also part of the metadata will be retrieved from SPSS.However not all meta data needed for τ‑argus is available in SPSS, sothe user has to enter the additional metadata himself. See section[4.4.2] In fact <span class="math inline">\(\tau\)</span>-Argus will call SPSS to export the data and will create afixed format scratch file in the temp-directory. After that τ‑arguswill work similar to working with fixed format ASCII files. The first time you open a SPSS systemfile, no metadata file can andhas to be specified. After opening the SPSS system file in this menu option SPSS will becalled and the meta data (Variable names, field length, missingvalues) available in SPSS will be read. This is a process that takes abit of time and should not be interrupted by pressing any key or so.However no progress information can be showed on the screen. If you reopen an SPSS system file with a meta data file, <span class="math inline">\(\tau\)</span>-Argus willcheck whether all the variables in the RDA file are really availablein the system file. The RDA file is very similar to the RDA file for a fixed format ASCIIfile. One exception is that the first line will read &lt;SPSS&gt;</p>
 </section>
 <section id="meta-data-for-tabular-data-files" class="level3" data-number="6.1.4">
 <h3 data-number="6.1.4" class="anchored" data-anchor-id="meta-data-for-tabular-data-files"><span class="header-section-number">6.1.4</span> Meta data for tabular data files</h3>
@@ -422,20 +459,20 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>For explanatory variables the code for the total has to be specified.We recommend strongly that the user also provides the values for thetotals himself, but if needed he can ask τ-argus to compute thesetotals. In any case, τ-argus needs these totals as they play animportant role is the structure of a table and also are important forthe suppression models. &lt;SEPARATOR&gt; “,” &lt;SAFE&gt; s &lt;UNSAFE&gt; u &lt;PROTECT&gt; p expvar1 &lt;RECODABLE&gt; &lt;TOTCODE&gt; T expvar2 &lt;RECODABLE&gt; &lt;TOTCODE&gt; T respvar &lt;NUMERIC&gt; freq &lt;FREQUENCY&gt; top1 &lt;MAXSCORE&gt; top2 &lt;MAXSCORE&gt; top3 &lt;MAXSCORE&gt; stat &lt;STATUS&gt;</p>
+<p>For explanatory variables the code for the total has to be specified.We recommend strongly that the user also provides the values for thetotals himself, but if needed he can ask <span class="math inline">\(\tau\)</span>-Argus to compute thesetotals. In any case, <span class="math inline">\(\tau\)</span>-Argus needs these totals as they play animportant role is the structure of a table and also are important forthe suppression models. &lt;SEPARATOR&gt; “,” &lt;SAFE&gt; s &lt;UNSAFE&gt; u &lt;PROTECT&gt; p expvar1 &lt;RECODABLE&gt; &lt;TOTCODE&gt; T expvar2 &lt;RECODABLE&gt; &lt;TOTCODE&gt; T respvar &lt;NUMERIC&gt; freq &lt;FREQUENCY&gt; top1 &lt;MAXSCORE&gt; top2 &lt;MAXSCORE&gt; top3 &lt;MAXSCORE&gt; stat &lt;STATUS&gt;</p>
 </section>
 </section>
 <section id="hierarchy-file" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="hierarchy-file"><span class="header-section-number">6.2</span> Hierarchy file</h2>
-<p>Hierarchical structures play an important role in τ-argus. Thehierarchical structures can often be derived from the code itself.E.g. the NACE classification is an example of this. In othersituations the structure is not so clear. In that case the wholestructure has to be specified. A hierarchical structure is in fact atree. And a tree can be described easily by indentation. In τ‑argus ahierarchical structure can be described in a simple text-file, usingNotepad or something similar. The default extension is .HRC. One level deeper means a new sub-node in the tree. In the examplegiven below only two levels are shown, but many more levels areallowed. The indentation (an @ in this example) character has to bespecified separately in the RDA file. Note that the total code is never specified in these .HRC files, asτ‑argus always assumes that the total will be computed. Note also that in this situation the codes 1 to 9 in a fixed formatfile have a leading space. This space should be used in the HRC-fileas well. region2.hrc Nr @ 1 @ 2 @ 3 Os @ 4 @ 5 @ 6 @ 7 Ws @ 8 @ 9 @10 Zd @11 @12</p>
+<p>Hierarchical structures play an important role in <span class="math inline">\(\tau\)</span>-Argus. Thehierarchical structures can often be derived from the code itself.E.g. the NACE classification is an example of this. In othersituations the structure is not so clear. In that case the wholestructure has to be specified. A hierarchical structure is in fact atree. And a tree can be described easily by indentation. In τ‑argus ahierarchical structure can be described in a simple text-file, usingNotepad or something similar. The default extension is .HRC. One level deeper means a new sub-node in the tree. In the examplegiven below only two levels are shown, but many more levels areallowed. The indentation (an @ in this example) character has to bespecified separately in the RDA file. Note that the total code is never specified in these .HRC files, asτ‑argus always assumes that the total will be computed. Note also that in this situation the codes 1 to 9 in a fixed formatfile have a leading space. This space should be used in the HRC-fileas well. region2.hrc Nr @ 1 @ 2 @ 3 Os @ 4 @ 5 @ 6 @ 7 Ws @ 8 @ 9 @10 Zd @11 @12</p>
 </section>
 <section id="codelist-file" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="codelist-file"><span class="header-section-number">6.3</span> Codelist file</h2>
-<p>Codelists can be specified for explanatory variables. The codes arestored in a separate file (default extension .CDL). However the codes are only used to enhance certain windows during theprocessing. τ-argus itself will create the coding schemes for thevariables used during the processing of the datafile. So a code notspecified in the .CDL-file will not cause any problem, only the labelis not available. Also codes specified but not found in the data filewill be ignored. The structure of the file is simple. Each line contains a code and alabel separated by a “,” region.cdl 1,Groningen 2,Friesland 3,Drenthe 4,Overijssel 5,Flevoland 6,Gelderland 7,Utrecht 8,Noord-Holland 9,Zuid-Holland 10,Zeeland 11,Noord-Brabant 12,Limburg Nr,North Os,East Ws,West Zd,South</p>
+<p>Codelists can be specified for explanatory variables. The codes arestored in a separate file (default extension .CDL). However the codes are only used to enhance certain windows during theprocessing. <span class="math inline">\(\tau\)</span>-Argus itself will create the coding schemes for thevariables used during the processing of the datafile. So a code notspecified in the .CDL-file will not cause any problem, only the labelis not available. Also codes specified but not found in the data filewill be ignored. The structure of the file is simple. Each line contains a code and alabel separated by a “,” region.cdl 1,Groningen 2,Friesland 3,Drenthe 4,Overijssel 5,Flevoland 6,Gelderland 7,Utrecht 8,Noord-Holland 9,Zuid-Holland 10,Zeeland 11,Noord-Brabant 12,Limburg Nr,North Os,East Ws,West Zd,South</p>
 </section>
 <section id="global-recode-file" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="global-recode-file"><span class="header-section-number">6.4</span> Global recode file</h2>
-<p>Global recoding is a powerful method to reduce the number of primaryunsafe cells. It reduces the size of the table, but the advantage isalso that the number of primary unsafe cells is reduced. It is aclassical balance to decide how far you should go when applying globalrecodes, but often the resulting table contains much more information,compared to a table with many, but suppressed cells. For a hierarchical coding scheme τ-argus allows recoding viacollapsing the tree structure of the hierarchy. But for non-structuredcodelists the global recode must be specified manually The structure is always: A new code is assigned to a set of old codes.So all the old codes are collapsed into the new code. A set can beeither a list of individual codes, separated by a comma, or aninterval indicated by a lower code, dash upper code. If the upper orlower code is not specified an open interval is assumed. Examples: For a variable with the categories 1,…,182 a possible recode isthen: 1: - 49 2: 50 - 99 3: 100 – 149 4: 150 – This implies that every code below 49 will be recoded into the newcode 1,all codes between 50 and 99 will be the new code 2 etc. For a variable with the categories 01 till 10 a possible recode is: 1: 01 , 02 2: 03 , 04 3: 05 – 07 4: 08 , 09 , 10 An important point is not to forget the colon (:) if it is forgotten,the recode will not work. Recoding 3: 05,06,07 can be shortened to 3: 05-07. And the two different schemes can be combined as well 1: 02 - 06, 09 is a valid recode as well.</p>
+<p>Global recoding is a powerful method to reduce the number of primaryunsafe cells. It reduces the size of the table, but the advantage isalso that the number of primary unsafe cells is reduced. It is aclassical balance to decide how far you should go when applying globalrecodes, but often the resulting table contains much more information,compared to a table with many, but suppressed cells. For a hierarchical coding scheme <span class="math inline">\(\tau\)</span>-Argus allows recoding viacollapsing the tree structure of the hierarchy. But for non-structuredcodelists the global recode must be specified manually The structure is always: A new code is assigned to a set of old codes.So all the old codes are collapsed into the new code. A set can beeither a list of individual codes, separated by a comma, or aninterval indicated by a lower code, dash upper code. If the upper orlower code is not specified an open interval is assumed. Examples: For a variable with the categories 1,…,182 a possible recode isthen: 1: - 49 2: 50 - 99 3: 100 – 149 4: 150 – This implies that every code below 49 will be recoded into the newcode 1,all codes between 50 and 99 will be the new code 2 etc. For a variable with the categories 01 till 10 a possible recode is: 1: 01 , 02 2: 03 , 04 3: 05 – 07 4: 08 , 09 , 10 An important point is not to forget the colon (:) if it is forgotten,the recode will not work. Recoding 3: 05,06,07 can be shortened to 3: 05-07. And the two different schemes can be combined as well 1: 02 - 06, 09 is a valid recode as well.</p>
 </section>
 <section id="the-jj-file-format" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="the-jj-file-format"><span class="header-section-number">6.5</span> The JJ-file format</h2>
@@ -538,15 +575,16 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>Note: changing the status of a cell is of course limited. E.g. aprimary unsafe cell cannot become protected, nor can a protected cellbecome unsafe. The cost function must always be positive. It is recommended to restrict the use of setting a cell status toprotected. If you want to prevent that a cell will become a secondarysuppression, give it a high cost value. If this cell is neverthelesssuppressed, there will be a good reason for this. Putting a cell toprotected, might lead to infeasible problems with all the consequencesof that. An example: Nr, 4, u Zd, 6, p 5, 5, c, 1 <img src="Media/Pictures/10000000000001E8000001CF33753FC7.png" style="width:13cm;height:12.333cm"> The apriori file allows you to feed τ-argus a list of cells where thestatus of the standard rules can be overruled. E.g. a cell must bekept confidential or not for other reasons that just because of thesensitivity rules. By modifying the cost-function you can influencethe selection of the secondaries. E.g. the cells suppressed last yearcan get a preference for the suppression this year by giving this cella small value for the cost-function. The option ‘trivial levels’ is important. Often in a table withhierarchies, some levels in a hierarchy break down in only one lowerlevel. This implies that there are different cells in a table whichare implicitly the same. Changing the status of one of them might leadto inconsistencies and serious problems. E.g. one of the two is unsafeand the other is protected, the solution is impossible. If you selectthe option ‘Expand for trivial levels’, τ‑argus will always modify allcells that are the same if you modify one of them.</p>
+<p>Note: changing the status of a cell is of course limited. E.g. aprimary unsafe cell cannot become protected, nor can a protected cellbecome unsafe. The cost function must always be positive. It is recommended to restrict the use of setting a cell status toprotected. If you want to prevent that a cell will become a secondarysuppression, give it a high cost value. If this cell is neverthelesssuppressed, there will be a good reason for this. Putting a cell toprotected, might lead to infeasible problems with all the consequencesof that. An example: Nr, 4, u Zd, 6, p 5, 5, c, 1 <img src="Media/Pictures/10000000000001E8000001CF33753FC7.png" style="width:13cm;height:12.333cm"> The apriori file allows you to feed <span class="math inline">\(\tau\)</span>-Argus a list of cells where thestatus of the standard rules can be overruled. E.g. a cell must bekept confidential or not for other reasons that just because of thesensitivity rules. By modifying the cost-function you can influencethe selection of the secondaries. E.g. the cells suppressed last yearcan get a preference for the suppression this year by giving this cella small value for the cost-function. The option ‘trivial levels’ is important. Often in a table withhierarchies, some levels in a hierarchy break down in only one lowerlevel. This implies that there are different cells in a table whichare implicitly the same. Changing the status of one of them might leadto inconsistencies and serious problems. E.g. one of the two is unsafeand the other is protected, the solution is impossible. If you selectthe option ‘Expand for trivial levels’, τ‑argus will always modify allcells that are the same if you modify one of them.</p>
 </section>
 <section id="the-batch-command-file" class="level2" data-number="6.7">
 <h2 data-number="6.7" class="anchored" data-anchor-id="the-batch-command-file"><span class="header-section-number">6.7</span> The Batch command file</h2>
-<p>τ-argus has originally been designed as an interactive program. Acomplete menu-driven design guides you through all steps of theprocess. However a growing need for a batch version emerged afterthat. Since then τ-argus has been extended with a batch version. Thebatch commands are stored in a separate text-file. These commands canbe executed from the command line or via the menu (File|Open Batchprocess. See section [4.3.4]. Alternatively the batch file can be used in a real batch environmentas well. Just invoke τ-argus with the command Taupath\TAUARGUS param1 param2 param3 param4 where Taupath is the name of the directory where you installedτ-argus, param1 is the name of the file with batch commands; seebelow. Param2 is optional, and is the name of the logfile. If omittedτ-argus will write a logbook in the file logbook.txt in thetemp-directory. See also section [5.8]. Param3 is theparameter specifying the temp-directory. If omitted the defaulttemp-directory will be used. Param4 specifies the batch datadirectory. When using τ-argus interactively a batch file can be generated via themenu Output|Write Batch file. See section [4.6.4]. Butwe advise you to inspect the results of this action before using thisgenerated batch-file as certain details might have been omitted. Layout of the batch-file A file can be written in a text editor and called from this command.Lines starting with “//” will be considered as comment and will beignored. Files mentioned in batch-file are assumed to reside in the samedirectory as the batch-file. If not, the complete directory-pathshould be specified. The possible commands are shown here.</p>
+<p><span class="math inline">\(\tau\)</span>-Argus has originally been designed as an interactive program. Acomplete menu-driven design guides you through all steps of theprocess. However a growing need for a batch version emerged afterthat. Since then <span class="math inline">\(\tau\)</span>-Argus has been extended with a batch version. Thebatch commands are stored in a separate text-file. These commands canbe executed from the command line or via the menu (File|Open Batchprocess. See section [4.3.4]. Alternatively the batch file can be used in a real batch environmentas well. Just invoke <span class="math inline">\(\tau\)</span>-Argus with the command Taupath\TAUARGUS param1 param2 param3 param4 where Taupath is the name of the directory where you installed<span class="math inline">\(\tau\)</span>-Argus, param1 is the name of the file with batch commands; seebelow. Param2 is optional, and is the name of the logfile. If omitted<span class="math inline">\(\tau\)</span>-Argus will write a logbook in the file logbook.txt in thetemp-directory. See also section [5.8]. Param3 is theparameter specifying the temp-directory. If omitted the defaulttemp-directory will be used. Param4 specifies the batch datadirectory. When using <span class="math inline">\(\tau\)</span>-Argus interactively a batch file can be generated via themenu Output|Write Batch file. See section [4.6.4]. Butwe advise you to inspect the results of this action before using thisgenerated batch-file as certain details might have been omitted. Layout of the batch-file A file can be written in a text editor and called from this command.Lines starting with “//” will be considered as comment and will beignored. Files mentioned in batch-file are assumed to reside in the samedirectory as the batch-file. If not, the complete directory-pathshould be specified. The possible commands are shown here.</p>
 <table class="table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 72%">
+<col style="width: 23%">
+<col style="width: 68%">
+<col style="width: 6%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -556,6 +594,7 @@ ul.task-list li input[type="checkbox"] {
 <td><blockquote class="blockquote">
 <p>Parameters</p>
 </blockquote></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><blockquote class="blockquote">
@@ -564,6 +603,7 @@ ul.task-list li input[type="checkbox"] {
 <td><blockquote class="blockquote">
 <p>Name of the logbook file; If not specified the default logbook file will be used.</p>
 </blockquote></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><blockquote class="blockquote">
@@ -575,6 +615,7 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p>This is equal to starting a line with //</p>
 </blockquote></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><blockquote class="blockquote">
@@ -583,6 +624,7 @@ ul.task-list li input[type="checkbox"] {
 <td><blockquote class="blockquote">
 <p>Data file name with microdata</p>
 </blockquote></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><blockquote class="blockquote">
@@ -591,6 +633,7 @@ ul.task-list li input[type="checkbox"] {
 <td><blockquote class="blockquote">
 <p>File name containing tabular data</p>
 </blockquote></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><blockquote class="blockquote">
@@ -599,26 +642,15 @@ ul.task-list li input[type="checkbox"] {
 <td><blockquote class="blockquote">
 <p>Metadata file name</p>
 </blockquote></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><blockquote class="blockquote">
 <p>SPECIFYTABLE</p>
 </blockquote></td>
-<td><blockquote class="blockquote">
-<p>"ExpVar1""ExpVar2""ExpVar3"|"RespVar"|<br>
-"ShadowVar"|"Costvar"|Lambda</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>For frequency tables you can specify &lt;FREQ&gt; as Response Variable</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>ShadowVar, Costvar and Lambda are optional. If not specified then ShadowVar, Costvar equal the Response Variable. For lambda the default is 1.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>If the cost variable is specified either a numerical variable can be specified or ‘-1’ is chosen for frequency or ‘-2’ for unity or -3 for the distance function.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>(See section [4.4.4] for the | explanation for the use of lambda)</p>
+<td colspan="2"><blockquote class="blockquote">
+<pre><code>                                            |</code></pre>
+<p>"ExpVar1""ExpVar2""ExpVar3"|"RespVar"|&nbsp;| "ShadowVar"|"Costvar"|Lambda | | For frequency tables you can specify &lt;FREQ&gt; | as Response Variable | | ShadowVar, Costvar and Lambda are optional. If | not specified then ShadowVar, Costvar equal the | Response Variable. For lambda the default is 1. | | If the cost variable is specified either a | numerical variable can be specified or ‘-1’ is | chosen for frequency or ‘-2’ for unity or -3 | for the distance function. | | (See section [4.4.4] for the | explanation for the use of lambda) |</p>
 </blockquote></td>
 </tr>
 <tr class="even">
@@ -628,58 +660,14 @@ ul.task-list li input[type="checkbox"] {
 <td><blockquote class="blockquote">
 <p>Clears all and starts a new session.</p>
 </blockquote></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><blockquote class="blockquote">
 <p>SAFETYRULE</p>
 </blockquote></td>
-<td><blockquote class="blockquote">
-<p>This command is used for primary suppression.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>All these parameters are described in the section Specify tables, [4.4.4] |</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>A set of safety rule specifications separated by a “|”</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>Each safety spec starts with "P", "NK" "ZERO", "FREQ", "REQ","WGT","MIS" or "MAN" and between brackets the parameters</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>P</strong>: (p,n) with the n optional. (default = 1). So (20,3). A p% rule with p=20% and n=3</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>NK: (</strong>n,k<strong>).</strong> A n,k-dominance rule**** ****with n = the size of the coalition and k the max. percentage.****</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>ZERO</strong>: (ZeroSafetyRange)</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>FREQ</strong>:(MinFreq, FrequencySafetyRange)</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>REQ</strong>: (Percent1, Percent2, SafetyMargin)</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>All rules can appear several times,</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>The first two <strong>P, NK</strong> are for the individual level; the following two for the holding level,</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>The first <strong>FREQ</strong> and <strong>REQ</strong> are at the individual level the second one is for the holding.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>ZERO</strong>, the zero safety range parameter, can be given only once for each safety rule.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>MIS</strong>: 0 = cells with a missing code are unsafe if the safety-rules are violated; 1 = these cells are always safe. (Default = 0.)</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>WGT</strong>: 0 no weights are used, 1 = apply weights for computing the tables and in the safety rules Default = 0</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>MAN</strong>: (Manual safety margin). This margin is used e.g.&nbsp;of a table with only the status is read, or if via the apriori option a cell is set to manually unsafe. The default value = 20.</p>
+<td colspan="2"><blockquote class="blockquote">
+<p>This command is used for primary suppression. | | All these parameters are described in the | section Specify tables, [4.4.4] | | A set of safety rule specifications separated | by a “|” | | Each safety spec starts with "P", "NK" | "ZERO", "FREQ", "REQ","WGT","MIS" or | "MAN" and between brackets the parameters | | <strong>P</strong>: (p,n) with the n optional. (default = | 1). So (20,3). A p% rule with p=20% and n=3 | | <strong>NK: (</strong>n,k<strong>).</strong> A n,k-dominance rule**** | ****with n = the size of the coalition and k | the max. percentage.**** | | <strong>ZERO</strong>: (ZeroSafetyRange) | | <strong>FREQ</strong>:(MinFreq, FrequencySafetyRange) | | <strong>REQ</strong>: (Percent1, Percent2, SafetyMargin) | | All rules can appear several times, | | The first two <strong>P, NK</strong> are for the individual | level; the following two for the holding level, | | The first <strong>FREQ</strong> and <strong>REQ</strong> are at the | individual level the second one is for the | holding. | | <strong>ZERO</strong>, the zero safety range parameter, can | be given only once for each safety rule. | | <strong>MIS</strong>: 0 = cells with a missing code are | unsafe if the safety-rules are violated; 1 = | these cells are always safe. (Default = 0.) | | <strong>WGT</strong>: 0 no weights are used, 1 = apply | weights for computing the tables and in the | safety rules Default = 0 | | <strong>MAN</strong>: (Manual safety margin). This margin is | used e.g.&nbsp;of a table with only the status is | read, or if via the apriori option a cell is | set to manually unsafe. The default value = 20. |</p>
 </blockquote></td>
 </tr>
 <tr class="even">
@@ -689,6 +677,7 @@ ul.task-list li input[type="checkbox"] {
 <td><blockquote class="blockquote">
 <p>Just reads the microdata file and calculates the table(s), no parameters are required</p>
 </blockquote></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><blockquote class="blockquote">
@@ -707,25 +696,14 @@ But this might cause problems in the further process.</p>
 <blockquote class="blockquote">
 <p>Default: do not compute the missing totals. But an error will be reported if the totals are not correct.</p>
 </blockquote></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><blockquote class="blockquote">
 <p>APRIORI</p>
 </blockquote></td>
-<td><blockquote class="blockquote">
-<p>This reads an a-priori file</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>The parameters are: Filename, Table number, the separator, IgnoreError, ExpandTrivial</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>The Separator should now be enclosed in double-quotes</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>IgnoreError: if 1 then lines causing an error will be ignored.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>ExpandTrivial: if 1 then a line will be applied to all trivial levels in the hierarchy; see also section [5.6] |</p>
+<td colspan="2"><blockquote class="blockquote">
+<p>This reads an a-priori file | | The parameters are: Filename, Table number, the | separator, IgnoreError, ExpandTrivial | | The Separator should now be enclosed in | double-quotes | | IgnoreError: if 1 then lines causing an error | will be ignored. | | ExpandTrivial: if 1 then a line will be applied | to all trivial levels in the hierarchy; see | also section [5.6] |</p>
 </blockquote></td>
 </tr>
 <tr class="odd">
@@ -798,81 +776,22 @@ But this might cause problems in the further process.</p>
 <blockquote class="blockquote">
 <p><strong>CTA</strong>(TabNo)</p>
 </blockquote></td>
+<td></td>
 </tr>
 <tr class="even">
 <td><blockquote class="blockquote">
 <p>SOLVER</p>
 </blockquote></td>
-<td><blockquote class="blockquote">
-<p>Indicate whether you will be using cplex, Xpress or the free solver. Only needed when the type of solver has not yet been specified on the computer during a previous interactive session of τ-argus or if you want to use a different solver. The only parameter allowed is cplex, xpress or free.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>If you select cplex the name of the cplex licence file can be specified here. But if you have already made known this licence file to τ-argus in a previous session you can omit it here.</p>
+<td colspan="2"><blockquote class="blockquote">
+<p>Indicate whether you will be using cplex, | Xpress or the free solver. Only needed when the | type of solver has not yet been specified on | the computer during a previous interactive | session of <span class="math inline">\(\tau\)</span>-Argus or if you want to use a different solver. The only parameter allowed is | cplex, xpress or free. | | If you select cplex the name of the cplex | licence file can be specified here. But if you | have already made known this licence file to | <span class="math inline">\(\tau\)</span>-Argus in a previous session you can omit it here. |</p>
 </blockquote></td>
 </tr>
 <tr class="odd">
 <td><blockquote class="blockquote">
 <p>WRITETABLE</p>
 </blockquote></td>
-<td><blockquote class="blockquote">
-<p>TabNo, P1, P2,Filename</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>P1: Output type:</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>1. CVS-file</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>2. CSV file for pivot table</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>3. Code, value file</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>4. SBS-output format</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>5. Intermediate file</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>6. JJ format file</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>P2: Options String. This string contains a series of 3 letter combinations, the first two are the option and the third one can only be + or -, indicating whether or not this option is selected or not</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>The options are:</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>AR: write the audit results in an intermediate file</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>AS: write additionally the status; i.e.&nbsp;do not replace the cell value by an x for unsafe cells, but give the value and a status indicator. This is a number between 1 and 14 see section [4.6.1].&nbsp; | For CTA and rounding this means that the original and the modified value are written.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>FL: write variable names on the first line</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>HI: write holding level information in an intermediate file</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>HL: write also the hierarchical levels in a SBS file</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>QU: embed codes in quotes</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>SE: Suppress empty cells</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>SO: write only the status in an intermediate file</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>TR: remove trivial levels in the output file.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><em>Note:</em> not all options can be used in all situations. Such options will simply be ignored and do not cause an error. See the Save Table option in the interactive mode to see which options are valid in which situation or section [4.6.1]. |</p>
+<td colspan="2"><blockquote class="blockquote">
+<p>TabNo, P1, P2,Filename | | P1: Output type: | | 1. CVS-file | | 2. CSV file for pivot table | | 3. Code, value file | | 4. SBS-output format | | 5. Intermediate file | | 6. JJ format file | | P2: Options String. This string contains a | series of 3 letter combinations, the first two | are the option and the third one can only be + | or -, indicating whether or not this option is | selected or not | | The options are: | | AR: write the audit results in an intermediate | file | | AS: write additionally the status; i.e.&nbsp;do not | replace the cell value by an x for unsafe | cells, but give the value and a status | indicator. This is a number between 1 and 14 | see section [4.6.1].&nbsp; | For CTA and rounding this means that the | original and the modified value are written. | | FL: write variable names on the first line | | HI: write holding level information in an | intermediate file | | HL: write also the hierarchical levels in a SBS | file | | QU: embed codes in quotes | | SE: Suppress empty cells | | SO: write only the status in an intermediate | file | | TR: remove trivial levels in the output file. | | <em>Note:</em> not all options can be used in all | situations. Such options will simply be ignored | and do not cause an error. See the Save Table | option in the interactive mode to see which | options are valid in which situation or section | [4.6.1]. |</p>
 </blockquote></td>
 </tr>
 <tr class="even">
@@ -885,6 +804,7 @@ But this might cause problems in the further process.</p>
 <blockquote class="blockquote">
 <p>The name of the file is the only parameter of this command. Warning: An existing file will be overwritten.</p>
 </blockquote></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td><blockquote class="blockquote">
@@ -896,6 +816,7 @@ But this might cause problems in the further process.</p>
 <blockquote class="blockquote">
 <p>However if you start the batch file interactively from the menu of τ‑ argus you will always end in the GUI.</p>
 </blockquote></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -903,7 +824,7 @@ But this might cause problems in the further process.</p>
 </section>
 <section id="log-file" class="level2" data-number="6.8">
 <h2 data-number="6.8" class="anchored" data-anchor-id="log-file"><span class="header-section-number">6.8</span> Log file</h2>
-<p>τ-argus will write a log-file. This describes among others thecommands used during the runs of τ-argus. If gives a log of the use ofτ-argus. Especially for the batch process this file could give someinformation about the progress of the process. Notably is some errorhas occurred, as a batch version cannot inform the user interactively.Below is given a small example. Please note that new information isalways added to this file. So from time to time the user should deletethis file to clean his computer. By default the logfile is the file taulogbook.txt in thetemp-directory. In the options window the name of the logfile can bechanged for the remainder of the current session and future sessions. The Temp directory is normally something like C:\Users\<em>YOURNAME</em>\AppData\Local\Temp where yourname is the name of the current user. Of course in specificcircumstances the network administrator might have a chosen differentlocation. When running in batch-mode it is possible to change the name of thelog-file with a batch command in the batch-file or as the secondparameter on the commandline. See section [4.3.4] 23-Oct-2014 16:17:27 : Start of TauArgus run 23-Oct-2014 16:17:27 : Version 4.0.1 (beta) build 3 23-Oct-2014 16:17:27 :-------------------------- 23-Oct-2014 16:17:35 : Start of batch procedure; file:D:\TauJava3\Datata\manual.arb 23-Oct-2014 16:17:35 : &lt;OPENMICRODATA&gt; "C:\ProgramFiles\TauARGUS\data\tau_testW.asc" 23-Oct-2014 16:17:35 : &lt;OPENMETADATA&gt; "C:\ProgramFiles\TauARGUS\data\tau_testW.rda" 23-Oct-2014 16:17:35 : &lt;SPECIFYTABLE&gt;"Size""region"|"var2"|"var3"|"var3" 23-Oct-2014 16:17:35 : &lt;SAFETYRULE&gt; P(20,3)|FREQ(3,30)|ZERO(20) 23-Oct-2014 16:17:35 : &lt;SPECIFYTABLE&gt;"Size""Year"|"var2"|"var3"|"var3" 23-Oct-2014 16:17:35 : &lt;SAFETYRULE&gt; NK(3,70)|FREQ(3,30)|ZERO(20) 23-Oct-2014 16:17:35 : &lt;READMICRODATA&gt; 23-Oct-2014 16:17:35 : Start explore file: C:\ProgramFiles\TauARGUS\data\tau_testW.asc 23-Oct-2014 16:17:35 : Start computing tables 23-Oct-2014 16:17:36 : Table: Size x Region | Var2 has been specified 23-Oct-2014 16:17:36 : Table: Size x Year | Var2 has been specified 23-Oct-2014 16:17:36 : Tables have been computed 23-Oct-2014 16:17:36 : Micro data file read; processing time 1 seconds 23-Oct-2014 16:17:36 : Tables from microdata have been read 23-Oct-2014 16:17:36 : &lt;SUPPRESS&gt; GH(1,75) 23-Oct-2014 16:17:36 : Start of the hypercube protection for tableSize x Region | Var2 23-Oct-2014 16:17:37 : End of hypercube protection. Time used 1seconds Number of suppressions: 10 23-Oct-2014 16:17:37 : The hypercube procedure has been applied 10 cells have been suppressed 23-Oct-2014 16:17:37 : &lt;WRITETABLE&gt;(1,1,AS+,"D:\TauJava3\Datata\x1.csv") 23-Oct-2014 16:17:37 : Table: Size x Region | Var2 has been written Output file name: D:\TauJava3\Datata\x1.csv 23-Oct-2014 16:17:37 : &lt;SUPPRESS&gt; GH(2,75) 23-Oct-2014 16:17:37 : Start of the hypercube protection for tableSize x Year | Var2 23-Oct-2014 16:17:39 : End of hypercube protection. Time used 1seconds Number of suppressions: 5 23-Oct-2014 16:17:39 : The hypercube procedure has been applied 5 cells have been suppressed 23-Oct-2014 16:17:39 : &lt;WRITETABLE&gt;(2,2,QU+,"D:\TauJava3\Datata\y11.csv") 23-Oct-2014 16:17:39 : Table: Size x Year | Var2 has been written Output file name: D:\TauJava3\Datata\y11.csv 23-Oct-2014 16:17:39 : &lt;SUPPRESS&gt; MOD(1) 23-Oct-2014 16:17:39 : Start of the modular protection for table Sizex Region | Var2 23-Oct-2014 16:17:39 : End of modular protection. Time used 0 seconds Number of suppressions: 10 23-Oct-2014 16:17:40 : &lt;WRITETABLE&gt;(1,3,AS-,"D:\TauJava3\Datata\x20.txt") 23-Oct-2014 16:17:40 : Table: Size x Region | Var2 has been written Output file name: D:\TauJava3\Datata\x20.txt 23-Oct-2014 16:17:40 : &lt;SUPPRESS&gt; MOD(2) 23-Oct-2014 16:17:40 : Start of the modular protection for table Sizex Year | Var2 23-Oct-2014 16:17:40 : End of modular protection. Time used 0 seconds Number of suppressions: 5 23-Oct-2014 16:17:41 : &lt;WRITETABLE&gt;(2,4,SE+,"D:\TauJava3\Datata\y20.tab") 23-Oct-2014 16:17:41 : Table: Size x Year | Var2 has been written Output file name: D:\TauJava3\Datata\y20.tab 23-Oct-2014 16:17:41 : &lt;SUPPRESS&gt; OPT(1,5) 23-Oct-2014 16:17:41 : End of Optimal protection. Time used 0 seconds Number of suppressions: 12 23-Oct-2014 16:17:42 : &lt;WRITETABLE&gt;(1,1,AS+,"D:\TauJava3\Datata\x3.csv") 23-Oct-2014 16:17:42 : Table: Size x Region | Var2 has been written Output file name: D:\TauJava3\Datata\x3.csv 23-Oct-2014 16:17:42 : &lt;GOINTERACTIVE&gt;</p>
+<p><span class="math inline">\(\tau\)</span>-Argus will write a log-file. This describes among others thecommands used during the runs of <span class="math inline">\(\tau\)</span>-Argus. If gives a log of the use of<span class="math inline">\(\tau\)</span>-Argus. Especially for the batch process this file could give someinformation about the progress of the process. Notably is some errorhas occurred, as a batch version cannot inform the user interactively.Below is given a small example. Please note that new information isalways added to this file. So from time to time the user should deletethis file to clean his computer. By default the logfile is the file taulogbook.txt in thetemp-directory. In the options window the name of the logfile can bechanged for the remainder of the current session and future sessions. The Temp directory is normally something like C:\Users\<em>YOURNAME</em>\AppData\Local\Temp where yourname is the name of the current user. Of course in specificcircumstances the network administrator might have a chosen differentlocation. When running in batch-mode it is possible to change the name of thelog-file with a batch command in the batch-file or as the secondparameter on the commandline. See section [4.3.4] 23-Oct-2014 16:17:27 : Start of TauArgus run 23-Oct-2014 16:17:27 : Version 4.0.1 (beta) build 3 23-Oct-2014 16:17:27 :-------------------------- 23-Oct-2014 16:17:35 : Start of batch procedure; file:D:\TauJava3\Datata\manual.arb 23-Oct-2014 16:17:35 : &lt;OPENMICRODATA&gt; "C:\ProgramFiles\TauARGUS\data\tau_testW.asc" 23-Oct-2014 16:17:35 : &lt;OPENMETADATA&gt; "C:\ProgramFiles\TauARGUS\data\tau_testW.rda" 23-Oct-2014 16:17:35 : &lt;SPECIFYTABLE&gt;"Size""region"|"var2"|"var3"|"var3" 23-Oct-2014 16:17:35 : &lt;SAFETYRULE&gt; P(20,3)|FREQ(3,30)|ZERO(20) 23-Oct-2014 16:17:35 : &lt;SPECIFYTABLE&gt;"Size""Year"|"var2"|"var3"|"var3" 23-Oct-2014 16:17:35 : &lt;SAFETYRULE&gt; NK(3,70)|FREQ(3,30)|ZERO(20) 23-Oct-2014 16:17:35 : &lt;READMICRODATA&gt; 23-Oct-2014 16:17:35 : Start explore file: C:\ProgramFiles\TauARGUS\data\tau_testW.asc 23-Oct-2014 16:17:35 : Start computing tables 23-Oct-2014 16:17:36 : Table: Size x Region | Var2 has been specified 23-Oct-2014 16:17:36 : Table: Size x Year | Var2 has been specified 23-Oct-2014 16:17:36 : Tables have been computed 23-Oct-2014 16:17:36 : Micro data file read; processing time 1 seconds 23-Oct-2014 16:17:36 : Tables from microdata have been read 23-Oct-2014 16:17:36 : &lt;SUPPRESS&gt; GH(1,75) 23-Oct-2014 16:17:36 : Start of the hypercube protection for tableSize x Region | Var2 23-Oct-2014 16:17:37 : End of hypercube protection. Time used 1seconds Number of suppressions: 10 23-Oct-2014 16:17:37 : The hypercube procedure has been applied 10 cells have been suppressed 23-Oct-2014 16:17:37 : &lt;WRITETABLE&gt;(1,1,AS+,"D:\TauJava3\Datata\x1.csv") 23-Oct-2014 16:17:37 : Table: Size x Region | Var2 has been written Output file name: D:\TauJava3\Datata\x1.csv 23-Oct-2014 16:17:37 : &lt;SUPPRESS&gt; GH(2,75) 23-Oct-2014 16:17:37 : Start of the hypercube protection for tableSize x Year | Var2 23-Oct-2014 16:17:39 : End of hypercube protection. Time used 1seconds Number of suppressions: 5 23-Oct-2014 16:17:39 : The hypercube procedure has been applied 5 cells have been suppressed 23-Oct-2014 16:17:39 : &lt;WRITETABLE&gt;(2,2,QU+,"D:\TauJava3\Datata\y11.csv") 23-Oct-2014 16:17:39 : Table: Size x Year | Var2 has been written Output file name: D:\TauJava3\Datata\y11.csv 23-Oct-2014 16:17:39 : &lt;SUPPRESS&gt; MOD(1) 23-Oct-2014 16:17:39 : Start of the modular protection for table Sizex Region | Var2 23-Oct-2014 16:17:39 : End of modular protection. Time used 0 seconds Number of suppressions: 10 23-Oct-2014 16:17:40 : &lt;WRITETABLE&gt;(1,3,AS-,"D:\TauJava3\Datata\x20.txt") 23-Oct-2014 16:17:40 : Table: Size x Region | Var2 has been written Output file name: D:\TauJava3\Datata\x20.txt 23-Oct-2014 16:17:40 : &lt;SUPPRESS&gt; MOD(2) 23-Oct-2014 16:17:40 : Start of the modular protection for table Sizex Year | Var2 23-Oct-2014 16:17:40 : End of modular protection. Time used 0 seconds Number of suppressions: 5 23-Oct-2014 16:17:41 : &lt;WRITETABLE&gt;(2,4,SE+,"D:\TauJava3\Datata\y20.tab") 23-Oct-2014 16:17:41 : Table: Size x Year | Var2 has been written Output file name: D:\TauJava3\Datata\y20.tab 23-Oct-2014 16:17:41 : &lt;SUPPRESS&gt; OPT(1,5) 23-Oct-2014 16:17:41 : End of Optimal protection. Time used 0 seconds Number of suppressions: 12 23-Oct-2014 16:17:42 : &lt;WRITETABLE&gt;(1,1,AS+,"D:\TauJava3\Datata\x3.csv") 23-Oct-2014 16:17:42 : Table: Size x Region | Var2 has been written Output file name: D:\TauJava3\Datata\x3.csv 23-Oct-2014 16:17:42 : &lt;GOINTERACTIVE&gt;</p>
 
 
 </section>
@@ -988,10 +909,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1001,8 +921,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1015,6 +944,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1058,6 +1106,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1083,6 +1132,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1144,17 +1219,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./04_Reference_Section_-_Description_of_the_Menu_Items.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">04_Reference_Section_-_Description_of_the_Menu_Items</span></span>
+      <a href="./04_Reference_Section_-_Description_of_the_Menu_Items.html" class="pagination-link  aria-label=" &lt;span="" of="" the="" menu="" items&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Description of the Menu Items</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./06_Index.html" class="pagination-link">
+      <a href="./06_Index.html" class="pagination-link" aria-label="<span class='chapter-number'>7</span>&nbsp; <span class='chapter-title'>Index</span>">
         <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Index</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
