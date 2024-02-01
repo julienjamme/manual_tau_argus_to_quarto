@@ -1,16 +1,14 @@
 ## Latest improvements
+
 The latest extensions in version 4.1 of τ‑argus are :
 
--   New structure of the interface, making the table itself the central
-    > window.
+-   New structure of the interface, making the table it self the central window.
 
 -   Controlled Tabular Adjustment.
 
 -   Rewritten Open Source Code in JAVA.
 
--   C++ dlls for data manipulation and the modular approach have been
-    > adapted for the Open Source compilers.
+-   C++ dlls for data manipulation and the modular approach have been adapted for the Open Source compilers.
 
--   The use of free Open Solvers complementary to the commercial
-    > solvers.
+-   The use of free Open Solvers complementary to the commercial solvers.
 
