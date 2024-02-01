@@ -1,3 +1,4 @@
 ## Series of tables
-In $\tau$-Argus it is possible to specify a series of tables that will beprotected one by one, and independently of each other. It is moreefficient to choose this option since $\tau$-Argus requires only a singlerun through the microdata in order to produce the tables. But also forthe user it is often more attractive to specify a series of tables andlet $\tau$-Argus protect them in a single session, rather than have severalindependent sessions.
+
+In $\tau$-Argus it is possible to specify a series of tables that will be protected one by one, and independently of each other. It is more efficient to choose this option since $\tau$-Argus requires only a single run through the microdata in order to produce the tables. But also for the user it is often more attractive to specify a series of tables and let $\tau$-Argus protect them in a single session, rather than have several independent sessions.
 
