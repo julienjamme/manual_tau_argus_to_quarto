@@ -1,17 +1,17 @@
 ## Meta data files
-The meta data plays a vital role in τ-argus. The meta data is alwaysspecified and stored in a separate file. As τ-argus can read bothmicro data as input as tabular data, the meta data descriptions willbe different as well. Nevertheless there are many similarities,especially between meta data for fixed and free format micro data.
+The meta data plays a vital role in $\tau$-Argus. The meta data is alwaysspecified and stored in a separate file. As $\tau$-Argus can read bothmicro data as input as tabular data, the meta data descriptions willbe different as well. Nevertheless there are many similarities,especially between meta data for fixed and free format micro data.
 The meta data can always be changed/adapted/entered via the menu itemSpecify\|Metadata, see sections [4.4.1],[4.4.2] and [4.4.3].
-As no standard meta data system is available which is powerful enoughto manage the complete metadata specification necessary forStatistical Disclosure Control we had to develop something speciallyfor τ-argus.
-The metadata file (default extension .RDA) has globally the samestructure for all the different file types that can be handled byτ-argus. i.e fixed format/free format microdata, SPSS system files ortabular data.
+As no standard meta data system is available which is powerful enoughto manage the complete metadata specification necessary forStatistical Disclosure Control we had to develop something speciallyfor $\tau$-Argus.
+The metadata file (default extension .RDA) has globally the samestructure for all the different file types that can be handled by$\tau$-Argus. i.e fixed format/free format microdata, SPSS system files ortabular data.
 For each variable the name is specified followed by its position inthe file and possible missing values. Following this specificationadditional information can be specified. These specifications alwaysstart with a keyword enclosed by "\<"and"\>" followed by thespecifications.
-The metadata is always stored in a plain text file without any tabs orso. If you wish you could enter/modify the metadata file with e.g.Notepad, but not with Word. It is then your own risk that the metadatais syntactically correct. τ-argus will check the meta data file whenit is read, but to a certain limit. The best way is to modify themetadata via the τ‑argus program.
+The metadata is always stored in a plain text file without any tabs orso. If you wish you could enter/modify the metadata file with e.g.Notepad, but not with Word. It is then your own risk that the metadatais syntactically correct. $\tau$-Argus will check the meta data file whenit is read, but to a certain limit. The best way is to modify themetadata via the τ‑argus program.
 Files mentioned in meta-files are assumed to reside in the samedirectory as the meta-file. If not, the complete directory-path shouldbe specified.
 We will first describe in section [5.1.1]the meta datafile a fixed format micro data file. In the subsequent sections thespecial issues for the other file formats (free format and SPSS) willbe described. In section [5.1.4] the meta data fortabular data files will be dscribed.
 
 ### Meta data for fixed format micro data 
 For fixed format for each variable the starting position and the fieldlength have to be specified. Also the possible missing values must bespecified as well as the role that a variable can play in theSDC-analysis, like spanning variable (also known as explanatoryvariable), cell item, weight, etc. Additional extra specifications canbe entered. as well, like codelists and hierarchical structures.
 The metafile describes the variables in the microdata file, both therecord layout and some additional information necessary to perform theSDC-process. Each variable is specified on one main line followed byone or more option lines.
-The first line gives the name of the variable followed by the startingposition for each record, the width of the field and optionally one ortwo missing value indicators for the record. Missing values are notrequired in τ-argus, but they can play a role when deciding whether ornot a cell is unsafe.
+The first line gives the name of the variable followed by the startingposition for each record, the width of the field and optionally one ortwo missing value indicators for the record. Missing values are notrequired in $\tau$-Argus, but they can play a role when deciding whether ornot a cell is unsafe.
 For fixed format microdata it is not necessary to specify all thevariables in the file. Only the variables used in τ‑argus have to bespecified. When reading the data τ‑argus will ignore the fields notdescribed. This will improve the speed of processing.
 The following lines explain specific characteristics of the variable:
 
@@ -115,10 +115,10 @@ This rule is used in foreign trade statistics and based on a specialregulation..
 Holding Indicator
 entgroup 101 4
 \<HOLDING\>
-Here the variable 'entgroup' is in column 101 and is four characterslong. This variable is to act as the holding indicator (see section4.3.1 for further explanation). The records of a holding should begrouped together in the input datafile. τ-argus will not searchthrough the whole file to try to find all records for a holding.Before applying the sensitivity rules all records of one holding aregrouped together and treated as one contribution.
+Here the variable 'entgroup' is in column 101 and is four characterslong. This variable is to act as the holding indicator (see section4.3.1 for further explanation). The records of a holding should begrouped together in the input datafile. $\tau$-Argus will not searchthrough the whole file to try to find all records for a holding.Before applying the sensitivity rules all records of one holding aregrouped together and treated as one contribution.
 
 ### Meta data for free format micro data 
-For a free-format datafile the RDA is a little bit different. Notablythe first line specifies the separator used. This indicates to τ-argusthat the record description is for a free-format file. And for eachvariable the starting position is no longer specified, as this ismeaningless in a free-format datafile. For the rest there are nodifferences compared to the fixed format version. The example givenabove for a fixed format file will now looks as:
+For a free-format datafile the RDA is a little bit different. Notablythe first line specifies the separator used. This indicates to $\tau$-Argusthat the record description is for a free-format file. And for eachvariable the starting position is no longer specified, as this ismeaningless in a free-format datafile. For the rest there are nodifferences compared to the fixed format version. The example givenabove for a fixed format file will now looks as:
 \<SEPARATOR\> \",\"
 YEAR 2 99
 \<RECODEABLE\>
@@ -147,11 +147,11 @@ Var2 10 9999999999
 ..
 
 ### Meta data for SPSS system files
-When the microdata is stored in a SPSS System file τ-argus can alsoread this data. However some special rules have to be taken intoaccount. It is assumed that a valid license for SPSS is available onthe computer, because τ-argus will call SPSS to read the data from thesystemfile. Also part of the metadata will be retrieved from SPSS.However not all meta data needed for τ‑argus is available in SPSS, sothe user has to enter the additional metadata himself. See section[4.4.2]
-In fact τ-argus will call SPSS to export the data and will create afixed format scratch file in the temp-directory. After that τ‑arguswill work similar to working with fixed format ASCII files.
+When the microdata is stored in a SPSS System file $\tau$-Argus can alsoread this data. However some special rules have to be taken intoaccount. It is assumed that a valid license for SPSS is available onthe computer, because $\tau$-Argus will call SPSS to read the data from thesystemfile. Also part of the metadata will be retrieved from SPSS.However not all meta data needed for τ‑argus is available in SPSS, sothe user has to enter the additional metadata himself. See section[4.4.2]
+In fact $\tau$-Argus will call SPSS to export the data and will create afixed format scratch file in the temp-directory. After that τ‑arguswill work similar to working with fixed format ASCII files.
 The first time you open a SPSS systemfile, no metadata file can andhas to be specified.
 After opening the SPSS system file in this menu option SPSS will becalled and the meta data (Variable names, field length, missingvalues) available in SPSS will be read. This is a process that takes abit of time and should not be interrupted by pressing any key or so.However no progress information can be showed on the screen.
-If you reopen an SPSS system file with a meta data file, τ-argus willcheck whether all the variables in the RDA file are really availablein the system file.
+If you reopen an SPSS system file with a meta data file, $\tau$-Argus willcheck whether all the variables in the RDA file are really availablein the system file.
 The RDA file is very similar to the RDA file for a fixed format ASCIIfile. One exception is that the first line will read
 \<SPSS\>
 
@@ -221,7 +221,7 @@ The variables can have the following role:
 |                                | > cannot be used for secondary     |
 |                                | > suppression                      |
 +--------------------------------+------------------------------------+
-For explanatory variables the code for the total has to be specified.We recommend strongly that the user also provides the values for thetotals himself, but if needed he can ask τ-argus to compute thesetotals. In any case, τ-argus needs these totals as they play animportant role is the structure of a table and also are important forthe suppression models.
+For explanatory variables the code for the total has to be specified.We recommend strongly that the user also provides the values for thetotals himself, but if needed he can ask $\tau$-Argus to compute thesetotals. In any case, $\tau$-Argus needs these totals as they play animportant role is the structure of a table and also are important forthe suppression models.
 \<SEPARATOR\> ","
 \<SAFE\> s
 \<UNSAFE\> u

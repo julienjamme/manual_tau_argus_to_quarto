@@ -1,5 +1,5 @@
 ## Log file
-τ-argus will write a log-file. This describes among others thecommands used during the runs of τ-argus. If gives a log of the use ofτ-argus. Especially for the batch process this file could give someinformation about the progress of the process. Notably is some errorhas occurred, as a batch version cannot inform the user interactively.Below is given a small example. Please note that new information isalways added to this file. So from time to time the user should deletethis file to clean his computer.
+$\tau$-Argus will write a log-file. This describes among others thecommands used during the runs of $\tau$-Argus. If gives a log of the use of$\tau$-Argus. Especially for the batch process this file could give someinformation about the progress of the process. Notably is some errorhas occurred, as a batch version cannot inform the user interactively.Below is given a small example. Please note that new information isalways added to this file. So from time to time the user should deletethis file to clean his computer.
 By default the logfile is the file taulogbook.txt in thetemp-directory. In the options window the name of the logfile can bechanged for the remainder of the current session and future sessions.
 The Temp directory is normally something like
 C:\\Users\\*YOURNAME*\\AppData\\Local\\Temp

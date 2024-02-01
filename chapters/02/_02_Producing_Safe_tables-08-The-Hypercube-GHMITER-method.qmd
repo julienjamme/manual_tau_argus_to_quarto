@@ -47,7 +47,7 @@ It should be mentioned here that the 'hypercube criterion' is asufficient but no
 
 -   For tables presenting magnitude data, if protection against
     > inferential disclosure is requested (see the upper part of the
-    > pop-up window below) τ-argus will ensure that ghmiter selects
+    > pop-up window below) $\tau$-Argus will ensure that ghmiter selects
     > secondary suppressions that protect the sensitive cells properly.
     > Only cells will be considered feasible as secondary suppressions
     > that are large enough to give enough protection to the target
@@ -60,8 +60,8 @@ It should be mentioned here that the 'hypercube criterion' is asufficient but no
     > might be able to undo the protection. But this extra protecting
     > can be disabled.
 
--   In order to achieve this, τ-argus computes a suitable *sliding
-    > protection ratio* (for explanation see Giessing (2003), τ-argus
+-   In order to achieve this, $\tau$-Argus computes a suitable *sliding
+    > protection ratio* (for explanation see Giessing (2003), $\tau$-Argus
     > will display the value of this ratio in the report file) to be
     > used by ghmiter. If in the screen above the option "*Protection
     > against inferential disclosure required*" is inactivated, ghmiter
@@ -81,7 +81,7 @@ It should be mentioned here that the 'hypercube criterion' is asufficient but no
     > ratio by k, values of k from 2 to 10, and if this still does not
     > help, in step 10 we divide by an extremely large value, and
     > finally, if even that does not solve the problem, step 11 will set
-    > the ratio to zero). The τ-argus report file will display the
+    > the ratio to zero). The $\tau$-Argus report file will display the
     > number of cases where the sliding protection range was reduced by
     > finally confirmed sliding protection ratio.
 
@@ -99,11 +99,11 @@ It should be mentioned here that the 'hypercube criterion' is asufficient but no
     > level*" are used synonymously in the report file.
 
 -   Note that step 11 will make cells eligible for secondary suppression
-    > that τ-argus considers as 'protected' (so called '*frozen*' cells,
+    > that $\tau$-Argus considers as 'protected' (so called '*frozen*' cells,
     > for discussion of this option see for instance Giessing (2003).
-As this is inconsistent with the current view on protected cells inτ-argus this will lead to the following error message:
+As this is inconsistent with the current view on protected cells in$\tau$-Argus this will lead to the following error message:
 
->![](Media/Pictures/100000000000016E0000009C1D394A05.png){width=10.301cm height=4.713cm}\The cell value and the codes of those suppressed *frozen* cells arethen displayed by τ-argus :This information is also written in thefile "frozen.txt" in the temp-directory.
+>![](Media/Pictures/100000000000016E0000009C1D394A05.png){width=10.301cm height=4.713cm}\The cell value and the codes of those suppressed *frozen* cells arethen displayed by $\tau$-Argus :This information is also written in thefile "frozen.txt" in the temp-directory.
 ![](Media/Pictures/10000000000001A0000002008F41CBDE.png){width=11.007cm height=13.547cm}
 When the status of these cells is changed into 'unprotected' beforere-running the hypercube method, the solution will be a feasiblesolution for τ‑argus. Zero cells are consider to be frozen as well inthe hypercube. Those frozen cells can be ignored
 Negative values

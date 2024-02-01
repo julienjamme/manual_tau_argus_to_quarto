@@ -1,6 +1,6 @@
 ## Global recode file
 Global recoding is a powerful method to reduce the number of primaryunsafe cells. It reduces the size of the table, but the advantage isalso that the number of primary unsafe cells is reduced. It is aclassical balance to decide how far you should go when applying globalrecodes, but often the resulting table contains much more information,compared to a table with many, but suppressed cells.
-For a hierarchical coding scheme τ-argus allows recoding viacollapsing the tree structure of the hierarchy. But for non-structuredcodelists the global recode must be specified manually
+For a hierarchical coding scheme $\tau$-Argus allows recoding viacollapsing the tree structure of the hierarchy. But for non-structuredcodelists the global recode must be specified manually
 The structure is always: A new code is assigned to a set of old codes.So all the old codes are collapsed into the new code. A set can beeither a list of individual codes, separated by a comma, or aninterval indicated by a lower code, dash upper code. If the upper orlower code is not specified an open interval is assumed.
 Examples:
 For a variable with the categories 1,...,182 a possible recode isthen:

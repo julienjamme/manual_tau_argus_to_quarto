@@ -1,5 +1,5 @@
 ## The process of disclosure control
-When the table(s) have been calculated, the main-window of τ-arguswill show the (first) table.
+When the table(s) have been calculated, the main-window of $\tau$-Arguswill show the (first) table.
 ![](Media/Pictures/1000000000000399000002AFC81A9D2E.png){width=13cm height=9.696cm}
 Safe cells are shown in black, whilst cells failing the safety ruleand/or minimum frequency rule are displayed in red.
 Only the top2 levels of a hierarchy are shown initially. But at thebottom of the window there are options to open more levels. Alsoclicking on the \'+\'before a code will open a level of the hierarchy.In the example we have opened the 3^rd^ level of the region variable.
@@ -52,7 +52,7 @@ The second pane ('Change Status') on the right will allow the user tochange the 
 
 -   Use \'a priori\' information (see below).
 A Priori Info
-This option is an *a priori* option to be mainly used for microdatawhich allows the user to feed τ-argus a list of cells where the statusof the standard rules can be overruled i.e. the status of the cells isalready specified. The associated file specifying this information isfree format. The format will be:
+This option is an *a priori* option to be mainly used for microdatawhich allows the user to feed $\tau$-Argus a list of cells where the statusof the standard rules can be overruled i.e. the status of the cells isalready specified. The associated file specifying this information isfree format. The format will be:
 Code of first spanning variable, Code of second spanning variable,Status of cell (u = unsafe, p = protected (not to be suppressed),s = safe).
 Also the cost-function can be changed here for a cell. This will makethe cell more likely to become secondary cell suppression, when thevalue is low or less likely when the value is high.
 Nr, 4, u

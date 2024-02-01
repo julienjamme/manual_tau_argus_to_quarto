@@ -39,13 +39,13 @@
 
 ### First steps
 Via (Help\|Options) you can open the options window.
-Before starting the process of protecting a table, you can customiseτ-argus. Some methods for secondary suppression (the modular and theoptimal), but also the audit procedure require an external linearprogramming solver. For the complex problems of τ-argus we haveconcluded that the use of high quality commercial solvers can beefficient. However also a free solver can be chosen as a goodalternative. Although τ-argus is freeware software these solvers arecommercial packages and you have to acquire a licence for themseparately. More information can be found on the casc-website([*https://research.cbs.nl/casc/*](https://research.cbs.nl/casc/)) Thechoice of this solver must be made before protecting a table. Thechoices are either Xpress or cplex or the free solver soplex, thedifferent LP_solvers supported by τ-argus. See also section[2.9] for more details.
+Before starting the process of protecting a table, you can customise$\tau$-Argus. Some methods for secondary suppression (the modular and theoptimal), but also the audit procedure require an external linearprogramming solver. For the complex problems of $\tau$-Argus we haveconcluded that the use of high quality commercial solvers can beefficient. However also a free solver can be chosen as a goodalternative. Although $\tau$-Argus is freeware software these solvers arecommercial packages and you have to acquire a licence for themseparately. More information can be found on the casc-website([*https://research.cbs.nl/casc/*](https://research.cbs.nl/casc/)) Thechoice of this solver must be made before protecting a table. Thechoices are either Xpress or cplex or the free solver soplex, thedifferent LP_solvers supported by $\tau$-Argus. See also section[2.9] for more details.
 ![](Media/Pictures/10000000000001E600000138BEEDE4BF.png){width=13.229cm height=8.414cm}For cplex the name of the licence file mustspecified.
 Once this window has been opened details of the solver can be entered.Also the maximum time the solver is allowed to spend on each sub-tablein Modular can be specified. However always a feasible solution issought.
 And the name of the logbook, by default taulogbook.txt in thetemp-directory can be chosen.
 
 ### Open a microdata file
-In this tour we only deal with how to open a fixed format microdatafile (see sections [3.1.2] to [3.1.4]). If analready constructed table is to be used, then go to the Referencechapter (section [4.3.2]). To start disclosure controlwith τ-argus there are three possible options:
+In this tour we only deal with how to open a fixed format microdatafile (see sections [3.1.2] to [3.1.4]). If analready constructed table is to be used, then go to the Referencechapter (section [4.3.2]). To start disclosure controlwith $\tau$-Argus there are three possible options:
 
 1.  Open a ascii microdata file from which a table can be constructed,
 
@@ -55,10 +55,10 @@ In this tour we only deal with how to open a fixed format microdatafile (see sec
 Opening an already completed table is not part of this tour. Seesection [4.3.2], Also the SPSS-option (see section[4.3.1]) is not part of this tour,
 Both a microdata file and the metadata file describing this microdatafile are required. The microdata file must be either a fixed formatascii file or a free format file with a specified separator. Byclicking (File\|Open Microdata) you can specify both the name of themicrodata file and the name of the file containing the metadata.
 ![](Media/Pictures/1000000000000240000000DC95A72CE6.png){width=13cm height=5.089cm}
-τ-argus, expects the microdata and metadata file to be stored inseparate files. The simplest way to use the program is to use theextension .ASC for the (fixed format) datafile and .RDA (RecordDescription for Argus) for the metadata file. If the name of themetadata file is the same as the datafile, except for the extension,and it already exists in the same directory, τ-argus will fill in thename of this metadata file automatically in the second textbox. If nometadata file is specified, the program has the facility to specifythe metadata interactively via the menu option (Specify\|Metafile).This is also the place to make changes to the metadata file. Insubsection [3.1.3] we will give a description of themetadata file for τ-argus.
+$\tau$-Argus, expects the microdata and metadata file to be stored inseparate files. The simplest way to use the program is to use theextension .ASC for the (fixed format) datafile and .RDA (RecordDescription for Argus) for the metadata file. If the name of themetadata file is the same as the datafile, except for the extension,and it already exists in the same directory, $\tau$-Argus will fill in thename of this metadata file automatically in the second textbox. If nometadata file is specified, the program has the facility to specifythe metadata interactively via the menu option (Specify\|Metafile).This is also the place to make changes to the metadata file. Insubsection [3.1.3] we will give a description of themetadata file for $\tau$-Argus.
 
 ### Specify metafile
-When you enter or change the metadata file interactively using τ-argusthe option (Specify\|Metafile) will bring you to the following screen:
+When you enter or change the metadata file interactively using $\tau$-Argusthe option (Specify\|Metafile) will bring you to the following screen:
 ![](Media/Pictures/1000000000000381000002374DCB2899.png){width=13cm height=8.236cm}
 The key elements of this window are the definitions for each variable.Most variables will be defined as one of the following.
 
@@ -73,7 +73,7 @@ The key elements of this window are the definitions for each variable.Most varia
 More details on these variables along with the others options can befound in the Reference chapter (subsection [4.4.1]).
 Other important features of this window are as follows.
 
--   Codelist: τ-argus will always automatically build the codelists for
+-   Codelist: $\tau$-Argus will always automatically build the codelists for
     > the explanatory variables from the datafile. However you can
     > enhance the presentation of the information if you can specify a
     > codelist file (a list-of-codes of the explanatory variables) as
@@ -84,7 +84,7 @@ Other important features of this window are as follows.
 
     -   Codelist file: The codes can be read in from an external file.
         > Each category can contain a label. The codelist is only used
-        > for enhancing the presentation but always τ-argus will build a
+        > for enhancing the presentation but always $\tau$-Argus will build a
         > codelist from the datafile itself.
 
 -   Missing values: this gives information on the missing values which
@@ -152,7 +152,7 @@ Details of the variables
 *'Size'*: For this variable begins on position 9 of each record and is2 characters long, and missing values are represented by 99. It isalso recodeable.
 *'Region'*: For this variable begins on position 12 of each record andis 2 characters long. There is no missing value. There is a codelistfile *region.cdl* and of a hierarchical codelist file *region2.hrc*.Examples of these files are shown here.
 *Note:* the codelist file is not essential; the content is only usedto enhance some information on the screen. The hierarchicalinformation however plays an essential role as it describes thestructure of the table and the relation between the cells.
-*Note:* In both files the code for Total is not specified. τ-argusalways explicitly assumes that there will be a total in each dimensionof the table. Without totals there are no additivity constrains andhence there is no problem of Secondary Cell Suppression.
+*Note:* In both files the code for Total is not specified. $\tau$-Argusalways explicitly assumes that there will be a total in each dimensionof the table. Without totals there are no additivity constrains andhence there is no problem of Secondary Cell Suppression.
 The file region.cdl:
 1,Groningen
 2,Friesland
@@ -217,8 +217,8 @@ p% rule
 The p% rule says that if the value of a cell *x*~*1*~ can be estimatedto an accuracy of better than p% of the true value then it isdisclosive where *x*~*1*~ is the largest contributor to a cell.
 This rule can be written as:
 $${{\sum\limits_{\mathit{ii} = 3}^{c}x_{i}} \geq \frac{p}{100}}x_{1}$$for the cell to be non-disclosive where *c* is the total number ofcontributors to the cell and the intruder is a respondent in the cell.
-It is important to know that when entering this rule in τ-argus thevalue of *n* refers to the number of intruders in coalition (who wishto group together to estimate the largest contributor). In general n =1.
-A typical example would be that the sum of all reporting unitsexcluding the largest two must be at least 10% of the value of thelargest. Therefore, in τ-argus set p=10 and n =1 as there is just oneintruder in the coalition, respondent *x*~*2*~.
+It is important to know that when entering this rule in $\tau$-Argus thevalue of *n* refers to the number of intruders in coalition (who wishto group together to estimate the largest contributor). In general n =1.
+A typical example would be that the sum of all reporting unitsexcluding the largest two must be at least 10% of the value of thelargest. Therefore, in $\tau$-Argus set p=10 and n =1 as there is just oneintruder in the coalition, respondent *x*~*2*~.
 *Note:* we only consider the situation for the largest contributor, asthis is the worst case. If the largest is safe all contributors aresafe.
 The choice of safety rule is specified by the user and the chosenparameters can then be entered. From these parameters symmetric safetyranges are computed automatically prior to the secondary suppressions.
 For the minimum frequency rule, a safety range is calculated from theuser given range. This is usually a small positive value and isrequired to enable secondary suppression to be carried out.
@@ -226,5 +226,5 @@ A manual safety range is also required for cells that can be madeunsafe by inter
 Other options such as the 'Request Rule' or the 'Holding Rule' will belooked at in more detail in the Reference chapter (section[4.4.4]).
 When everything has been filled in, click \'˅\' to transport all thespecified parameters describing the table to the 'listwindow' on thebottom. As many tables as you want may be specified, only limited bythe memory of the computer. If a table is to be modified press the'\^' button.
 Creating the Table
-Pressing the 'Compute tables' button will invoke τ-argus to actuallycompute the tables requested and the process to start disclosurecontrol may be invoked. τ-argus will come back showing the (first)table in a spreadsheet like view number of unsafe cells per variable,per dimension, as explained in the next section [3.2].
+Pressing the 'Compute tables' button will invoke $\tau$-Argus to actuallycompute the tables requested and the process to start disclosurecontrol may be invoked. $\tau$-Argus will come back showing the (first)table in a spreadsheet like view number of unsafe cells per variable,per dimension, as explained in the next section [3.2].
 

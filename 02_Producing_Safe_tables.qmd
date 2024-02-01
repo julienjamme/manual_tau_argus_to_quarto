@@ -30,6 +30,6 @@
 
 {{< include chapters/02/_02_Producing_Safe_tables-15-Audit.qmd >}}
 
-{{< include chapters/02/_02_Producing_Safe_tables-16-Functional-design-of-τ-argus-.qmd >}}
+{{< include chapters/02/_02_Producing_Safe_tables-16-Functional-design-of-$\tau$-Argus-.qmd >}}
 
 

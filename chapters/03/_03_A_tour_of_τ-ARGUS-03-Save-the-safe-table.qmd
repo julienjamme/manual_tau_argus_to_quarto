@@ -2,12 +2,12 @@
 When the table is safe it may be written to the hard disk of thecomputer. The user has six options:
 
 1.  As a CSV file. This Comma separated file can easily be read into
-    > Excel. Please note that τ-argus uses the ',' as the
+    > Excel. Please note that $\tau$-Argus uses the ',' as the
     > field-separator in this CSV-file. This might influence opening the
     > CSV file in Excel. A solution for this is to change the settings
     > in the Windows control-panel or use the \'Data\|Text to Columns\'
     > option of Excel. This is a typical tabular output maintaining the
-    > appearance of the table in τ-argus.
+    > appearance of the table in $\tau$-Argus.
 
 2.  A CSV-file for a pivot table. This offers the opportunity to make
     > use of the facilities of pivot tables in Excel. The status of each
@@ -26,7 +26,7 @@ When the table is safe it may be written to the hard disk of thecomputer. The us
 
 5.  A file in intermediate format for possible input into another
     > program. This contains protection levels and external bounds for
-    > each cell. This table could even be read back into τ-argus.
+    > each cell. This table could even be read back into $\tau$-Argus.
 
 6.  A file in the JJ-format. This format has been introduced by JJ
     > Salazar as an intermediate between the normal table and the

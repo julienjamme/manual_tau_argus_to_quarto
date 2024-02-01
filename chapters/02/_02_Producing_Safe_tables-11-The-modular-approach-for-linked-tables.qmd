@@ -8,6 +8,6 @@ Then use the Modular approach (see section [2.10]) on thecover table *T*~*C*~, b
 I.e., the procedure of the Modular approach is followed, but duringthat process any simple subtable that is not a subtable of any of thetables in the set {*T*~1~,...,*T*~*N*~} is skipped. I.e., the orderthe simple subtables will be protected, is the same as in the'complete' Modular approach, only some subtables will be skipped.
 See De Wolf and Hundepool (2010) for a practical application of theAdjusted Modular Approach.
 References on the modular approach for linked tables
-De Wolf, P.P. and S. Giessing (2009), Adjusting the τ-argus modularapproach to deal with linked tables, Data & Knowledge Engineering,Volume 68, Issue 11, pp. 1160-1174.
-De Wolf, P.P. and A. Hundepool (2010), Three ways to deal with a setof linked SBS tables using τ-argus, Privacy in Statistical Databases,J. Domingo-Ferrer and E. Magkos (Eds.), Springer 2010, LNCS 6344 pp.66-74.
+De Wolf, P.P. and S. Giessing (2009), Adjusting the $\tau$-Argus modularapproach to deal with linked tables, Data & Knowledge Engineering,Volume 68, Issue 11, pp. 1160-1174.
+De Wolf, P.P. and A. Hundepool (2010), Three ways to deal with a setof linked SBS tables using $\tau$-Argus, Privacy in Statistical Databases,J. Domingo-Ferrer and E. Magkos (Eds.), Springer 2010, LNCS 6344 pp.66-74.
 

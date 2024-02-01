@@ -1,6 +1,6 @@
 ## Codelist file
 Codelists can be specified for explanatory variables. The codes arestored in a separate file (default extension .CDL).
-However the codes are only used to enhance certain windows during theprocessing. τ-argus itself will create the coding schemes for thevariables used during the processing of the datafile. So a code notspecified in the .CDL-file will not cause any problem, only the labelis not available. Also codes specified but not found in the data filewill be ignored.
+However the codes are only used to enhance certain windows during theprocessing. $\tau$-Argus itself will create the coding schemes for thevariables used during the processing of the datafile. So a code notspecified in the .CDL-file will not cause any problem, only the labelis not available. Also codes specified but not found in the data filewill be ignored.
 The structure of the file is simple. Each line contains a code and alabel separated by a ","
 region.cdl
 1,Groningen
