@@ -1,4 +1,4 @@
-# 04_Reference_Section_-_Description_of_the_Menu_Items
+# Description of the Menu Items {#sec-menu}
 
 {{< include chapters/04/_04_Reference_Section_-_Description_of_the_Menu_Items-01--Menu-structure.qmd >}}
 
