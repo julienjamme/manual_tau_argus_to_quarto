@@ -1,135 +1,128 @@
 ## The Hypercube/GHMITER method^[^9]^
-In order to ensure tractability also of big applications, τ‑argusinterfaces with the ghmiter hypercube method of R. D. Repsilber of theLandesamt für Datenverarbeitung und Statistik inNordrhein-Westfalen/Germany, offering a quick heuristic solution. Themethod has been described in depth in Repsilber (1994), Repsilber(1999) and Repsilber (2002), for a briefer description see Giessingand Repsilber (2002).
+In order to ensure tractability also of big applications, $\tau$‑argus interfaces with the ghmiter hypercube method of R. D. Repsilber of the Landesamt für Datenverarbeitung und Statistik in Nordrhein-Westfalen/Germany, offering a quick heuristic solution. The method has been described in depth in Repsilber (1994), Repsilber(1999) and Repsilber (2002), for a briefer description see Giessing and Repsilber (2002).
 
 ### The hypercube method
-The approach builds on the fact that a suppressed cell in a simple*n*‑dimensional table without substructure cannot be disclosed exactlyif that cell is contained in a pattern of suppressed, nonzero cells,forming the corner points of a hypercube.
-The algorithm subdivides n-dimensional tables with hierarchicalstructure into a set of n-dimensional sub-tables without substructure.These sub-tables are then protected successively in an iterativeprocedure that starts from the highest level. Successively, for eachprimary suppression in the current sub-table, all possible hypercubeswith this cell as one of the corner points are constructed.
-If protection against inferential disclosure is requested, for eachhypercube, a lower bound for the width of the suppression interval forthe primary suppression that would result from the suppression of allcorner points of the particular hypercube will be estimated. Toestimate that bound, it is not necessary to implement the timeconsuming solution to the corresponding Linear Programming problem.Only if it turns out that the bound is sufficiently large, thehypercube becomes a feasible solution.
-If no protection against inferential disclosure is requested, anyhypercube will be considered feasible. This may of course lead to somecases of underprotection.
-For any of the feasible hypercubes, the loss of information associatedwith the suppression of its corner points is computed. The particularhypercube that leads to minimum information loss is selected, and allits corner points are suppressed.
-Note that the information loss concept of the hypercube method isslightly different from the one of the other, linear programming basedmethods for secondary cell suppression offered by τ‑argus it operatesrather like a two-stage concept. In the first way, the algorithm willlook at the number of additional suppressions (additional to thosethat are already suppressed because they a primary unsafe, or becausethey were selected as secondary suppression in another subtable) thatwould be caused by the selection of a particular candidate hypercube.If there is more than one hypercube that would result in the same,smallest number of additional secondary suppressions, at secondpriority the method will select the one with the smallest sum of costsassociated to the suppression of the corresponding additionalsecondary suppressions. Cell costs associated to a cell are indeed alogarithmic transformation of the cell value plus eventually a largeconstant, if the cell is a marginal cell of the current sub-table.
-After all sub-tables have been protected once, the procedure isrepeated in an iterative fashion. Within this procedure, when cellsbelonging to more than one sub-table are chosen as secondarysuppressions in one of these sub-tables, in further processing theywill be treated like sensitive cells in the other sub-tables theybelong to. The same iterative approach is used for sets of linkedtables.
-It should be mentioned here that the 'hypercube criterion' is asufficient but not a necessary criterion for a 'safe' suppressionpattern. Thus, for particular subtables the 'best' suppression patternmay not be a set of hypercubes -- in which case, of course, thehypercube method will miss the best solution and lead to someoverprotection. Other simplifications of the heuristic approach thatadd to this tendency for over‑suppression are the following: whenassessing the feasibility of a hypercube to protect specific targetsuppressions against interval disclosure, the method
+
+The approach builds on the fact that a suppressed cell in a simple $n$‑dimensional table without substructure cannot be disclosed exactly if that cell is contained in a pattern of suppressed, nonzero cells,forming the corner points of a hypercube.
+The algorithm subdivides n-dimensional tables with hierarchical structure into a set of $n$-dimensional sub-tables without substructure.These sub-tables are then protected successively in an iterative procedure that starts from the highest level. Successively, for each primary suppression in the current sub-table, all possible hypercubes with this cell as one of the corner points are constructed.
+If protection against inferential disclosure is requested, for each hypercube, a lower bound for the width of the suppression interval forthe primary suppression that would result from the suppression of all corner points of the particular hypercube will be estimated. To estimate that bound, it is not necessary to implement the time consuming solution to the corresponding Linear Programming problem. Only if it turns out that the bound is sufficiently large, the hypercube becomes a feasible solution.
+If no protection against inferential disclosure is requested, any hypercube will be considered feasible. This may of course lead to somecases of under protection.
+For any of the feasible hypercubes, the loss of information associated with the suppression of its corner points is computed. The particular hypercube that leads to minimum information loss is selected, and all its corner points are suppressed.
+Note that the information loss concept of the hypercube method is slightly different from the one of the other, linear programming based methods for secondary cell suppression offered by $\tau$-Argus it operates rather like a two-stage concept. In the first way, the algorithm will look at the number of additional suppressions (additional to those that are already suppressed because they a primary unsafe, or because they were selected as secondary suppression in another subtable) that would be caused by the selection of a particular candidate hypercube. If there is more than one hypercube that would result in the same, smallest number of additional secondary suppressions, at second priority the method will select the one with the smallest sum of costs associated to the suppression of the corresponding additional secondary suppressions. Cell costs associated to a cell are indeed a logarithmic transformation of the cell value plus eventually a large constant, if the cell is a marginal cell of the current sub-table.
+After all sub-tables have been protected once, the procedure is repeated in an iterative fashion. Within this procedure, when cells belonging to more than one sub-table are chosen as secondary suppressions in one of these sub-tables, in further processing they will be treated like sensitive cells in the other sub-tables they belong to. The same iterative approach is used for sets of linked tables.
+It should be mentioned here that the 'hypercube criterion' is a sufficient but not a necessary criterion for a 'safe' suppression pattern. Thus, for particular subtables the 'best' suppression patternmay not be a set of hypercubes -- in which case, of course, thehypercube method will miss the best solution and lead to some over-protection. Other simplifications of the heuristic approach that add to this tendency for over‑suppression are the following: when assessing the feasibility of a hypercube to protect specific target suppressions against interval disclosure, the method
 
 -   is not able to consider protection maybe already provided by other
-    > cell suppressions (suppressed cells that are not corner points of
-    > this hypercube) within the same sub‑table,
+    cell suppressions (suppressed cells that are not corner points of
+    this hypercube) within the same sub‑table,
 
 -   does not consider the sensitivity of multi‑contributor primary
-    > suppressions properly, that is, it does not consider the
-    > protection already provided in advance of cell suppression through
-    > aggregation of these contributions,
+    suppressions properly, that is, it does not consider the
+    protection already provided in advance of cell suppression through
+    aggregation of these contributions,
 
 -   attempts to provide the same *relative* ambiguity to (eventually
-    > large) secondary suppressions that have been selected to protect
-    > cells in a linked sub‑table, as if they were single‑respondent
-    > primary suppressions, while actually it would be enough to provide
-    > the same *absolute* ambiguity as required by the corresponding
-    > primary suppressions.
+    large) secondary suppressions that have been selected to protect
+    cells in a linked sub‑table, as if they were single‑respondent
+    primary suppressions, while actually it would be enough to provide
+    the same *absolute* ambiguity as required by the corresponding
+    primary suppressions.
 
 ### The ARGUS implementation of GHMITER
 
 -   In the implementation offered by argus, ghmiter makes sure that a
-    > single respondent cell will never appear to be corner point of one
-    > hypercube only, but of two hypercubes at least. Otherwise it could
-    > happen that a single respondent, who often can be reasonably
-    > assumed to know that he is the only respondent, could use his
-    > knowledge on the amount of his own contribution to recalculate the
-    > value of any other suppressed corner point of this hypercube.
+    single respondent cell will never appear to be corner point of one
+    hypercube only, but of two hypercubes at least. Otherwise it could
+    happen that a single respondent, who often can be reasonably
+    assumed to know that he is the only respondent, could use his
+    knowledge on the amount of his own contribution to recalculate the
+    value of any other suppressed corner point of this hypercube.
 
 -   As explained above, ghmiter uses an elaborate internal cost
-    > assignment mechanism which is essential to achieve an optimal
-    > performance (given the natural restrictions of the simple
-    > heuristic approach, of course). This mechanism should not be cast
-    > out of balance. Therefore, the user's choice of the cell costs
-    > (c.f. [3.1.4], [4.4.4]) does not have any
-    > impact, when using the hypercube method.
+    assignment mechanism which is essential to achieve an optimal
+    performance (given the natural restrictions of the simple
+    heuristic approach, of course). This mechanism should not be cast
+    out of balance. Therefore, the user's choice of the cell costs
+    (c.f. [3.1.4], [4.4.4]) does not have any
+    impact, when using the hypercube method.
 
 -   For tables presenting magnitude data, if protection against
-    > inferential disclosure is requested (see the upper part of the
-    > pop-up window below) $\tau$-Argus will ensure that ghmiter selects
-    > secondary suppressions that protect the sensitive cells properly.
-    > Only cells will be considered feasible as secondary suppressions
-    > that are large enough to give enough protection to the target
-    > sensitive cell as explained in Giessing (2003).
+    inferential disclosure is requested (see the upper part of the
+    pop-up window below) $\tau$-Argus will ensure that ghmiter selects
+    secondary suppressions that protect the sensitive cells properly.
+    Only cells will be considered feasible as secondary suppressions
+    that are large enough to give enough protection to the target
+    sensitive cell as explained in Giessing (2003).
+
 ![](Media/Pictures/10000000000001860000013A300D2794.png){width=10.689cm height=8.599cm}
 
 -   The standard implementation of the hypercube is that extra
-    > protection is given to singleton cells, i.e. cells with only one
-    > contributor. As this contributor knows exactly the cell value he
-    > might be able to undo the protection. But this extra protecting
-    > can be disabled.
+    protection is given to singleton cells, i.e. cells with only one
+    contributor. As this contributor knows exactly the cell value he
+    might be able to undo the protection. But this extra protecting
+    can be disabled.
 
 -   In order to achieve this, $\tau$-Argus computes a suitable *sliding
-    > protection ratio* (for explanation see Giessing (2003), $\tau$-Argus
-    > will display the value of this ratio in the report file) to be
-    > used by ghmiter. If in the screen above the option "*Protection
-    > against inferential disclosure required*" is inactivated, ghmiter
-    > will not check whether secondary suppressions are sufficiently
-    > large.
+    protection ratio* (for explanation see Giessing (2003), $\tau$-Argus
+    will display the value of this ratio in the report file) to be
+    used by ghmiter. If in the screen above the option "*Protection
+    against inferential disclosure required*" is inactivated, ghmiter
+    will not check whether secondary suppressions are sufficiently
+    large.
 
 -   As mentioned above, ghmiter is unable to \'add\' the protection
-    > given by multiple hypercubes. In certain situations, it is not
-    > possible to provide sufficient protection to a particular
-    > sensitive cell (or secondary suppression) by suppression of one
-    > single hypercube. In such a case, ghmiter is unable to confirm
-    > that this cell has been protected properly, according to the
-    > specified *sliding protection ratio*. It will then reduce the
-    > *sliding protection ratio* automatically, and individually, step
-    > by step for those cells, the protection of which the program
-    > cannot confirm otherwise. In steps 1 to 9 we divide the original
-    > ratio by k, values of k from 2 to 10, and if this still does not
-    > help, in step 10 we divide by an extremely large value, and
-    > finally, if even that does not solve the problem, step 11 will set
-    > the ratio to zero). The $\tau$-Argus report file will display the
-    > number of cases where the sliding protection range was reduced by
-    > finally confirmed sliding protection ratio.
+    given by multiple hypercubes. In certain situations, it is not
+    possible to provide sufficient protection to a particular
+    sensitive cell (or secondary suppression) by suppression of one
+    single hypercube. In such a case, ghmiter is unable to confirm
+    that this cell has been protected properly, according to the
+    specified *sliding protection ratio*. It will then reduce the
+    *sliding protection ratio* automatically, and individually, step
+    by step for those cells, the protection of which the program
+    cannot confirm otherwise. In steps $1$ to $9$ we divide the original
+    ratio by $k$, values of $k$ from $2$ to $10$, and if this still does not
+    help, in step 10 we divide by an extremely large value, and
+    finally, if even that does not solve the problem, step 11 will set
+    the ratio to zero). The $\tau$-Argus report file will display the
+    number of cases where the sliding protection range was reduced by
+    finally confirmed sliding protection ratio.
 
 -   Note, that that the number of cases with range reduction reported by
-    > this statistic in the report file is very likely to exceed the
-    > actual number of cells concerned, because cells belonging to
-    > multiple (sub-) tables are counted multiple times. In our
-    > experience this concerns particularly the cases, where the
-    > protection level was reduced to an‚ 'infinitely' small (positive)
-    > value (in step 10, see above). Step 10 is usually required to
-    > confirm protection of large, high level secondary suppressions,
-    > which are likely to appear in multiple tables, especially in
-    > processing of linked tables. By the way, terms "reduction of the
-    > *sliding protection ratio*" and "reduction of the *protection
-    > level*" are used synonymously in the report file.
+    this statistic in the report file is very likely to exceed the
+    actual number of cells concerned, because cells belonging to
+    multiple (sub-) tables are counted multiple times. In our
+    experience this concerns particularly the cases, where the
+    protection level was reduced to an‚ 'infinitely' small (positive)
+    value (in step 10, see above). Step 10 is usually required to
+    confirm protection of large, high level secondary suppressions,
+    which are likely to appear in multiple tables, especially in
+    processing of linked tables. By the way, terms "reduction of the
+    *sliding protection ratio*" and "reduction of the *protection
+    level*" are used synonymously in the report file.
 
 -   Note that step 11 will make cells eligible for secondary suppression
-    > that $\tau$-Argus considers as 'protected' (so called '*frozen*' cells,
-    > for discussion of this option see for instance Giessing (2003).
-As this is inconsistent with the current view on protected cells in$\tau$-Argus this will lead to the following error message:
+    that $\tau$-Argus considers as 'protected' (so called '*frozen*' cells,
+    for discussion of this option see for instance Giessing (2003).
 
->![](Media/Pictures/100000000000016E0000009C1D394A05.png){width=10.301cm height=4.713cm}\The cell value and the codes of those suppressed *frozen* cells arethen displayed by $\tau$-Argus :This information is also written in thefile "frozen.txt" in the temp-directory.
+As this is inconsistent with the current view on protected cells in $\tau$-Argus this will lead to the following error message:
+
+![](Media/Pictures/100000000000016E0000009C1D394A05.png){width=10.301cm height=4.713cm}
+
+The cell value and the codes of those suppressed *frozen* cells are then displayed by $\tau$-Argus : This information is also written in the file "frozen.txt" in the temp-directory.
+
 ![](Media/Pictures/10000000000001A0000002008F41CBDE.png){width=11.007cm height=13.547cm}
-When the status of these cells is changed into 'unprotected' beforere-running the hypercube method, the solution will be a feasiblesolution for τ‑argus. Zero cells are consider to be frozen as well inthe hypercube. Those frozen cells can be ignored
-Negative values
+
+When the status of these cells is changed into 'unprotected' before re-running the hypercube method, the solution will be a feasible solution for $\tau$-Argus. Zero cells are consider to be frozen as well inthe hypercube. Those frozen cells can be ignored.
+
+**Negative values**
+
 The hypercube method has no problems when certain cells are negative.
-References on GHMITER
 
-1.  Repsilber, R. D. (1994), 'Preservation of Confidentiality in
-    > Aggregated data', paper presented at the Second International
-    > Seminar on Statistical Confidentiality, Luxembourg, 1994
+### References on GHMITER
 
-    > Repsilber, D. (1999), 'Das Quaderverfahren' - in Forum der
-    > Bundesstatistik, Band 31/1999: Methoden zur Sicherung der
-    > Statistischen Geheimhaltung, (in German)
-
-    > Repsilber, D. (2002), 'Sicherung persönlicher Angaben in
-    > Tabellendaten' - in Statistische Analysen und Studien
-    > Nordrhein-Westfalen, Landesamt für Datenverarbeitung und Statistik
-    > NRW, Ausgabe 1/2002 (in German)
-
-    > Giessing, S. and Repsilber, D. (2002), 'Tools and Strategies to
-    > Protect Multiple Tables with the GHQUAR Cell Suppression Engine',
-    > in '*Inference Control in Statistical Databases'* Domingo-Ferrer
-    > (Editor), Springer Lecture Notes in Computer Science Vol. 2316.
-
-    > Giessing, S. (2003), 'Co-ordination of Cell Suppressions:
-    > strategies for use of GHM*ITER*', Proceedings of the Joint
-    > ECE/Eurostat work session on statistical data confidentiality
-    > (Luxembourg, 7-9 April 2003)
+1.  Repsilber, R. D. (1994), 'Preservation of Confidentiality in Aggregated data', paper presented at the Second International Seminar on Statistical Confidentiality, Luxembourg, 1994
+2.  Repsilber, D. (1999), 'Das Quaderverfahren' - in Forum der Bundesstatistik, Band 31/1999: Methoden zur Sicherung der Statistischen Geheimhaltung, (in German)
+3.  Repsilber, D. (2002), 'Sicherung persönlicher Angaben in Tabellendaten' - in Statistische Analysen und Studien Nordrhein-Westfalen, Landesamt für Datenverarbeitung und Statistik NRW, Ausgabe 1/2002 (in German)
+4.  Giessing, S. and Repsilber, D. (2002), 'Tools and Strategies to Protect Multiple Tables with the GHQUAR Cell Suppression Engine', in '*Inference Control in Statistical Databases'* Domingo-Ferrer (Editor), Springer Lecture Notes in Computer Science Vol. 2316.
+5.  Giessing, S. (2003), 'Co-ordination of Cell Suppressions: strategies for use of GHMITER', Proceedings of the Joint ECE/Eurostat work session on statistical data confidentiality (Luxembourg, 7-9 April 2003)
 
