@@ -1,7 +1,10 @@
 ## The structure of this manual
 
 The remaining part of this manual consists of four chapters and an index.
-In @sec-producingSafeTables we will give a short introduction to the theory and methodology. However for a more fundamental description we refer to the Wiley handbook on Statistical Disclosure Control^[^4]^. This handbook is the result of the joined work of the SDC specialists in Europe working together for a long period.
+In @sec-producingSafeTables we will give a short introduction to the theory and methodology. However for a more fundamental description we refer to the Wiley handbook on Statistical Disclosure Control[^4]. This handbook is the result of the joined work of the SDC specialists in Europe working together for a long period.
+
+[^4]: Anco Hundepool, Josep Domingo-Ferrer, Luisa Franconi, Sarah Giessing, Eric Schulte Nordholt, Keith Spicer, Peter-Paul de Wolf (2012), *Statistical Disclosure control*, ISBN: 978-119-97815-2, Wiley.
+
 In @sec-tour a short tour of $\tau$-Argus will be given as a first impression of the program.
 @sec-menu is the reference manual of $\tau$-Argus. It will describe in detail the program. This chapter is organized by the menu items of $\tau$-Argus. @sec-further gives details of files used by $\tau$-Argus.
 The manual is concluded with an index (@sec-index).

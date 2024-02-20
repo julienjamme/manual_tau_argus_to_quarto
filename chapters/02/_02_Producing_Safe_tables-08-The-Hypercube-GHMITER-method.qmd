@@ -1,15 +1,25 @@
-## The Hypercube/GHMITER method^[^9]^
-In order to ensure tractability also of big applications, $\tau$‑argus interfaces with the ghmiter hypercube method of R. D. Repsilber of the Landesamt für Datenverarbeitung und Statistik in Nordrhein-Westfalen/Germany, offering a quick heuristic solution. The method has been described in depth in Repsilber (1994), Repsilber(1999) and Repsilber (2002), for a briefer description see Giessing and Repsilber (2002).
+## The Hypercube/GHMITER method[^9]
+
+[^9]: The section on GHMiter has been contributed by Sarah Giessing, *Federal Statistical Office of Germany* 65180 Wiesbaden; E-mail: [sarah.giessing@destatis.de]().
+
+In order to ensure tractability also of big applications, $\tau$‑argus interfaces with the ghmiter hypercube method of R. D. Repsilber of the Landesamt für Datenverarbeitung und Statistik in Nordrhein-Westfalen/Germany, offering a quick heuristic solution. The method has been described in depth in Repsilber (1994), Repsilber (1999) and Repsilber (2002), for a briefer description see Giessing and Repsilber (2002).
 
 ### The hypercube method
 
-The approach builds on the fact that a suppressed cell in a simple $n$‑dimensional table without substructure cannot be disclosed exactly if that cell is contained in a pattern of suppressed, nonzero cells,forming the corner points of a hypercube.
+The approach builds on the fact that a suppressed cell in a simple $n$‑dimensional table without substructure cannot be disclosed exactly if that cell is contained in a pattern of suppressed, nonzero cells, forming the corner points of a hypercube.
+
 The algorithm subdivides n-dimensional tables with hierarchical structure into a set of $n$-dimensional sub-tables without substructure.These sub-tables are then protected successively in an iterative procedure that starts from the highest level. Successively, for each primary suppression in the current sub-table, all possible hypercubes with this cell as one of the corner points are constructed.
+
 If protection against inferential disclosure is requested, for each hypercube, a lower bound for the width of the suppression interval forthe primary suppression that would result from the suppression of all corner points of the particular hypercube will be estimated. To estimate that bound, it is not necessary to implement the time consuming solution to the corresponding Linear Programming problem. Only if it turns out that the bound is sufficiently large, the hypercube becomes a feasible solution.
+
 If no protection against inferential disclosure is requested, any hypercube will be considered feasible. This may of course lead to somecases of under protection.
+
 For any of the feasible hypercubes, the loss of information associated with the suppression of its corner points is computed. The particular hypercube that leads to minimum information loss is selected, and all its corner points are suppressed.
+
 Note that the information loss concept of the hypercube method is slightly different from the one of the other, linear programming based methods for secondary cell suppression offered by $\tau$-Argus it operates rather like a two-stage concept. In the first way, the algorithm will look at the number of additional suppressions (additional to those that are already suppressed because they a primary unsafe, or because they were selected as secondary suppression in another subtable) that would be caused by the selection of a particular candidate hypercube. If there is more than one hypercube that would result in the same, smallest number of additional secondary suppressions, at second priority the method will select the one with the smallest sum of costs associated to the suppression of the corresponding additional secondary suppressions. Cell costs associated to a cell are indeed a logarithmic transformation of the cell value plus eventually a large constant, if the cell is a marginal cell of the current sub-table.
+
 After all sub-tables have been protected once, the procedure is repeated in an iterative fashion. Within this procedure, when cells belonging to more than one sub-table are chosen as secondary suppressions in one of these sub-tables, in further processing they will be treated like sensitive cells in the other sub-tables they belong to. The same iterative approach is used for sets of linked tables.
+
 It should be mentioned here that the 'hypercube criterion' is a sufficient but not a necessary criterion for a 'safe' suppression pattern. Thus, for particular subtables the 'best' suppression patternmay not be a set of hypercubes -- in which case, of course, thehypercube method will miss the best solution and lead to some over-protection. Other simplifications of the heuristic approach that add to this tendency for over‑suppression are the following: when assessing the feasibility of a hypercube to protect specific target suppressions against interval disclosure, the method
 
 -   is not able to consider protection maybe already provided by other

@@ -1,4 +1,6 @@
-## Information loss in terms of cell costs^[^8]^
+## Information loss in terms of cell costs[^8]
+
+[^8]: See section 4.6 *Information loss measures for tabular data* of the SDC-Handbook (Hundepool et al. (2012)).
 
 In case of secondary cell suppression it is possible that a data protector might want to differentiate between the candidate cells for secondary suppression. It is possible that they would strongly prefer to preserve the content of certain cells, and are willing to sacrifice the values of other cells instead. A mechanism that can be used to make such a distinction between cells in a table is that of cell costs. In $\tau$-Argus it is possible to associate different costs with the cells in a table. The higher the cost the more important the corresponding cell value is considered and the less likely it will be suppressed. We shall interpret this by saying that the cells with the higher associated costs have a higher information content. 
 

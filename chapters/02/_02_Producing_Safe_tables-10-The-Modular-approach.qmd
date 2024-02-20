@@ -1,4 +1,6 @@
-## The Modular approach^[^11]^
+## The Modular approach[^11] {#sec-modularapproach}
+
+[^11]: See section 4.4.4 *Secondary cell suppression in hierarchical and linked tables* of the SDC Handbook Hundepool et al. (2012).
 
 The modular (HiTaS) solution is a heuristic approach to cell suppression in hierarchical tables. Hierarchical tables are specially linked tables: at least one of the spanning variables exhibits a hierarchical structure, *i.e*. contains (many) sub-totals.
 

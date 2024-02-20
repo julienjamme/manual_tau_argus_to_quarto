@@ -3,5 +3,5 @@
 In the open source world the responsibility for the software is different. The idea behind open source is that the software code is no longer owned by one institute (Statistics Netherlands), but the source is available for anybody. Anybody can also contribute to the code and make his own extensions. Nevertheless we do not want to have many different versions of the software and many diversions.
 Therefore there will always be one official version of $\tau$-Argus. In order to achieve this we need a body to make decisions about further developments and extensions for the official $\tau$-Argus. This responsibility will be in the hands of a small committee. This committee will be a sub-group of the Eurostat technical working group on Statistical Confidentiality. They will make decisions on whether a new extension/correction will be allowed in the official versions of $\tau$-Argus, and also make recommendations for future extensions.
 
-Nevertheless the above mentioned email address([**argus@cbs.nl**](mailto:argus@cbs.nl)) will remain open for questions.
+Nevertheless the above mentioned email address ([argus@cbs.nl](mailto:argus@cbs.nl)) will remain open for questions.
 
