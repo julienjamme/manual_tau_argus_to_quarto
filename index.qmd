@@ -1,4 +1,4 @@
-# $\tau$-ARGUS User's Manual
+# $\tau$-ARGUS User's Manual {.unnumbered}
 
 **Version 4.1 (revised)**
 
@@ -6,7 +6,7 @@
 # GHMiter huge in batch
 
 Wijzigingen in table-meta
-\<Solver\> in batch mogelijk
+\<Solver\  in batch mogelijk
 \<SBS-output\>
 \<Rounder extensions\>
 SPSS system files
@@ -15,15 +15,15 @@ Revision overview
 December 2019
 
 -   All batch file issues from release notes version 4.1.7 have been
-    > included
+      included
 
 -   Some errors on the solver issues have been corrected.
 
 -   Obsolete neon server has been replaced by research.cbs
 
 -   The story of frozen cells in the Hypercube has been suppressed as it
-    > is no longer displayed. Needs nevertheless attention. Old text has
-    > been made hidden now.
+      is no longer displayed. Needs nevertheless attention. Old text has
+      been made hidden now.
 
 -   All screen shots have been updated, except the SPSS_story.
 -->
@@ -32,24 +32,24 @@ December 2019
 ![](Media/Pictures/100000000000027F000001D1F527FC8E.png){width=14.637cm height=10.663cm}
 
 
-+----------------------------------+----------------------------------+
-| > Project: Argus Open            | > Statistics Netherlands, P.O.   |
-| > Source-project                 | > Box 24500                      |
-+----------------------------------+----------------------------------+
-| > Date: January 2020             | > 2490 HA The Hague, The         |
-|                                  | > Netherlands                    |
-+----------------------------------+----------------------------------+
-|                                  | > email:                         |
-|                                  | > [**argu                        |
-|                                  | s@cbs.nl**](mailto:argus@cbs.nl) |
-+----------------------------------+----------------------------------+
+|                                    |                                                  |
+|:-----------------------------------|-------------------------------------------------:|
+| Project: Argus Open Source-project |   Statistics Netherlands, P.O.                   |
+|  Date: January 2020                |   Box 24500                                      |
+|                                    |   2490 HA The Hague, The Netherlands             |
+|                                    |   email: [**argus@cbs.nl**](mailto:argus@cbs.nl) |
 
-+------------------+--------------------------------------------------+
-| > Contributors:  | > Peter-Paul de Wolf (Modular), Anco Hundepool,  |
-|                  | > Sarah Giessing (ghmiter, audit), Juan-José     |
-|                  | > Salazar (Optimisation methods), Jordi Castro   |
-|                  | > (Network solutions, CTA)                       |
-+------------------+--------------------------------------------------+
+: {.striped .borderless}
+
+|                  |                                             |    
+|:-----------------|:--------------------------------------------|
+|   Contributors:  |   Peter-Paul de Wolf (Modular),             |
+|                  |   Anco Hundepool,                           |
+|                  |   Sarah Giessing (ghmiter, audit),          |
+|                  |   Juan-José Salazar (Optimisation methods), |
+|                  |   Jordi Castro (Network solutions, CTA)     |
+
+: {.striped .borderless}
 
 <!--
 <div>
