@@ -12,9 +12,9 @@ Any secondary suppressed cells are shown in blue (there are none atthis stage, i
     > secondary suppressions.
 ![](Media/Pictures/100000000000039C000002BA5B0158B8.png){width=13cm height=12.476cm}
 For some windows, the complete table cannot be seen on the screen. Inthese cases there will be scrollbars at the bottom and the right ofthe table above, which can be used to display the unseen columns.
-For large tables one does not want to see the whole table on thescreen, which is virtually impossible. Therefore τ-argus will showonly the first two levels of the hierarchal structures. If you want tosee more you can open and close certain parts of the table by clickingon the codes with a '+' or "-"sign. This works similar to the way youopen and close certain parts in the Windows explorer. Via 'ChangeView' at the bottom of the screen you can also select the level ofeach hierarchy you want to see both horizontally and vertically.
+For large tables one does not want to see the whole table on thescreen, which is virtually impossible. Therefore $\tau$-Argus will showonly the first two levels of the hierarchal structures. If you want tosee more you can open and close certain parts of the table by clickingon the codes with a '+' or "-"sign. This works similar to the way youopen and close certain parts in the Windows explorer. Via 'ChangeView' at the bottom of the screen you can also select the level ofeach hierarchy you want to see both horizontally and vertically.
 Example of a 3-dimensional table
-3-dimensional tables cannot be displayed as a whole. τ-argus can onlyshow a 2-dimensional layer of the table. So for higher dimensionaltable two variables are selected to be show. For the other variablescombo-boxes are shown. These combo-boxes allow for the selection of aspecific layer of the table. Just select the corresponding code andthat layer will be shown.
+3-dimensional tables cannot be displayed as a whole. $\tau$-Argus can onlyshow a 2-dimensional layer of the table. So for higher dimensionaltable two variables are selected to be show. For the other variablescombo-boxes are shown. These combo-boxes allow for the selection of aspecific layer of the table. Just select the corresponding code andthat layer will be shown.
 If you want to see another combination of two explanatory variables,go to "Select view" at the bottom of the window. See section[4.2.7].
 ![](Media/Pictures/20000007000070CF0000728555E01747.svm){width=15cm height=15.236cm}
 ![](Media/Pictures/100000000000033C000002BA8CA03719.png){width=13cm height=9.82cm}
@@ -78,7 +78,7 @@ The second pane ('Change Status') on the right will allow the user tochange the 
 -   Set Cost: Change the cost function for a cell.
 
 ### A priori info
-This option allows you to feed τ-argus a list of cells where thestatus of the standard rules can be overruled. E.g. a cell must bekept confidential or not for other reasons that just because of thesensitivity rules. By modifying the cost-function you can influencethe selection of the secondaries. E.g. the cells suppressed last yearcan get a preference for the suppression this year by giving this cella small value for the cost-function.
+This option allows you to feed $\tau$-Argus a list of cells where thestatus of the standard rules can be overruled. E.g. a cell must bekept confidential or not for other reasons that just because of thesensitivity rules. By modifying the cost-function you can influencethe selection of the secondaries. E.g. the cells suppressed last yearcan get a preference for the suppression this year by giving this cella small value for the cost-function.
 The option 'Expand trivial levels' is important. Often in a table withhierarchies, some levels in a hierarchy break down in only one lowerlevel. This implies that there are different cells in a table whichare implicitly the same. Changing the status of one of them might leadto inconsistencies and serious problems. E.g. one if the two is unsafeand the other is protected, the solution is impossible. If you selectthe option 'Expand trivial levels', τ‑argus will always modify allcells that are the same if you modify one of them.
 The format of the file is free format. The separator can be chosen.
 The format is:
@@ -90,7 +90,7 @@ Nr, 4, u
 Zd, 6, p
 5, 5, c, 1
 Zd, 5, pl, 100, 200
-When the apriori file has been applied τ-argus will show an overviewof the changes that have been made to the table.
+When the apriori file has been applied $\tau$-Argus will show an overviewof the changes that have been made to the table.
 ![](Media/Pictures/100000000000017B0000016FE25BE8F1.png){width=13cm height=12.247cm}
 
 ### Global recoding
@@ -132,10 +132,10 @@ Nr,North
 Os,East
 Ws,West
 Zd,South
-Pressing the 'Apply' button will actually restructure the table. Thevariable concerned will be displayed in red and additionally an x isshown in front of the variable. If required, recoding can easily beundone by pressing \'undo recoding\'. The window will return to theoriginally coding structure. If there is any error in the recodingsuch as certain codes not being found when pressing the 'Apply'button, an error message will be shown at the bottom of the screen.Alternatively, a warning could be issued; *e.g.* if the user did notrecode all original codes, τ-argus will inform the user. This may havebeen the intention of the user, therefore the program allows it. Inthe above example a τ-argus message informs the user that 4 codes havenot been changed.
+Pressing the 'Apply' button will actually restructure the table. Thevariable concerned will be displayed in red and additionally an x isshown in front of the variable. If required, recoding can easily beundone by pressing \'undo recoding\'. The window will return to theoriginally coding structure. If there is any error in the recodingsuch as certain codes not being found when pressing the 'Apply'button, an error message will be shown at the bottom of the screen.Alternatively, a warning could be issued; *e.g.* if the user did notrecode all original codes, $\tau$-Argus will inform the user. This may havebeen the intention of the user, therefore the program allows it. Inthe above example a $\tau$-Argus message informs the user that 4 codes havenot been changed.
 At the end of the operation τ‑argus will ask you whether or not amodified recoding scheme must be saved or not.
 ![](Media/Pictures/1000000000000114000000762128121F.png){width=8.184cm height=3.641cm}
-Once the 'Close' button has been pressed, τ-argus will present thetable with the recoding applied.
+Once the 'Close' button has been pressed, $\tau$-Argus will present thetable with the recoding applied.
 **Recoding a hierarchical variable **
 ![](Media/Pictures/100000000000025C000001CACB45ADD8.png){width=14.979cm height=9.857cm}
 In the hierarchical case the code scheme is typically a tree. Toglobal recode a hierarchical variable requires a user to manipulate atree structure. The standard Windows tree view is used to present ahierarchical code. Certain parts of a tree can be folded and unfoldedwith the standard Windows actions (clicking on '+' and '-').
@@ -158,7 +158,7 @@ There are a number of suppression options, which can be seen on thebottom right 
 ![](Media/Pictures/100000000000031F000002C826BA6194.png){width=14.75cm height=12.511cm}
 
 #### Hypercube
-This is also known as the ghmiter method. The approach builds on thefact that a suppressed cell in a simple n‑dimensional table withoutsubstructure cannot be disclosed exactly if that cell is contained ina pattern of suppressed, nonzero cells, forming the corner points of ahypercube. Selecting the hypercube method will lead to the followingwindow being showed by τ-argus.
+This is also known as the ghmiter method. The approach builds on thefact that a suppressed cell in a simple n‑dimensional table withoutsubstructure cannot be disclosed exactly if that cell is contained ina pattern of suppressed, nonzero cells, forming the corner points of ahypercube. Selecting the hypercube method will lead to the followingwindow being showed by $\tau$-Argus.
 ghmiter will select secondary suppressions that protect the sensitivecells properly against the risk of inferential disclosure, to someextent, if the user activates the option "*Protection againstinferential disclosure required*". If the option is inactivated, onthe other hand, ghmiter will not check secondary suppressions to besufficiently large.
 For more explanation, and detailed information on the hypercube seesection [2.8].
 The lower part of the window above enables the user to affect thesetting of two parameters, "Max sub-codelist size" and "Max sub-tablesize" that GHMITER uses for memory allocation.
@@ -175,7 +175,7 @@ After starting the modular procedure a little window will be shown.This allows t
 
 #### Optimal
 This method protects the (hierarchical) table as a single tablewithout breaking it down into smaller tables. As this method uses theoptimisation routines, an LP-solver is required: this can be eitherXpress or cplex or a free solver. The routine used can be specified inthe Options box, this will be discussed later.
-It is the responsibility of the users of τ-argus to apply for alicence for one of these commercial packages themselves. Informationon obtaining one of these licences will be found in a 'read.me' filesupplied with the software or on the CASC website.
+It is the responsibility of the users of $\tau$-Argus to apply for alicence for one of these commercial packages themselves. Informationon obtaining one of these licences will be found in a 'read.me' filesupplied with the software or on the CASC website.
 Almost the same window as in Modular is shown to select the 3additional rules; see above.
 ![](Media/Pictures/100000000000010D000000BF7829E019.png){width=7.117cm height=5.054cm}
 But a further question is asked. The question is 'How much time do youallow the system to compute the optimal solution'.
@@ -189,14 +189,14 @@ This is a Network Flow approach for large unstructured 2 dimensionaltables with 
 As the network solution is a heuristic to find an approximation of thereal optimal solution, it cannot be expected that always an optimalsolution is found. Nevertheless it is guaranteed that at least a goodfeasible solution is found in a relatively short time. The order inwhich the primaries are provided to the network algorithm couldinfluence the solution found. Therefore three options are available toorder the primaries.
 
 #### **After the suppression**
-After selecting one of the options and after clicking the Suppressbutton, τ-argus will run and display a protected table after informingthe user of the number of cells selected for secondary suppression andthe time taken to perform the operation.
+After selecting one of the options and after clicking the Suppressbutton, $\tau$-Argus will run and display a protected table after informingthe user of the number of cells selected for secondary suppression andthe time taken to perform the operation.
 ![](Media/Pictures/10000000000001080000008913CDE9F9.png){width=7.846cm height=4.177cm}
 The secondary suppressed cells will be shown in blue.
 ![](Media/Pictures/100000000000032F000002BE6D6373C6.png){width=15cm height=14.524cm}
 When the user is satisfied with the table it can be saved (see section[4.6.1] for the possible formats). Via the menuOutput\|Save table you can specify the format and start the process ofsaving a table.
 
 ### Controlled Tabular Adjustment
-A method new in version 4.0 of τ-argus is a method called ControlledTabular Adjustment. Instead of suppressing a set of cells, a selectedset of cells is modified. The aim is to change the sensitive cellssuch that the cells are replaced by a value larger that the upperprotection level or smaller than the lower protection level. i.e. farenough away from the unsafe value.. And a set of safe cells ismodified such that the resulting table is additive again. Of course wetry to minimise the information loss.
+A method new in version 4.0 of $\tau$-Argus is a method called ControlledTabular Adjustment. Instead of suppressing a set of cells, a selectedset of cells is modified. The aim is to change the sensitive cellssuch that the cells are replaced by a value larger that the upperprotection level or smaller than the lower protection level. i.e. farenough away from the unsafe value.. And a set of safe cells ismodified such that the resulting table is additive again. Of course wetry to minimise the information loss.
 More information can be found in section [2.13].
 We have implemented two variants. A standard version, suitable forgeneral cases, and an expert version for the specialists.
 ![](Media/Pictures/1000000000000116000000759A081A18.png){width=7.355cm height=3.096cm}
@@ -205,7 +205,7 @@ The expert version will show the following window: You can e.g. selectthe solver
 ![](Media/Pictures/100000000000043E000002A721797AA0.png){width=12.986cm height=8.611cm}
 
 ### Controlled rounding
-Controlled rounding (see Section [2.14] for details onthis method) requires a solver that allows you using the Mixed IntegerModel (MIP). Already in version 3 of τ‑argus we had access to MIP inXpress, thanks to the friendly cooperation of Dash Inc and later FICO.However the restricted version of the cplex licence we used in version3 of τ-argus did not have access to MIP. But from now on you can buy alicence for cplex including MIP. This allows you to use ControlledRounding with a new cplex licence.
+Controlled rounding (see Section [2.14] for details onthis method) requires a solver that allows you using the Mixed IntegerModel (MIP). Already in version 3 of τ‑argus we had access to MIP inXpress, thanks to the friendly cooperation of Dash Inc and later FICO.However the restricted version of the cplex licence we used in version3 of $\tau$-Argus did not have access to MIP. But from now on you can buy alicence for cplex including MIP. This allows you to use ControlledRounding with a new cplex licence.
 Also the free solver, soplex, can be used for Controlled Rounding.
 In general, rounding is more appropriate for frequency tables than formagnitude tables.
 The next figure shows the simple frequency table obtained from thetest data using the variable Size and Region.
@@ -306,7 +306,7 @@ The headings in the summary window are as follows:
 *Sum resp*: Total cell value in each category
 *Sum cost*: The sum of the cost variable.
 Hor. Levels and Vert. levels
-A large (hierarchical) table can never be showncompletely on the screen. Therefor τ-argus will start by showing onlythe top-2 levels of the hierarchy. With these options you can specifythat more levels of the table must be shown.
+A large (hierarchical) table can never be showncompletely on the screen. Therefor $\tau$-Argus will start by showing onlythe top-2 levels of the hierarchy. With these options you can specifythat more levels of the table must be shown.
 Alternatively you can click on the + and -- symbols ofthe hierarchical codes in the table to fold and unfold parts of thetable.
 ****3 dig separator****
 This removes or inserts the character separating the thousands for thevalues in the table.

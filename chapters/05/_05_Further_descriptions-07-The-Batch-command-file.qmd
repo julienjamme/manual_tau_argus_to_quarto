@@ -1,9 +1,9 @@
 ## The Batch command file
-τ-argus has originally been designed as an interactive program. Acomplete menu-driven design guides you through all steps of theprocess. However a growing need for a batch version emerged afterthat. Since then τ-argus has been extended with a batch version. Thebatch commands are stored in a separate text-file. These commands canbe executed from the command line or via the menu (File\|Open Batchprocess. See section [4.3.4].
-Alternatively the batch file can be used in a real batch environmentas well. Just invoke τ-argus with the command
+$\tau$-Argus has originally been designed as an interactive program. Acomplete menu-driven design guides you through all steps of theprocess. However a growing need for a batch version emerged afterthat. Since then $\tau$-Argus has been extended with a batch version. Thebatch commands are stored in a separate text-file. These commands canbe executed from the command line or via the menu (File\|Open Batchprocess. See section [4.3.4].
+Alternatively the batch file can be used in a real batch environmentas well. Just invoke $\tau$-Argus with the command
 Taupath\\TAUARGUS param1 param2 param3 param4
-where Taupath is the name of the directory where you installedτ-argus, param1 is the name of the file with batch commands; seebelow. Param2 is optional, and is the name of the logfile. If omittedτ-argus will write a logbook in the file logbook.txt in thetemp-directory. See also section [5.8]. Param3 is theparameter specifying the temp-directory. If omitted the defaulttemp-directory will be used. Param4 specifies the batch datadirectory.
-When using τ-argus interactively a batch file can be generated via themenu Output\|Write Batch file. See section [4.6.4]. Butwe advise you to inspect the results of this action before using thisgenerated batch-file as certain details might have been omitted.
+where Taupath is the name of the directory where you installed$\tau$-Argus, param1 is the name of the file with batch commands; seebelow. Param2 is optional, and is the name of the logfile. If omitted$\tau$-Argus will write a logbook in the file logbook.txt in thetemp-directory. See also section [5.8]. Param3 is theparameter specifying the temp-directory. If omitted the defaulttemp-directory will be used. Param4 specifies the batch datadirectory.
+When using $\tau$-Argus interactively a batch file can be generated via themenu Output\|Write Batch file. See section [4.6.4]. Butwe advise you to inspect the results of this action before using thisgenerated batch-file as certain details might have been omitted.
 Layout of the batch-file
 A file can be written in a text editor and called from this command.Lines starting with "//" will be considered as comment and will beignored.
 Files mentioned in batch-file are assumed to reside in the samedirectory as the batch-file. If not, the complete directory-pathshould be specified.
@@ -190,14 +190,14 @@ The possible commands are shown here.
 |                 | > Xpress or the free solver. Only needed when the |
 |                 | > type of solver has not yet been specified on    |
 |                 | > the computer during a previous interactive      |
-|                 | > session of τ-argus or if you want to use a      |
+|                 | > session of $\tau$-Argus or if you want to use a      |
 |                 | > different solver. The only parameter allowed is |
 |                 | > cplex, xpress or free.                          |
 |                 |                                                   |
 |                 | > If you select cplex the name of the cplex       |
 |                 | > licence file can be specified here. But if you  |
 |                 | > have already made known this licence file to    |
-|                 | > τ-argus in a previous session you can omit it   |
+|                 | > $\tau$-Argus in a previous session you can omit it   |
 |                 | > here.                                           |
 +-----------------+---------------------------------------------------+
 | > WRITETABLE    | > TabNo, P1, P2,Filename                          |

@@ -4,16 +4,16 @@
 This shows the contents page of the help file and from there makes thehelp available. This program has context-sensitive help. By pressingF1, the relevant page of the manual will be shown.
 
 ### Help \| News
-Information on the latest developments is shown. Old friends can seehere which new extensions have been included in this version ofτ-argus and information about bugs is shown here as well.
+Information on the latest developments is shown. Old friends can seehere which new extensions have been included in this version of$\tau$-Argus and information about bugs is shown here as well.
 
 ### Help \| Options
 There are a number of options, which can be changed here. The coloursindicating the status of a cell can be altered.
 In order to make a hierarchical table more readable, the differentlevels of the hierarchy will be indicated with an increasing greybackground. If you like different colours, you can adapt this.
 For the modular solution the maximum computing time per subtable canbe specified. This could speed up the computations, but on the otherhand might give a less optimal solution.
 Also the name of the logfile (see section [5.8]) can bechanged here. By default it is Logbook.txt in the temp-directory.
-Finally the solver for the optimisation routines must be specified.The options are: cplex or Xpress or a free solver. τ-argus can workwith all three solvers.
-If the cplex optimisation routine is being used, the location of thelicence file can be specified here. For Xpress the name of the licencefile is prescribed and fixed (XPAUTH.XPR) The Xpress licence file hasto be stored in the τ-argus program directory.
-τ-argus will store the information of all these options in theregistry and will use it in future runs. It is advisable but notnecessary to open this window at the start of a τ-argus session toensure the correct solver has been chosen.
+Finally the solver for the optimisation routines must be specified.The options are: cplex or Xpress or a free solver. $\tau$-Argus can workwith all three solvers.
+If the cplex optimisation routine is being used, the location of thelicence file can be specified here. For Xpress the name of the licencefile is prescribed and fixed (XPAUTH.XPR) The Xpress licence file hasto be stored in the $\tau$-Argus program directory.
+$\tau$-Argus will store the information of all these options in theregistry and will use it in future runs. It is advisable but notnecessary to open this window at the start of a $\tau$-Argus session toensure the correct solver has been chosen.
 ![](Media/Pictures/10000000000001E600000138155D828E.png){width=12.859cm height=8.255cm}
 
 ### Help \| About

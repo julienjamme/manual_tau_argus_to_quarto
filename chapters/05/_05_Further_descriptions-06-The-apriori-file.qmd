@@ -45,6 +45,6 @@ Nr, 4, u
 Zd, 6, p
 5, 5, c, 1
 ![](Media/Pictures/10000000000001E8000001CF33753FC7.png){width=13cm height=12.333cm}
-The apriori file allows you to feed τ-argus a list of cells where thestatus of the standard rules can be overruled. E.g. a cell must bekept confidential or not for other reasons that just because of thesensitivity rules. By modifying the cost-function you can influencethe selection of the secondaries. E.g. the cells suppressed last yearcan get a preference for the suppression this year by giving this cella small value for the cost-function.
+The apriori file allows you to feed $\tau$-Argus a list of cells where thestatus of the standard rules can be overruled. E.g. a cell must bekept confidential or not for other reasons that just because of thesensitivity rules. By modifying the cost-function you can influencethe selection of the secondaries. E.g. the cells suppressed last yearcan get a preference for the suppression this year by giving this cella small value for the cost-function.
 The option 'trivial levels' is important. Often in a table withhierarchies, some levels in a hierarchy break down in only one lowerlevel. This implies that there are different cells in a table whichare implicitly the same. Changing the status of one of them might leadto inconsistencies and serious problems. E.g. one of the two is unsafeand the other is protected, the solution is impossible. If you selectthe option 'Expand for trivial levels', τ‑argus will always modify allcells that are the same if you modify one of them.
 

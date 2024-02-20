@@ -1,4 +1,4 @@
-# 03_A_tour_of_τ-ARGUS
+# A tour of $\tau$-Argus {#sec-tour}
 
 {{< include chapters/03/_03_A_tour_of_τ-ARGUS-01-Preparation.qmd >}}
 

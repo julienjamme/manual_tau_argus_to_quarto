@@ -1,4 +1,5 @@
-## Functional design of τ-argus 
+## Functional design of $\tau$-Argus 
+
 ![](Media/Pictures/tau_argus_functional_design.png){width=14.792cm height=19.233cm}
 <!-- 2000000700004D00000062CFD2BA6125.svm -->
 
