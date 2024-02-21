@@ -1,5 +1,12 @@
 # Description of the Menu Items {#sec-menu}
 
+@sec-tour gave a brief introduction of the most frequently used options within $\tau$-Argus. In this section a more detailed description of the program by menu-item is presented. In @sec-further some general descriptions are given.
+
+ Compared with the previous versions of $\tau$-Argus (before 4.0 and before the Open Source version) the main window of $\tau$-Argus looks rather different. A window with the unsafe combinations by variable and by code was presented. This information however was seldom used and the main focus of the users of $\tau$-Argus was on the table itself. So from version 4.0 onwards the main window of $\tau$-Argus will show the table(s) itself.
+
+ ![](Media/Pictures/100000000000039C000002C3EBDD7173.png){width="13cm" height="11.873cm"}
+
+
 {{< include chapters/04/_04_Reference_Section_-_Description_of_the_Menu_Items-01--Menu-structure.qmd >}}
 
 {{< include chapters/04/_04_Reference_Section_-_Description_of_the_Menu_Items-02-Viewing-the-table.qmd >}}

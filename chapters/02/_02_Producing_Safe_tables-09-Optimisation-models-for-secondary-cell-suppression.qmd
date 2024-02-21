@@ -1,4 +1,4 @@
-## Optimisation models for secondary cell suppression[^10]
+## Optimisation models for secondary cell suppression[^10] {#sec-optimcellsuppression}
 
 [^10]: The optimisation models have been built by a team of researchers headed by Juan-José Salazar-Gonzalez of the University La Laguna, Tenerife, Spain. Other members of the team were: G Andreatta, M. Fischetti, R. Betancort Villalva, M.D. Montesdeoca Sanchez and M. Schoch.
 

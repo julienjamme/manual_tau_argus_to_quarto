@@ -1,11 +1,11 @@
 ## The File menu
-$\tau$-Argus can read data in two ways. The first option is that $\tau$-Arguswill read the data from a microdata file (fixed format, free formatand a SPSS_systemfile), which is explained in section[4.3.1]. From this microdata $\tau$-Argus can then build oneor more tables and during this tabulation process compute allnecessary additional information, needed to fully protect a table.This is the most flexible way allowing using all the functionality of$\tau$-Argus.
+$\tau$-Argus can read data in two ways. The first option is that $\tau$-Arguswill read the data from a microdata file (fixed format, free formatand a SPSS_systemfile), which is explained in @sec-fileopenmicro. From this microdata $\tau$-Argus can then build oneor more tables and during this tabulation process compute allnecessary additional information, needed to fully protect a table.This is the most flexible way allowing using all the functionality of$\tau$-Argus.
 The second option is the input and treatment of a pre-tabulated dataand is dealt with in section [4.3.2]. Only one of theseoptions can be used at one time, a pre-tabulated table and tablescomputed from microdata cannot be read in $\tau$-Argus simultaneously.
 A set of pre-tabulated tables can be read into $\tau$-Argus and via thelinked tables procedure be protected. See section[4.3.3].
 $\tau$-Argus can also be used in batch, see section [4.3.4].
 Finally the $\tau$-Argus can be closed.
 
-### File \| Open Microdata
+### File \| Open Microdata {#sec-fileopenmicro}
 The File\|Open microdata menu allows the user to specify the microdatafile (both fixed and free format or a SPSS-system file) and optionallythe metadata file.
 Note that a valid licence for SPSS must be available on your PC, atτ‑argus will use the functionality of SPSS to extract the microdatafrom SPSS to a scratch file. This file will then be used to constructthe tables to be protected.
 ![](Media/Pictures/1000000000000240000000DC8A23AEC6.png){width=13cm height=4.964cm}
@@ -18,7 +18,7 @@ If a user selects a data file with another extension,$\tau$-Argus willremember t
 A full description of the metadata file can be found in section[5.1].
 When the data file has been selected and optionally the meta datafile, you can proceed to the menu options Specify\|Metafile toedit/modify the meta data file and to Specify\|Tables to specify thetables required. See section [4.4] and[4.4.4].
 
-### File \| Open Table 
+### File \| Open Table {#sec-openfiletable}
 This is the option allowing the input of tabular data into $\tau$-Argus. Inthis case, an already-constructed table is read in. This is reached byselecting 'Open Table' in the file menu of $\tau$-Argus.
 ![](Media/Pictures/1000000000000263000000EFC8740176.png){width=14.49cm height=5.084cm}
 The name of the file containing the table to be opened (in the formatgiven below) needs to be specified in the first line. Optionally thename of the file containing the metadata is entered in the secondline. Later on you will be offered the option of adapting the metadataor even enter the metadata from scratch.

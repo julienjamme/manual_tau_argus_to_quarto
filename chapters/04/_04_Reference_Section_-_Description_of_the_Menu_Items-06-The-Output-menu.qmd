@@ -1,6 +1,7 @@
 ## The Output menu
 
-### Output \| Save Table
+### Output \| Save Table {#sec-outputsavetable}
+
 There are six options of saving the tables
 ![](Media/Pictures/100000000000019F000001BB880BA05A.png){width=11.351cm height=12.012cm}
 **As a CSV file**. This Comma Separated file can easily be read intoExcel. Please note the Excel should interpret the comma as aseparator. If your local settings are different you could use theExcel option 'Data\|Text to Columns', This a typical tabular outputmaintaining the appearance of the table in $\tau$-Argus.
@@ -66,7 +67,8 @@ Finally, a report will be generated to a user specified directory.This report wi
 A **file in JJ-format**. This is an intermediate format used inτ‑argus. See section [5.5].
 Some options are applicable to several output-versions. These aregrouped together under "General Options".
 
-### Output \| View Report
+### Output \| View Report {#sec-outputviewreport}
+
 Views the report file which has been generated with Output\|SaveTable. An example of a part of the output HTML file is shown here.
 As can be seen the essential information, for somebody other than theuser, about which rules have been applied to make the data safe isdisplayed along with details of any recoding. If required the reportcan be printed as well.
 ![](Media/Pictures/10000000000002450000030C952D053E.png){width=13cm height=17.452cm}

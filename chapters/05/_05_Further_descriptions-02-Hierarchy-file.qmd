@@ -1,4 +1,5 @@
-## Hierarchy file
+## Hierarchy file {#sec-hierarchyfile}
+
 Hierarchical structures play an important role in $\tau$-Argus. Thehierarchical structures can often be derived from the code itself.E.g. the NACE classification is an example of this. In othersituations the structure is not so clear. In that case the wholestructure has to be specified. A hierarchical structure is in fact atree. And a tree can be described easily by indentation. In τ‑argus ahierarchical structure can be described in a simple text-file, usingNotepad or something similar. The default extension is .HRC.
 One level deeper means a new sub-node in the tree. In the examplegiven below only two levels are shown, but many more levels areallowed. The indentation (an @ in this example) character has to bespecified separately in the RDA file.
 Note that the total code is never specified in these .HRC files, asτ‑argus always assumes that the total will be computed.

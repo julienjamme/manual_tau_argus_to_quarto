@@ -1,4 +1,4 @@
-## Information loss in terms of cell costs[^8]
+## Information loss in terms of cell costs[^8] {#sec-infolosscost}
 
 [^8]: See section 4.6 *Information loss measures for tabular data* of the SDC-Handbook (Hundepool et al. (2012)).
 

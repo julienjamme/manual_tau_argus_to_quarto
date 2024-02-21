@@ -1,4 +1,5 @@
-## Viewing the table
+## Viewing the table {#sec-viewtable}
+
 On the left side the table itself is shown in a spreadsheet view. Safecells are black, unsafe cells (those failing the primary suppressionrule) are red. In this example there are 12 unsafe cells and byviewing the table the user can now see the actual cells that areunsafe.
 Any secondary suppressed cells are shown in blue (there are none atthis stage, in this example) and empty cells have a hyphen (-). Thetwo check-boxes on the left-bottom give some control over the layout.
 
@@ -195,7 +196,7 @@ The secondary suppressed cells will be shown in blue.
 ![](Media/Pictures/100000000000032F000002BE6D6373C6.png){width=15cm height=14.524cm}
 When the user is satisfied with the table it can be saved (see section[4.6.1] for the possible formats). Via the menuOutput\|Save table you can specify the format and start the process ofsaving a table.
 
-### Controlled Tabular Adjustment
+### Controlled Tabular Adjustment {#sec-CTA424}
 A method new in version 4.0 of $\tau$-Argus is a method called ControlledTabular Adjustment. Instead of suppressing a set of cells, a selectedset of cells is modified. The aim is to change the sensitive cellssuch that the cells are replaced by a value larger that the upperprotection level or smaller than the lower protection level. i.e. farenough away from the unsafe value.. And a set of safe cells ismodified such that the resulting table is additive again. Of course wetry to minimise the information loss.
 More information can be found in section [2.13].
 We have implemented two variants. A standard version, suitable forgeneral cases, and an expert version for the specialists.
@@ -204,7 +205,7 @@ The standard version will run CTA without any further questions.
 The expert version will show the following window: You can e.g. selectthe solver and the type of CTA. We further refer to the detailed [CTAdocumentation](../tau-Argus_CTA_help.pdf).
 ![](Media/Pictures/100000000000043E000002A721797AA0.png){width=12.986cm height=8.611cm}
 
-### Controlled rounding
+### Controlled rounding {#sec-controlledrounding425}
 Controlled rounding (see Section [2.14] for details onthis method) requires a solver that allows you using the Mixed IntegerModel (MIP). Already in version 3 of τ‑argus we had access to MIP inXpress, thanks to the friendly cooperation of Dash Inc and later FICO.However the restricted version of the cplex licence we used in version3 of $\tau$-Argus did not have access to MIP. But from now on you can buy alicence for cplex including MIP. This allows you to use ControlledRounding with a new cplex licence.
 Also the free solver, soplex, can be used for Controlled Rounding.
 In general, rounding is more appropriate for frequency tables than formagnitude tables.

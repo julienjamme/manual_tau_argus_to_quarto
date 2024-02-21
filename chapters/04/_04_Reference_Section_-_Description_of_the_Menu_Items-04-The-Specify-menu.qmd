@@ -1,7 +1,8 @@
 ## The Specify menu
 Themetadata structure is different for describing microdata and tabulardata. Therefor the structure of the metadata file (RDA-file) isdifferent and also the window to specify and modify the metadata isdifferent. The version presented depends on the type of data that hasbeen selected. We will first describe the situation for microdata(section [4.4.1]) and then for tabular data (section[4.4.3]).
 
-### Specify \| Metafile \[for microdata\]
+### Specify \| Metafile \[for microdata\] {#sec-specifymetafilemicro}
+
 Clicking on 'Specify\|Metafile' gives the user the opportunity toeither edit a metafile already read in or to enter the metadatainformation directly at the computer from scratch.
 In this dialog box all attributes of the variables can be specified.This is a good alternative to manually edit the rda-file outside$\tau$-Argus. $\tau$-Argus does a moderate checking of the rda-file, but noguarantee can be given for a proper functioning of a manually editedrda-file. The rda-file has been explained in detail in section[5.1]. Here, the editing of a rda-file within $\tau$-Argus islooked at.
 ![](Media/Pictures/10000000000003810000023790E40C02.png){width=13cm height=8.216cm}
@@ -124,7 +125,8 @@ The options are:
 The codelist and the hierarchy are the same as for microdata, so werefer to section [4.4.1].
 For explanatory variables the code for the total has to be specified.We strongly recommend strongly that the user also provides the valuesfor the totals himself, but if needed he can ask $\tau$-Argus to computethese totals. However it should be noted that when the option tocompute the totals by $\tau$-Argus is selected you will lose vitalinformation as the cell status. See also section [4.4.5]In any case, $\tau$-Argus needs these totals as they play an important roleis the structure of a table and also are important for the suppressionmodels.
 
-### Specify \| Specify Tables \[for microdata\]
+### Specify \| Specify Tables \[for microdata\] {#sec-specifytablesformicro}
+
 In this dialog box the user can specify the tables which requireprotection. In one run of $\tau$-Argus more than one table can bespecified, but the tables will be protected separately unless they arelinked (have at least one variable in common). In that case they canbe protected simultaneously if required. In section[4.5.2] the idea of linked tables will be discussed.
 Also, the user has to specify the parameters for the dominance rule orp% rule and the minimum number of contributors in a cell, etc. Atpresent $\tau$-Argus allows up to 6-dimensional tables, but due to thecapacities of the LP-solver used (either Xpress or cplex depending onthe user's license or the free solver) and the complexity of theoptimisations involved, tables of this complexity can only beprotected by the hypercube method (see section [2.8] inthe Theory chapter). The solutions based on optimisation are limitedto 4 dimensions.
 Below is a typical window obtained when specifying tables with thep%-rule applied.

@@ -1,4 +1,4 @@
-## The apriori file
+## The apriori file {#sec-apriorifile}
 The apriori file can be used to modify the characteristics of a cellbefore the secondary cell suppression routines are called. You canmodify the following characteristics:
 
 -   Cell status

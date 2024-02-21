@@ -6,7 +6,7 @@ This shows the contents page of the help file and from there makes thehelp avail
 ### Help \| News
 Information on the latest developments is shown. Old friends can seehere which new extensions have been included in this version of$\tau$-Argus and information about bugs is shown here as well.
 
-### Help \| Options
+### Help \| Options {#sec-helpoptions}
 There are a number of options, which can be changed here. The coloursindicating the status of a cell can be altered.
 In order to make a hierarchical table more readable, the differentlevels of the hierarchy will be indicated with an increasing greybackground. If you like different colours, you can adapt this.
 For the modular solution the maximum computing time per subtable canbe specified. This could speed up the computations, but on the otherhand might give a less optimal solution.
