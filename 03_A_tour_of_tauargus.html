@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Manual of Tau-Argus - 3&nbsp; A tour of \(\tau\)-Argus</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./04_Reference_Section_-_Description_of_the_Menu_Items.html" rel="next">
+<link href="./02_Producing_Safe_tables.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03_A_tour_of_tauargus.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A tour of <span class="math inline">\(\tau\)</span>-Argus</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Manual of Tau-Argus</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="math inline">\(\tau\)</span>-ARGUS User’s Manual</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_Introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_Producing_Safe_tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Producing Safe Tables</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_A_tour_of_tauargus.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A tour of <span class="math inline">\(\tau\)</span>-Argus</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_Reference_Section_-_Description_of_the_Menu_Items.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Description of the Menu Items</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_Further_descriptions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Further descriptions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_Index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Index</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation"><span class="header-section-number">3.1</span> Preparation</a>
+  <ul class="collapse">
+  <li><a href="#sec-firststeps" id="toc-sec-firststeps" class="nav-link" data-scroll-target="#sec-firststeps"><span class="header-section-number">3.1.1</span> First steps</a></li>
+  <li><a href="#sec-openmicro" id="toc-sec-openmicro" class="nav-link" data-scroll-target="#sec-openmicro"><span class="header-section-number">3.1.2</span> Open a microdata file</a></li>
+  <li><a href="#sec-specifymeta" id="toc-sec-specifymeta" class="nav-link" data-scroll-target="#sec-specifymeta"><span class="header-section-number">3.1.3</span> Specify metafile</a></li>
+  <li><a href="#sec-specifytables" id="toc-sec-specifytables" class="nav-link" data-scroll-target="#sec-specifytables"><span class="header-section-number">3.1.4</span> Specify tables</a></li>
+  </ul></li>
+  <li><a href="#sec-processdisclosure" id="toc-sec-processdisclosure" class="nav-link" data-scroll-target="#sec-processdisclosure"><span class="header-section-number">3.2</span> The process of disclosure control</a>
+  <ul class="collapse">
+  <li><a href="#cell-information" id="toc-cell-information" class="nav-link" data-scroll-target="#cell-information"><span class="header-section-number">3.2.1</span> Cell information</a></li>
+  <li><a href="#change-status" id="toc-change-status" class="nav-link" data-scroll-target="#change-status"><span class="header-section-number">3.2.2</span> Change Status</a></li>
+  <li><a href="#a-priori-info" id="toc-a-priori-info" class="nav-link" data-scroll-target="#a-priori-info"><span class="header-section-number">3.2.3</span> A Priori Info</a></li>
+  <li><a href="#recode" id="toc-recode" class="nav-link" data-scroll-target="#recode"><span class="header-section-number">3.2.4</span> Recode</a></li>
+  <li><a href="#secondary-suppression" id="toc-secondary-suppression" class="nav-link" data-scroll-target="#secondary-suppression"><span class="header-section-number">3.2.5</span> Secondary Suppression</a></li>
+  <li><a href="#summary-window" id="toc-summary-window" class="nav-link" data-scroll-target="#summary-window"><span class="header-section-number">3.2.6</span> Summary Window</a></li>
+  </ul></li>
+  <li><a href="#sec-savesafetable" id="toc-sec-savesafetable" class="nav-link" data-scroll-target="#sec-savesafetable"><span class="header-section-number">3.3</span> Save the safe table</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-tour" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A tour of <span class="math inline">\(\tau\)</span>-Argus</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this chapter, we explain and display the key features of <span class="math inline">\(\tau\)</span>-Argus. <span class="math inline">\(\tau\)</span>-Argus is a menu driven program, and here we describe a number of menu steps the user will follow in order to prepare a table for output in a ‘safe’ form. The aim of the tour is to guide the user through the basic features of the program without describing every feature in detail. The only pre-requisite knowledge is basic experience of the Windows environment. In <a href="04_Reference_Section_-_Description_of_the_Menu_Items.html" class="quarto-xref"><span>Chapter 4</span></a> (Reference) a more systematic description of the different parts of <span class="math inline">\(\tau\)</span>-Argus will be given. Chapter 3 can be read as a standalone chapter as there is enough detail to enable the user to run the program. However, not every option is covered and the user is pointed in the direction of the Reference chapter in a number of instances. In addition, back references to the theory explained in <a href="02_Producing_Safe_tables.html" class="quarto-xref"><span>Chapter 2</span></a> are also indicated. In this tour we will use the data in the file tau_testW.asc, which comes with the installation of <span class="math inline">\(\tau\)</span>-Argus.</p>
+<p>This file will be installed in a subdirectory of the installation called data. In most situations the user will not have write permission in that directory. So saving any information must be done in a folder,where the user has write permission.</p>
+<p>In this tour we will start with the fixed format data file tau_testW.asc, build a table from that file and go through the process of disclosure control and finish with saving a protected safe table.</p>
+<p>The key windows for preparation of the data and the processes of disclosure control (depicted graphically in the figure in <a href="02_Producing_Safe_tables.html#sec-functionaldesign" class="quarto-xref"><span>Section 2.16</span></a>) are explored in this tour, which are given below.</p>
+<section id="preparation" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">3.1</span> Preparation</h2>
+<ul>
+<li><p><em>First steps</em>. Before using <span class="math inline">\(\tau\)</span>-Argus for the first time, some options should be set to make <span class="math inline">\(\tau\)</span>-Argus better usable in your environment. E.g. you can select the solver you want to use in secondary cell suppression. See <a href="#sec-firststeps" class="quarto-xref"><span>Section 3.1.1</span></a></p></li>
+<li><p><em>Open Microdata</em>. This involves selecting both the microdata and the associated metadata. See <a href="#sec-openmicro" class="quarto-xref"><span>Section 3.1.2</span></a></p></li>
+<li><p><em>Specify Metafile</em>. This shows how the metafile can be entered when there in no metafile available, or can be edited after being read in but before any tables are being specified. This includes options such as declaring variables to be explanatory or response, and setting up the hierarchical structure of the data and the location of the variables in the file. See <a href="#sec-specifymeta" class="quarto-xref"><span>Section 3.1.3</span></a></p></li>
+<li><p><em>Specify Tables</em>. Declare the tables for which protection is required, along with the safety rule and minimum frequency rule on which the primary suppressions will be based. When this has been finished the tables will be computed or read in. See <a href="#sec-specifytables" class="quarto-xref"><span>Section 3.1.4</span></a></p></li>
+<li><p><em>Process of Disclosure Control</em>. The main window of <span class="math inline">\(\tau\)</span>-Argus will show the table that we have computed or read in and when all the safety rules for primary suppressions have been applied.</p></li>
+<li><p>You can inspect the table; get information about the number of unsafe cells etc. It contains options to modify the table using global recoding. There are several options to make the table safe via secondary cell suppression and rounding. Also an audit procedure is available to check quality of any secondary suppression pattern. See <a href="#sec-processdisclosure" class="quarto-xref"><span>Section 3.2</span></a></p></li>
+<li><p><em>Save Table</em>. The user can save the ‘safe’ table in a number of formats as will be seen in <a href="#sec-savesafetable" class="quarto-xref"><span>Section 3.3</span></a>.</p></li>
+</ul>
+<section id="sec-firststeps" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="sec-firststeps"><span class="header-section-number">3.1.1</span> First steps</h3>
+<p>Via (Help|Options) you can open the options window.</p>
+<p>Before starting the process of protecting a table, you can customise <span class="math inline">\(\tau\)</span>-Argus. Some methods for secondary suppression (the modular and the optimal), but also the audit procedure require an external linear programming solver. For the complex problems of <span class="math inline">\(\tau\)</span>-Argus we have concluded that the use of high quality commercial solvers can be efficient. However also a free solver can be chosen as a good alternative. Although <span class="math inline">\(\tau\)</span>-Argus is freeware software these solvers are commercial packages and you have to acquire a licence for them separately. More information can be found on the casc-website (<a href="https://research.cbs.nl/casc/"><em>https://research.cbs.nl/casc/</em></a>). The choice of this solver must be made before protecting a table. The choices are either Xpress or <span class="smallcaps">cplex</span> or the free solver soplex, the different LP_solvers supported by <span class="math inline">\(\tau\)</span>-Argus. See also <a href="02_Producing_Safe_tables.html#sec-optimcellsuppression" class="quarto-xref"><span>Section 2.9</span></a> for more details.</p>
+<p><img src="Media/Pictures/10000000000001E600000138BEEDE4BF.png" style="width:13.229cm;height:8.414cm"></p>
+<p>For <span class="smallcaps">cplex</span> the name of the licence file must specified.</p>
+<p>Once this window has been opened details of the solver can be entered. Also the maximum time the solver is allowed to spend on each sub-table in Modular can be specified. However always a feasible solution is sought.</p>
+<p>And the name of the logbook, by default taulogbook.txt in thetemp-directory can be chosen.</p>
+</section>
+<section id="sec-openmicro" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="sec-openmicro"><span class="header-section-number">3.1.2</span> Open a microdata file</h3>
+<p>In this tour we only deal with how to open a fixed format microdata file (see <a href="#sec-openmicro" class="quarto-xref"><span>Section 3.1.2</span></a> to <a href="#sec-specifytables" class="quarto-xref"><span>Section 3.1.4</span></a>). If an already constructed table is to be used, then go to the Reference chapter (<a href="04_Reference_Section_-_Description_of_the_Menu_Items.html#sec-openfiletable" class="quarto-xref"><span>Section 4.3.2</span></a>). To start disclosure controlwith <span class="math inline">\(\tau\)</span>-Argus there are three possible options:</p>
+<ol type="1">
+<li><p>Open a ascii microdata file from which a table can be constructed,</p></li>
+<li><p>Open an already completed table,</p></li>
+<li><p>Open a SPSS systemfile containing the microdata</p></li>
+</ol>
+<p>Opening an already completed table is not part of this tour (See <a href="04_Reference_Section_-_Description_of_the_Menu_Items.html#sec-openfiletable" class="quarto-xref"><span>Section 4.3.2</span></a>). Also the SPSS-option (see <a href="04_Reference_Section_-_Description_of_the_Menu_Items.html#sec-fileopenmicro" class="quarto-xref"><span>Section 4.3.1</span></a>) is not part of this tour.</p>
+<p>Both a microdata file and the metadata file describing this microdata file are required. The microdata file must be either a fixed format ascii file or a free format file with a specified separator. By clicking (File|Open Microdata) you can specify both the name of the microdata file and the name of the file containing the metadata.</p>
+<p><img src="Media/Pictures/1000000000000240000000DC95A72CE6.png" style="width:13cm;height:5.089cm"></p>
+<p><span class="math inline">\(\tau\)</span>-Argus, expects the microdata and metadata file to be stored in separate files. The simplest way to use the program is to use the extension .ASC for the (fixed format) data file and .RDA (Record Description for Argus) for the metadata file. If the name of the metadata file is the same as the data file, except for the extension, and it already exists in the same directory, <span class="math inline">\(\tau\)</span>-Argus will fill in the name of this metadata file automatically in the second text box. If no metadata file is specified, the program has the facility to specify the metadata interactively via the menu option (Specify|Metafile). This is also the place to make changes to the metadata file. In <a href="#sec-specifymeta" class="quarto-xref"><span>Section 3.1.3</span></a> we will give a description of the metadata file for <span class="math inline">\(\tau\)</span>-Argus.</p>
+</section>
+<section id="sec-specifymeta" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="sec-specifymeta"><span class="header-section-number">3.1.3</span> Specify metafile</h3>
+<p>When you enter or change the metadata file interactively using <span class="math inline">\(\tau\)</span>-Argus the option (Specify|Metafile) will bring you to the following screen:</p>
+<p><img src="Media/Pictures/1000000000000381000002374DCB2899.png" style="width:13cm;height:8.236cm"></p>
+<p>The key elements of this window are the definitions for each variable. Most variables will be defined as one of the following.</p>
+<ul>
+<li><p>Explanatory Variable: a variable to be used as a categorical (spanning) variable when defining a table.</p></li>
+<li><p>Response Variable: a numerical variable to be used as a cell item in a table.</p></li>
+<li><p>Weight variable: a variable containing the sampling weighting scheme.</p></li>
+</ul>
+<p>More details on these variables along with the others options can befound in the Reference chapter (<a href="04_Reference_Section_-_Description_of_the_Menu_Items.html#sec-specifymetafilemicro" class="quarto-xref"><span>Section 4.4.1</span></a>).</p>
+<p>Other important features of this window are as follows.</p>
+<ul>
+<li><p>Codelist: <span class="math inline">\(\tau\)</span>-Argus will always automatically build the codelists for the explanatory variables from the datafile. However you can enhance the presentation of the information if you can specify a codelist file (a list-of-codes of the explanatory variables) as follows.</p>
+<ul>
+<li><p>Automatic: The codelist is created from the categories in the variable.</p></li>
+<li><p>Codelist file: The codes can be read in from an external file. Each category can contain a label. The codelist is only used for enhancing the presentation but always <span class="math inline">\(\tau\)</span>-Argus will build a codelist from the datafile itself.</p></li>
+</ul></li>
+<li><p>Missing values: this gives information on the missing values which are attached to a codelist. Two distinct missing value indicators can be set (the reason for this is for the purposes of indicating different reasons for missing values: for example perhaps non-responses of different forms: maybe one code for the response ‘<em>don't know’,</em> and another for’<em>refusal’</em>). Missing values however are not required.</p></li>
+<li><p>Hierarchical codes: The hierarchy can be derived from</p>
+<ul>
+<li><p>the digits of the individual codes in the data file or</p></li>
+<li><p>a specified file containing the hierarchical structure. See <a href="05_Further_descriptions.html#sec-hierarchyfile" class="quarto-xref"><span>Section 5.2</span></a></p></li>
+</ul></li>
+</ul>
+<p>Examples are shown in the metafile information below.</p>
+<section id="the-metafile" class="level4" data-number="3.1.3.1">
+<h4 data-number="3.1.3.1" class="anchored" data-anchor-id="the-metafile"><span class="header-section-number">3.1.3.1</span> The Metafile</h4>
+<p>The metafile describes the variables in the microdata file, both the record layout and some additional information necessary to perform the SDC-process. Each variable is specified on one main line, followed by one or more option lines. The options ine always start with an option name enclosed in "&lt;" and "&gt;". An example is shown here. The leading spaces shown only serve only to make the file more readable; they have no other meaning.</p>
+<p><img src="Media/Pictures/metafile_example_313.png" class="img-fluid"></p>
+<!--
+Year 1 2 " x"
+    <RECODEABLE>
+    <TOTCODE> "Total"
+IndustryCode 4 5 "99999"
+    <RECODEABLE>
+    <TOTCODE> "Total"
+    <DISTANCE> 1 3 5 7 9
+    <HIERARCHICAL>
+    <HIERLEVELS> 3 1 1
+Size 9 2 "99"
+    <RECODEABLE>
+    <TOTCODE> "Alles"
+Region 12 2
+    <RECODEABLE>
+    <TOTCODE> "Total"
+    <DISTANCE> 2 4 4 4 4
+    <CODELIST> "REGION.CDL"
+    <HIERARCHICAL>
+    <HIERCODELIST> "D:\\TauJava3\\Datata\\region2.hrc"
+    <HIERLEADSTRING> "@"
+Wgt 15 4
+    <WEIGHT>
+    <DECIMALS> 1
+Var1 19 9
+    <NUMERIC>
+Var2 28 10
+    <NUMERIC>
+    <DECIMALS> 2
+Var3 38 10
+    <NUMERIC>
+Var4 48 10
+    <NUMERIC>
+Var5 58 10
+    <NUMERIC>
+Var6 68 10
+    <NUMERIC>
+Var7 78 10
+    <NUMERIC>
+Var8 88 10
+    <NUMERIC>
+Request 99 1
+    <NUMERIC>
+-->
+</section>
+<section id="details-of-the-variables" class="level4" data-number="3.1.3.2">
+<h4 data-number="3.1.3.2" class="anchored" data-anchor-id="details-of-the-variables"><span class="header-section-number">3.1.3.2</span> Details of the variables</h4>
+<p><em>‘Year’</em> : For this variable begins on position 1 of each record , is2 characters long and missing values are represented by 99. It is alsorecodeable implicitly stating that it is an explanatory or spanningvariable used to create the tables.</p>
+<p><em>‘IndustryCode’</em>: For this variable begins on position 4 of eachrecord and is 5 characters long. Missing values are represented by99999. As well as being recodeable this variable is hierarchical andthe hierarchy structure is specified. The first 3 characters are inthe top hierarchy level, the 4<sup>th</sup> character in the second level andthe 5<sup>th</sup> character in the lowest level.</p>
+<p><em>‘Size’</em>: For this variable begins on position 9 of each record and is2 characters long, and missing values are represented by 99. It isalso recodeable.</p>
+<p><em>‘Region’</em>: For this variable begins on position 12 of each record andis 2 characters long. There is no missing value. There is a codelistfile <em>region.cdl</em> and of a hierarchical codelist file <em>region2.hrc</em>.Examples of these files are shown here.</p>
+<p><em>Note:</em> the codelist file is not essential; the content is only usedto enhance some information on the screen. The hierarchicalinformation however plays an essential role as it describes thestructure of the table and the relation between the cells.</p>
+<p><em>Note:</em> In both files the code for Total is not specified. <span class="math inline">\(\tau\)</span>-Argusalways explicitly assumes that there will be a total in each dimensionof the table. Without totals there are no additivity constrains andhence there is no problem of Secondary Cell Suppression.</p>
+<p>The file region.cdl:</p>
+<p><img src="Media/Pictures/region_cdl_file_3132.png" class="img-fluid"></p>
+<!---
+1,Groningen
+2,Friesland
+3,Drenthe
+4,Overijssel
+5,Flevoland
+6,Gelderland
+7,Utrecht
+8,Noord-Holland
+9,Zuid-Holland
+10,Zeeland
+11,Noord-Brabant
+12,Limburg
+Nr,North
+Os,East
+Ws,West
+Zd,South
+
+--->
+<p>The file region.hrc:</p>
+<p><img src="Media/Pictures/region_hrc_file_3132.png" class="img-fluid"></p>
+<!--
+Nr
+@ 1
+@ 2
+@ 3
+Os
+@ 4
+@ 5
+@ 6
+@ 7
+Ws
+@ 8
+@ 9
+\@10
+Zd
+\@11
+\@12
+
+-->
+<p>Additional details of these coding files can be found in <a href="05_Further_descriptions.html#sec-codelistfile" class="quarto-xref"><span>Section 5.3</span></a> and <a href="05_Further_descriptions.html#sec-hierarchyfile" class="quarto-xref"><span>Section 5.2</span></a>.</p>
+</section>
+</section>
+<section id="sec-specifytables" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="sec-specifytables"><span class="header-section-number">3.1.4</span> Specify tables</h3>
+<p>When the metadata file is ready, the tables to be protected can be specified. This is achieved via Specify|Tables. A window to specify the tables is presented. In the example here we have a 2 dimensional table (2 explanatory variables; Size x Region) and a response variable(Var2). A safety rule (<span class="math inline">\(p\)</span>%-rule) has been defined.</p>
+<p><img src="Media/Pictures/10000000000002EC000002CD5753E43A.png" style="width:13cm;height:12.42cm"></p>
+<p>The key elements of this window are as follows.</p>
+<section id="explanatory-variables" class="level4" data-number="3.1.4.1">
+<h4 data-number="3.1.4.1" class="anchored" data-anchor-id="explanatory-variables"><span class="header-section-number">3.1.4.1</span> Explanatory variables</h4>
+<p>On the left is the list box with the explanatory variables.</p>
+<p>Click on ‘&gt;&gt;’ moves the selected variables to the next box in which the selected explanatory variables can be seen. From the box on the left hand side, containing explanatory variables, the variables that will be used in the row or the column of the table, in a 2-way table can be selected. Up to six explanatory variables can be selected to create a table, but higher dimensions will restrict the options to process a table.</p>
+</section>
+<section id="cell-items" class="level4" data-number="3.1.4.2">
+<h4 data-number="3.1.4.2" class="anchored" data-anchor-id="cell-items"><span class="header-section-number">3.1.4.2</span> Cell items</h4>
+<p>The ‘cell items’ box contains the variables, which were declared as ‘response variables’ in the metafile. By using the ‘&gt;&gt;’ button they can be moved to the ‘response variable’ box to be used in the defined table.</p>
+</section>
+<section id="response-variable" class="level4" data-number="3.1.4.3">
+<h4 data-number="3.1.4.3" class="anchored" data-anchor-id="response-variable"><span class="header-section-number">3.1.4.3</span> Response variable</h4>
+<p>Any variable in the cell items box can be chosen as the responsevariable. Also the implicit variable &lt;freq&gt; for making a frequencytable.</p>
+</section>
+<section id="shadow-variable" class="level4" data-number="3.1.4.4">
+<h4 data-number="3.1.4.4" class="anchored" data-anchor-id="shadow-variable"><span class="header-section-number">3.1.4.4</span> Shadow variable</h4>
+<p>The shadow variable is the variable which is used to apply the safety rule. By default this is the response variable. More details on the Shadow variable can be found in <a href="04_Reference_Section_-_Description_of_the_Menu_Items.html#sec-specifytablesformicro" class="quarto-xref"><span>Section 4.4.4</span></a> in the Reference chapter.</p>
+</section>
+<section id="cost-variable" class="level4" data-number="3.1.4.5">
+<h4 data-number="3.1.4.5" class="anchored" data-anchor-id="cost-variable"><span class="header-section-number">3.1.4.5</span> Cost variable</h4>
+<p>This variable describes the cost of each cell. These are the costs that are minimised when the pattern of secondary suppressed cells are calculated (see <a href="02_Producing_Safe_tables.html#sec-infolosscost" class="quarto-xref"><span>Section 2.6</span></a> in the Theory chapter for the further details). By default this is the response variable butother choices are possible. If the response or any other explicitly specified variable is used for this purpose, the radio button 'variable' should be selected. Then, any variable name can be transferred from the cell items to the cost variable window. However if the name is empty by default the response variable will be chosen. It is also possible to use the frequency of the cells as a cost-function. This will suppress cells minimising the number of contributors to each cell. A third option is that the number of cells to be suppressed is minimised, irrespective of the size of their contributions (unity option – cost variable is set to 1 for each cell). However this tends to the suppression of totals and marginals. Also a distance function is available. More details will be given inthe Reference Chapter along with an example (<a href="04_Reference_Section_-_Description_of_the_Menu_Items.html#sec-specifytablesformicro" class="quarto-xref"><span>Section 4.4.4</span></a>). Note that choice of the cost variable does not have any impact when using the hypercube method for secondary suppression.</p>
+</section>
+<section id="weight" class="level4" data-number="3.1.4.6">
+<h4 data-number="3.1.4.6" class="anchored" data-anchor-id="weight"><span class="header-section-number">3.1.4.6</span> Weight</h4>
+<p>If the data file has a sample weight, specified in the metadata file, the table can be computed taking this weight into account. In this case, the 'apply weights' box should be ticked. More details will be given in the Reference Chapter along with an example (<a href="04_Reference_Section_-_Description_of_the_Menu_Items.html#sec-specifytablesformicro" class="quarto-xref"><span>Section 4.4.4</span></a>).</p>
+</section>
+<section id="the-safety-rule" class="level4" data-number="3.1.4.7">
+<h4 data-number="3.1.4.7" class="anchored" data-anchor-id="the-safety-rule"><span class="header-section-number">3.1.4.7</span> The safety rule</h4>
+<p>The concept of safety rules is explained in <a href="02_Producing_Safe_tables.html#sec-infolosscost" class="quarto-xref"><span>Section 2.6</span></a> in the chapter on Theory. In this window the left side of the window allows the type of rule to be selected, this is usually either the dominance rule or <span class="math inline">\(p\)</span>% rule, along with the necessary parameter values. Several rules together can be set for any particular table.</p>
+<p>Additionally, the minimum number of contributors (threshold rule) can be chosen. In the window this is referred to as the ‘Minimum Frequency’.</p>
+<p>Now for the readability of this chapter, brief summaries are provided of the Dominance and <span class="math inline">\(p\)</span>% rules.</p>
+</section>
+<section id="dominance-rule" class="level4" data-number="3.1.4.8">
+<h4 data-number="3.1.4.8" class="anchored" data-anchor-id="dominance-rule"><span class="header-section-number">3.1.4.8</span> Dominance rule</h4>
+<p>This is sometimes referred to as the <span class="math inline">\((n,k)\)</span> rule. The rule states that if the sum of contributions of the largest <span class="math inline">\(n\)</span> contributors to a cell is more than <span class="math inline">\(k\)</span>%, the cell is considered disclosive.</p>
+<p>This is the traditional rule; however we recommend to use the <span class="math inline">\(p\)</span>% rule as a better alternative. The <span class="math inline">\(p\)</span>%-rule focusses more on the individual contributors to a cell.</p>
+</section>
+<section id="p-rule" class="level4" data-number="3.1.4.9">
+<h4 data-number="3.1.4.9" class="anchored" data-anchor-id="p-rule"><span class="header-section-number">3.1.4.9</span> <span class="math inline">\(p\)</span>% rule</h4>
+<p>The <span class="math inline">\(p\)</span>% rule says that if the value of a cell <span class="math inline">\(X_1\)</span> can be estimated to an accuracy of better than <span class="math inline">\(p\)</span>% of the true value then it is disclosive where <span class="math inline">\(X_1\)</span> is the largest contributor to a cell.</p>
+<p>This rule can be written as: <span class="math inline">\({{\sum\limits_{\mathit{ii} = 3}^{c}x_{i}} \geq \frac{p}{100}}x_{1}\)</span> for the cell to be non-disclosive where <em>c</em> is the total number of contributors to the cell and the intruder is a respondent in the cell.</p>
+<p>It is important to know that when entering this rule in <span class="math inline">\(\tau\)</span>-Argus the value of <span class="math inline">\(n\)</span> refers to the number of intruders in coalition (who wish to group together to estimate the largest contributor). In general <span class="math inline">\(n=1\)</span>.</p>
+<p>A typical example would be that the sum of all reporting units excluding the largest two must be at least <span class="math inline">\(10\)</span>% of the value of the largest. Therefore, in <span class="math inline">\(\tau\)</span>-Argus set <span class="math inline">\(p=10\)</span> and <span class="math inline">\(n=1\)</span> as there is just one intruder in the coalition, respondent <span class="math inline">\(X_2\)</span>.</p>
+<p><em>Note:</em> we only consider the situation for the largest contributor, as this is the worst case. If the largest is safe all contributors are safe.</p>
+<p>The choice of safety rule is specified by the user and the chosen parameters can then be entered. From these parameters symmetric safety ranges are computed automatically prior to the secondary suppressions.</p>
+<p>For the minimum frequency rule, a safety range is calculated from the user given range. This is usually a small positive value and is required to enable secondary suppression to be carried out.</p>
+<p>A manual safety range is also required for cells that can be made unsafe by intervention of the user.</p>
+<p>Other options such as the ‘Request Rule’ or the ‘Holding Rule’ will be looked at in more detail in the Reference chapter (<a href="04_Reference_Section_-_Description_of_the_Menu_Items.html#sec-specifytablesformicro" class="quarto-xref"><span>Section 4.4.4</span></a>).</p>
+<p>When everything has been filled in, click '˅' to transport all the specified parameters describing the table to the ‘listwindow’ on the bottom. As many tables as you want may be specified, only limited by the memory of the computer. If a table is to be modified press the ‘^’ button.</p>
+</section>
+<section id="creating-the-table" class="level4" data-number="3.1.4.10">
+<h4 data-number="3.1.4.10" class="anchored" data-anchor-id="creating-the-table"><span class="header-section-number">3.1.4.10</span> Creating the Table</h4>
+<p>Pressing the ‘Compute tables’ button will invoke <span class="math inline">\(\tau\)</span>-Argus to actually compute the tables requested and the process to start disclosure control may be invoked. <span class="math inline">\(\tau\)</span>-Argus will come back showing the (first) table in a spreadsheet like view number of unsafe cells per variable, per dimension, as explained in the next <a href="#sec-processdisclosure" class="quarto-xref"><span>Section 3.2</span></a>.</p>
+</section>
+</section>
+</section>
+<section id="sec-processdisclosure" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="sec-processdisclosure"><span class="header-section-number">3.2</span> The process of disclosure control</h2>
+<p>When the table(s) have been calculated, the main-window of <span class="math inline">\(\tau\)</span>-Arguswill show the (first) table.</p>
+<p><img src="Media/Pictures/1000000000000399000002AFC81A9D2E.png" style="width:13cm;height:9.696cm"></p>
+<p>Safe cells are shown in black, whilst cells failing the safety ruleand/or minimum frequency rule are displayed in red.</p>
+<p>Only the top 2 levels of a hierarchy are shown initially. But at the bottom of the window there are options to open more levels. Also clicking on the '+' before a code will open a level of the hierarchy. In the example we have opened the <span class="math inline">\(3^{rd}\)</span> level of the region variable.</p>
+<p>The user now has to decide whether to carry out secondary suppressions immediately or to perform some recoding first. There are other options such as changing the status of individual cells manually, this will be discussed further in the Reference chapter (see <a href="04_Reference_Section_-_Description_of_the_Menu_Items.html#sec-viewtable" class="quarto-xref"><span>Section 4.2</span></a>).</p>
+<section id="cell-information" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="cell-information"><span class="header-section-number">3.2.1</span> Cell information</h3>
+<p>Cells can be selected in the table by clicking with the cursor on a specific cell. In that case, information about the selected cell is shown on the right top part of the window.</p>
+<p>The status of the cell can be one of the following. Some of the terms will be explained later in this section but others are expanded upon in the Reference <a href="04_Reference_Section_-_Description_of_the_Menu_Items.html#sec-viewtable" class="quarto-xref"><span>Section 4.2</span></a>.</p>
+<ul>
+<li><p>Safe: Does not violate the safety rule</p></li>
+<li><p>Safe (from manual): manually made safe during this session</p></li>
+<li><p>Unsafe: According to the safety rule</p></li>
+<li><p>Unsafe (request): Unsafe according to the Request rule.</p></li>
+<li><p>Unsafe (frequency): Unsafe according to the minimum frequency rule.</p></li>
+<li><p>Unsafe (zero cell) Unsafe because the zero-cells are considered unsafe.</p></li>
+<li><p>Unsafe (from manual): Manually made unsafe during this session.</p></li>
+<li><p>Protected: Cannot be selected as a candidate for secondary cell suppression.</p></li>
+<li><p>Secondary: Cell selected for secondary suppression.</p></li>
+<li><p>Secondary (from manual): Unsafe due to secondary suppression after primary suppressions carried out manually.</p></li>
+<li><p>Zero: Value is zero and cannot be suppressed.</p></li>
+<li><p>Empty: No records contributed to this cell and the cell cannot be suppressed.</p></li>
+</ul>
+</section>
+<section id="change-status" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="change-status"><span class="header-section-number">3.2.2</span> Change Status</h3>
+<p>The second pane (‘Change Status’) on the right will allow the user tochange the cell–status.</p>
+<ul>
+<li><p>Set to Safe: A cell, which has failed the safety rules, can be declared safe by the user.</p></li>
+<li><p>Set to Unsafe: A cell, which has passed the safety rules, can be declared to be unsafe by the user.</p></li>
+<li><p>Set to Protected: A safe cell is set so that it cannot be selected for secondary suppression.</p></li>
+<li><p>Set Cost: Change the value of the Cost-value for this cell</p></li>
+<li><p>Use 'a priori' information (see below).</p></li>
+</ul>
+</section>
+<section id="a-priori-info" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="a-priori-info"><span class="header-section-number">3.2.3</span> A Priori Info</h3>
+<p>This option is an <em>a priori</em> option to be mainly used for microdata which allows the user to feed <span class="math inline">\(\tau\)</span>-Argus a list of cells where the status of the standard rules can be overruled i.e.&nbsp;the status of the cells is already specified. The associated file specifying this information is free format. The format will be:</p>
+<p>Code of first spanning variable, Code of second spanning variable,Status of cell (u&nbsp;=&nbsp;unsafe, p&nbsp;=&nbsp;protected (not to be suppressed),s&nbsp;=&nbsp;safe).</p>
+<p>Also the cost-function can be changed here for a cell. This will make the cell more likely to become secondary cell suppression, when the value is low or less likely when the value is high.</p>
+<p><img src="Media/Pictures/apriori_info_file_3211.png" class="img-fluid"></p>
+<!--
+Nr, 4, u
+Zd, 6, p
+5, 5, c, 1
+-->
+<p>A full description of the aproiri file can be found in <a href="05_Further_descriptions.html#sec-apriorifile" class="quarto-xref"><span>Section 5.6</span></a>.</p>
+</section>
+<section id="recode" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="recode"><span class="header-section-number">3.2.4</span> Recode</h3>
+<p>The recode button will bring the user to the recoding system. Recodingis a very powerful method of protecting a table. Collapsed cells usually have more contributors and therefore tend to be much safer.</p>
+<section id="hierarchical-recoding" class="level4" data-number="3.2.4.1">
+<h4 data-number="3.2.4.1" class="anchored" data-anchor-id="hierarchical-recoding"><span class="header-section-number">3.2.4.1</span> Hierarchical Recoding</h4>
+<p>The first window shows the variables available for recoding.</p>
+<p>In this example, the ‘Region’ variable has been selected for recoding. As ‘Region’ is a hierarchical variable, the codes are shown in a hierarchical tree. The user can either fold or unfold the branches by clicking on the ‘+’ or ‘-’ boxes which results in showing or omitting codes from the table, or by choosing an overall maximum hierarchical level. (See the following windows for details). Pressing the ‘Apply ’button followed by ’Close’ will actually apply the selected recoding and show the resulting table. Press the undo-button – it is now possible to go back to the original recoding scheme. Below this there are two windows, one showing the recode window prior to applying there coding for the hierarchical variable ‘Region’ and the second after the folding of the tree.</p>
+<p><img src="Media/Pictures/100000000000025C000002278C10BCB1.png" style="width:13cm;height:11.716cm"></p>
+<p>The next window shows the new hierarchical codes after collapsing all second level categories.</p>
+<p><img src="Media/Pictures/100000000000025C0000017155E7F1A3.png" style="width:13cm;height:7.941cm"></p>
+<p>By clicking 'Apply' and 'Close', we go back to the main windowwhich shows the table after recoding:</p>
+<p><img src="Media/Pictures/100000000000039B000002A87499D80A.png" style="width:13cm;height:9.696cm"></p>
+</section>
+<section id="non-hierarchical-recoding" class="level4" data-number="3.2.4.2">
+<h4 data-number="3.2.4.2" class="anchored" data-anchor-id="non-hierarchical-recoding"><span class="header-section-number">3.2.4.2</span> Non Hierarchical Recoding</h4>
+<p>In this example the non-hierarchical ‘Size’ variable has been selected to be recoded. The user can either write the required recodings in the edit box or import them from a previously written file. In the example the line 2:2-6 results that categories <span class="math inline">\(2,3,4,5,\)</span> and <span class="math inline">\(6\)</span> will be recoded into a new category <span class="math inline">\(2\)</span>. Note that <span class="math inline">\(\tau\)</span>-Argus will give a warning that some codes have not been recoded. They will remain unchanged. The user will know whether this is harmful or not.</p>
+<p><img src="Media/Pictures/1000000000000295000002273BA54BDE.png" style="width:13cm;height:11.529cm"></p>
+<p>Once the recoding has been applied (both for hierarchical and non hierarchical data) the table can again be displayed. If there are now no cells, which fail the safety rules, the table can be saved as a protected table. However, if there are still anumber of unsafe cells, secondary suppression needs to be carried out. This is necessary as the table is not yet safe. If only the cells failing the safety rules are suppressed, other cell values could be obtained by differencing.</p>
+</section>
+</section>
+<section id="secondary-suppression" class="level3" data-number="3.2.5">
+<h3 data-number="3.2.5" class="anchored" data-anchor-id="secondary-suppression"><span class="header-section-number">3.2.5</span> Secondary Suppression</h3>
+<p>The Suppress button is an important button. It will activate the modules for computing the necessary secondary suppressions as described above. There are a number of options here:</p>
+<ul>
+<li><p>Hypercube</p></li>
+<li><p>Modular</p></li>
+<li><p>Network</p></li>
+<li><p>Optimal</p></li>
+</ul>
+<section id="hypercube" class="level4" data-number="3.2.5.1">
+<h4 data-number="3.2.5.1" class="anchored" data-anchor-id="hypercube"><span class="header-section-number">3.2.5.1</span> Hypercube</h4>
+<p>This is also known as the ghmiter method. The approach builds on the fact that a suppressed cell in a simple <em>n</em>‑dimensional table without substructure cannot be disclosed exactly if that cell is contained in a pattern of suppressed, non zero cells, forming the corner points of a hypercube.</p>
+</section>
+<section id="modular" class="level4" data-number="3.2.5.2">
+<h4 data-number="3.2.5.2" class="anchored" data-anchor-id="modular"><span class="header-section-number">3.2.5.2</span> Modular</h4>
+<p>This partial method will break the hierarchical table down to several non-hierarchical tables, protect them and compose a protected table from the smaller tables. As this method uses the optimisationroutines, an LP-solver is required: this will be either Xpress or <span class="smallcaps">cplex</span>, or the free solver The routine used can be specified in the Options window, this will be discussed later.</p>
+</section>
+<section id="optimal" class="level4" data-number="3.2.5.3">
+<h4 data-number="3.2.5.3" class="anchored" data-anchor-id="optimal"><span class="header-section-number">3.2.5.3</span> Optimal</h4>
+<p>This method protects the hierarchical table as a single table without breaking it down into smaller tables. As this method uses the optimisation routines, an LP-solver is required: this will be either Xpress or <span class="smallcaps">cplex</span>. The routine used can be specified in the Options window; see <a href="04_Reference_Section_-_Description_of_the_Menu_Items.html#sec-helpoptions" class="quarto-xref"><span>Section 4.7.3</span></a>.</p>
+</section>
+<section id="network" class="level4" data-number="3.2.5.4">
+<h4 data-number="3.2.5.4" class="anchored" data-anchor-id="network"><span class="header-section-number">3.2.5.4</span> Network</h4>
+<p>This is a Network Flow approach for large unstructured 2 dimensional tables or a 2 dimensional table with one hierarchy (the first variable specified). This method is also based on optimisation techniques, butdoes not require an external solver like Xpress or <span class="smallcaps">cplex</span>. As alternatives for cell suppression we can also apply rounding and Controlled Tabular Adjustment (CTA)</p>
+</section>
+<section id="rounding" class="level4" data-number="3.2.5.5">
+<h4 data-number="3.2.5.5" class="anchored" data-anchor-id="rounding"><span class="header-section-number">3.2.5.5</span> Rounding</h4>
+<p>The controlled rounding procedure can be applied. The user has to specify the rounding base. Note that this option requires the Xpress solver or the <span class="smallcaps">cplex</span> solver or the free solver. See <a href="04_Reference_Section_-_Description_of_the_Menu_Items.html#sec-controlledrounding425" class="quarto-xref"><span>Section 4.2.5</span></a></p>
+</section>
+<section id="controlled-tabular-adjustment-cta" class="level4" data-number="3.2.5.6">
+<h4 data-number="3.2.5.6" class="anchored" data-anchor-id="controlled-tabular-adjustment-cta"><span class="header-section-number">3.2.5.6</span> Controlled Tabular Adjustment (CTA)</h4>
+<p>This method will modify a table such that the unsafe cells are replaced by their upper or lower protection level and the remaining cells are modified such that the table is still additive. See <a href="04_Reference_Section_-_Description_of_the_Menu_Items.html#sec-CTA424" class="quarto-xref"><span>Section 4.2.4</span></a></p>
+</section>
+<section id="choose-the-suppression-method" class="level4" data-number="3.2.5.7">
+<h4 data-number="3.2.5.7" class="anchored" data-anchor-id="choose-the-suppression-method"><span class="header-section-number">3.2.5.7</span> Choose the suppression method</h4>
+<p>The radio-buttons at the right lower part of the window allow selecting the desired suppression method. Clicking on the Suppress button will then start the process of calculating the secondary suppressions. When this process has finished the protected table will be displayed and also the user will be informed about the number of cells selected for secondary suppression and the time taken to perform the operation. The secondary suppressed cells will be shown in blue.</p>
+<p><img src="Media/Pictures/100000000000039C000002B6944CDCBE.png" style="width:13cm;height:9.696cm"></p>
+</section>
+</section>
+<section id="summary-window" class="level3" data-number="3.2.6">
+<h3 data-number="3.2.6" class="anchored" data-anchor-id="summary-window"><span class="header-section-number">3.2.6</span> Summary Window</h3>
+<p>By clicking on 'Table Summary', the summary window is obtained. The summary window gives an overview of the cells according to their status.</p>
+<ul>
+<li><p>Freq: The number of cells in each category</p></li>
+<li><p># rec: The number of observations in each category</p></li>
+<li><p>Sum Resp: Total cell value in each category</p></li>
+<li><p>SumCost: The sum of the cost variable. Here it is equal to the response variable.</p></li>
+</ul>
+<p><img src="Media/Pictures/100000000000026700000177020B6D1D.png" style="width:13cm;height:7.976cm"></p>
+<p>By clicking on 'Close', we return to the table window.</p>
+<p>The table can now be written to an output file in the required format. Any cells which have been selected for suppression will be replaced by'X', unless another option is chosen. The safe table can be saved by using 'Output|Save table' menu on the main menu. See <a href="04_Reference_Section_-_Description_of_the_Menu_Items.html#sec-outputsavetable" class="quarto-xref"><span>Section 4.6.1</span></a>.</p>
+</section>
+</section>
+<section id="sec-savesafetable" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="sec-savesafetable"><span class="header-section-number">3.3</span> Save the safe table</h2>
+<p>When the table is safe it may be written to the hard disk of thecomputer. The user has six options:</p>
+<ol type="1">
+<li><p>As a CSV file. This Comma separated file can easily be read into<span class="smallcaps">cplex</span> Excel. Please note that <span class="math inline">\(\tau\)</span>-Argus uses the ‘,’ as the <span class="smallcaps">cplex</span> field-separator in this CSV-file. This might influence opening the <span class="smallcaps">cplex</span> CSV file in Excel. A solution for this is to change the settings<span class="smallcaps">cplex</span> in the Windows control-panel or use the 'Data|Text to Columns' <span class="smallcaps">cplex</span> option of Excel. This is a typical tabular output maintaining the <span class="smallcaps">cplex</span> appearance of the table in <span class="math inline">\(\tau\)</span>-Argus.</p></li>
+<li><p>A CSV-file for a pivot table. This offers the opportunity to make <span class="smallcaps">cplex</span> use of the facilities of pivot tables in Excel. The status of each <span class="smallcaps">cplex</span> cell can be added here as an option (Safe, Unsafe or Protected for <span class="smallcaps">cplex</span> example). The information for each cell is displayed on a single <span class="smallcaps">cplex</span> line unlike standard csv format.</p></li>
+<li><p>A text file in the format code-value, separated by commas. Here, the <span class="smallcaps">cplex</span> cell status is again an option. Also empty cells can be suppressed <span class="smallcaps">cplex</span> from the output file if required. The information for each cell is <span class="smallcaps">cplex</span> displayed on a single line similar to the CSV file for a pivot <span class="smallcaps">cplex</span> table.</p></li>
+<li><p>SBS format. This is a special format required for sending data to <span class="smallcaps">cplex</span> Eurostat.</p></li>
+<li><p>A file in intermediate format for possible input into another <span class="smallcaps">cplex</span> program. This contains protection levels and external bounds for <span class="smallcaps">cplex</span> each cell. This table could even be read back into <span class="math inline">\(\tau\)</span>-Argus.</p></li>
+<li><p>A file in the JJ-format. This format has been introduced by JJ <span class="smallcaps">cplex</span> Salazar as an intermediate between the normal table and the <span class="smallcaps">cplex</span> structures required in the optimisation routines.</p></li>
+</ol>
+<p><img src="Media/Pictures/100000000000019F000001BBAB79FE89.png" style="width:12.107cm;height:12.813cm"></p>
+<p>Finally, a report will be generated to a user specified directory. This report will also be displayed on the screen when the table has been written. It will contain details such as table structure, safety rules (and number of cells failing), secondary suppression method (and number of cell failing) and details of any recodes. An example is shown in the Reference <a href="04_Reference_Section_-_Description_of_the_Menu_Items.html#sec-outputviewreport" class="quarto-xref"><span>Section 4.6.2</span></a>. As this is an HTML-file it can be viewed easily later or printed.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./02_Producing_Safe_tables.html" class="pagination-link" aria-label="Producing Safe Tables">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Producing Safe Tables</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./04_Reference_Section_-_Description_of_the_Menu_Items.html" class="pagination-link" aria-label="Description of the Menu Items">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Description of the Menu Items</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

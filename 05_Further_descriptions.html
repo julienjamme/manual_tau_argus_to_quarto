@@ -155,7 +155,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_A_tour_of_τ-ARGUS.html" class="sidebar-item-text sidebar-link">
+  <a href="./03_A_tour_of_tauargus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A tour of <span class="math inline">\(\tau\)</span>-Argus</span></span></a>
   </div>
 </li>
@@ -200,11 +200,11 @@ window.Quarto = {
   <li><a href="#meta-data-for-spss-system-files" id="toc-meta-data-for-spss-system-files" class="nav-link" data-scroll-target="#meta-data-for-spss-system-files"><span class="header-section-number">5.1.3</span> Meta data for SPSS system files</a></li>
   <li><a href="#meta-data-for-tabular-data-files" id="toc-meta-data-for-tabular-data-files" class="nav-link" data-scroll-target="#meta-data-for-tabular-data-files"><span class="header-section-number">5.1.4</span> Meta data for tabular data files</a></li>
   </ul></li>
-  <li><a href="#hierarchy-file" id="toc-hierarchy-file" class="nav-link" data-scroll-target="#hierarchy-file"><span class="header-section-number">5.2</span> Hierarchy file</a></li>
-  <li><a href="#codelist-file" id="toc-codelist-file" class="nav-link" data-scroll-target="#codelist-file"><span class="header-section-number">5.3</span> Codelist file</a></li>
+  <li><a href="#sec-hierarchyfile" id="toc-sec-hierarchyfile" class="nav-link" data-scroll-target="#sec-hierarchyfile"><span class="header-section-number">5.2</span> Hierarchy file</a></li>
+  <li><a href="#sec-codelistfile" id="toc-sec-codelistfile" class="nav-link" data-scroll-target="#sec-codelistfile"><span class="header-section-number">5.3</span> Codelist file</a></li>
   <li><a href="#global-recode-file" id="toc-global-recode-file" class="nav-link" data-scroll-target="#global-recode-file"><span class="header-section-number">5.4</span> Global recode file</a></li>
   <li><a href="#the-jj-file-format" id="toc-the-jj-file-format" class="nav-link" data-scroll-target="#the-jj-file-format"><span class="header-section-number">5.5</span> The JJ-file format</a></li>
-  <li><a href="#the-apriori-file" id="toc-the-apriori-file" class="nav-link" data-scroll-target="#the-apriori-file"><span class="header-section-number">5.6</span> The apriori file</a></li>
+  <li><a href="#sec-apriorifile" id="toc-sec-apriorifile" class="nav-link" data-scroll-target="#sec-apriorifile"><span class="header-section-number">5.6</span> The apriori file</a></li>
   <li><a href="#the-batch-command-file" id="toc-the-batch-command-file" class="nav-link" data-scroll-target="#the-batch-command-file"><span class="header-section-number">5.7</span> The Batch command file</a></li>
   <li><a href="#log-file" id="toc-log-file" class="nav-link" data-scroll-target="#log-file"><span class="header-section-number">5.8</span> Log file</a></li>
   </ul>
@@ -462,12 +462,12 @@ window.Quarto = {
 <p>For explanatory variables the code for the total has to be specified.We recommend strongly that the user also provides the values for thetotals himself, but if needed he can ask <span class="math inline">\(\tau\)</span>-Argus to compute thesetotals. In any case, <span class="math inline">\(\tau\)</span>-Argus needs these totals as they play animportant role is the structure of a table and also are important forthe suppression models. &lt;SEPARATOR&gt; “,” &lt;SAFE&gt; s &lt;UNSAFE&gt; u &lt;PROTECT&gt; p expvar1 &lt;RECODABLE&gt; &lt;TOTCODE&gt; T expvar2 &lt;RECODABLE&gt; &lt;TOTCODE&gt; T respvar &lt;NUMERIC&gt; freq &lt;FREQUENCY&gt; top1 &lt;MAXSCORE&gt; top2 &lt;MAXSCORE&gt; top3 &lt;MAXSCORE&gt; stat &lt;STATUS&gt;</p>
 </section>
 </section>
-<section id="hierarchy-file" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="hierarchy-file"><span class="header-section-number">5.2</span> Hierarchy file</h2>
+<section id="sec-hierarchyfile" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-hierarchyfile"><span class="header-section-number">5.2</span> Hierarchy file</h2>
 <p>Hierarchical structures play an important role in <span class="math inline">\(\tau\)</span>-Argus. Thehierarchical structures can often be derived from the code itself.E.g. the NACE classification is an example of this. In othersituations the structure is not so clear. In that case the wholestructure has to be specified. A hierarchical structure is in fact atree. And a tree can be described easily by indentation. In τ‑argus ahierarchical structure can be described in a simple text-file, usingNotepad or something similar. The default extension is .HRC. One level deeper means a new sub-node in the tree. In the examplegiven below only two levels are shown, but many more levels areallowed. The indentation (an @ in this example) character has to bespecified separately in the RDA file. Note that the total code is never specified in these .HRC files, asτ‑argus always assumes that the total will be computed. Note also that in this situation the codes 1 to 9 in a fixed formatfile have a leading space. This space should be used in the HRC-fileas well. region2.hrc Nr @ 1 @ 2 @ 3 Os @ 4 @ 5 @ 6 @ 7 Ws @ 8 @ 9 @10 Zd @11 @12</p>
 </section>
-<section id="codelist-file" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="codelist-file"><span class="header-section-number">5.3</span> Codelist file</h2>
+<section id="sec-codelistfile" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sec-codelistfile"><span class="header-section-number">5.3</span> Codelist file</h2>
 <p>Codelists can be specified for explanatory variables. The codes arestored in a separate file (default extension .CDL). However the codes are only used to enhance certain windows during theprocessing. <span class="math inline">\(\tau\)</span>-Argus itself will create the coding schemes for thevariables used during the processing of the datafile. So a code notspecified in the .CDL-file will not cause any problem, only the labelis not available. Also codes specified but not found in the data filewill be ignored. The structure of the file is simple. Each line contains a code and alabel separated by a “,” region.cdl 1,Groningen 2,Friesland 3,Drenthe 4,Overijssel 5,Flevoland 6,Gelderland 7,Utrecht 8,Noord-Holland 9,Zuid-Holland 10,Zeeland 11,Noord-Brabant 12,Limburg Nr,North Os,East Ws,West Zd,South</p>
 </section>
 <section id="global-recode-file" class="level2" data-number="5.4">
@@ -489,8 +489,8 @@ window.Quarto = {
 <li><p>The sliding protection level (never used in τ‑argus) Then the number of relations Then follow all the relations. Each relation starts with a ‘0’followed by the number of cells in thatrelations and a colon (’:’). Then the sequence-number of the totalcell (followed by a (-1) and all the sub-cells (followed by a (1). Example of a part of a JJ-file: 0 162 0 16847646.84 20000 s 0.00 25271470.26 0.0100 0.0100 0.00 1 4373664.00 5192 s 0.00 25271470.26 0.0100 0.0100 0.00 2 1986129.00 2358 s 0.00 25271470.26 0.0100 0.0100 0.00 3 1809246.00 2148 s 0.00 25271470.26 0.0100 0.0100 0.00 4 578289.00 686 s 0.00 25271470.26 0.0100 0.0100 0.00 5 3703896.00 4397 s 0.00 25271470.26 0.0100 0.0100 0.00 ... ... ... ... 63 0 9 : 0 (-1) 18 (1) 36 (1) 54 (1) 72 (1) 90 (1) 108 (1) 126 (1) 144(1) 0 9 : 1 (-1) 19 (1) 37 (1) 55 (1) 73 (1) 91 (1) 109 (1) 127 (1) 145(1) 0 9 : 2 (-1) 20 (1) 38 (1) 56 (1) 74 (1) 92 (1) 110 (1) 128 (1) 146(1) 0 9 : 3 (-1) 21 (1) 39 (1) 57 (1) 75 (1) 93 (1) 111 (1) 129 (1) 147(1) 0 9 : 4 (-1) 22 (1) 40 (1) 58 (1) 76 (1) 94 (1) 112 (1) 130 (1) 148(1) ... ... ... ...</p></li>
 </ul>
 </section>
-<section id="the-apriori-file" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="the-apriori-file"><span class="header-section-number">5.6</span> The apriori file</h2>
+<section id="sec-apriorifile" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="sec-apriorifile"><span class="header-section-number">5.6</span> The apriori file</h2>
 <p>The apriori file can be used to modify the characteristics of a cellbefore the secondary cell suppression routines are called. You canmodify the following characteristics:</p>
 <ul>
 <li><p>Cell status</p></li>

@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./03_A_tour_of_τ-ARGUS.html" rel="next">
+<link href="./03_A_tour_of_tauargus.html" rel="next">
 <link href="./01_Introduction.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -155,7 +155,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_A_tour_of_τ-ARGUS.html" class="sidebar-item-text sidebar-link">
+  <a href="./03_A_tour_of_tauargus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A tour of <span class="math inline">\(\tau\)</span>-Argus</span></span></a>
   </div>
 </li>
@@ -198,7 +198,7 @@ window.Quarto = {
   <li><a href="#sensitive-cells-in-frequency-count-tables" id="toc-sensitive-cells-in-frequency-count-tables" class="nav-link" data-scroll-target="#sensitive-cells-in-frequency-count-tables"><span class="header-section-number">2.3</span> Sensitive cells in frequency count tables</a></li>
   <li><a href="#table-redesign" id="toc-table-redesign" class="nav-link" data-scroll-target="#table-redesign"><span class="header-section-number">2.4</span> Table redesign</a></li>
   <li><a href="#secondary-cell-suppression" id="toc-secondary-cell-suppression" class="nav-link" data-scroll-target="#secondary-cell-suppression"><span class="header-section-number">2.5</span> Secondary cell suppression</a></li>
-  <li><a href="#information-loss-in-terms-of-cell-costs8" id="toc-information-loss-in-terms-of-cell-costs8" class="nav-link" data-scroll-target="#information-loss-in-terms-of-cell-costs8"><span class="header-section-number">2.6</span> Information loss in terms of cell costs</a></li>
+  <li><a href="#sec-infolosscost" id="toc-sec-infolosscost" class="nav-link" data-scroll-target="#sec-infolosscost"><span class="header-section-number">2.6</span> Information loss in terms of cell costs</a></li>
   <li><a href="#series-of-tables" id="toc-series-of-tables" class="nav-link" data-scroll-target="#series-of-tables"><span class="header-section-number">2.7</span> Series of tables</a></li>
   <li><a href="#the-hypercubeghmiter-method9" id="toc-the-hypercubeghmiter-method9" class="nav-link" data-scroll-target="#the-hypercubeghmiter-method9"><span class="header-section-number">2.8</span> The Hypercube/GHMITER method</a>
   <ul class="collapse">
@@ -206,7 +206,7 @@ window.Quarto = {
   <li><a href="#the-argus-implementation-of-ghmiter" id="toc-the-argus-implementation-of-ghmiter" class="nav-link" data-scroll-target="#the-argus-implementation-of-ghmiter"><span class="header-section-number">2.8.2</span> The ARGUS implementation of GHMITER</a></li>
   <li><a href="#references-on-ghmiter" id="toc-references-on-ghmiter" class="nav-link" data-scroll-target="#references-on-ghmiter"><span class="header-section-number">2.8.3</span> References on GHMITER</a></li>
   </ul></li>
-  <li><a href="#optimisation-models-for-secondary-cell-suppression10" id="toc-optimisation-models-for-secondary-cell-suppression10" class="nav-link" data-scroll-target="#optimisation-models-for-secondary-cell-suppression10"><span class="header-section-number">2.9</span> Optimisation models for secondary cell suppression</a></li>
+  <li><a href="#sec-optimcellsuppression" id="toc-sec-optimcellsuppression" class="nav-link" data-scroll-target="#sec-optimcellsuppression"><span class="header-section-number">2.9</span> Optimisation models for secondary cell suppression</a></li>
   <li><a href="#sec-modularapproach" id="toc-sec-modularapproach" class="nav-link" data-scroll-target="#sec-modularapproach"><span class="header-section-number">2.10</span> The Modular approach</a>
   <ul class="collapse">
   <li><a href="#references-on-the-modular-method" id="toc-references-on-the-modular-method" class="nav-link" data-scroll-target="#references-on-the-modular-method"><span class="header-section-number">2.10.1</span> References on the modular method</a></li>
@@ -235,7 +235,7 @@ window.Quarto = {
   <li><a href="#auditing-a-hierarchical-table" id="toc-auditing-a-hierarchical-table" class="nav-link" data-scroll-target="#auditing-a-hierarchical-table"><span class="header-section-number">2.15.1</span> Auditing a hierarchical table</a></li>
   <li><a href="#discovering-singleton-problems" id="toc-discovering-singleton-problems" class="nav-link" data-scroll-target="#discovering-singleton-problems"><span class="header-section-number">2.15.2</span> Discovering singleton problems</a></li>
   </ul></li>
-  <li><a href="#functional-design-of-tau-argus" id="toc-functional-design-of-tau-argus" class="nav-link" data-scroll-target="#functional-design-of-tau-argus"><span class="header-section-number">2.16</span> Functional design of <span class="math inline">\(\tau\)</span>-Argus</a></li>
+  <li><a href="#sec-functionaldesign" id="toc-sec-functionaldesign" class="nav-link" data-scroll-target="#sec-functionaldesign"><span class="header-section-number">2.16</span> Functional design of <span class="math inline">\(\tau\)</span>-Argus</a></li>
   </ul>
 </nav>
     </div>
@@ -296,8 +296,8 @@ window.Quarto = {
 <p>Once the sensitive cells in a table have been identified, possibly following table redesign it might be a good idea to suppress these values. In case no constraints on the possible values in the cells of a table exist this is easy: one simply removes the cell values concerned and the problem is solved. In practice, however, this situation hardly ever occurs. Instead one has constraints on the values in the cells due to the presence of marginals and lower bounds for the cell values (typically 0). The problem then is to find additional cells that should be suppressed in order to protect the sensitive cells. The additional cells should be chosen in such a way that the interval of possible values for each sensitive cell value is sufficiently large. What is “sufficiently large” can be specified by the data protector in <span class="math inline">\(\tau\)</span>-Argus by specifying the protection intervals.</p>
 <p>In general the secondary cell suppression problem turns out to be a hard problem, provided the aim is to retain as much information in the table as possible, which, of course, is a quite natural requirement. The optimisation problems that will then result are quite difficult to solve and require expert knowledge in the area of combinatorial optimisation.</p>
 </section>
-<section id="information-loss-in-terms-of-cell-costs8" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="information-loss-in-terms-of-cell-costs8"><span class="header-section-number">2.6</span> Information loss in terms of cell costs<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></h2>
+<section id="sec-infolosscost" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="sec-infolosscost"><span class="header-section-number">2.6</span> Information loss in terms of cell costs<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></h2>
 <p>In case of secondary cell suppression it is possible that a data protector might want to differentiate between the candidate cells for secondary suppression. It is possible that they would strongly prefer to preserve the content of certain cells, and are willing to sacrifice the values of other cells instead. A mechanism that can be used to make such a distinction between cells in a table is that of cell costs. In <span class="math inline">\(\tau\)</span>-Argus it is possible to associate different costs with the cells in a table. The higher the cost the more important the corresponding cell value is considered and the less likely it will be suppressed. We shall interpret this by saying that the cells with the higher associated costs have a higher information content.</p>
 <p>The aim of secondary cell suppression can be summarised by saying that a safe table should be produced from an unsafe one, by minimising the information loss, expressed as the sum of the costs associated with the cells that have secondarily been suppressed.</p>
 <p><span class="math inline">\(\tau\)</span>-Argus offers several ways to compute these costs. The first option is to compute the costs as the sum of the contributions to a cell. Alternatively another variable in the data file can be used as the cost function. Secondly this cost can be the frequency of the contributors to a cell, and finally each cell can have cost <span class="math inline">\(= 1\)</span>, minimising the number of suppressed cells.</p>
@@ -359,8 +359,8 @@ window.Quarto = {
 </ol>
 </section>
 </section>
-<section id="optimisation-models-for-secondary-cell-suppression10" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="optimisation-models-for-secondary-cell-suppression10"><span class="header-section-number">2.9</span> Optimisation models for secondary cell suppression<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></h2>
+<section id="sec-optimcellsuppression" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="sec-optimcellsuppression"><span class="header-section-number">2.9</span> Optimisation models for secondary cell suppression<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></h2>
 <p><span class="math inline">\(\tau\)</span>-Argus applies different approaches to find optimal and near-optimal solutions. One of these approaches is based on a Mathematical Programming technique which consists of solving Integer Linear Programming programs modelling the combinatorial problems under different methodologies (Cell Suppression and Controlled Rounding).The main characteristic of these models is that they share the same structure, thus based only on a <span class="math inline">\(0\)</span>-<span class="math inline">\(1\)</span> variable for each cell. In the Cell Suppression methodology, the variable is <span class="math inline">\(1\)</span> if and only if the cell value must be suppressed. In the Controlled Rounding methodology, the variable is <span class="math inline">\(1\)</span> if and only if the cell value must be rounded up. Noother variables are necessary, so the number of variables in the model is exactly the number of cells in the table to be protected. In addition, the model also imposes the protection level requirements(upper, lower and sliding) in the same way for the different methodologies (Cell Suppression and Controlled Rounding). These requirements ask for a guarantee that an attacker will not get too narrow an interval of potential values for a sensitive cell, whichhe/she will compute by solving two linear programming programs (calledattacker problems). Even if a first model containing this two-attacker problem would lead to a bi-level programming model, complex to be solved in practice, a Benders' decomposition approach allows us to convert the attacker problems into a set of linear inequalities. This conversion provides a second model for each methodology that can be efficiently solved by a modern cutting-plane approach. Since the variables are 0-1, a branching phase can be necessary, and the whole approach is named "branch-and-cut algorithm".</p>
 <p>Branch-and-cut algorithms are modern techniques in Operations Research that provide excellent results when solving larger and complicated combinatorial problems arising in many applied fields (like routing, scheduling, planning, telecomunications, etc.). Shortly, the idea isto solve a compact <span class="math inline">\(0-1\)</span> model containing a large number of linear inequalities (as the ones above mentioned for the Cell Suppression andfor the Controlled Rounding) through an iterative procedure that does not consider all the inequalities at the same time, but generates the important ones when needed. This dynamic procedure of dealing with large models allows the program to replace the resolution of a hugelarge model by a short sequence of small models, which is termed a "decomposition approach". The on-line generation of the linear inequalities (rows) was also extended in this work to the variables (columns), thus the algorithm can also works on tables with a large number of cells, and the overall algorithm is named "branch-and-cut-and-price" in the Operations Research literature.</p>
 <p>To obtain good performance, the implementation has also considered many other ingredients, standard in branch-and-cut-and-price approaches. For example, it is fundamentally the implementation of a pre-processing approach where redundant equations defining the table are eliminated, where variables associated to non-relevant cells are removed, and where dominated protection levels are detected. Thepre-processing is fundamental to make the problem as small as possible before starting the optimization phase. Another fundamental ingredient is the heuristic routine, which allows the algorithm to start with an upper bound of the optimal loss of information. This heuristic routine ensures the production of a protected pattern if the algorithm is interrupted by the user before the end. In other words, thanks to the heuristic routine, the implemented algorithm provide a near-optimal solution if the execution is cancelled before having a proof of optimality. During the implicit enumeration approach (i.e., the branch-and-cut-and-price) the heuristic routine is called several times, thus providing different protected patterns, and the best one will be the optimal solution if its loss of information is equal tothe lower bound. This lower bound is computed by solving a relaxed model, which consists of removing the integrability condition on the integer model. Since the relaxed model is a linear program, a linear programming solver must be called.</p>
@@ -1049,8 +1049,8 @@ Upper protection direction (c)</strong></strong></p>
 <p>Making use of the additional knowledge of a respondent, who is the single respondent to a cell (a so called ‘singleton’), it is possible to derive intervals that are much closer than without this knowledge. The audit routine could be used to identify problems in this respect in the following way: in advance of running the audit routine, set the status of a particular singleton cell from “unsafe” to “safe”.</p>
 </section>
 </section>
-<section id="functional-design-of-tau-argus" class="level2" data-number="2.16">
-<h2 data-number="2.16" class="anchored" data-anchor-id="functional-design-of-tau-argus"><span class="header-section-number">2.16</span> Functional design of <span class="math inline">\(\tau\)</span>-Argus</h2>
+<section id="sec-functionaldesign" class="level2" data-number="2.16">
+<h2 data-number="2.16" class="anchored" data-anchor-id="sec-functionaldesign"><span class="header-section-number">2.16</span> Functional design of <span class="math inline">\(\tau\)</span>-Argus</h2>
 <p><img src="Media/Pictures/tau_argus_functional_design.png" style="width:14.792cm;height:19.233cm"> <!-- 2000000700004D00000062CFD2BA6125.svm --></p>
 
 
@@ -1467,7 +1467,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03_A_tour_of_τ-ARGUS.html" class="pagination-link" aria-label="A tour of $\tau$-Argus">
+      <a href="./03_A_tour_of_tauargus.html" class="pagination-link" aria-label="A tour of $\tau$-Argus">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A tour of <span class="math inline">\(\tau\)</span>-Argus</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
