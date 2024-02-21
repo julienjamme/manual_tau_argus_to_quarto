@@ -9,7 +9,7 @@ book:
     - index.qmd
     - 01_Introduction.qmd
     - 02_Producing_Safe_tables.qmd
-    - 03_A_tour_of_τ-ARGUS.qmd
+    - 03_A_tour_of_tauargus.qmd
     - 04_Reference_Section_-_Description_of_the_Menu_Items.qmd
     - 05_Further_descriptions.qmd
     - 06_Index.qmd
