@@ -1,0 +1,18 @@
+# A tour of $\tau$-Argus {#sec-tour}
+
+In this chapter, we explain and display the key features of $\tau$-Argus. $\tau$-Argus is a menu driven program, and here we describe a number of menu steps the user will follow in order to prepare a table for output in a 'safe' form. The aim of the tour is to guide the user through the basic features of the program without describing every feature in detail. The only pre-requisite knowledge is basic experience of the Windows environment. In @sec-menu (Reference) a more systematic description of the different parts of $\tau$-Argus will be given. Chapter 3 can be read as a standalone chapter as there is enough detail to enable the user to run the program. However, not every option is covered and the user is pointed in the direction of the Reference chapter in a number of instances. In addition, back references to the theory explained in @sec-producingSafeTables are also indicated. In this tour we will use the data in the file tau_testW.asc, which comes with the installation of $\tau$-Argus.
+
+This file will be installed in a subdirectory of the installation called data. In most situations the user will not have write permission in that directory. So saving any information must be done in a folder,where the user has write permission.
+
+In this tour we will start with the fixed format data file tau_testW.asc, build a table from that file and go through the process of disclosure control and finish with saving a protected safe table. 
+
+The key windows for preparation of the data and the processes of disclosure control (depicted graphically in the figure in @sec-functionaldesign) are explored in this tour, which are given below.
+
+
+{{< include chapters/03/_03_A_tour_of_tauargus-01-Preparation.qmd >}}
+
+{{< include chapters/03/_03_A_tour_of_tauargus-02-The-process-of-disclosure-control.qmd >}}
+
+{{< include chapters/03/_03_A_tour_of_tauargus-03-Save-the-safe-table.qmd >}}
+
+
